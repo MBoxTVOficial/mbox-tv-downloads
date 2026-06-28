@@ -1,9 +1,9 @@
 {
   "appName": "MBox TV",
-  "versionName": "1.0.2",
-  "versionCode": 3,
+  "versionName": "1.0.3",
+  "versionCode": 4,
   "mandatory": false,
   "apkUrl": "https://github.com/Maurobrito21/mbox-tv-downloads/releases/latest/download/MBoxTV.apk",
-  "releaseNotes": "Se agrego un mensaje, si por error el usuario presiona volver atras y otro mensaje por si falla la conexion de internet del usuario.",
+  "releaseNotes": "Se agrego boton de inicio, favoritos e historial, tambien se agrego un servidor mas (televisor 2),",
   "publishedAt": "2026-06-27T00:00:00Z"
 }
