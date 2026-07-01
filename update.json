@@ -1,7 +1,7 @@
 {
   "appName": "MBox TV",
-  "versionName": "1.0.10",
-  "versionCode": 11,
+  "versionName": "1.0.11",
+  "versionCode": 12,
   "mandatory": false,
   "apkUrl": "https://github.com/MBoxTVOficial/mbox-tv-downloads/releases/latest/download/MBoxTV.apk",
   "releaseNotes": "Mejoras de estabilidad, navegación, reproducción y conexión.",
