@@ -6,30 +6,4 @@
   "apkUrl": "https://github.com/MBoxTVOficial/mbox-tv-downloads/releases/latest/download/MBoxTV.apk",
   "releaseNotes": "Mejoras de estabilidad, navegación, reproducción y conexión.",
   "publishedAt": "2026-06-28T00:00:00Z",
-
-  "remoteConfigVersion": 1,
-
-  "tv1": {
-    "enabled": true,
-    "name": "TV 1",
-    "label": "Principal",
-    "baseUrl": "http://inyoutv.com:8080"
-  },
-
-  "tv2": {
-    "enabled": true,
-    "name": "TV 2",
-    "label": "Respaldo",
-    "baseUrl": "http://elotrojuego.com:2095"
-  },
-
-  "update": {
-    "enabled": true,
-    "manifestUrl": "https://raw.githubusercontent.com/MBoxTVOficial/mbox-tv-downloads/main/update.json"
-  },
-
-  "notice": {
-    "enabled": false,
-    "message": ""
-  }
 }
