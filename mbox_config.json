@@ -18,7 +18,7 @@
 "manifestUrl": "https://raw.githubusercontent.com/MBoxTVOficial/mbox-tv-downloads/main/update.json"
 },
 "notice": {
-"enabled": true,
-"message": "Prueba de configuración remota activa"
+"enabled": false,
+"message": ""
 }
 }
