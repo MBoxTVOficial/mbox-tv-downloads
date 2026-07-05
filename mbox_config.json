@@ -1,6 +1,6 @@
 {
 "configVersion": 1,
-"updatedAt": "2026-07-05T00:00:00Z",
+"updatedAt": "2026-07-05T10:35:00Z",
 "tv1": {
 "enabled": true,
 "name": "TV 1",
@@ -18,7 +18,7 @@
 "manifestUrl": "https://raw.githubusercontent.com/MBoxTVOficial/mbox-tv-downloads/main/update.json"
 },
 "notice": {
-"enabled": false,
+"enabled": true,
 "message": "Prueba de configuración remota activa"
 }
 }
