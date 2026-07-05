@@ -1,0 +1,24 @@
+{
+"configVersion": 1,
+"updatedAt": "2026-07-05T00:00:00Z",
+"tv1": {
+"enabled": true,
+"name": "TV 1",
+"label": "Principal",
+"baseUrl": "http://inyoutv.com:8080"
+},
+"tv2": {
+"enabled": true,
+"name": "TV 2",
+"label": "Respaldo",
+"baseUrl": "http://elotrojuego.com:2095"
+},
+"update": {
+"enabled": true,
+"manifestUrl": "https://raw.githubusercontent.com/MBoxTVOficial/mbox-tv-downloads/main/update.json"
+},
+"notice": {
+"enabled": false,
+"message": ""
+}
+}
