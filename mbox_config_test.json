@@ -1,0 +1,18 @@
+{
+  "configVersion": 1,
+  "updatedAt": "2026-07-07T18:15:00Z",
+  "tv1": {
+    "enabled": true,
+    "categoryOrderMode": "priority"
+  },
+  "tv2": {
+    "enabled": true,
+    "baseUrl": "http://line.liondnscloud.ru:80",
+    "categoryOrderMode": "provider",
+    "useLocalDebugCredentials": true
+  },
+  "notice": {
+    "enabled": false,
+    "message": ""
+  }
+}
