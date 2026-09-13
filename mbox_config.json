@@ -5,13 +5,13 @@
 "enabled": true,
 "name": "TV 1",
 "label": "Principal",
-"baseUrl": "http://elotrojuego.com:2095"
+"baseUrl": "http://inyoutv.com:8080"
 },
 "tv2": {
 "enabled": true,
 "name": "TV 2",
 "label": "Respaldo",
-"baseUrl": "http://inyoutv.com:8080"
+"baseUrl": "http://elotrojuego.com:2095"
 },
 "update": {
 "enabled": true,
