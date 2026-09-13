@@ -5,7 +5,7 @@
 "enabled": true,
 "name": "TV 1",
 "label": "Principal",
-"baseUrl": "http://inyoutv.com:8080"
+"baseUrl": "http://maracanazo.lat:2095/"
 },
 "tv2": {
 "enabled": true,
