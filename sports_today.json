@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-05",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "updatedAt": "2026-10-05T19:30:00-03:00",
+  "demo": true,
+  "sections": [
+    {
+      "id": "argentina",
+      "title": "Fútbol - Argentina",
+      "priority": 1,
+      "events": [
+        {
+          "id": "demo-arg-001",
+          "sport": "football",
+          "competition": "Liga Profesional",
+          "homeTeam": "Boca Juniors",
+          "awayTeam": "Racing Club",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "21:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "demo-arg-002",
+          "sport": "football",
+          "competition": "Copa Argentina",
+          "homeTeam": "River Plate",
+          "awayTeam": "Independiente",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "22:15",
+          "status": "SCHEDULED"
+        }
+      ]
+    },
+    {
+      "id": "conmebol",
+      "title": "Copas CONMEBOL",
+      "priority": 2,
+      "events": [
+        {
+          "id": "demo-conmebol-001",
+          "sport": "football",
+          "competition": "Copa Libertadores",
+          "homeTeam": "Equipo Local",
+          "awayTeam": "Equipo Visitante",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "20:30",
+          "status": "SCHEDULED"
+        }
+      ]
+    },
+    {
+      "id": "champions",
+      "title": "Champions League",
+      "priority": 3,
+      "events": [
+        {
+          "id": "demo-ucl-001",
+          "sport": "football",
+          "competition": "UEFA Champions League",
+          "homeTeam": "Equipo Local",
+          "awayTeam": "Equipo Visitante",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:00",
+          "status": "SCHEDULED"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "title": "Fútbol - Internacional",
+      "priority": 4,
+      "events": [
+        {
+          "id": "demo-int-001",
+          "sport": "football",
+          "competition": "Fútbol Internacional",
+          "homeTeam": "Equipo Local",
+          "awayTeam": "Equipo Visitante",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "18:30",
+          "status": "SCHEDULED"
+        }
+      ]
+    }
+  ]
+}
