@@ -57,7 +57,22 @@
       "title": "Champions League",
       "priority": 3,
       "events": [
-        
+        {
+      "id": "champions",
+      "title": "Champions League",
+      "priority": 3,
+      "events": [
+        {
+          "id": "demo-ucl-001",
+          "sport": "football",
+          "competition": "UEFA Champions League",
+          "homeTeam": "Equipo Local",
+          "awayTeam": "Equipo Visitante",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:00",
+          "status": "SCHEDULED"
+        }
        
       ]
     },
