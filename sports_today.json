@@ -1,74 +1,27 @@
 {
   "schemaVersion": 1,
-  "date": "2026-10-05",
+  "date": "2026-10-06",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-06T14:40:00-03:00",
-  "demo": true,
+  "updatedAt": "2026-10-06T17:34:56-03:00",
+  "demo": false,
   "sections": [
     {
       "id": "argentina",
       "title": "Fútbol - Argentina",
       "priority": 1,
-      "events": [
-        {
-          "id": "demo-arg-001",
-          "sport": "football",
-          "competition": "Liga Profesional",
-          "homeTeam": "Boca Juniors",
-          "awayTeam": "Racing Club",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "demo-arg-002",
-          "sport": "football",
-          "competition": "Copa Argentina",
-          "homeTeam": "River Plate",
-          "awayTeam": "Independiente",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "22:15",
-          "status": "SCHEDULED"
-        }
-      ]
+      "events": []
     },
     {
       "id": "conmebol",
       "title": "Copas CONMEBOL",
       "priority": 2,
-      "events": [
-        {
-          "id": "demo-conmebol-001",
-          "sport": "football",
-          "competition": "Copa Libertadores",
-          "homeTeam": "Equipo Local",
-          "awayTeam": "Equipo Visitante",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "20:30",
-          "status": "SCHEDULED"
-        }
-      ]
+      "events": []
     },
     {
       "id": "champions",
       "title": "Champions League",
       "priority": 3,
-      "events": [
-        {
-          "id": "demo-ucl-001",
-          "sport": "football",
-          "competition": "UEFA Champions League",
-          "homeTeam": "Equipo Local",
-          "awayTeam": "Equipo Visitante",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "16:00",
-          "status": "SCHEDULED"
-        }
-      ]
+      "events": []
     },
     {
       "id": "international",
@@ -76,14 +29,124 @@
       "priority": 4,
       "events": [
         {
-          "id": "demo-int-001",
+          "id": "fixture-1528951",
           "sport": "football",
-          "competition": "Fútbol Internacional",
-          "homeTeam": "Equipo Local",
-          "awayTeam": "Equipo Visitante",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "18:30",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Kazakhstan",
+          "awayTeam": "Faroe Islands",
+          "homeLogo": "https://media.api-sports.io/football/teams/1095.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1098.png",
+          "startTime": "11:00",
+          "status": "FINISHED"
+        },
+        {
+          "id": "fixture-1528952",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Croatia",
+          "awayTeam": "Spain",
+          "homeLogo": "https://media.api-sports.io/football/teams/3.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1528953",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "England",
+          "awayTeam": "Czechia",
+          "homeLogo": "https://media.api-sports.io/football/teams/10.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/770.png",
+          "startTime": "15:45",
+          "status": "FINISHED"
+        },
+        {
+          "id": "fixture-1528954",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Albania",
+          "awayTeam": "San Marino",
+          "homeLogo": "https://media.api-sports.io/football/teams/778.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1115.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1528955",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Belarus",
+          "awayTeam": "Finland",
+          "homeLogo": "https://media.api-sports.io/football/teams/1100.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1099.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1528956",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Moldova",
+          "awayTeam": "Slovakia",
+          "homeLogo": "https://media.api-sports.io/football/teams/1114.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/773.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1528957",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Estonia",
+          "awayTeam": "Iceland",
+          "homeLogo": "https://media.api-sports.io/football/teams/1101.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/18.png",
+          "startTime": "15:45",
+          "status": "FINISHED"
+        },
+        {
+          "id": "fixture-1545612",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Luxembourg",
+          "awayTeam": "Bulgaria",
+          "homeLogo": "https://media.api-sports.io/football/teams/1102.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1103.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1545655",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Switzerland",
+          "awayTeam": "FYR Macedonia",
+          "homeLogo": "https://media.api-sports.io/football/teams/15.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1105.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1545657",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Scotland",
+          "awayTeam": "Slovenia",
+          "homeLogo": "https://media.api-sports.io/football/teams/1108.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1091.png",
+          "startTime": "15:45",
+          "status": "LIVE"
+        },
+        {
+          "id": "fixture-1490326",
+          "sport": "football",
+          "competition": "Major League Soccer",
+          "homeTeam": "Chicago Fire",
+          "awayTeam": "Vancouver Whitecaps",
+          "homeLogo": "https://media.api-sports.io/football/teams/1607.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1603.png",
+          "startTime": "21:30",
           "status": "SCHEDULED"
         }
       ]
