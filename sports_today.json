@@ -3,7 +3,7 @@
   "date": "2026-10-05",
   "timezone": "America/Argentina/Buenos_Aires",
   "updatedAt": "2026-10-05T19:30:00-03:00",
-  "demo": false,
+  "demo": true,
   "sections": [
     {
       "id": "argentina",
@@ -18,7 +18,7 @@
           "awayTeam": "Racing Club",
           "homeLogo": "",
           "awayLogo": "",
-          "startTime": "17:00",
+          "startTime": "21:00",
           "status": "SCHEDULED"
         },
         {
@@ -29,7 +29,7 @@
           "awayTeam": "Independiente",
           "homeLogo": "",
           "awayLogo": "",
-          "startTime": "21:00",
+          "startTime": "22:15",
           "status": "SCHEDULED"
         }
       ]
@@ -47,17 +47,12 @@
           "awayTeam": "Equipo Visitante",
           "homeLogo": "",
           "awayLogo": "",
-          "startTime": "21:00",
+          "startTime": "20:30",
           "status": "SCHEDULED"
         }
       ]
     },
     {
-      "id": "champions",
-      "title": "Champions League",
-      "priority": 3,
-      "events": [
-        {
       "id": "champions",
       "title": "Champions League",
       "priority": 3,
@@ -73,7 +68,6 @@
           "startTime": "16:00",
           "status": "SCHEDULED"
         }
-       
       ]
     },
     {
@@ -89,7 +83,7 @@
           "awayTeam": "Equipo Visitante",
           "homeLogo": "",
           "awayLogo": "",
-          "startTime": "22:30",
+          "startTime": "18:30",
           "status": "SCHEDULED"
         }
       ]
