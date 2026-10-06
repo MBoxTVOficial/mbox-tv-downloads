@@ -161,8 +161,148 @@ class TransformationTest(unittest.TestCase):
             feed(fixture(time="not-a-date"))
 
 
+class ScoreTest(unittest.TestCase):
+    def scored_fixture(self, home, away, status="1H"):
+        item = fixture(status=status)
+        item["goals"] = {"home": home, "away": away}
+        return item
+
+    def event(self, home, away, status="1H"):
+        return feed(self.scored_fixture(home, away, status))["sections"][0]["events"][0]
+
+    def assert_no_scores(self, event):
+        self.assertNotIn("homeScore", event)
+        self.assertNotIn("awayScore", event)
+
+    def test_live_goals_one_zero_include_current_score(self):
+        event = self.event(1, 0)
+        self.assertEqual("LIVE", event["status"])
+        self.assertEqual((1, 0), (event["homeScore"], event["awayScore"]))
+
+    def test_finished_goals_two_two_include_final_score(self):
+        event = self.event(2, 2, "FT")
+        self.assertEqual("FINISHED", event["status"])
+        self.assertEqual((2, 2), (event["homeScore"], event["awayScore"]))
+
+    def test_scheduled_null_goals_do_not_invent_zero_zero(self):
+        event = self.event(None, None, "NS")
+        self.assertEqual("SCHEDULED", event["status"])
+        self.assert_no_scores(event)
+
+    def test_null_home_omits_both_scores(self):
+        self.assert_no_scores(self.event(None, 1))
+
+    def test_null_away_omits_both_scores(self):
+        self.assert_no_scores(self.event(1, None))
+
+    def test_zero_zero_is_valid(self):
+        event = self.event(0, 0)
+        self.assertEqual((0, 0), (event["homeScore"], event["awayScore"]))
+
+    def test_five_zero_is_valid(self):
+        event = self.event(5, 0)
+        self.assertEqual((5, 0), (event["homeScore"], event["awayScore"]))
+
+    def test_negative_goals_are_omitted(self):
+        for scores in ((-1, 0), (0, -1), (-1, -1)):
+            with self.subTest(scores=scores):
+                self.assert_no_scores(self.event(*scores))
+
+    def test_boolean_is_not_an_integer_score(self):
+        for scores in ((True, 0), (0, False)):
+            with self.subTest(scores=scores):
+                self.assert_no_scores(self.event(*scores))
+
+    def test_string_score_is_not_coerced(self):
+        self.assert_no_scores(self.event("1", 0))
+        self.assert_no_scores(self.event(0, "1"))
+
+    def test_float_score_is_not_coerced(self):
+        self.assert_no_scores(self.event(1.0, 0))
+        self.assert_no_scores(self.event(0, 1.0))
+
+    def test_old_feed_without_scores_remains_valid(self):
+        generated = feed(fixture())
+        generator.validate_feed(generated)
+        self.assertEqual(1, generated["schemaVersion"])
+        self.assert_no_scores(generated["sections"][0]["events"][0])
+
+    def test_identical_score_keeps_exact_bytes_and_timestamp(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "sports_today.json"
+            first = feed(self.scored_fixture(1, 0))
+            self.assertTrue(generator.write_feed_atomic(first, output))
+            original = output.read_bytes()
+            later = feed(self.scored_fixture(1, 0), now=NOW + timedelta(minutes=10))
+            self.assertFalse(generator.write_feed_atomic(later, output))
+            self.assertEqual(first["updatedAt"], later["updatedAt"])
+            self.assertEqual(original, output.read_bytes())
+
+    def test_live_score_change_updates_feed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "sports_today.json"
+            generator.write_feed_atomic(feed(self.scored_fixture(1, 0)), output)
+            later = feed(self.scored_fixture(2, 0), now=NOW + timedelta(minutes=10))
+            self.assertTrue(generator.write_feed_atomic(later, output))
+            saved = json.loads(output.read_bytes())
+            event = saved["sections"][0]["events"][0]
+            self.assertEqual(("LIVE", 2, 0), (event["status"], event["homeScore"], event["awayScore"]))
+            self.assertEqual("2026-10-06T12:10:00-03:00", saved["updatedAt"])
+
+    def test_live_one_zero_to_finished_two_one_updates_feed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "sports_today.json"
+            generator.write_feed_atomic(feed(self.scored_fixture(1, 0)), output)
+            final = feed(self.scored_fixture(2, 1, "FT"), now=NOW + timedelta(hours=1))
+            self.assertTrue(generator.write_feed_atomic(final, output))
+            saved = json.loads(output.read_bytes())
+            event = saved["sections"][0]["events"][0]
+            self.assertEqual(("FINISHED", 2, 1), (event["status"], event["homeScore"], event["awayScore"]))
+            self.assertEqual("2026-10-06T13:00:00-03:00", saved["updatedAt"])
+
+    def test_output_validation_rejects_partial_pairs_and_invalid_types(self):
+        invalid_pairs = [{"homeScore": 1}, {"awayScore": 1}]
+        for invalid in (None, -1, True, False, "1", 1.0):
+            invalid_pairs.extend(({"homeScore": invalid, "awayScore": 0},
+                                  {"homeScore": 0, "awayScore": invalid}))
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "sports_today.json"
+            output.write_bytes(b"ORIGINAL FEED")
+            for scores in invalid_pairs:
+                with self.subTest(scores=scores):
+                    invalid_feed = feed(fixture())
+                    invalid_feed["sections"][0]["events"][0].update(scores)
+                    with self.assertRaises(generator.GenerationError):
+                        generator.write_feed_atomic(invalid_feed, output)
+                    self.assertEqual(b"ORIGINAL FEED", output.read_bytes())
+                    self.assertFalse(output.with_name("sports_today.json.tmp").exists())
+
+    def test_incoherent_optional_goals_keep_fixture_and_other_events(self):
+        for goals in (None, {}, {"home": 1}, {"away": 1}, [], "bad", True):
+            with self.subTest(goals=goals):
+                item = fixture()
+                item["goals"] = goals
+                generated = feed(item, fixture(101))
+                events = generated["sections"][0]["events"]
+                self.assertEqual(2, len(events))
+                self.assert_no_scores(events[0])
+
+    def test_uses_goals_only_and_never_score_breakdowns(self):
+        item = self.scored_fixture(1, 0)
+        item["score"] = {key: {"home": 9, "away": 8} for key in
+                         ("halftime", "fulltime", "extratime", "penalty")}
+        event = feed(item)["sections"][0]["events"][0]
+        self.assertEqual((1, 0), (event["homeScore"], event["awayScore"]))
+        del item["goals"]
+        self.assert_no_scores(feed(item)["sections"][0]["events"][0])
+
+
 class GenerationSafetyTest(unittest.TestCase):
     def setUp(self):
+        # Offline HTTP mocks must not inherit GitHub Actions production metadata.
+        environment = patch.dict(generator.os.environ, {"GITHUB_ACTIONS": "false"})
+        environment.start()
+        self.addCleanup(environment.stop)
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
         self.root = Path(self.directory.name)

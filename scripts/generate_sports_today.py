@@ -21,10 +21,100 @@ ENDPOINT = "https://v3.football.api-sports.io/fixtures"
 ROOT = Path(__file__).resolve().parents[1]
 REAL_OUTPUT = ROOT / "sports_today.json"
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
+MAX_DAILY_API_CALLS = 90
+SPORTS_WORKFLOWS = ("update-sports-today.yml", "update-sports-live.yml")
 
 
 class GenerationError(Exception):
     """A safe, user-facing error: never contains API headers or remote error text."""
+
+
+class RefreshSkipped(GenerationError):
+    """A deliberate skip before any API-Football request, preserving the feed."""
+
+
+def realtime_log(event, **fields):
+    # Only bounded identifiers/counts/statuses, never remote bodies, URLs or credentials.
+    values = " ".join(f"{key}={re.sub(r'[^A-Za-z0-9_.:+-]', '_', str(value))[:80]}"
+                      for key, value in fields.items())
+    print(f"SPORTS_REALTIME {event}" + (f" {values}" if values else ""))
+
+
+def check_github_budget(now=None):
+    """GitHub run history is a persistent, conservative upper bound, including manual runs.
+
+    Each first attempt can issue at most one request. Re-runs and runs created on
+    another UTC day cannot issue requests. Failed/skipped runs also consume slots.
+    No ephemeral runner counter or mutable quota file is needed.
+    """
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    real_clock = now is None
+    now = now or datetime.now(timezone.utc)
+    utc_day = now.astimezone(timezone.utc).date()
+    repository = os.environ.get("GITHUB_REPOSITORY", "")
+    token = os.environ.get("GITHUB_TOKEN", "")
+    run_id = os.environ.get("GITHUB_RUN_ID", "")
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository) or \
+            not token or not run_id.isdigit() or os.environ.get("GITHUB_REF") != "refs/heads/main":
+        raise GenerationError("No se puede verificar el presupuesto GitHub; no se consulta API-Football.")
+    if os.environ.get("GITHUB_RUN_ATTEMPT") != "1":
+        raise RefreshSkipped("rerun_requires_new_workflow_dispatch")
+    total = 0
+    current = None
+    for workflow in SPORTS_WORKFLOWS:
+        request = Request(
+            f"https://api.github.com/repos/{repository}/actions/workflows/{workflow}/runs?"
+            + urlencode({"created": utc_day.isoformat(), "per_page": 100}),
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json",
+                     "X-GitHub-Api-Version": "2026-03-10"},
+        )
+        try:
+            with build_opener(NoRedirects()).open(request, timeout=20) as response:
+                if response.status != 200:
+                    raise GenerationError("Historial GitHub no disponible; no se consulta API-Football.")
+                raw = response.read(MAX_RESPONSE_BYTES + 1)
+            if len(raw) > MAX_RESPONSE_BYTES:
+                raise GenerationError("Historial GitHub demasiado grande; no se consulta API-Football.")
+            payload = decode_json(raw)
+        except HTTPError as error:
+            error.close()
+            raise GenerationError("Historial GitHub no disponible; no se consulta API-Football.") from None
+        except (URLError, TimeoutError, OSError, ValueError, HTTPException):
+            raise GenerationError("Historial GitHub no disponible; no se consulta API-Football.") from None
+        if not isinstance(payload, dict) or type(payload.get("total_count")) is not int or \
+                payload["total_count"] < 0 or not isinstance(payload.get("workflow_runs"), list):
+            raise GenerationError("Historial GitHub inválido; no se consulta API-Football.")
+        total += payload["total_count"]
+        if total > MAX_DAILY_API_CALLS:
+            raise RefreshSkipped("daily_budget_exhausted")
+        runs = payload["workflow_runs"]
+        # <=90 results fit on one page. An incomplete/eventually consistent response fails closed.
+        if len(runs) != payload["total_count"] or any(not isinstance(run, dict) for run in runs):
+            raise GenerationError("Historial GitHub incompleto; no se consulta API-Football.")
+        for run in runs:
+            attempt = run.get("run_attempt")
+            if type(attempt) is not int or attempt < 1:
+                raise GenerationError("Intentos GitHub no verificados; no se consulta API-Football.")
+            total += attempt - 1  # Also reserve slots for historical re-runs, conservatively.
+            if total > MAX_DAILY_API_CALLS:
+                raise RefreshSkipped("daily_budget_exhausted")
+            if str(run.get("id")) == run_id:
+                current = run
+    if current is None or current.get("run_attempt") != 1 or \
+            current.get("event") not in ("schedule", "workflow_dispatch") or \
+            current.get("head_branch") != "main":
+        raise GenerationError("Ejecución actual no verificada; no se consulta API-Football.")
+    try:
+        created = datetime.fromisoformat(current["created_at"].replace("Z", "+00:00"))
+        if created.tzinfo is None or created.astimezone(timezone.utc).date() != utc_day:
+            raise ValueError("Wrong day")
+    except (KeyError, AttributeError, TypeError, ValueError):
+        raise GenerationError("Fecha de ejecución no verificada; no se consulta API-Football.") from None
+    # A midnight rollover during history checks must not use yesterday's quota decision.
+    if real_clock and datetime.now(timezone.utc).date() != utc_day:
+        raise RefreshSkipped("utc_day_changed")
+    realtime_log("API_BUDGET", utcDate=utc_day, reservedRuns=total, max=MAX_DAILY_API_CALLS)
 
 
 @dataclass(frozen=True)
@@ -157,6 +247,8 @@ def fetch_fixtures(day):
     key = os.environ.get("API_FOOTBALL_KEY", "").strip()
     if not key:
         raise GenerationError("Falta la variable de entorno API_FOOTBALL_KEY.")
+    check_github_budget()
+    realtime_log("REALTIME_REQUEST", date=day.isoformat())
     request = Request(
         ENDPOINT + "?" + urlencode({"date": day.isoformat(), "timezone": TIMEZONE}),
         headers={"x-apisports-key": key, "Accept": "application/json"},
@@ -234,6 +326,13 @@ def build_feed(payload, day, now=None):
             "awayLogo": away.get("logo") if isinstance(away.get("logo"), str) else "",
             "startTime": time, "status": normalize_status(raw_status),
         }
+        # Optional scores: a malformed/incomplete pair must not discard a valid fixture.
+        # Use goals only, never halftime/fulltime/extra-time/penalty breakdowns.
+        goals = item.get("goals")
+        if isinstance(goals, dict) and all(
+            type(goals.get(side)) is int and goals[side] >= 0 for side in ("home", "away")
+        ):
+            event.update(homeScore=goals["home"], awayScore=goals["away"])
         buckets[section_id].append(event)
         ids.add(fixture_id)
     for section in sections:
@@ -266,6 +365,10 @@ def validate_feed(feed):
     if not isinstance(sections, list) or len(sections) != len(SECTIONS):
         raise GenerationError("Feed generado inválido: secciones.")
     event_ids = set()
+    event_fields = {
+        "id", "sport", "competition", "homeTeam", "awayTeam", "homeLogo", "awayLogo", "startTime", "status"
+    }
+    score_fields = {"homeScore", "awayScore"}
     for section, (sid, title, priority, _) in zip(sections, SECTIONS):
         if not isinstance(section, dict) or set(section) != {"id", "title", "priority", "events"} or \
                 type(section["priority"]) is not int or \
@@ -273,10 +376,15 @@ def validate_feed(feed):
                 not isinstance(section["events"], list):
             raise GenerationError("Feed generado inválido: sección.")
         for event in section["events"]:
-            if not isinstance(event, dict) or set(event) != {
-                "id", "sport", "competition", "homeTeam", "awayTeam", "homeLogo", "awayLogo", "startTime", "status"
-            } or any(not isinstance(value, str) for value in event.values()):
+            if not isinstance(event, dict) or not event_fields <= set(event) or \
+                    set(event) - event_fields - score_fields or \
+                    any(not isinstance(event[key], str) for key in event_fields):
                 raise GenerationError("Feed generado inválido: evento.")
+            present_scores = score_fields.intersection(event)
+            if present_scores and (present_scores != score_fields or any(
+                type(event[key]) is not int or event[key] < 0 for key in present_scores
+            )):
+                raise GenerationError("Feed generado inválido: marcador incompleto o no entero no negativo.")
             if not re.fullmatch(r"fixture-[1-9]\d*", event["id"]) or event["id"] in event_ids or \
                     event["sport"] != "football" or any(not event[key].strip() for key in
                     ("competition", "homeTeam", "awayTeam", "status")) or (event["startTime"] and
@@ -318,7 +426,61 @@ def write_feed_atomic(feed, output):
     return True
 
 
-def generate(day, output, input_path=None, now=None):
+def previous_feed(output):
+    try:
+        previous = decode_json(output.read_bytes())
+        validate_feed(previous)
+        return previous
+    except (OSError, GenerationError):
+        return None
+
+
+def needs_live_refresh(previous, day, now):
+    if previous is None or previous["date"] != day.isoformat():
+        return True  # Seed the new day's real feed, never substitute examples.
+    local_now = now.astimezone(argentina_timezone())
+    for section in previous["sections"]:
+        for event in section["events"]:
+            if event["status"] == "LIVE":
+                return True
+            if event["status"] == "SCHEDULED" and event["startTime"]:
+                kickoff = datetime.fromisoformat(f"{day.isoformat()}T{event['startTime']}:00") \
+                    .replace(tzinfo=argentina_timezone())
+                if -timedelta(minutes=10) <= local_now - kickoff <= timedelta(hours=4):
+                    return True
+    return False
+
+
+def log_feed_changes(previous, incoming):
+    if previous is None or previous["date"] != incoming["date"]:
+        return
+    old_events = {event["id"]: event for section in previous["sections"] for event in section["events"]}
+    for section in incoming["sections"]:
+        for event in section["events"]:
+            old = old_events.get(event["id"])
+            if old is None:
+                continue
+            old_scores = (old.get("homeScore"), old.get("awayScore"))
+            new_scores = (event.get("homeScore"), event.get("awayScore"))
+            if old_scores != new_scores:
+                def label(scores):
+                    return "none" if None in scores else f"{scores[0]}-{scores[1]}"
+                realtime_log("SCORE_CHANGED", fixture=event["id"].removeprefix("fixture-"),
+                             old=label(old_scores), new=label(new_scores))
+            if old["status"] != event["status"]:
+                safe = {"LIVE", "FINISHED", "SCHEDULED", "CANCELLED", "POSTPONED"}
+                realtime_log("STATUS_CHANGED", fixture=event["id"].removeprefix("fixture-"),
+                             old=old["status"] if old["status"] in safe else "UNKNOWN",
+                             new=event["status"] if event["status"] in safe else "UNKNOWN")
+
+
+def generate(day, output, input_path=None, now=None, live_only=False):
+    now = now or datetime.now(argentina_timezone())
+    previous = previous_feed(output)
+    manual = input_path is None and os.environ.get("GITHUB_ACTIONS") == "true" and \
+        os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    if live_only and not manual and not needs_live_refresh(previous, day, now):
+        raise RefreshSkipped("no_live_or_near_kickoff")
     if input_path is not None:
         if output.resolve() == REAL_OUTPUT.resolve():
             raise GenerationError("--input es una prueba: usa una salida distinta de sports_today.json.")
@@ -328,8 +490,19 @@ def generate(day, output, input_path=None, now=None):
             raise GenerationError("No se pudo leer el archivo --input.") from None
     else:
         payload = fetch_fixtures(day)
+    realtime_log("OFFLINE_RESPONSE" if input_path is not None else "REALTIME_RESPONSE",
+                 fixtures=len(validate_api_response(payload)))
     feed, ignored = build_feed(payload, day, now)
+    realtime_log("LIVE_FIXTURES", count=sum(event["status"] == "LIVE" for section in feed["sections"]
+                                           for event in section["events"]),
+                 source="offline" if input_path is not None else "api")
+    if previous is not None and previous["date"] == feed["date"] and \
+            any(section["events"] for section in previous["sections"]) and \
+            not any(section["events"] for section in feed["sections"]):
+        raise GenerationError("Agenda vacía inesperada para el mismo día; se conserva el feed anterior.")
     changed = write_feed_atomic(feed, output)
+    if changed:
+        log_feed_changes(previous, feed)
     return feed, len(payload["response"]), ignored, changed
 
 
@@ -338,11 +511,16 @@ def main(argv=None):
     parser.add_argument("--input", type=Path, help="Respuesta API guardada; no hace requests ni escribe el feed real.")
     parser.add_argument("--output", type=Path, help="Ruta alternativa de salida.")
     parser.add_argument("--date", type=date.fromisoformat, help="Fecha YYYY-MM-DD; por defecto hoy en Argentina.")
+    parser.add_argument("--live", action="store_true", help="Consultar solo si hay LIVE, inicio cercano o fecha nueva.")
     args = parser.parse_args(argv)
     day = args.date or datetime.now(argentina_timezone()).date()
     output = args.output or (ROOT / "sports_today.preview.json" if args.input else REAL_OUTPUT)
     try:
-        feed, received, ignored, changed = generate(day, output, args.input)
+        feed, received, ignored, changed = generate(day, output, args.input, live_only=args.live)
+    except RefreshSkipped as error:
+        realtime_log("REFRESH_SKIPPED", reason=str(error))
+        print("Changed: false")
+        return 0
     except GenerationError as error:
         print(f"Error: {error}", file=sys.stderr)
         return 1

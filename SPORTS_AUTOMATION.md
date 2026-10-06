@@ -45,10 +45,40 @@ Estados: NS/TBD → SCHEDULED; PST → POSTPONED; CANC/ABD → CANCELLED;
 1H/HT/2H/ET/BT/P/SUSP/INT/LIVE → LIVE; FT/AET/PEN → FINISHED.
 Estados desconocidos se conservan; si faltan, se usa UNKNOWN.
 
+### Marcadores opcionales
+
+El generador usa exclusivamente los goles de API-Football:
+
+- `goals.home` → `homeScore`.
+- `goals.away` → `awayScore`.
+
+Si ambos valores son enteros no negativos, incluye ambos campos en el evento.
+En `LIVE` representan el marcador actual y en `FINISHED` el resultado final.
+`0-0` y `5-0` son marcadores válidos cuando la API proporciona ambos enteros.
+En `SCHEDULED` con `null/null`, no se publica un `0-0` ficticio.
+
+Si falta un valor, es `null` o es inválido (negativo, boolean, string o float),
+se omiten **ambos** campos. Un `goals` ausente o malformado tampoco aporta marcador.
+Esta excepción conserva el fixture y el resto de la agenda si sus campos obligatorios
+son válidos: un marcador opcional incoherente no debe impedir publicar la programación.
+No se convierte `null` a cero ni se usan `score.halftime`, `score.fulltime`,
+`score.extratime` o `score.penalty`.
+
+La validación de salida exige ambos scores presentes o ambos ausentes; si están,
+deben ser enteros no negativos, nunca boolean, string, float ni `null` explícito.
+Los feeds anteriores sin scores siguen siendo válidos y `schemaVersion` permanece en 1.
+Los cambios de marcador participan en la comparación estructural existente: un score
+idéntico conserva los bytes y `updatedAt`; un score diferente actualiza el feed.
+
 Una clave ausente, HTTP distinto de 200, JSON inválido, `errors`, resultados
 inconsistentes o paginación incompleta hacen fallar el proceso y conservan la salida.
 Un fixture relevante malformado también detiene la publicación. Una respuesta válida
 con cero resultados genera el día con las cuatro secciones vacías.
+Si ya existe una agenda válida no vacía para la misma fecha y la nueva respuesta
+vacía **todas** las secciones relevantes, se conserva la agenda anterior y falla
+la actualización. No se mezclan marcadores viejos con la respuesta nueva. Un día
+nuevo o una primera carga válida sí pueden tener cero eventos; secciones individuales
+pueden vaciarse mientras siga habiendo otros eventos relevantes.
 
 Se valida el modelo, se escribe `sports_today.json.tmp`, se valida ese archivo y
 se reemplaza el destino atómicamente. Si el contenido es idéntico, se conservan
@@ -109,6 +139,87 @@ en el paso de generación. Corre tests offline antes de consultar la API.
 Son cuatro consultas diarias, sin polling frecuente. GitHub puede demorar una
 ejecución programada; estos horarios no son una garantía de puntualidad.
 Ver [documentación de schedules](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule).
+
+### Actualización LIVE
+
+`.github/workflows/update-sports-live.yml` usa **el mismo generador**, con `--live`,
+la misma API key desde `secrets.API_FOOTBALL_KEY` y el mismo grupo de concurrencia
+`sports-today-main`. Ambos workflows se serializan; usan `main` y nunca cargan examples.
+El workflow LIVE mantiene `workflow_dispatch` para consultas manuales reales.
+Una ejecución manual permite consultar aunque el feed no tenga candidatos activos;
+mantiene la misma comprobación del presupuesto y nunca usa datos de ejemplo.
+
+| Cron UTC LIVE | Horario ART |
+| --- | --- |
+| `7,17,27,37,47,57 18-23 * * *` | 15:07–20:57 |
+| `7,17,27,37,47,57 0-3 * * *` | 21:07–00:57 |
+
+Son **60 oportunidades LIVE al día**, cada diez minutos entre aproximadamente
+15:00 y 01:00 ART. El minuto 7 evita el comienzo de la hora, que suele tener mayor
+carga en [GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+GitHub puede retrasar u omitir ejecuciones: no se promete una latencia exacta.
+
+Antes de usar API-Football, `--live` revisa el feed ya cargado desde disco:
+
+- Si hay un evento `LIVE`, consulta para actualizarlo y detectar su finalización.
+- Si hay un `SCHEDULED` con hora conocida, consulta desde diez minutos antes del
+  inicio hasta cuatro horas después. Este margen permite descubrir la transición
+  a LIVE sin quedarse indefinidamente consultando un NS atrasado.
+- Si todos terminaron, fueron cancelados/aplazados o no tienen hora conocida y no
+  hay otro candidato, omite la consulta. Las cuatro cargas generales siguen vigentes.
+- Si falta un feed válido o cambió el día argentino, permite una primera carga real.
+  Se consulta exclusivamente la fecha argentina actual, incluyendo después de medianoche.
+  Partidos de la fecha anterior requieren una futura estrategia específica; no se
+  añaden consultas a fechas anteriores en este cambio.
+
+Cada ejecución elegible hace **un solo GET `/fixtures` para todo el día**, sin llamadas
+por equipo, liga o partido, sin retries HTTP ni fallback sintético. Los estados LIVE
+usan los goles recibidos en cada respuesta; FT/AET/PEN pasan a FINISHED con esos mismos
+goles. Los marcadores no se calculan ni se obtienen de los desgloses `score.*`.
+La APK verá los nuevos datos en su próxima lectura del feed remoto; este repositorio
+no modifica la frecuencia de refresh de Android.
+
+El commit del workflow LIVE es `Update live sports scores` y añade exclusivamente
+`sports_today.json`. Si no cambia el contenido, conserva bytes/`updatedAt` y no hace
+commit ni push. El workflow general conserva su mensaje y sus cuatro crons.
+
+### Presupuesto compartido y persistente
+
+`MAX_DAILY_API_CALLS = 90` deja diez solicitudes de margen respecto de las 100 del
+plan gratuito. Las cuotas del dashboard directo se reinician a las 00:00 UTC,
+según [API-Football](https://www.api-football.com/terms); la agenda sigue usando ART.
+
+Máximo automático: **60 LIVE + 4 generales = 64 solicitudes por día UTC**. El filtro
+de actividad normalmente reduce esa cifra. Las ejecuciones manuales nuevas comparten
+el tope de 90; con los 64 slots programados quedan hasta 26 slots adicionales.
+
+Para no depender de la memoria efímera del runner, el generador consulta el historial
+persistente de ambos workflows mediante la
+[API de workflow runs](https://docs.github.com/en/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow).
+Cada run creado ese día UTC reserva conservadoramente una posible consulta; sus
+intentos históricos también cuentan. Runs fallidos, omitidos o todavía en cola
+consumen slots aunque finalmente no hayan usado API-Football. No se requiere otro
+archivo, caché, rama de contabilidad ni secreto nuevo. El historial del día debe
+conservarse para mantener esta cota.
+
+La ejecución actual debe aparecer completa en el historial, ser de `main`, ser
+`schedule`/`workflow_dispatch` y tener `run_attempt = 1`. Los re-runs se omiten: para
+reintentar se usa **Run workflow**, que crea otro run contabilizado. Runs creados en
+otro día UTC no pueden usar la cuota nueva. Si el contador supera 90, se omite sin
+consultar ni cambiar el feed. Si GitHub falla o devuelve metadata incompleta, se
+falla conservando el feed **sin llamar a API-Football**. No se usa un contador local
+que pueda reiniciarse silenciosamente entre runners.
+
+Ambos workflows conservan `contents: write` y añaden solo `actions: read` para leer
+ese historial mediante `${{ github.token }}` (`GITHUB_TOKEN` en el paso de generación).
+La API key existente no cambia. Las consultas al historial GitHub no consumen cuota
+de API-Football. La cota cubre estos workflows; usos de la misma key fuera de ellos
+comparten la cuota del proveedor y deben contabilizarse por separado.
+
+Logs seguros con prefijo `SPORTS_REALTIME`: `REALTIME_REQUEST`, `REALTIME_RESPONSE`,
+`LIVE_FIXTURES`, `SCORE_CHANGED`, `STATUS_CHANGED`, `API_BUDGET` y `REFRESH_SKIPPED`.
+El modo `--input` se identifica como `OFFLINE_RESPONSE`/`source=offline`, nunca como
+consulta real. No se imprimen API key, token GitHub, headers ni respuestas completas.
 
 Para una ejecución manual: Actions → **Update sports schedule** → Run workflow →
 seleccionar `main` → Run workflow. El job solo publica desde `main`.

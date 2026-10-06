@@ -1,13 +1,11 @@
-name: Update sports schedule
+name: Update live sports scores
 
 on:
   workflow_dispatch:
   schedule:
-    # UTC -> Argentina: 08:00, 12:00, 17:00, 20:00.
-    - cron: '0 11 * * *'
-    - cron: '0 15 * * *'
-    - cron: '0 20 * * *'
-    - cron: '0 23 * * *'
+    # UTC -> ART: 15:07..23:57 and 00:07..00:57 (60 slots/day).
+    - cron: '7,17,27,37,47,57 18-23 * * *'
+    - cron: '7,17,27,37,47,57 0-3 * * *'
 
 permissions:
   contents: write
@@ -35,20 +33,20 @@ jobs:
           python-version: '3.12'
       - name: Test generator offline
         run: python -m unittest discover -s tests -p "test_*.py"
-      - name: Generate today's schedule
+      - name: Refresh real live scores
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/generate_sports_today.py
+        run: python scripts/generate_sports_today.py --live
       - name: Commit only the updated feed
         shell: bash
         run: |
           git add -- sports_today.json
           if git diff --cached --quiet -- sports_today.json; then
-            echo "Sports schedule unchanged; no commit."
+            echo "Live scores unchanged; no commit."
             exit 0
           fi
           git config user.name "MBox Sports Bot"
           git config user.email "actions@users.noreply.github.com"
-          git commit -m "Update sports schedule" --only -- sports_today.json
+          git commit -m "Update live sports scores" --only -- sports_today.json
           git push origin HEAD:main
