@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+sports_today.json.tmp
+sports_today.preview.json
+sports_today.preview.json.tmp
