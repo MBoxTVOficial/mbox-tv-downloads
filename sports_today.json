@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-06",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-06T22:29:51-03:00",
+  "updatedAt": "2026-10-06T23:09:52-03:00",
   "demo": false,
   "sections": [
     {
@@ -17,19 +17,6 @@
       "priority": 2,
       "events": [
         {
-          "id": "fixture-1632359",
-          "sport": "football",
-          "competition": "Friendlies",
-          "homeTeam": "Colombia",
-          "awayTeam": "Peru",
-          "homeLogo": "https://media.api-sports.io/football/teams/8.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/30.png",
-          "startTime": "20:45",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1629006",
           "sport": "football",
           "competition": "Friendlies",
@@ -39,6 +26,19 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2383.png",
           "startTime": "23:30",
           "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1632359",
+          "sport": "football",
+          "competition": "Friendlies",
+          "homeTeam": "Colombia",
+          "awayTeam": "Peru",
+          "homeLogo": "https://media.api-sports.io/football/teams/8.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/30.png",
+          "startTime": "20:45",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
         },
         {
           "id": "fixture-1640517",
@@ -272,45 +272,6 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1619710",
-          "sport": "football",
-          "competition": "Copa de la División Profesional",
-          "homeTeam": "Aurora",
-          "awayTeam": "ABB",
-          "homeLogo": "https://media.api-sports.io/football/teams/3637.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/17743.png",
-          "startTime": "21:00",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1629007",
-          "sport": "football",
-          "competition": "Friendlies",
-          "homeTeam": "USA",
-          "awayTeam": "Canada",
-          "homeLogo": "https://media.api-sports.io/football/teams/2384.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5529.png",
-          "startTime": "21:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1638962",
-          "sport": "football",
-          "competition": "Primera Division",
-          "homeTeam": "San Marcos",
-          "awayTeam": "Diriangén",
-          "homeLogo": "https://media.api-sports.io/football/teams/23311.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4641.png",
-          "startTime": "21:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 2
-        },
-        {
           "id": "fixture-1490326",
           "sport": "football",
           "competition": "Major League Soccer",
@@ -320,7 +281,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1603.png",
           "startTime": "21:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -335,6 +296,19 @@
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 1
+        },
+        {
+          "id": "fixture-1640003",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "French Guyana",
+          "awayTeam": "Belize",
+          "homeLogo": "https://media.api-sports.io/football/teams/8118.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5528.png",
+          "startTime": "23:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1632358",
@@ -356,17 +330,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/20706.png",
           "awayLogo": "https://media.api-sports.io/football/teams/4492.png",
           "startTime": "14:20",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1640003",
-          "sport": "football",
-          "competition": "CONCACAF Nations League",
-          "homeTeam": "French Guyana",
-          "awayTeam": "Belize",
-          "homeLogo": "https://media.api-sports.io/football/teams/8118.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5528.png",
-          "startTime": "23:00",
           "status": "SCHEDULED"
         },
         {
@@ -401,6 +364,45 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7644.png",
           "startTime": "15:45",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1619710",
+          "sport": "football",
+          "competition": "Copa de la División Profesional",
+          "homeTeam": "Aurora",
+          "awayTeam": "ABB",
+          "homeLogo": "https://media.api-sports.io/football/teams/3637.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/17743.png",
+          "startTime": "21:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1629007",
+          "sport": "football",
+          "competition": "Friendlies",
+          "homeTeam": "USA",
+          "awayTeam": "Canada",
+          "homeLogo": "https://media.api-sports.io/football/teams/2384.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5529.png",
+          "startTime": "21:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1638962",
+          "sport": "football",
+          "competition": "Primera Division",
+          "homeTeam": "San Marcos",
+          "awayTeam": "Diriangén",
+          "homeLogo": "https://media.api-sports.io/football/teams/23311.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4641.png",
+          "startTime": "21:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 2
         },
         {
           "id": "fixture-1520914",
