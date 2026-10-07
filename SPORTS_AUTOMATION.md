@@ -15,21 +15,23 @@ Editar las reglas de competiciones y `SECTIONS` en el script. Cada `LeagueRule`
 permite IDs, alias y países. Los IDs conocidos tienen prioridad; las reglas específicas
 comparan nombres completos normalizados (sin acentos, diferencias de mayúsculas o
 puntuación) y exigen el país configurado. No hay coincidencias parciales por país
-o equipo. Se evalúan todas las reglas específicas antes del fallback Internacional.
+o equipo. Se evalúan las competiciones específicas antes del fallback por selección
+sudamericana, y luego el fallback Internacional.
 
 | Prioridad | ID | Título |
 | --- | --- | --- |
 | 1 | `south_america_qualifiers` | Eliminatorias Sudamericanas |
-| 2 | `uefa_qualifiers` | Eliminatorias UEFA |
-| 3 | `uefa_nations` | UEFA Nations League |
-| 4 | `argentina` | Fútbol - Argentina |
-| 5 | `conmebol` | Copas CONMEBOL |
-| 6 | `champions` | Champions League |
-| 7 | `spain` | Liga de España |
-| 8 | `england` | Premier League |
-| 9 | `france` | Liga de Francia |
-| 10 | `italy` | Serie A |
-| 11 | `international` | Fútbol - Internacional |
+| 2 | `south_america_national_teams` | Selecciones Sudamericanas |
+| 3 | `uefa_qualifiers` | Eliminatorias UEFA |
+| 4 | `uefa_nations` | UEFA Nations League |
+| 5 | `argentina` | Fútbol - Argentina |
+| 6 | `conmebol` | Copas CONMEBOL |
+| 7 | `champions` | Champions League |
+| 8 | `spain` | Liga de España |
+| 9 | `england` | Premier League |
+| 10 | `france` | Liga de Francia |
+| 11 | `italy` | Serie A |
+| 12 | `international` | Fútbol - Internacional |
 
 - Argentina: Liga Profesional/Primera División, Primera Nacional, Copa Argentina,
   Supercopa, Copa de la Liga y Trofeo de Campeones. El fallback exige Argentina.
@@ -40,7 +42,8 @@ o equipo. Se evalúan todas las reglas específicas antes del fallback Internaci
   Championship y competiciones homónimas de otros países no entran en estas secciones.
 - Internacional: MLS, Bundesliga, Europa/Conference League, Mundial, Copa América,
   Eurocopa no clasificatoria, eliminatorias de otras confederaciones, amistosos y
-  cualquier competición sin una regla específica. El fallback amplía la agenda a
+  cualquier competición sin una regla específica ni selección sudamericana absoluta.
+  El fallback amplía la agenda a
   fixtures válidos anteriormente descartados por no estar configurados.
 
 Las Eliminatorias Sudamericanas reconocen los alias `World Cup - Qualification South America`,
@@ -49,8 +52,20 @@ Las Eliminatorias Sudamericanas reconocen los alias `World Cup - Qualification S
 por nombre completo normalizado. No se añade un ID sin verificación fiable; la regla
 admite incorporar un ID confirmado manteniendo el fallback por nombre.
 Todos sus partidos van a `south_america_qualifiers`, incluidos los de Argentina.
-Los equipos no modifican la sección: Argentina, U20, Women u Olympic no activan
-reglas especiales. `argentina` queda reservada para los torneos de clubes configurados.
+La competición determina esta sección; un amistoso nunca se convierte en Eliminatorias
+por los equipos participantes. `argentina` queda reservada para clubes configurados.
+
+Si ninguna competición tiene una sección específica y alguno de los equipos tiene
+el nombre completo normalizado Argentina, Bolivia, Brazil/Brasil, Chile, Colombia,
+Ecuador, Paraguay, Peru/Perú, Uruguay o Venezuela, el fixture va a
+`south_america_national_teams` / Selecciones Sudamericanas. Basta con local o visitante.
+No se activan coincidencias parciales como Argentina U20/U17/U23, Women u Olympic,
+ni sus equivalentes de otros países. Esta regla tiene prioridad sobre Internacional,
+pero no sobre Eliminatorias, Nations League, clubes argentinos/CONMEBOL, Champions
+o ligas nacionales con sección propia. Ejemplos: Argentina–Benin y Colombia–Japón
+en Friendlies van a Selecciones Sudamericanas; Argentina–Uruguay en World Cup -
+Qualification South America sigue en Eliminatorias Sudamericanas. `competition`
+conserva el nombre real recibido de API-Football.
 
 Las Eliminatorias UEFA reconocen `World Cup - Qualification Europe`,
 `World Cup Qualification UEFA`, `UEFA World Cup Qualifiers`,
@@ -68,10 +83,10 @@ IDs confirmados con `/leagues` o el [dashboard de IDs](https://dashboard.api-foo
 ## Salida y errores
 
 La salida contiene `schemaVersion: 1`, fecha argentina, timezone, `updatedAt` ISO-8601
-con offset `-03:00`, `demo: false` y las once secciones de la tabla, aunque estén
+con offset `-03:00`, `demo: false` y las doce secciones de la tabla, aunque estén
 vacías. La app oculta las secciones sin eventos. El formato de events y schemaVersion
-se conservan. El validador también acepta cachés antiguas de las cuatro secciones
-originales y prioridades 1–4, para conservar su lectura y el filtro LIVE durante
+se conservan. El validador también acepta cachés antiguas de cuatro y once secciones
+con sus IDs, títulos y prioridades originales, para conservar su lectura y el filtro LIVE durante
 la transición; la siguiente generación usa siempre la estructura nueva.
 
 Cada evento incluye `fixture-<id>`, sport `football`, competencia, equipos, logos,

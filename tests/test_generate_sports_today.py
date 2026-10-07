@@ -37,7 +37,7 @@ def feed(*fixtures, day=DAY, now=NOW):
     return generator.build_feed(response(*fixtures), day, now)[0]
 
 
-SECTION_IDS = ["south_america_qualifiers", "uefa_qualifiers", "uefa_nations", "argentina",
+SECTION_IDS = ["south_america_qualifiers", "south_america_national_teams", "uefa_qualifiers", "uefa_nations", "argentina",
                "conmebol", "champions", "spain", "england", "france", "italy", "international"]
 
 
@@ -132,7 +132,7 @@ class TransformationTest(unittest.TestCase):
         result = feed()
         self.assertEqual(SECTION_IDS,
                          [section["id"] for section in result["sections"]])
-        self.assertEqual(list(range(1, 12)), [section["priority"] for section in result["sections"]])
+        self.assertEqual(list(range(1, 13)), [section["priority"] for section in result["sections"]])
         self.assertTrue(all(section["events"] == [] for section in result["sections"]))
         self.assertFalse(result["demo"])
         generator.validate_feed(result)

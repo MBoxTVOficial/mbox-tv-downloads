@@ -81,10 +81,11 @@ class QualifierClassificationTest(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertEqual("south_america_qualifiers", generator.classify_fixture(match(home=name)))
 
-    def test_no_senior_override_outside_south_american_qualifiers(self):
+    def test_specific_competition_precedes_national_team_fallback(self):
         self.assert_section(match(league="World Cup - Qualification Europe"),
                             "uefa_qualifiers", "Eliminatorias UEFA")
-        self.assertEqual("international", generator.classify_fixture(match(league="Unrecognized competition")))
+        self.assertEqual("south_america_national_teams",
+                         generator.classify_fixture(match(league="Unrecognized competition")))
 
     def test_verified_league_ids_still_take_precedence(self):
         self.assertEqual("champions", generator.classify_fixture(match(league_id=2)))

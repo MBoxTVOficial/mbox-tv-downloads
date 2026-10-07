@@ -15,16 +15,17 @@ from test_sports_classification_and_order import build, match
 
 EXPECTED_SECTIONS = [
     ("south_america_qualifiers", "Eliminatorias Sudamericanas", 1),
-    ("uefa_qualifiers", "Eliminatorias UEFA", 2),
-    ("uefa_nations", "UEFA Nations League", 3),
-    ("argentina", "Fútbol - Argentina", 4),
-    ("conmebol", "Copas CONMEBOL", 5),
-    ("champions", "Champions League", 6),
-    ("spain", "Liga de España", 7),
-    ("england", "Premier League", 8),
-    ("france", "Liga de Francia", 9),
-    ("italy", "Serie A", 10),
-    ("international", "Fútbol - Internacional", 11),
+    ("south_america_national_teams", "Selecciones Sudamericanas", 2),
+    ("uefa_qualifiers", "Eliminatorias UEFA", 3),
+    ("uefa_nations", "UEFA Nations League", 4),
+    ("argentina", "Fútbol - Argentina", 5),
+    ("conmebol", "Copas CONMEBOL", 6),
+    ("champions", "Champions League", 7),
+    ("spain", "Liga de España", 8),
+    ("england", "Premier League", 9),
+    ("france", "Liga de Francia", 10),
+    ("italy", "Serie A", 11),
+    ("international", "Fútbol - Internacional", 12),
 ]
 
 
@@ -48,7 +49,8 @@ class CompetitionSectionsTest(unittest.TestCase):
         for name in ("Argentina", "Argentina U20", "Argentina Women", "Argentina Olympic", "Club Argentina"):
             with self.subTest(name=name):
                 self.assert_section(match(home=name), "south_america_qualifiers")
-                self.assert_section(match(home=name, league="Unknown competition"), "international")
+                expected = "south_america_national_teams" if name == "Argentina" else "international"
+                self.assert_section(match(home=name, away="Benin", league="Unknown competition"), expected)
 
     def test_south_american_aliases_normalized_without_new_ids(self):
         for name in ("CONMEBOL World Cup Qualifiers", "World Cup - Qualification South America",
@@ -89,7 +91,8 @@ class CompetitionSectionsTest(unittest.TestCase):
                                 ("Ligue 1", "Algeria"), ("Primera Division", "Chile"),
                                 ("Championship", "England"), ("Unknown Spain League", "Spain")):
             with self.subTest(league=league, country=country):
-                self.assert_section(match(league=league, country=country), "international")
+                self.assert_section(match(home="Club local", away="Club visitante", league=league, country=country),
+                                    "international")
 
     def test_champions_stays_separate(self):
         self.assert_section(match(league="UEFA Champions League"), "champions")
@@ -112,17 +115,18 @@ class CompetitionSectionsTest(unittest.TestCase):
         self.assert_section(match(home="France", away="Germany", league="UEFA Nations League"), "uefa_nations")
 
     def test_euro_finals_are_not_qualifiers(self):
-        self.assert_section(match(league="Euro Championship"), "international")
+        self.assert_section(match(home="Spain", away="Croatia", league="Euro Championship"), "international")
 
     def test_mls_remains_international(self):
         self.assert_section(match(home="Chicago Fire", away="Vancouver Whitecaps",
                                   league="Major League Soccer", country="USA"), "international")
 
     def test_unknown_competition_is_international(self):
-        self.assert_section(match(league="Unconfigured competition"), "international")
+        self.assert_section(match(home="Club local", away="Club visitante", league="Unconfigured competition"),
+                            "international")
 
     def test_international_friendlies_are_residual(self):
-        self.assert_section(match(league="Friendlies"), "international")
+        self.assert_section(match(home="Spain", away="Japan", league="Friendlies"), "international")
 
     def test_live_score_and_event_shape_unchanged(self):
         item = match(status="LIVE")
@@ -210,7 +214,7 @@ class LegacyCacheCompatibilityTest(unittest.TestCase):
             result = generator.generate(DAY, self.output, now=NOW)
         fetch.assert_called_once_with(DAY)
         self.assertTrue(result[-1])
-        self.assertEqual(11, len(result[0]["sections"]))
+        self.assertEqual(12, len(result[0]["sections"]))
         self.assertEqual(1, len(section_events(result[0], "south_america_qualifiers")))
 
     def test_legacy_metadata_is_still_validated(self):

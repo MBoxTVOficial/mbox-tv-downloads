@@ -179,18 +179,24 @@ INTERNATIONAL_LEAGUES = (
                 "World Cup - Qualification Asia", "World Cup - Qualification Oceania")),
 )
 
+SOUTH_AMERICAN_NATIONAL_TEAMS = frozenset((
+    "argentina", "bolivia", "brazil", "brasil", "chile", "colombia",
+    "ecuador", "paraguay", "peru", "uruguay", "venezuela",
+))  # Full normalized names only; Peru/Perú normalize to the same entry.
+
 SECTIONS = (
     ("south_america_qualifiers", "Eliminatorias Sudamericanas", 1, (SOUTH_AMERICAN_QUALIFIERS,)),
-    ("uefa_qualifiers", "Eliminatorias UEFA", 2, (UEFA_QUALIFIERS,)),
-    ("uefa_nations", "UEFA Nations League", 3, (UEFA_NATIONS,)),
-    ("argentina", "Fútbol - Argentina", 4, ARGENTINA_LEAGUES),
-    ("conmebol", "Copas CONMEBOL", 5, CONMEBOL_LEAGUES),
-    ("champions", "Champions League", 6, CHAMPIONS_LEAGUES),
-    ("spain", "Liga de España", 7, SPAIN_LEAGUES),
-    ("england", "Premier League", 8, ENGLAND_LEAGUES),
-    ("france", "Liga de Francia", 9, FRANCE_LEAGUES),
-    ("italy", "Serie A", 10, ITALY_LEAGUES),
-    ("international", "Fútbol - Internacional", 11, INTERNATIONAL_LEAGUES),
+    ("south_america_national_teams", "Selecciones Sudamericanas", 2, ()),
+    ("uefa_qualifiers", "Eliminatorias UEFA", 3, (UEFA_QUALIFIERS,)),
+    ("uefa_nations", "UEFA Nations League", 4, (UEFA_NATIONS,)),
+    ("argentina", "Fútbol - Argentina", 5, ARGENTINA_LEAGUES),
+    ("conmebol", "Copas CONMEBOL", 6, CONMEBOL_LEAGUES),
+    ("champions", "Champions League", 7, CHAMPIONS_LEAGUES),
+    ("spain", "Liga de España", 8, SPAIN_LEAGUES),
+    ("england", "Premier League", 9, ENGLAND_LEAGUES),
+    ("france", "Liga de Francia", 10, FRANCE_LEAGUES),
+    ("italy", "Serie A", 11, ITALY_LEAGUES),
+    ("international", "Fútbol - Internacional", 12, INTERNATIONAL_LEAGUES),
 )
 # Read old schemaVersion 1 caches without resetting the existing LIVE eligibility/empty-feed guard.
 LEGACY_SECTIONS = (
@@ -198,6 +204,19 @@ LEGACY_SECTIONS = (
     ("conmebol", "Copas CONMEBOL", 2),
     ("champions", "Champions League", 3),
     ("international", "Fútbol - Internacional", 4),
+)
+PREVIOUS_COMPETITION_SECTIONS = (
+    ("south_america_qualifiers", "Eliminatorias Sudamericanas", 1),
+    ("uefa_qualifiers", "Eliminatorias UEFA", 2),
+    ("uefa_nations", "UEFA Nations League", 3),
+    ("argentina", "Fútbol - Argentina", 4),
+    ("conmebol", "Copas CONMEBOL", 5),
+    ("champions", "Champions League", 6),
+    ("spain", "Liga de España", 7),
+    ("england", "Premier League", 8),
+    ("france", "Liga de Francia", 9),
+    ("italy", "Serie A", 10),
+    ("international", "Fútbol - Internacional", 11),
 )
 STATUS_MAP = {
     "NS": "SCHEDULED", "TBD": "SCHEDULED", "PST": "POSTPONED",
@@ -245,8 +264,16 @@ def classify_league(league):
 
 
 def classify_fixture(item):
-    # Team names do not determine a competition's section, including national teams.
-    return classify_league(item["league"])
+    section_id = classify_league(item["league"])
+    if section_id != "international":
+        return section_id  # Specific competitions always win, including real qualifiers.
+    teams = item.get("teams")
+    if isinstance(teams, dict):
+        for side in ("home", "away"):
+            team = teams.get(side)
+            if isinstance(team, dict) and normalize(team.get("name")) in SOUTH_AMERICAN_NATIONAL_TEAMS:
+                return "south_america_national_teams"
+    return section_id
 
 
 def event_sort_key(event):
@@ -427,8 +454,11 @@ def validate_feed(feed):
     sections = feed["sections"]
     # Generation always emits the current sections; reading a legacy cache keeps realtime intact.
     expected_sections = tuple((sid, title, priority) for sid, title, priority, _ in SECTIONS)
-    if isinstance(sections, list) and len(sections) == len(LEGACY_SECTIONS):
-        expected_sections = LEGACY_SECTIONS
+    if isinstance(sections, list):
+        for legacy_sections in (LEGACY_SECTIONS, PREVIOUS_COMPETITION_SECTIONS):
+            if len(sections) == len(legacy_sections):
+                expected_sections = legacy_sections
+                break
     if not isinstance(sections, list) or len(sections) != len(expected_sections):
         raise GenerationError("Feed generado inválido: secciones.")
     event_ids = set()
