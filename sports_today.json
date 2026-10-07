@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-06",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-06T21:08:23-03:00",
+  "updatedAt": "2026-10-06T21:43:24-03:00",
   "demo": false,
   "sections": [
     {
@@ -29,17 +29,17 @@
       "priority": 4,
       "events": [
         {
-          "id": "fixture-1528951",
+          "id": "fixture-1490326",
           "sport": "football",
-          "competition": "UEFA Nations League",
-          "homeTeam": "Kazakhstan",
-          "awayTeam": "Faroe Islands",
-          "homeLogo": "https://media.api-sports.io/football/teams/1095.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1098.png",
-          "startTime": "11:00",
-          "status": "FINISHED",
-          "homeScore": 2,
-          "awayScore": 2
+          "competition": "Major League Soccer",
+          "homeTeam": "Chicago Fire",
+          "awayTeam": "Vancouver Whitecaps",
+          "homeLogo": "https://media.api-sports.io/football/teams/1607.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1603.png",
+          "startTime": "21:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1528952",
@@ -159,15 +159,17 @@
           "awayScore": 2
         },
         {
-          "id": "fixture-1490326",
+          "id": "fixture-1528951",
           "sport": "football",
-          "competition": "Major League Soccer",
-          "homeTeam": "Chicago Fire",
-          "awayTeam": "Vancouver Whitecaps",
-          "homeLogo": "https://media.api-sports.io/football/teams/1607.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1603.png",
-          "startTime": "21:30",
-          "status": "SCHEDULED"
+          "competition": "UEFA Nations League",
+          "homeTeam": "Kazakhstan",
+          "awayTeam": "Faroe Islands",
+          "homeLogo": "https://media.api-sports.io/football/teams/1095.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1098.png",
+          "startTime": "11:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 2
         }
       ]
     }
