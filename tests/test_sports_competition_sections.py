@@ -183,7 +183,11 @@ class LegacyCacheCompatibilityTest(unittest.TestCase):
     def test_legacy_finished_cache_does_not_trigger_extra_api_call(self):
         self.save_legacy()
         original = self.output.read_bytes()
-        with patch.object(generator, "fetch_fixtures") as fetch:
+        # Scheduled refreshes skip inactive caches; a manual workflow_dispatch intentionally queries.
+        # Do not inherit the event that launched the test suite on GitHub Actions.
+        with patch.dict(generator.os.environ, {"GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": "schedule"}), \
+                patch.object(generator, "fetch_fixtures",
+                             side_effect=AssertionError("Unexpected API call for finished legacy cache")) as fetch:
             with self.assertRaises(generator.RefreshSkipped):
                 generator.generate(DAY, self.output, now=NOW, live_only=True)
         fetch.assert_not_called()
