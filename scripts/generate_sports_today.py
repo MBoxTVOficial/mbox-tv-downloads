@@ -137,10 +137,16 @@ ARGENTINA_LEAGUES = (
     LeagueRule(("Supercopa Argentina", "Super Copa"), ("Argentina",)),
     LeagueRule(("Copa de la Liga Profesional", "Trofeo de Campeones"), ("Argentina",)),
 )
+SOUTH_AMERICAN_QUALIFIERS = LeagueRule((
+    "World Cup - Qualification South America",
+    "World Cup Qualification South America",
+    "CONMEBOL World Cup Qualifiers",
+))  # No ID seeded until verified via /leagues or the official dashboard.
 CONMEBOL_LEAGUES = (
     LeagueRule(("Copa Libertadores", "CONMEBOL Libertadores")),
     LeagueRule(("Copa Sudamericana", "CONMEBOL Sudamericana")),
     LeagueRule(("Recopa Sudamericana", "CONMEBOL Recopa")),
+    SOUTH_AMERICAN_QUALIFIERS,
 )
 CHAMPIONS_LEAGUES = (
     LeagueRule(("UEFA Champions League",), ids=(2,)),
@@ -154,7 +160,7 @@ INTERNATIONAL_LEAGUES = (
     LeagueRule(("Major League Soccer", "MLS"), ("USA", "United States")),
     LeagueRule(("UEFA Europa League", "UEFA Conference League", "UEFA Europa Conference League")),
     LeagueRule(("World Cup", "FIFA World Cup", "Copa America", "Euro Championship", "UEFA Euro")),
-    LeagueRule(("World Cup - Qualification South America", "World Cup - Qualification Europe",
+    LeagueRule(("World Cup - Qualification Europe",
                 "World Cup - Qualification CONCACAF", "World Cup - Qualification Africa",
                 "World Cup - Qualification Asia", "World Cup - Qualification Oceania")),
     LeagueRule(("UEFA Nations League",)),
@@ -188,21 +194,50 @@ def normalize(value):
     return " ".join(re.sub(r"[^a-z0-9]+", " ", text).split())
 
 
-def classify_league(league):
+def matching_league_rule(league):
     league_id = league.get("id")
     # Identity takes precedence over names, including translated names.
     if type(league_id) is int:
         for section_id, _, _, rules in SECTIONS:
-            if any(league_id in rule.ids for rule in rules):
-                return section_id
+            for rule in rules:
+                if league_id in rule.ids:
+                    return section_id, rule
     name, country = normalize(league.get("name")), normalize(league.get("country"))
     for section_id, _, _, rules in SECTIONS:
         for rule in rules:
             if name in map(normalize, rule.names) and (
                 not rule.countries or country in map(normalize, rule.countries)
             ):
-                return section_id
-    return None
+                return section_id, rule
+    return None, None
+
+
+def classify_league(league):
+    return matching_league_rule(league)[0]
+
+
+def classify_fixture(item):
+    section_id, rule = matching_league_rule(item["league"])
+    if rule == SOUTH_AMERICAN_QUALIFIERS:
+        teams = item.get("teams")
+        if isinstance(teams, dict):
+            for side in ("home", "away"):
+                team = teams.get(side)
+                if isinstance(team, dict) and normalize(team.get("name")) == "argentina":
+                    return "argentina"
+    return section_id
+
+
+def event_sort_key(event):
+    # Unknown/special statuses share the postponed group. Python's sort keeps ties stable.
+    status = event["status"]
+    priority = {"LIVE": 0, "SCHEDULED": 1, "FINISHED": 3, "CANCELLED": 4}.get(status, 2)
+    time = event["startTime"]
+    if not time or time == "TBD":
+        return priority, True, 0
+    hour, minute = map(int, time.split(":"))
+    minutes = hour * 60 + minute
+    return priority, False, -minutes if status == "FINISHED" else minutes
 
 
 def normalize_status(value):
@@ -300,7 +335,7 @@ def build_feed(payload, day, now=None):
         if not isinstance(item, dict) or not isinstance(item.get("league"), dict):
             raise GenerationError("Respuesta API inválida: fixture/league malformado.")
         required_text(item["league"], "name")
-        section_id = classify_league(item["league"])
+        section_id = classify_fixture(item)
         if section_id is None:
             continue
         fixture, teams = item.get("fixture"), item.get("teams")
@@ -335,9 +370,16 @@ def build_feed(payload, day, now=None):
             event.update(homeScore=goals["home"], awayScore=goals["away"])
         buckets[section_id].append(event)
         ids.add(fixture_id)
+        if matching_league_rule(item["league"])[1] == SOUTH_AMERICAN_QUALIFIERS:
+            decision = "QUALIFIERS_ARGENTINA" if section_id == "argentina" else "QUALIFIERS_CONMEBOL"
+            print(f"SPORTS_CLASSIFY {decision} fixtureId={fixture_id}")
     for section in sections:
-        # Stable: ties preserve API order, unknown times go last, never sort by team name.
-        section["events"].sort(key=lambda event: (not bool(event["startTime"]), event["startTime"]))
+        section["events"].sort(key=event_sort_key)
+        events = section["events"]
+        print(f"SPORTS_SORT section={section['id']} "
+              f"live={sum(event['status'] == 'LIVE' for event in events)} "
+              f"scheduled={sum(event['status'] == 'SCHEDULED' for event in events)} "
+              f"finished={sum(event['status'] == 'FINISHED' for event in events)}")
     now = now or datetime.now(argentina_timezone())
     feed = {"schemaVersion": 1, "date": day.isoformat(), "timezone": TIMEZONE,
             "updatedAt": now.astimezone(argentina_timezone()).isoformat(timespec="seconds"),

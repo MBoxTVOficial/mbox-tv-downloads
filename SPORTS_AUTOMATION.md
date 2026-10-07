@@ -19,11 +19,22 @@ No se incluyen todas las competiciones del país ni coincidencias parciales.
 
 - Argentina: Liga Profesional/Primera División, Primera Nacional, Copa Argentina,
   Supercopa, Copa de la Liga y Trofeo de Campeones. El fallback exige Argentina.
-- CONMEBOL: Libertadores, Sudamericana y Recopa.
+- CONMEBOL: Libertadores, Sudamericana, Recopa y Eliminatorias Sudamericanas.
 - Champions: UEFA Champions League.
 - Internacional: Premier League de Inglaterra, La Liga, Serie A italiana,
   Bundesliga, Ligue 1, MLS, Europa/Conference League, Mundial, Copa América,
-  Eurocopa, eliminatorias y UEFA Nations League.
+  Eurocopa, eliminatorias de otras confederaciones y UEFA Nations League.
+
+Las Eliminatorias Sudamericanas reconocen los alias `World Cup - Qualification South America`,
+`World Cup Qualification South America` y `CONMEBOL World Cup Qualifiers`, comparados
+por nombre completo normalizado. No se añade un ID sin verificación fiable; la regla
+admite incorporar un ID confirmado manteniendo el fallback por nombre.
+`classify_fixture` considera también ambos equipos: si el nombre normalizado del local
+o visitante es exactamente `argentina`, el evento va a `argentina` / `Fútbol - Argentina`.
+`Argentina U20`, `Argentina Women` y `Argentina Olympic` no activan esta regla especial.
+Los demás fixtures de esta competencia van a `conmebol` / `Copas CONMEBOL`.
+Estas reglas también incluyen los eventos en el feed usado para decidir el refresh LIVE,
+sin consultas adicionales por selección o competencia.
 
 IDs inicialmente verificados: **2** (Champions), **39** (Premier League) y **140**
 (La Liga), publicados en la [guía oficial de API-Football](https://www.api-football.com/news/post/how-to-get-started-with-api-football-the-complete-beginners-guide).
@@ -38,12 +49,18 @@ con offset `-03:00`, `demo: false` y las cuatro secciones, aunque estén vacías
 
 Cada evento incluye `fixture-<id>`, sport `football`, competencia, equipos, logos,
 hora `HH:mm` y estado. No genera URLs IPTV ni asociaciones `channels`.
-Los eventos se ordenan por hora; `TBD` o una hora ausente quedan al final.
+Dentro de cada sección, los eventos se ordenan por estado:
+LIVE primero (hora ascendente), SCHEDULED después (hora ascendente), POSTPONED y
+otros estados especiales (hora ascendente), FINISHED (hora descendente) y CANCELLED
+al final (hora ascendente). Una hora ausente/TBD queda al final de su grupo de estado;
+los empates conservan el orden de la API. Se conservan los finalizados del día.
 Las horas con offset se convierten a Argentina y se excluyen fixtures de otro día local.
 
 Estados: NS/TBD → SCHEDULED; PST → POSTPONED; CANC/ABD → CANCELLED;
 1H/HT/2H/ET/BT/P/SUSP/INT/LIVE → LIVE; FT/AET/PEN → FINISHED.
 Estados desconocidos se conservan; si faltan, se usa UNKNOWN.
+Los logs `SPORTS_CLASSIFY` incluyen únicamente la decisión de Eliminatorias y un ID
+numérico; `SPORTS_SORT` muestra sección y cantidades LIVE/SCHEDULED/FINISHED.
 
 ### Marcadores opcionales
 
