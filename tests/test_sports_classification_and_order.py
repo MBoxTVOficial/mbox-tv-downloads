@@ -4,7 +4,7 @@ import io
 import unittest
 
 from scripts import generate_sports_today as generator
-from test_generate_sports_today import DAY, NOW, fixture, response
+from test_generate_sports_today import DAY, NOW, SECTION_IDS, fixture, response
 
 
 def match(fixture_id=1, home="Argentina", away="Uruguay",
@@ -23,7 +23,7 @@ def build(*fixtures):
         return generator.build_feed(response(*fixtures), DAY, NOW)[0]
 
 
-def events(feed, section="argentina"):
+def events(feed, section="south_america_qualifiers"):
     return next(item["events"] for item in feed["sections"] if item["id"] == section)
 
 
@@ -36,25 +36,25 @@ class QualifierClassificationTest(unittest.TestCase):
         self.assertEqual(1, sum(len(s["events"]) for s in result["sections"]))
 
     def test_argentina_vs_uruguay(self):
-        self.assert_section(match(), "argentina", "Fútbol - Argentina")
+        self.assert_section(match(), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_brazil_vs_argentina(self):
-        self.assert_section(match(home="Brasil", away="Argentina"), "argentina", "Fútbol - Argentina")
+        self.assert_section(match(home="Brasil", away="Argentina"), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_brazil_vs_uruguay(self):
-        self.assert_section(match(home="Brasil"), "conmebol", "Copas CONMEBOL")
+        self.assert_section(match(home="Brasil"), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_chile_vs_colombia(self):
-        self.assert_section(match(home="Chile", away="Colombia"), "conmebol", "Copas CONMEBOL")
+        self.assert_section(match(home="Chile", away="Colombia"), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_argentina_u20_does_not_trigger_senior_rule(self):
-        self.assert_section(match(home="Argentina U20"), "conmebol", "Copas CONMEBOL")
+        self.assert_section(match(home="Argentina U20"), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_argentina_women_does_not_trigger_senior_rule(self):
-        self.assert_section(match(home="Argentina Women"), "conmebol", "Copas CONMEBOL")
+        self.assert_section(match(home="Argentina Women"), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_argentina_olympic_away_does_not_trigger_senior_rule(self):
-        self.assert_section(match(home="Brasil", away="Argentina Olympic"), "conmebol", "Copas CONMEBOL")
+        self.assert_section(match(home="Brasil", away="Argentina Olympic"), "south_america_qualifiers", "Eliminatorias Sudamericanas")
 
     def test_libertadores_is_still_conmebol(self):
         self.assert_section(match(league="Copa Libertadores"), "conmebol", "Copas CONMEBOL")
@@ -66,26 +66,25 @@ class QualifierClassificationTest(unittest.TestCase):
     def test_champions_is_still_champions(self):
         self.assert_section(match(league="UEFA Champions League"), "champions", "Champions League")
 
-    def test_all_qualifier_aliases_include_both_sections(self):
+    def test_all_qualifier_aliases_share_one_section(self):
         for name in ("World Cup - Qualification South America",
                      "World Cup Qualification South America", "CONMEBOL World Cup Qualifiers",
                      "  cOnMeBoL WORLD CUP QUALIFIERS  ", "WORLD CUP: QUALIFICATION SOUTH AMERICA"):
-            for home, away, section in (("Argentina", "Chile", "argentina"),
-                                        ("Brasil", "Argentina", "argentina"),
-                                        ("Paraguay", "Ecuador", "conmebol")):
+            for home, away in (("Argentina", "Chile"), ("Brasil", "Argentina"), ("Paraguay", "Ecuador")):
                 with self.subTest(name=name, home=home, away=away):
-                    self.assertEqual(section, generator.classify_fixture(match(home=home, away=away, league=name)))
+                    self.assertEqual("south_america_qualifiers",
+                                     generator.classify_fixture(match(home=home, away=away, league=name)))
 
-    def test_argentina_exact_normalized_name(self):
-        self.assert_section(match(home="  ARGENTÍNA  "), "argentina", "Fútbol - Argentina")
+    def test_team_names_do_not_change_qualifier_section(self):
+        self.assert_section(match(home="  ARGENTÍNA  "), "south_america_qualifiers", "Eliminatorias Sudamericanas")
         for name in ("Argentina U20", "Argentina Women", "Argentina Olympic", "Club Argentina", "Argentinas"):
             with self.subTest(name=name):
-                self.assertEqual("conmebol", generator.classify_fixture(match(home=name)))
+                self.assertEqual("south_america_qualifiers", generator.classify_fixture(match(home=name)))
 
     def test_no_senior_override_outside_south_american_qualifiers(self):
         self.assert_section(match(league="World Cup - Qualification Europe"),
-                            "international", "Fútbol - Internacional")
-        self.assertIsNone(generator.classify_fixture(match(league="Unrecognized competition")))
+                            "uefa_qualifiers", "Eliminatorias UEFA")
+        self.assertEqual("international", generator.classify_fixture(match(league="Unrecognized competition")))
 
     def test_verified_league_ids_still_take_precedence(self):
         self.assertEqual("champions", generator.classify_fixture(match(league_id=2)))
@@ -101,8 +100,8 @@ class QualifierClassificationTest(unittest.TestCase):
         with contextlib.redirect_stdout(output):
             generator.build_feed(response(match(1), match(2, home="Brasil")), DAY, NOW)
         text = output.getvalue()
-        self.assertIn("SPORTS_CLASSIFY QUALIFIERS_ARGENTINA fixtureId=1", text)
-        self.assertIn("SPORTS_CLASSIFY QUALIFIERS_CONMEBOL fixtureId=2", text)
+        self.assertIn("SPORTS_CLASSIFY QUALIFIERS_SOUTH_AMERICA fixtureId=1", text)
+        self.assertIn("SPORTS_CLASSIFY QUALIFIERS_SOUTH_AMERICA fixtureId=2", text)
         self.assertNotIn("Uruguay", text)
         self.assertNotIn("World Cup", text)
 
@@ -160,12 +159,12 @@ class EventOrderingTest(unittest.TestCase):
         self.assert_order([match(1, time="20:30"), match(2, status="2H", time="18:00")], [2, 1])
 
     def test_each_section_sorted_independently_preserving_section_order(self):
-        fixtures = [match(1, home="Brasil", status="FT", time="11:00"),
+        fixtures = [match(1, home="Brasil", league="Copa Libertadores", status="FT", time="11:00"),
                     match(2, status="FT", time="11:00"),
-                    match(3, home="Brasil", status="LIVE", time="20:00"),
+                    match(3, home="Brasil", league="Copa Libertadores", status="LIVE", time="20:00"),
                     match(4, status="LIVE", time="20:00")]
         result = build(*fixtures)
-        self.assertEqual(["argentina", "conmebol", "champions", "international"],
+        self.assertEqual(SECTION_IDS,
                          [s["id"] for s in result["sections"]])
         self.assertEqual(["fixture-4", "fixture-2"], [e["id"] for e in events(result)])
         self.assertEqual(["fixture-3", "fixture-1"], [e["id"] for e in events(result, "conmebol")])
@@ -174,7 +173,7 @@ class EventOrderingTest(unittest.TestCase):
         output = io.StringIO()
         with contextlib.redirect_stdout(output):
             generator.build_feed(response(match(1, status="LIVE"), match(2), match(3, status="FT")), DAY, NOW)
-        self.assertIn("SPORTS_SORT section=argentina live=1 scheduled=1 finished=1", output.getvalue())
+        self.assertIn("SPORTS_SORT section=south_america_qualifiers live=1 scheduled=1 finished=1", output.getvalue())
 
 
 class QualifierLiveEligibilityTest(unittest.TestCase):

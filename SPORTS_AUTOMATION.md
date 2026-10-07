@@ -1,7 +1,7 @@
 # Agenda deportiva automática de MBox TV
 
 `scripts/generate_sports_today.py` consulta una vez los fixtures del día en Argentina,
-selecciona competiciones relevantes y genera el `sports_today.json` de la raíz.
+agrupa las competiciones y genera el `sports_today.json` de la raíz.
 Usa Python 3.10+ y exclusivamente su biblioteca estándar; no hay que instalar paquetes.
 
 Endpoint: `GET https://v3.football.api-sports.io/fixtures` con
@@ -11,29 +11,53 @@ entorno `API_FOOTBALL_KEY`. La app Android no contiene esta clave ni consulta es
 
 ## Configuración de competiciones
 
-Editar `ARGENTINA_LEAGUES`, `CONMEBOL_LEAGUES`, `CHAMPIONS_LEAGUES` e
-`INTERNATIONAL_LEAGUES` en el script. Cada `LeagueRule` permite IDs, alias y países.
-Los IDs conocidos tienen prioridad; el fallback compara nombres completos normalizados
-(sin acentos, diferencias de mayúsculas o puntuación) y exige el país configurado.
-No se incluyen todas las competiciones del país ni coincidencias parciales.
+Editar las reglas de competiciones y `SECTIONS` en el script. Cada `LeagueRule`
+permite IDs, alias y países. Los IDs conocidos tienen prioridad; las reglas específicas
+comparan nombres completos normalizados (sin acentos, diferencias de mayúsculas o
+puntuación) y exigen el país configurado. No hay coincidencias parciales por país
+o equipo. Se evalúan todas las reglas específicas antes del fallback Internacional.
+
+| Prioridad | ID | Título |
+| --- | --- | --- |
+| 1 | `south_america_qualifiers` | Eliminatorias Sudamericanas |
+| 2 | `uefa_qualifiers` | Eliminatorias UEFA |
+| 3 | `uefa_nations` | UEFA Nations League |
+| 4 | `argentina` | Fútbol - Argentina |
+| 5 | `conmebol` | Copas CONMEBOL |
+| 6 | `champions` | Champions League |
+| 7 | `spain` | Liga de España |
+| 8 | `england` | Premier League |
+| 9 | `france` | Liga de Francia |
+| 10 | `italy` | Serie A |
+| 11 | `international` | Fútbol - Internacional |
 
 - Argentina: Liga Profesional/Primera División, Primera Nacional, Copa Argentina,
   Supercopa, Copa de la Liga y Trofeo de Campeones. El fallback exige Argentina.
-- CONMEBOL: Libertadores, Sudamericana, Recopa y Eliminatorias Sudamericanas.
+- CONMEBOL: competiciones de clubes Libertadores, Sudamericana y Recopa.
 - Champions: UEFA Champions League.
-- Internacional: Premier League de Inglaterra, La Liga, Serie A italiana,
-  Bundesliga, Ligue 1, MLS, Europa/Conference League, Mundial, Copa América,
-  Eurocopa, eliminatorias de otras confederaciones y UEFA Nations League.
+- España: La Liga / Primera División de España; Francia: Ligue 1; Inglaterra:
+  Premier League; Italia: Serie A. Los alias exigen el país correspondiente.
+  Championship y competiciones homónimas de otros países no entran en estas secciones.
+- Internacional: MLS, Bundesliga, Europa/Conference League, Mundial, Copa América,
+  Eurocopa no clasificatoria, eliminatorias de otras confederaciones, amistosos y
+  cualquier competición sin una regla específica. El fallback amplía la agenda a
+  fixtures válidos anteriormente descartados por no estar configurados.
 
 Las Eliminatorias Sudamericanas reconocen los alias `World Cup - Qualification South America`,
-`World Cup Qualification South America` y `CONMEBOL World Cup Qualifiers`, comparados
+`World Cup Qualification South America`, `CONMEBOL World Cup Qualifiers`,
+`World Cup Qualification CONMEBOL` y `South America World Cup Qualifiers`, comparados
 por nombre completo normalizado. No se añade un ID sin verificación fiable; la regla
 admite incorporar un ID confirmado manteniendo el fallback por nombre.
-`classify_fixture` considera también ambos equipos: si el nombre normalizado del local
-o visitante es exactamente `argentina`, el evento va a `argentina` / `Fútbol - Argentina`.
-`Argentina U20`, `Argentina Women` y `Argentina Olympic` no activan esta regla especial.
-Los demás fixtures de esta competencia van a `conmebol` / `Copas CONMEBOL`.
-Estas reglas también incluyen los eventos en el feed usado para decidir el refresh LIVE,
+Todos sus partidos van a `south_america_qualifiers`, incluidos los de Argentina.
+Los equipos no modifican la sección: Argentina, U20, Women u Olympic no activan
+reglas especiales. `argentina` queda reservada para los torneos de clubes configurados.
+
+Las Eliminatorias UEFA reconocen `World Cup - Qualification Europe`,
+`World Cup Qualification UEFA`, `UEFA World Cup Qualifiers`,
+`Euro Championship - Qualification`, `UEFA Euro Qualifiers` y
+`UEFA European Championship Qualification`. No se confunden con el torneo final
+de la Eurocopa ni con `UEFA Nations League`, que tiene su propia sección `uefa_nations`.
+Estas reglas incluyen los eventos en el feed usado para decidir el refresh LIVE,
 sin consultas adicionales por selección o competencia.
 
 IDs inicialmente verificados: **2** (Champions), **39** (Premier League) y **140**
@@ -44,8 +68,11 @@ IDs confirmados con `/leagues` o el [dashboard de IDs](https://dashboard.api-foo
 ## Salida y errores
 
 La salida contiene `schemaVersion: 1`, fecha argentina, timezone, `updatedAt` ISO-8601
-con offset `-03:00`, `demo: false` y las cuatro secciones, aunque estén vacías:
-`argentina`, `conmebol`, `champions`, `international`, con prioridades 1–4.
+con offset `-03:00`, `demo: false` y las once secciones de la tabla, aunque estén
+vacías. La app oculta las secciones sin eventos. El formato de events y schemaVersion
+se conservan. El validador también acepta cachés antiguas de las cuatro secciones
+originales y prioridades 1–4, para conservar su lectura y el filtro LIVE durante
+la transición; la siguiente generación usa siempre la estructura nueva.
 
 Cada evento incluye `fixture-<id>`, sport `football`, competencia, equipos, logos,
 hora `HH:mm` y estado. No genera URLs IPTV ni asociaciones `channels`.

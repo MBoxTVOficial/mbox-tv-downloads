@@ -37,6 +37,14 @@ def feed(*fixtures, day=DAY, now=NOW):
     return generator.build_feed(response(*fixtures), day, now)[0]
 
 
+SECTION_IDS = ["south_america_qualifiers", "uefa_qualifiers", "uefa_nations", "argentina",
+               "conmebol", "champions", "spain", "england", "france", "italy", "international"]
+
+
+def section_events(value, section_id="argentina"):
+    return next(section["events"] for section in value["sections"] if section["id"] == section_id)
+
+
 class ClassificationTest(unittest.TestCase):
     def classify(self, name, country="World", league_id=None):
         return generator.classify_league({"id": league_id, "name": name, "country": country})
@@ -59,21 +67,21 @@ class ClassificationTest(unittest.TestCase):
         self.assertEqual("champions", self.classify("UEFA Champions League"))
 
     def test_premier_league(self):
-        self.assertEqual("international", self.classify("Premier League", "England"))
+        self.assertEqual("england", self.classify("Premier League", "England"))
 
-    def test_irrelevant_league_is_ignored_even_in_argentina(self):
-        self.assertIsNone(self.classify("Torneo Regional Amateur", "Argentina"))
-        self.assertIsNone(self.classify("National League", "England"))
+    def test_unconfigured_league_uses_residual_section_even_in_argentina(self):
+        self.assertEqual("international", self.classify("Torneo Regional Amateur", "Argentina"))
+        self.assertEqual("international", self.classify("National League", "England"))
 
     def test_country_prevents_ambiguous_name_matches(self):
-        self.assertIsNone(self.classify("Premier League", "Egypt"))
-        self.assertIsNone(self.classify("Serie A", "Brazil"))
-        self.assertIsNone(self.classify("Primera Division", "Chile"))
+        self.assertEqual("international", self.classify("Premier League", "Egypt"))
+        self.assertEqual("international", self.classify("Serie A", "Brazil"))
+        self.assertEqual("international", self.classify("Primera Division", "Chile"))
 
     def test_verified_ids_take_precedence_over_translated_names(self):
         self.assertEqual("champions", self.classify("Translated", league_id=2))
-        self.assertEqual("international", self.classify("Traducido", league_id=39))
-        self.assertEqual("international", self.classify("Traducido", league_id=140))
+        self.assertEqual("england", self.classify("Traducido", league_id=39))
+        self.assertEqual("spain", self.classify("Traducido", league_id=140))
 
     def test_normalized_accents_case_and_punctuation(self):
         self.assertEqual("argentina", self.classify("  PRIMERA   DIVISIÓN ", "ARGENTINA"))
@@ -107,35 +115,35 @@ class TransformationTest(unittest.TestCase):
                       fixture(2, status="TBD", time="2026-10-06T00:00:00-03:00"),
                       fixture(3, time="2026-10-06T16:00:00-03:00"),
                       fixture(4, time="2026-10-06T16:00:00-03:00"))
-        events = result["sections"][0]["events"]
+        events = section_events(result)
         self.assertEqual(["fixture-3", "fixture-4", "fixture-1", "fixture-2"],
                          [event["id"] for event in events])
         self.assertEqual("", events[-1]["startTime"])
 
     def test_logos_are_preserved(self):
-        event = feed(fixture())["sections"][0]["events"][0]
+        event = section_events(feed(fixture()))[0]
         self.assertEqual("https://example.test/home.png", event["homeLogo"])
         self.assertEqual("https://example.test/away.png", event["awayLogo"])
 
     def test_fixture_id_becomes_event_id(self):
-        self.assertEqual("fixture-123456", feed(fixture(123456))["sections"][0]["events"][0]["id"])
+        self.assertEqual("fixture-123456", section_events(feed(fixture(123456)))[0]["id"])
 
     def test_empty_sections_and_zero_results_stay_valid(self):
         result = feed()
-        self.assertEqual(["argentina", "conmebol", "champions", "international"],
+        self.assertEqual(SECTION_IDS,
                          [section["id"] for section in result["sections"]])
-        self.assertEqual([1, 2, 3, 4], [section["priority"] for section in result["sections"]])
+        self.assertEqual(list(range(1, 12)), [section["priority"] for section in result["sections"]])
         self.assertTrue(all(section["events"] == [] for section in result["sections"]))
         self.assertFalse(result["demo"])
         generator.validate_feed(result)
 
     def test_utc_kickoff_uses_argentina_day_and_clock(self):
         result = feed(fixture(time="2026-10-07T01:15:00Z"))
-        self.assertEqual("22:15", result["sections"][0]["events"][0]["startTime"])
+        self.assertEqual("22:15", section_events(result)[0]["startTime"])
         other_day = fixture(101, time="2026-10-06T01:15:00Z")
         result, ignored = generator.build_feed(response(other_day), DAY, NOW)
         self.assertEqual(1, ignored)
-        self.assertEqual([], result["sections"][0]["events"])
+        self.assertEqual([], section_events(result))
 
     def test_updated_at_has_argentina_offset(self):
         result = feed(now=datetime(2026, 10, 6, 15, tzinfo=timezone.utc))
@@ -147,8 +155,9 @@ class TransformationTest(unittest.TestCase):
 
     def test_selected_and_ignored_counts(self):
         result, ignored = generator.build_feed(response(fixture(), fixture(101, league="Minor League")), DAY, NOW)
-        self.assertEqual(1, ignored)
-        self.assertEqual(1, len(result["sections"][0]["events"]))
+        self.assertEqual(0, ignored)
+        self.assertEqual(1, len(section_events(result)))
+        self.assertEqual(1, len(section_events(result, "international")))
 
     def test_invalid_relevant_fixture_or_duplicate_id_fails(self):
         invalid = fixture()
@@ -168,7 +177,7 @@ class ScoreTest(unittest.TestCase):
         return item
 
     def event(self, home, away, status="1H"):
-        return feed(self.scored_fixture(home, away, status))["sections"][0]["events"][0]
+        return section_events(feed(self.scored_fixture(home, away, status)))[0]
 
     def assert_no_scores(self, event):
         self.assertNotIn("homeScore", event)
@@ -225,7 +234,7 @@ class ScoreTest(unittest.TestCase):
         generated = feed(fixture())
         generator.validate_feed(generated)
         self.assertEqual(1, generated["schemaVersion"])
-        self.assert_no_scores(generated["sections"][0]["events"][0])
+        self.assert_no_scores(section_events(generated)[0])
 
     def test_identical_score_keeps_exact_bytes_and_timestamp(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -245,7 +254,7 @@ class ScoreTest(unittest.TestCase):
             later = feed(self.scored_fixture(2, 0), now=NOW + timedelta(minutes=10))
             self.assertTrue(generator.write_feed_atomic(later, output))
             saved = json.loads(output.read_bytes())
-            event = saved["sections"][0]["events"][0]
+            event = section_events(saved)[0]
             self.assertEqual(("LIVE", 2, 0), (event["status"], event["homeScore"], event["awayScore"]))
             self.assertEqual("2026-10-06T12:10:00-03:00", saved["updatedAt"])
 
@@ -256,7 +265,7 @@ class ScoreTest(unittest.TestCase):
             final = feed(self.scored_fixture(2, 1, "FT"), now=NOW + timedelta(hours=1))
             self.assertTrue(generator.write_feed_atomic(final, output))
             saved = json.loads(output.read_bytes())
-            event = saved["sections"][0]["events"][0]
+            event = section_events(saved)[0]
             self.assertEqual(("FINISHED", 2, 1), (event["status"], event["homeScore"], event["awayScore"]))
             self.assertEqual("2026-10-06T13:00:00-03:00", saved["updatedAt"])
 
@@ -271,7 +280,7 @@ class ScoreTest(unittest.TestCase):
             for scores in invalid_pairs:
                 with self.subTest(scores=scores):
                     invalid_feed = feed(fixture())
-                    invalid_feed["sections"][0]["events"][0].update(scores)
+                    section_events(invalid_feed)[0].update(scores)
                     with self.assertRaises(generator.GenerationError):
                         generator.write_feed_atomic(invalid_feed, output)
                     self.assertEqual(b"ORIGINAL FEED", output.read_bytes())
@@ -283,7 +292,7 @@ class ScoreTest(unittest.TestCase):
                 item = fixture()
                 item["goals"] = goals
                 generated = feed(item, fixture(101))
-                events = generated["sections"][0]["events"]
+                events = section_events(generated)
                 self.assertEqual(2, len(events))
                 self.assert_no_scores(events[0])
 
@@ -291,10 +300,10 @@ class ScoreTest(unittest.TestCase):
         item = self.scored_fixture(1, 0)
         item["score"] = {key: {"home": 9, "away": 8} for key in
                          ("halftime", "fulltime", "extratime", "penalty")}
-        event = feed(item)["sections"][0]["events"][0]
+        event = section_events(feed(item))[0]
         self.assertEqual((1, 0), (event["homeScore"], event["awayScore"]))
         del item["goals"]
-        self.assert_no_scores(feed(item)["sections"][0]["events"][0])
+        self.assert_no_scores(section_events(feed(item))[0])
 
 
 class GenerationSafetyTest(unittest.TestCase):
@@ -455,7 +464,7 @@ class GenerationSafetyTest(unittest.TestCase):
 
     def test_invalid_generated_feed_is_rejected_before_write(self):
         invalid = feed(fixture())
-        invalid["sections"][0]["events"][0]["startTime"] = "29:99"
+        section_events(invalid)[0]["startTime"] = "29:99"
         with self.assertRaises(generator.GenerationError):
             generator.write_feed_atomic(invalid, self.output)
         self.assertEqual(b"ORIGINAL FEED", self.output.read_bytes())
@@ -466,7 +475,9 @@ class GenerationSafetyTest(unittest.TestCase):
         with patch.object(generator, "ROOT", self.root), contextlib.redirect_stdout(summary):
             result = generator.main(["--input", str(self.input), "--date", "2026-10-06"])
         self.assertEqual(0, result)
-        self.assertIn("Argentina selected: 1", summary.getvalue())
+        self.assertIn("Fútbol - Argentina selected: 1", summary.getvalue())
+        for _, title, _, _ in generator.SECTIONS:
+            self.assertIn(f"{title} selected:", summary.getvalue())
         self.assertIn("Ignored fixtures: 0", summary.getvalue())
         self.assertTrue((self.root / "sports_today.preview.json").exists())
         self.assertEqual(b"ORIGINAL FEED", self.output.read_bytes())

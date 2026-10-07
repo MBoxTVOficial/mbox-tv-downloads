@@ -11,7 +11,7 @@ from unittest.mock import patch
 from urllib.error import HTTPError
 
 from scripts import generate_sports_today as generator
-from test_generate_sports_today import DAY, NOW, fixture, response, feed
+from test_generate_sports_today import DAY, NOW, fixture, response, feed, section_events
 
 
 def scored(home=None, away=None, status="NS"):
@@ -34,7 +34,7 @@ class RealtimeTest(unittest.TestCase):
         return result
 
     def event(self):
-        return json.loads(self.output.read_bytes())["sections"][0]["events"][0]
+        return section_events(json.loads(self.output.read_bytes()))[0]
 
     def test_real_response_transition_scheduled_live_and_finished(self):
         stages = [("NS", None, None), ("1H", 0, 0), ("2H", 1, 0),

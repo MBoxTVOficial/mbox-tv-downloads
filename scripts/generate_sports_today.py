@@ -141,36 +141,63 @@ SOUTH_AMERICAN_QUALIFIERS = LeagueRule((
     "World Cup - Qualification South America",
     "World Cup Qualification South America",
     "CONMEBOL World Cup Qualifiers",
+    "World Cup Qualification CONMEBOL",
+    "South America World Cup Qualifiers",
 ))  # No ID seeded until verified via /leagues or the official dashboard.
+UEFA_QUALIFIERS = LeagueRule((
+    "World Cup - Qualification Europe", "World Cup Qualification UEFA",
+    "UEFA World Cup Qualifiers", "Euro Championship - Qualification",
+    "UEFA Euro Qualifiers", "UEFA European Championship Qualification",
+))
+UEFA_NATIONS = LeagueRule(("UEFA Nations League",))
 CONMEBOL_LEAGUES = (
     LeagueRule(("Copa Libertadores", "CONMEBOL Libertadores")),
     LeagueRule(("Copa Sudamericana", "CONMEBOL Sudamericana")),
     LeagueRule(("Recopa Sudamericana", "CONMEBOL Recopa")),
-    SOUTH_AMERICAN_QUALIFIERS,
 )
 CHAMPIONS_LEAGUES = (
     LeagueRule(("UEFA Champions League",), ids=(2,)),
 )
-INTERNATIONAL_LEAGUES = (
-    LeagueRule(("Premier League",), ("England",), (39,)),
-    LeagueRule(("La Liga",), ("Spain",), (140,)),
-    LeagueRule(("Serie A",), ("Italy",)),
-    LeagueRule(("Bundesliga",), ("Germany",)),
+SPAIN_LEAGUES = (
+    LeagueRule(("La Liga", "Primera Division"), ("Spain",), (140,)),
+)
+FRANCE_LEAGUES = (
     LeagueRule(("Ligue 1",), ("France",)),
+)
+ENGLAND_LEAGUES = (
+    LeagueRule(("Premier League",), ("England",), (39,)),
+)
+ITALY_LEAGUES = (
+    LeagueRule(("Serie A",), ("Italy",)),
+)
+INTERNATIONAL_LEAGUES = (
+    LeagueRule(("Bundesliga",), ("Germany",)),
     LeagueRule(("Major League Soccer", "MLS"), ("USA", "United States")),
     LeagueRule(("UEFA Europa League", "UEFA Conference League", "UEFA Europa Conference League")),
     LeagueRule(("World Cup", "FIFA World Cup", "Copa America", "Euro Championship", "UEFA Euro")),
-    LeagueRule(("World Cup - Qualification Europe",
-                "World Cup - Qualification CONCACAF", "World Cup - Qualification Africa",
+    LeagueRule(("World Cup - Qualification CONCACAF", "World Cup - Qualification Africa",
                 "World Cup - Qualification Asia", "World Cup - Qualification Oceania")),
-    LeagueRule(("UEFA Nations League",)),
 )
 
 SECTIONS = (
-    ("argentina", "Fútbol - Argentina", 1, ARGENTINA_LEAGUES),
-    ("conmebol", "Copas CONMEBOL", 2, CONMEBOL_LEAGUES),
-    ("champions", "Champions League", 3, CHAMPIONS_LEAGUES),
-    ("international", "Fútbol - Internacional", 4, INTERNATIONAL_LEAGUES),
+    ("south_america_qualifiers", "Eliminatorias Sudamericanas", 1, (SOUTH_AMERICAN_QUALIFIERS,)),
+    ("uefa_qualifiers", "Eliminatorias UEFA", 2, (UEFA_QUALIFIERS,)),
+    ("uefa_nations", "UEFA Nations League", 3, (UEFA_NATIONS,)),
+    ("argentina", "Fútbol - Argentina", 4, ARGENTINA_LEAGUES),
+    ("conmebol", "Copas CONMEBOL", 5, CONMEBOL_LEAGUES),
+    ("champions", "Champions League", 6, CHAMPIONS_LEAGUES),
+    ("spain", "Liga de España", 7, SPAIN_LEAGUES),
+    ("england", "Premier League", 8, ENGLAND_LEAGUES),
+    ("france", "Liga de Francia", 9, FRANCE_LEAGUES),
+    ("italy", "Serie A", 10, ITALY_LEAGUES),
+    ("international", "Fútbol - Internacional", 11, INTERNATIONAL_LEAGUES),
+)
+# Read old schemaVersion 1 caches without resetting the existing LIVE eligibility/empty-feed guard.
+LEGACY_SECTIONS = (
+    ("argentina", "Fútbol - Argentina", 1),
+    ("conmebol", "Copas CONMEBOL", 2),
+    ("champions", "Champions League", 3),
+    ("international", "Fútbol - Internacional", 4),
 )
 STATUS_MAP = {
     "NS": "SCHEDULED", "TBD": "SCHEDULED", "PST": "POSTPONED",
@@ -209,7 +236,8 @@ def matching_league_rule(league):
                 not rule.countries or country in map(normalize, rule.countries)
             ):
                 return section_id, rule
-    return None, None
+    # Unconfigured competitions remain visible in the residual section, never a specific league.
+    return "international", None
 
 
 def classify_league(league):
@@ -217,15 +245,8 @@ def classify_league(league):
 
 
 def classify_fixture(item):
-    section_id, rule = matching_league_rule(item["league"])
-    if rule == SOUTH_AMERICAN_QUALIFIERS:
-        teams = item.get("teams")
-        if isinstance(teams, dict):
-            for side in ("home", "away"):
-                team = teams.get(side)
-                if isinstance(team, dict) and normalize(team.get("name")) == "argentina":
-                    return "argentina"
-    return section_id
+    # Team names do not determine a competition's section, including national teams.
+    return classify_league(item["league"])
 
 
 def event_sort_key(event):
@@ -370,8 +391,8 @@ def build_feed(payload, day, now=None):
             event.update(homeScore=goals["home"], awayScore=goals["away"])
         buckets[section_id].append(event)
         ids.add(fixture_id)
-        if matching_league_rule(item["league"])[1] == SOUTH_AMERICAN_QUALIFIERS:
-            decision = "QUALIFIERS_ARGENTINA" if section_id == "argentina" else "QUALIFIERS_CONMEBOL"
+        if section_id in ("south_america_qualifiers", "uefa_qualifiers"):
+            decision = "QUALIFIERS_SOUTH_AMERICA" if section_id == "south_america_qualifiers" else "QUALIFIERS_UEFA"
             print(f"SPORTS_CLASSIFY {decision} fixtureId={fixture_id}")
     for section in sections:
         section["events"].sort(key=event_sort_key)
@@ -404,14 +425,18 @@ def validate_feed(feed):
     except (TypeError, ValueError):
         raise GenerationError("Feed generado inválido: date/updatedAt.") from None
     sections = feed["sections"]
-    if not isinstance(sections, list) or len(sections) != len(SECTIONS):
+    # Generation always emits the current sections; reading a legacy cache keeps realtime intact.
+    expected_sections = tuple((sid, title, priority) for sid, title, priority, _ in SECTIONS)
+    if isinstance(sections, list) and len(sections) == len(LEGACY_SECTIONS):
+        expected_sections = LEGACY_SECTIONS
+    if not isinstance(sections, list) or len(sections) != len(expected_sections):
         raise GenerationError("Feed generado inválido: secciones.")
     event_ids = set()
     event_fields = {
         "id", "sport", "competition", "homeTeam", "awayTeam", "homeLogo", "awayLogo", "startTime", "status"
     }
     score_fields = {"homeScore", "awayScore"}
-    for section, (sid, title, priority, _) in zip(sections, SECTIONS):
+    for section, (sid, title, priority) in zip(sections, expected_sections):
         if not isinstance(section, dict) or set(section) != {"id", "title", "priority", "events"} or \
                 type(section["priority"]) is not int or \
                 (section["id"], section["title"], section["priority"]) != (sid, title, priority) or \
@@ -568,8 +593,8 @@ def main(argv=None):
         return 1
     print(f"Date: {feed['date']}")
     print(f"API fixtures received: {received}")
-    for label, section in zip(("Argentina", "CONMEBOL", "Champions", "International"), feed["sections"]):
-        print(f"{label} selected: {len(section['events'])}")
+    for section in feed["sections"]:
+        print(f"{section['title']} selected: {len(section['events'])}")
     print(f"Ignored fixtures: {ignored}")
     print(f"Output: {output}")
     print(f"Changed: {str(changed).lower()}")
