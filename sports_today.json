@@ -360,7 +360,29 @@
           "homeLogo": "https://media.api-sports.io/football/teams/128.png",
           "awayLogo": "https://media.api-sports.io/football/teams/127.png",
           "startTime": "19:30",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "CO: WIN SPORTS HD",
+              "streamId": 166591,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "CO: WIN SPORTS HD",
+                "CO: Win Sports"
+              ]
+            },
+            {
+              "name": "CO: Win Sports",
+              "streamId": 166589,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "CO: WIN SPORTS HD",
+                "CO: Win Sports"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1520912",
@@ -371,7 +393,18 @@
           "homeLogo": "https://media.api-sports.io/football/teams/129.png",
           "awayLogo": "https://media.api-sports.io/football/teams/140.png",
           "startTime": "19:30",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "BR: ESPN",
+              "streamId": 563447,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "BR: ESPN"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1520915",
@@ -437,7 +470,39 @@
           "homeLogo": "https://media.api-sports.io/football/teams/1137.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1142.png",
           "startTime": "20:05",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "CO: Win Sports + HD",
+              "streamId": 166592,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            },
+            {
+              "name": "CO: Win Sports + HD",
+              "streamId": 166590,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            },
+            {
+              "name": "CO: WIN SPORTS + HD",
+              "streamId": 166594,
+              "priority": 3,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1619715",
@@ -470,7 +535,29 @@
           "homeLogo": "https://media.api-sports.io/football/teams/121.png",
           "awayLogo": "https://media.api-sports.io/football/teams/118.png",
           "startTime": "21:30",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "CO: WIN SPORTS HD",
+              "streamId": 166591,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "CO: WIN SPORTS HD",
+                "CO: Win Sports"
+              ]
+            },
+            {
+              "name": "CO: Win Sports",
+              "streamId": 166589,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "CO: WIN SPORTS HD",
+                "CO: Win Sports"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1559643",
@@ -492,7 +579,29 @@
           "homeLogo": "https://media.api-sports.io/football/teams/2300.png",
           "awayLogo": "https://media.api-sports.io/football/teams/2313.png",
           "startTime": "22:00",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "MX〢ESPN 2 HD",
+              "streamId": 165504,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "MX〢ESPN 2 HD",
+                "ESPN 2 MX"
+              ]
+            },
+            {
+              "name": "ESPN 2 MX",
+              "streamId": 169914,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "MX〢ESPN 2 HD",
+                "ESPN 2 MX"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1549817",
@@ -503,7 +612,39 @@
           "homeLogo": "https://media.api-sports.io/football/teams/1147.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1125.png",
           "startTime": "22:10",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "CO: Win Sports + HD",
+              "streamId": 166592,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            },
+            {
+              "name": "CO: Win Sports + HD",
+              "streamId": 166590,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            },
+            {
+              "name": "CO: WIN SPORTS + HD",
+              "streamId": 166594,
+              "priority": 3,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1600599",
