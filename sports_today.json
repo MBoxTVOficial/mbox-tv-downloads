@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-08",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-08T17:30:47-03:00",
+  "updatedAt": "2026-10-08T20:14:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -77,147 +77,173 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1642034",
+          "id": "fixture-1612077",
           "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Safa",
-          "awayTeam": "Reyady Abaseya",
-          "homeLogo": "https://media.api-sports.io/football/teams/4573.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/22812.png",
-          "startTime": "15:45",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1492780",
-          "sport": "football",
-          "competition": "Premier Division",
-          "homeTeam": "Shamrock Rovers",
-          "awayTeam": "Drogheda United",
-          "homeLogo": "https://media.api-sports.io/football/teams/652.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3850.png",
-          "startTime": "16:00",
-          "status": "LIVE",
-          "homeScore": 3,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1611408",
-          "sport": "football",
-          "competition": "Ligue 1",
-          "homeTeam": "MC Oran",
-          "awayTeam": "ES Setif",
-          "homeLogo": "https://media.api-sports.io/football/teams/907.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/905.png",
-          "startTime": "16:00",
+          "competition": "Reserve League",
+          "homeTeam": "Boca Juniors Res.",
+          "awayTeam": "Colón Res.",
+          "homeLogo": "https://media.api-sports.io/football/teams/18681.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/18683.png",
+          "startTime": "19:00",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
         },
         {
-          "id": "fixture-1619714",
+          "id": "fixture-1492398",
           "sport": "football",
-          "competition": "Copa de la División Profesional",
-          "homeTeam": "Always Ready",
-          "awayTeam": "Nacional Potosí",
-          "homeLogo": "https://media.api-sports.io/football/teams/3700.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3706.png",
-          "startTime": "16:00",
+          "competition": "Serie A",
+          "homeTeam": "Santos",
+          "awayTeam": "Flamengo",
+          "homeLogo": "https://media.api-sports.io/football/teams/128.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/127.png",
+          "startTime": "19:30",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 0,
+          "awayScore": 1,
+          "channels": [
+            {
+              "name": "CO: WIN SPORTS HD",
+              "streamId": 166591,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "CO: WIN SPORTS HD",
+                "CO: Win Sports"
+              ]
+            },
+            {
+              "name": "CO: Win Sports",
+              "streamId": 166589,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "CO: WIN SPORTS HD",
+                "CO: Win Sports"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1520912",
+          "sport": "football",
+          "competition": "Serie B",
+          "homeTeam": "Ceara",
+          "awayTeam": "Criciuma",
+          "homeLogo": "https://media.api-sports.io/football/teams/129.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/140.png",
+          "startTime": "19:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0,
+          "channels": [
+            {
+              "name": "BR: ESPN",
+              "streamId": 563447,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "BR: ESPN"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1520915",
+          "sport": "football",
+          "competition": "Serie B",
+          "homeTeam": "Nautico Recife",
+          "awayTeam": "Novorizontino",
+          "homeLogo": "https://media.api-sports.io/football/teams/755.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7834.png",
+          "startTime": "19:30",
+          "status": "LIVE",
+          "homeScore": 0,
           "awayScore": 2
         },
         {
-          "id": "fixture-1632438",
+          "id": "fixture-1492390",
           "sport": "football",
-          "competition": "Liga Pro Serie B",
-          "homeTeam": "Atletico FC",
-          "awayTeam": "San Antonio",
-          "homeLogo": "https://media.api-sports.io/football/teams/27548.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/23310.png",
-          "startTime": "16:15",
+          "competition": "Serie A",
+          "homeTeam": "Atletico Paranaense",
+          "awayTeam": "Atletico-MG",
+          "homeLogo": "https://media.api-sports.io/football/teams/134.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1062.png",
+          "startTime": "20:00",
           "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 1
+          "homeScore": 1,
+          "awayScore": 0
         },
         {
-          "id": "fixture-1640550",
+          "id": "fixture-1639228",
           "sport": "football",
           "competition": "Copa do Brasil U20",
-          "homeTeam": "Flamengo U20",
-          "awayTeam": "Vasco da Gama U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/11054.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/12979.png",
-          "startTime": "16:30",
+          "homeTeam": "Botafogo U20",
+          "awayTeam": "Bahia U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/22875.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/12954.png",
+          "startTime": "20:00",
           "status": "LIVE",
           "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1639236",
+          "sport": "football",
+          "competition": "Copa do Brasil U20",
+          "homeTeam": "São Raimundo RR U20",
+          "awayTeam": "Nacional AM U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/12974.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/12966.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 1,
           "awayScore": 1
         },
         {
-          "id": "fixture-1640278",
+          "id": "fixture-1549764",
           "sport": "football",
-          "competition": "Segunda División",
-          "homeTeam": "Bentín Tacna Heroica",
-          "awayTeam": "Carlos A. Mannucci",
-          "homeLogo": "https://media.api-sports.io/football/teams/22462.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2551.png",
-          "startTime": "17:00",
+          "competition": "Primera A",
+          "homeTeam": "Atletico Nacional",
+          "awayTeam": "Deportes Tolima",
+          "homeLogo": "https://media.api-sports.io/football/teams/1137.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1142.png",
+          "startTime": "20:05",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1644205",
-          "sport": "football",
-          "competition": "Botola Pro",
-          "homeTeam": "Maghreb Fès",
-          "awayTeam": "Raja Casablanca",
-          "homeLogo": "https://media.api-sports.io/football/teams/3453.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/976.png",
-          "startTime": "17:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1549595",
-          "sport": "football",
-          "competition": "Primera B",
-          "homeTeam": "Depor FC",
-          "awayTeam": "Real Cartagena",
-          "homeLogo": "https://media.api-sports.io/football/teams/1468.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1459.png",
-          "startTime": "17:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1549599",
-          "sport": "football",
-          "competition": "Primera B",
-          "homeTeam": "Ind. Yumbo",
-          "awayTeam": "Tigres FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/27411.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1145.png",
-          "startTime": "17:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1636705",
-          "sport": "football",
-          "competition": "Liga Pro Serie B",
-          "homeTeam": "Santo Domingo",
-          "awayTeam": "LDU Portoviejo",
-          "homeLogo": "https://media.api-sports.io/football/teams/19414.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1988.png",
-          "startTime": "17:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 0,
+          "channels": [
+            {
+              "name": "CO: Win Sports + HD",
+              "streamId": 166592,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            },
+            {
+              "name": "CO: Win Sports + HD",
+              "streamId": 166590,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            },
+            {
+              "name": "CO: WIN SPORTS + HD",
+              "streamId": 166594,
+              "priority": 3,
+              "enabled": true,
+              "aliases": [
+                "CO: Win Sports + HD",
+                "CO: WIN SPORTS + HD"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1645143",
@@ -228,17 +254,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/27187.png",
           "awayLogo": "https://media.api-sports.io/football/teams/23604.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1531002",
-          "sport": "football",
-          "competition": "Pro League A",
-          "homeTeam": "Aral",
-          "awayTeam": "Qiziriq",
-          "homeLogo": "https://media.api-sports.io/football/teams/18785.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/23394.png",
-          "startTime": "10:00",
           "status": "SCHEDULED"
         },
         {
@@ -297,127 +312,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1610860",
-          "sport": "football",
-          "competition": "Paraibano 2",
-          "homeTeam": "Picuiense",
-          "awayTeam": "Sport PB",
-          "homeLogo": "https://media.api-sports.io/football/teams/22364.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/12910.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1549505",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Atletico Grau",
-          "awayTeam": "Club Deportivo Los Chankas",
-          "homeLogo": "https://media.api-sports.io/football/teams/2564.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2572.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1640287",
-          "sport": "football",
-          "competition": "Copa do Brasil U20",
-          "homeTeam": "São Paulo U20",
-          "awayTeam": "Athletico PR U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/12973.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/12984.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1644709",
-          "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Portmore United",
-          "awayTeam": "Waterhouse",
-          "homeLogo": "https://media.api-sports.io/football/teams/3443.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3447.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1612077",
-          "sport": "football",
-          "competition": "Reserve League",
-          "homeTeam": "Boca Juniors Res.",
-          "awayTeam": "Colón Res.",
-          "homeLogo": "https://media.api-sports.io/football/teams/18681.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/18683.png",
-          "startTime": "19:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1492398",
-          "sport": "football",
-          "competition": "Serie A",
-          "homeTeam": "Santos",
-          "awayTeam": "Flamengo",
-          "homeLogo": "https://media.api-sports.io/football/teams/128.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/127.png",
-          "startTime": "19:30",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "CO: WIN SPORTS HD",
-              "streamId": 166591,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "CO: WIN SPORTS HD",
-                "CO: Win Sports"
-              ]
-            },
-            {
-              "name": "CO: Win Sports",
-              "streamId": 166589,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "CO: WIN SPORTS HD",
-                "CO: Win Sports"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "fixture-1520912",
-          "sport": "football",
-          "competition": "Serie B",
-          "homeTeam": "Ceara",
-          "awayTeam": "Criciuma",
-          "homeLogo": "https://media.api-sports.io/football/teams/129.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/140.png",
-          "startTime": "19:30",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "BR: ESPN",
-              "streamId": 563447,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "BR: ESPN"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "fixture-1520915",
-          "sport": "football",
-          "competition": "Serie B",
-          "homeTeam": "Nautico Recife",
-          "awayTeam": "Novorizontino",
-          "homeLogo": "https://media.api-sports.io/football/teams/755.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7834.png",
-          "startTime": "19:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1610858",
           "sport": "football",
           "competition": "Paraibano 2",
@@ -427,82 +321,6 @@
           "awayLogo": "https://media.api-sports.io/football/teams/18306.png",
           "startTime": "19:30",
           "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1492390",
-          "sport": "football",
-          "competition": "Serie A",
-          "homeTeam": "Atletico Paranaense",
-          "awayTeam": "Atletico-MG",
-          "homeLogo": "https://media.api-sports.io/football/teams/134.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1062.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1639228",
-          "sport": "football",
-          "competition": "Copa do Brasil U20",
-          "homeTeam": "Botafogo U20",
-          "awayTeam": "Bahia U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/22875.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/12954.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1639236",
-          "sport": "football",
-          "competition": "Copa do Brasil U20",
-          "homeTeam": "São Raimundo RR U20",
-          "awayTeam": "Nacional AM U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/12974.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/12966.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1549764",
-          "sport": "football",
-          "competition": "Primera A",
-          "homeTeam": "Atletico Nacional",
-          "awayTeam": "Deportes Tolima",
-          "homeLogo": "https://media.api-sports.io/football/teams/1137.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1142.png",
-          "startTime": "20:05",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "CO: Win Sports + HD",
-              "streamId": 166592,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "CO: Win Sports + HD",
-                "CO: WIN SPORTS + HD"
-              ]
-            },
-            {
-              "name": "CO: Win Sports + HD",
-              "streamId": 166590,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "CO: Win Sports + HD",
-                "CO: WIN SPORTS + HD"
-              ]
-            },
-            {
-              "name": "CO: WIN SPORTS + HD",
-              "streamId": 166594,
-              "priority": 3,
-              "enabled": true,
-              "aliases": [
-                "CO: Win Sports + HD",
-                "CO: WIN SPORTS + HD"
-              ]
-            }
-          ]
         },
         {
           "id": "fixture-1619715",
@@ -693,6 +511,19 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1531002",
+          "sport": "football",
+          "competition": "Pro League A",
+          "homeTeam": "Aral",
+          "awayTeam": "Qiziriq",
+          "homeLogo": "https://media.api-sports.io/football/teams/18785.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/23394.png",
+          "startTime": "10:00",
+          "status": "AWD",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1558532",
           "sport": "football",
           "competition": "First League",
@@ -702,6 +533,188 @@
           "awayLogo": "https://media.api-sports.io/football/teams/3741.png",
           "startTime": "13:00",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1549505",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Atletico Grau",
+          "awayTeam": "Club Deportivo Los Chankas",
+          "homeLogo": "https://media.api-sports.io/football/teams/2564.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2572.png",
+          "startTime": "17:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1549595",
+          "sport": "football",
+          "competition": "Primera B",
+          "homeTeam": "Depor FC",
+          "awayTeam": "Real Cartagena",
+          "homeLogo": "https://media.api-sports.io/football/teams/1468.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1459.png",
+          "startTime": "17:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1549599",
+          "sport": "football",
+          "competition": "Primera B",
+          "homeTeam": "Ind. Yumbo",
+          "awayTeam": "Tigres FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/27411.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1145.png",
+          "startTime": "17:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1636705",
+          "sport": "football",
+          "competition": "Liga Pro Serie B",
+          "homeTeam": "Santo Domingo",
+          "awayTeam": "LDU Portoviejo",
+          "homeLogo": "https://media.api-sports.io/football/teams/19414.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1988.png",
+          "startTime": "17:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1640287",
+          "sport": "football",
+          "competition": "Copa do Brasil U20",
+          "homeTeam": "São Paulo U20",
+          "awayTeam": "Athletico PR U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/12973.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/12984.png",
+          "startTime": "17:30",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1644709",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Portmore United",
+          "awayTeam": "Waterhouse",
+          "homeLogo": "https://media.api-sports.io/football/teams/3443.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3447.png",
+          "startTime": "17:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1640278",
+          "sport": "football",
+          "competition": "Segunda División",
+          "homeTeam": "Bentín Tacna Heroica",
+          "awayTeam": "Carlos A. Mannucci",
+          "homeLogo": "https://media.api-sports.io/football/teams/22462.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2551.png",
+          "startTime": "17:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1644205",
+          "sport": "football",
+          "competition": "Botola Pro",
+          "homeTeam": "Maghreb Fès",
+          "awayTeam": "Raja Casablanca",
+          "homeLogo": "https://media.api-sports.io/football/teams/3453.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/976.png",
+          "startTime": "17:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1640550",
+          "sport": "football",
+          "competition": "Copa do Brasil U20",
+          "homeTeam": "Flamengo U20",
+          "awayTeam": "Vasco da Gama U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/11054.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/12979.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1632438",
+          "sport": "football",
+          "competition": "Liga Pro Serie B",
+          "homeTeam": "Atletico FC",
+          "awayTeam": "San Antonio",
+          "homeLogo": "https://media.api-sports.io/football/teams/27548.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/23310.png",
+          "startTime": "16:15",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1492780",
+          "sport": "football",
+          "competition": "Premier Division",
+          "homeTeam": "Shamrock Rovers",
+          "awayTeam": "Drogheda United",
+          "homeLogo": "https://media.api-sports.io/football/teams/652.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3850.png",
+          "startTime": "16:00",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1611408",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "MC Oran",
+          "awayTeam": "ES Setif",
+          "homeLogo": "https://media.api-sports.io/football/teams/907.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/905.png",
+          "startTime": "16:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1619714",
+          "sport": "football",
+          "competition": "Copa de la División Profesional",
+          "homeTeam": "Always Ready",
+          "awayTeam": "Nacional Potosí",
+          "homeLogo": "https://media.api-sports.io/football/teams/3700.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3706.png",
+          "startTime": "16:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1642034",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Safa",
+          "awayTeam": "Reyady Abaseya",
+          "homeLogo": "https://media.api-sports.io/football/teams/4573.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/22812.png",
+          "startTime": "15:45",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1549506",
@@ -715,6 +728,19 @@
           "status": "FINISHED",
           "homeScore": 0,
           "awayScore": 2
+        },
+        {
+          "id": "fixture-1610860",
+          "sport": "football",
+          "competition": "Paraibano 2",
+          "homeTeam": "Picuiense",
+          "awayTeam": "Sport PB",
+          "homeLogo": "https://media.api-sports.io/football/teams/22364.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/12910.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 3
         },
         {
           "id": "fixture-1610862",
