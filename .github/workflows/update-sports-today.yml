@@ -3,7 +3,7 @@ name: Update sports schedule
 on:
   workflow_dispatch:
   schedule:
-    # UTC -> Argentina: 08:00, 12:00, 17:00, 20:00.
+    # UTC -> Argentina: 00:05, 08:00, 12:00, 17:00, 20:00.
     - cron: '5 3 * * *'
     - cron: '0 11 * * *'
     - cron: '0 15 * * *'
@@ -36,20 +36,29 @@ jobs:
           python-version: '3.12'
       - name: Test generator offline
         run: python -m unittest discover -s tests -p "test_*.py"
+      - name: Daily discovery cache key
+        id: discovery-key
+        run: echo "key=$(python scripts/broadcaster_discovery.py --cache-key)" >> "$GITHUB_OUTPUT"
+      - name: Restore daily public evidence cache
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        with:
+          path: sports_broadcast_discovery_cache.json
+          key: broadcasts-${{ steps.discovery-key.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: broadcasts-${{ steps.discovery-key.outputs.key }}-
       - name: Generate today's schedule
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/generate_sports_today.py
-      - name: Commit only the updated feed
+        run: python scripts/generate_sports_today.py --discover-broadcasts
+      - name: Commit only daily broadcasts and feed
         shell: bash
         run: |
-          git add -- sports_today.json
-          if git diff --cached --quiet -- sports_today.json; then
+          git add -- sports_today.json sports_broadcasts_today.json
+          if git diff --cached --quiet -- sports_today.json sports_broadcasts_today.json; then
             echo "Sports schedule unchanged; no commit."
             exit 0
           fi
           git config user.name "MBox Sports Bot"
           git config user.email "actions@users.noreply.github.com"
-          git commit -m "Update sports schedule" --only -- sports_today.json
+          git commit -m "Update sports schedule" --only -- sports_today.json sports_broadcasts_today.json
           git push origin HEAD:main

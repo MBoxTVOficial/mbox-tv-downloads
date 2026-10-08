@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "signals": [
+    {
+      "name": "Win Sports",
+      "territory": "Colombia",
+      "channelGroup": "win_sports",
+      "aliases": [
+        "WIN Sports HD"
+      ],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "Win+ Fútbol",
+      "territory": "Colombia",
+      "channelGroup": "win_sports_plus",
+      "aliases": [
+        "Win+",
+        "Win Sports+",
+        "Win Sports Plus",
+        "Win Fútbol +"
+      ],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "ESPN Argentina",
+      "territory": "Argentina",
+      "channelGroup": "espn",
+      "aliases": [
+        "ESPN"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 2 Argentina",
+      "territory": "Argentina",
+      "channelGroup": "espn_2",
+      "aliases": [
+        "ESPN 2",
+        "ESPN2",
+        "ESPN2 Argentina"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 3 Argentina",
+      "territory": "Argentina",
+      "channelGroup": "espn_3",
+      "aliases": [
+        "ESPN 3",
+        "ESPN3",
+        "ESPN3 Argentina"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 4 Argentina",
+      "territory": "Argentina",
+      "channelGroup": "espn_4",
+      "aliases": [
+        "ESPN 4",
+        "ESPN4",
+        "ESPN4 Argentina"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN Brasil",
+      "territory": "Brasil",
+      "channelGroup": "espn_brazil",
+      "aliases": [
+        "ESPN",
+        "ESPN Brazil"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 2 Brasil",
+      "territory": "Brasil",
+      "channelGroup": "espn_2_brazil",
+      "aliases": [
+        "ESPN 2",
+        "ESPN2",
+        "ESPN2 Brasil",
+        "ESPN 2 Brazil"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 3 Brasil",
+      "territory": "Brasil",
+      "channelGroup": "espn_3_brazil",
+      "aliases": [
+        "ESPN 3",
+        "ESPN3",
+        "ESPN3 Brasil",
+        "ESPN 3 Brazil"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN México",
+      "territory": "México",
+      "channelGroup": "espn_mexico",
+      "aliases": [
+        "ESPN"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 2 México",
+      "territory": "México",
+      "channelGroup": "espn_2_mexico",
+      "aliases": [
+        "ESPN 2",
+        "ESPN2",
+        "ESPN2 México"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 3 México",
+      "territory": "México",
+      "channelGroup": "espn_3_mexico",
+      "aliases": [
+        "ESPN 3",
+        "ESPN3",
+        "ESPN3 México"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN 4 México",
+      "territory": "México",
+      "channelGroup": "espn_4_mexico",
+      "aliases": [
+        "ESPN 4",
+        "ESPN4",
+        "ESPN4 México"
+      ],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "ESPN Premium",
+      "territory": "Argentina",
+      "channelGroup": "espn_premium",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "TyC Sports",
+      "territory": "Argentina",
+      "channelGroup": "tyc_sports",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "TNT Sports",
+      "territory": "Argentina",
+      "channelGroup": "tnt_sports",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "TNT Sports Premium",
+      "territory": "Argentina",
+      "channelGroup": "tnt_sports_premium",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "Fox Sports",
+      "territory": "Argentina",
+      "channelGroup": "fox_sports",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "Fox Sports 2",
+      "territory": "Argentina",
+      "channelGroup": "fox_sports_2",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "Fox Sports 3",
+      "territory": "Argentina",
+      "channelGroup": "fox_sports_3",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "DSports",
+      "territory": "Argentina",
+      "channelGroup": "dsports",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "DSports 2",
+      "territory": "Argentina",
+      "channelGroup": "dsports_2",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "DSports+",
+      "territory": "Argentina",
+      "channelGroup": "dsports_plus",
+      "aliases": [],
+      "intrinsicRegion": false
+    },
+    {
+      "name": "Fanatiz",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "LPF Play",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "OneFootball",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "Disney+",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "YouTube",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "Entel Gol",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "TyC Sports Play",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "Win Play",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    }
+  ]
+}

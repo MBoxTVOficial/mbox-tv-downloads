@@ -19,11 +19,13 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 if __package__:
     from .sports_channel_rules import ChannelRulesError, validate_references
     from .sports_daily_broadcasts import (BroadcastError, load_daily_context,
-                                        resolve_broadcasts, apply_daily_assignments)
+                                        resolve_broadcasts, apply_daily_assignments, write_broadcasts_atomic)
+    from .broadcaster_discovery import DiscoveryError, discover_from_root, atomic_json
 else:
     from sports_channel_rules import ChannelRulesError, validate_references
     from sports_daily_broadcasts import (BroadcastError, load_daily_context,
-                                       resolve_broadcasts, apply_daily_assignments)
+                                       resolve_broadcasts, apply_daily_assignments, write_broadcasts_atomic)
+    from broadcaster_discovery import DiscoveryError, discover_from_root, atomic_json
 
 TIMEZONE = "America/Argentina/Buenos_Aires"
 ENDPOINT = "https://v3.football.api-sports.io/fixtures"
@@ -617,8 +619,12 @@ def refresh_channels(day, output):
     return feed, write_feed_atomic(feed, output)
 
 
-def generate(day, output, input_path=None, now=None, live_only=False):
+def generate(day, output, input_path=None, now=None, live_only=False, discover_broadcasts=False, discovery_scope='all'):
+    if live_only and discover_broadcasts:
+        raise GenerationError('LIVE reutiliza broadcasts diarios; no ejecuta discovery.')
+    real_clock = now is None and input_path is None
     now = now or datetime.now(argentina_timezone())
+    started_day = now.astimezone(argentina_timezone()).date()
     previous = previous_feed(output)
     manual = input_path is None and os.environ.get("GITHUB_ACTIONS") == "true" and \
         os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
@@ -637,6 +643,40 @@ def generate(day, output, input_path=None, now=None, live_only=False):
     realtime_log("OFFLINE_RESPONSE" if input_path is not None else "REALTIME_RESPONSE",
                  fixtures=len(validate_api_response(payload)))
     feed, ignored = build_feed(payload, day, now)
+    config, groups = context
+    if config is not None:
+        # Reject invalid IDs before discovery can reconstruct/drop an assignment.
+        try:
+            resolve_broadcasts(config, feed, groups, normalize)
+        except BroadcastError as error:
+            raise GenerationError(str(error)) from None
+    discovery_outputs = None
+    if discover_broadcasts:
+        countries = {item['fixture']['id']: item.get('league', {}).get('country', '') for item in payload['response']}
+        try:
+            config, cache, report, groups = discover_from_root(feed, ROOT, previous=config,
+                now=now, scope=discovery_scope, countries=countries)
+            discovery_outputs = (cache, report)
+            realtime_log('BROADCAST_DISCOVERY', investigated=report['investigated'],
+                confirmed=report['counts']['CONFIRMED_MBOX'], requests=report['requests'],
+                warnings=len(report.get('providerWarnings', [])))
+        except (DiscoveryError, ChannelRulesError, BroadcastError, OSError, ValueError, TypeError, KeyError) as error:
+            realtime_log('BROADCAST_DISCOVERY_WARNING', reason=type(error).__name__)
+            if config is None:
+                config = {'schemaVersion': 1, 'date': day.isoformat(), 'timezone': TIMEZONE, 'broadcasts': []}
+            retained = {item['fixtureId']: item for item in config['broadcasts'] if item['confidence'] == 'confirmed'}
+            details = [{'fixtureId': int(event['id'].removeprefix('fixture-')), 'homeTeam': event['homeTeam'],
+                'awayTeam': event['awayTeam'], 'competition': event['competition'], 'startTime': event['startTime'],
+                'state': 'CONFIRMED_MBOX' if int(event['id'].removeprefix('fixture-')) in retained else 'UNRESOLVED',
+                'broadcaster': retained.get(int(event['id'].removeprefix('fixture-')), {}).get('broadcaster', []),
+                'channelGroups': retained.get(int(event['id'].removeprefix('fixture-')), {}).get('channelGroups', []),
+                'evidence': []} for section in feed['sections'] for event in section['events']]
+            discovery_outputs = (None, {'schemaVersion': 1, 'date': day.isoformat(), 'timezone': TIMEZONE,
+                'state': 'DISCOVERY_FAILED', 'warning': type(error).__name__, 'totalFixtures': len(details),
+                'investigated': 0, 'requests': 0, 'fixtures': details,
+                'counts': {state: sum(row['state'] == state for row in details) for state in
+                    ('CONFIRMED_MBOX', 'CONFIRMED_EXTERNAL', 'REVIEW', 'UNRESOLVED')}})
+        context = (config, groups)
     apply_broadcast_context(feed, context)
     realtime_log("LIVE_FIXTURES", count=sum(event["status"] == "LIVE" for section in feed["sections"]
                                            for event in section["events"]),
@@ -645,6 +685,19 @@ def generate(day, output, input_path=None, now=None, live_only=False):
             any(section["events"] for section in previous["sections"]) and \
             not any(section["events"] for section in feed["sections"]):
         raise GenerationError("Agenda vacía inesperada para el mismo día; se conserva el feed anterior.")
+    if discovery_outputs is not None:
+        if real_clock and started_day == day and datetime.now(argentina_timezone()).astimezone(argentina_timezone()).date() != day:
+            raise RefreshSkipped('argentina_day_changed')
+        try:
+            write_broadcasts_atomic(config, ROOT / 'sports_broadcasts_today.json')
+        except BroadcastError as error:
+            raise GenerationError(str(error)) from None
+        for filename, value in zip(('sports_broadcast_discovery_cache.json', 'sports_broadcast_discovery_report.json'), discovery_outputs):
+            if value is not None:
+                try:
+                    atomic_json(ROOT / filename, value)
+                except OSError:
+                    realtime_log('BROADCAST_DISCOVERY_WARNING', reason='DiagnosticWriteFailed')
     changed = write_feed_atomic(feed, output)
     if changed:
         log_feed_changes(previous, feed)
@@ -657,9 +710,13 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, help="Ruta alternativa de salida.")
     parser.add_argument("--date", type=date.fromisoformat, help="Fecha YYYY-MM-DD; por defecto hoy en Argentina.")
     parser.add_argument("--live", action="store_true", help="Consultar solo si hay LIVE, inicio cercano o fecha nueva.")
+    parser.add_argument('--discover-broadcasts', action='store_true', help='Descubrimiento público antes de generar (solo GENERAL).')
+    parser.add_argument('--discovery-scope', choices=('all', 'unresolved'), default='all', help='Todos o futuros sin resolver/REVIEW.')
     parser.add_argument("--refresh-channels", action="store_true",
                         help="Regenerar canales diarios sobre el feed actual sin consultar APIs ni cambiar metadata.")
     args = parser.parse_args(argv)
+    if args.discover_broadcasts and (args.live or args.input is not None or args.refresh_channels):
+        parser.error('--discover-broadcasts no se combina con LIVE ni modos offline.')
     if args.refresh_channels and (args.input is not None or args.live):
         parser.error("--refresh-channels no se combina con --input o --live.")
     day = args.date or datetime.now(argentina_timezone()).date()
@@ -670,7 +727,8 @@ def main(argv=None):
             print(f"Date: {feed['date']}")
             print(f"Changed: {str(changed).lower()}")
             return 0
-        feed, received, ignored, changed = generate(day, output, args.input, live_only=args.live)
+        feed, received, ignored, changed = generate(day, output, args.input, live_only=args.live,
+            discover_broadcasts=args.discover_broadcasts, discovery_scope=args.discovery_scope)
     except RefreshSkipped as error:
         realtime_log("REFRESH_SKIPPED", reason=str(error))
         print("Changed: false")

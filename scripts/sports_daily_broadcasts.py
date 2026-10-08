@@ -2,7 +2,10 @@
 import copy
 from datetime import date
 import json
+import os
+from pathlib import Path
 import re
+import tempfile
 
 if __package__:
     from .sports_channel_rules import (ChannelRulesError, group_id, load_clean_groups,
@@ -51,7 +54,7 @@ def validate_broadcasts(value):
     seen = set()
     for item in value["broadcasts"]:
         if not isinstance(item, dict) or not {"fixtureId", "channelGroups", "confidence"} <= set(item) or \
-                set(item) - {"fixtureId", "channelGroups", "confidence", "notes"}:
+                set(item) - {"fixtureId", "channelGroups", "confidence", "notes", "source", "broadcaster", "evidenceCount"}:
             raise BroadcastError("Asignación diaria inválida: campos no permitidos o incompletos.")
         identifier = item["fixtureId"]
         if type(identifier) is not int or identifier <= 0:
@@ -68,6 +71,14 @@ def validate_broadcasts(value):
             raise BroadcastError("Asignación diaria inválida: IDs de channelGroups no válidos.") from None
         if item["confidence"] not in ("confirmed", "probable", "unknown"):
             raise BroadcastError("Asignación diaria inválida: confidence debe ser confirmed, probable o unknown.")
+        if "source" in item and item["source"] not in ("manual", "auto"):
+            raise BroadcastError("Asignación diaria inválida: source debe ser manual o auto.")
+        if "broadcaster" in item and (not isinstance(item["broadcaster"], list) or any(
+                not isinstance(name, str) or not name.strip() or len(name) > 100 or '://' in name or
+                any(ord(c) < 32 for c in name) for name in item["broadcaster"])):
+            raise BroadcastError("Asignación diaria inválida: broadcaster debe contener nombres simples.")
+        if "evidenceCount" in item and (type(item["evidenceCount"]) is not int or item["evidenceCount"] < 0):
+            raise BroadcastError("Asignación diaria inválida: evidenceCount debe ser entero no negativo.")
         notes = item.get("notes", "")
         if not isinstance(notes, str) or len(notes) > 2000 or any(ord(c) < 32 for c in notes):
             raise BroadcastError("Asignación diaria inválida: notes debe ser texto simple.")
@@ -131,3 +142,27 @@ def apply_daily_assignments(feed, assignments):
                 # Authoritative fixture override: lower-level rules cannot add unconfirmed channels.
                 event["channels"] = copy.deepcopy(assignments[event["id"]])
     return feed
+
+
+def write_broadcasts_atomic(value, path):
+    validate_broadcasts(value)
+    temporary = None
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", newline="\n", dir=path.parent,
+                                         prefix=path.name + ".", suffix=".tmp", delete=False) as handle:
+            temporary = Path(handle.name)
+            json.dump(value, handle, ensure_ascii=False, indent=2, allow_nan=False)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        read_broadcasts(temporary)
+        os.replace(temporary, path)
+    except (OSError, ValueError):
+        raise BroadcastError("No se pudo guardar la asignación diaria; se conserva el archivo anterior.") from None
+    finally:
+        if temporary is not None:
+            try:
+                temporary.unlink(missing_ok=True)
+            except OSError:
+                pass

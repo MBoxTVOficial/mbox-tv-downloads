@@ -9,7 +9,8 @@
         "win_sports"
       ],
       "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública."
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
     },
     {
       "fixtureId": 1492396,
@@ -17,7 +18,8 @@
         "win_sports"
       ],
       "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública."
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
     },
     {
       "fixtureId": 1549764,
@@ -25,7 +27,8 @@
         "win_sports_plus"
       ],
       "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública."
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
     },
     {
       "fixtureId": 1549817,
@@ -33,7 +36,8 @@
         "win_sports_plus"
       ],
       "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública."
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
     },
     {
       "fixtureId": 1520912,
@@ -41,7 +45,8 @@
         "espn_brazil"
       ],
       "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública."
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
     },
     {
       "fixtureId": 1581444,
@@ -49,7 +54,8 @@
         "espn_2_mexico"
       ],
       "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública."
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
     }
   ]
 }

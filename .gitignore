@@ -1,4 +1,6 @@
 __pycache__/
+sports_broadcast_discovery_cache.json
+sports_broadcast_discovery_report.json
 *.py[cod]
 sports_today.json.tmp
 sports_today.preview.json

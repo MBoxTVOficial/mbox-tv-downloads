@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "limits": {
+    "maxRequests": 6,
+    "concurrency": 2,
+    "timeoutSeconds": 8,
+    "maxFixtures": 200,
+    "retryAfterSeconds": 7200
+  },
+  "providers": [
+    {
+      "id": "football-tv-colombia",
+      "adapter": "football_tv",
+      "enabled": true,
+      "url": "https://www.futbolenvivocolombia.com/",
+      "kind": "trusted_guide",
+      "territory": "Colombia",
+      "independenceKey": "football-on-tv",
+      "ownedBroadcasters": []
+    },
+    {
+      "id": "win-official",
+      "adapter": "win_schedule",
+      "enabled": true,
+      "url": "https://www.winsports.co/programacion",
+      "kind": "official_broadcaster",
+      "territory": "Colombia",
+      "independenceKey": "win",
+      "ownedBroadcasters": [
+        "Win Sports",
+        "Win Sports HD",
+        "Win Sports+",
+        "Win+",
+        "Win+ Fútbol"
+      ]
+    },
+    {
+      "id": "tyc-agenda",
+      "adapter": "tyc_agenda",
+      "enabled": true,
+      "url": "https://www.tycsports.com/agenda-deportiva-hoy.html",
+      "kind": "official_broadcaster",
+      "territory": "Argentina",
+      "independenceKey": "tyc",
+      "ownedBroadcasters": [
+        "TyC Sports",
+        "TyC Sports Play"
+      ]
+    },
+    {
+      "id": "espn-brazil",
+      "adapter": "espn_schedule",
+      "enabled": true,
+      "url": "https://www.espn.com.br/futebol/calendario",
+      "kind": "official_broadcaster",
+      "territory": "brazil",
+      "independenceKey": "espn",
+      "ownedBroadcasters": [
+        "ESPN",
+        "ESPN 2",
+        "ESPN2",
+        "ESPN 3",
+        "ESPN 4",
+        "ESPN Premium"
+      ]
+    },
+    {
+      "id": "espn-mexico",
+      "adapter": "espn_schedule",
+      "enabled": true,
+      "url": "https://www.espn.com.mx/futbol/calendario",
+      "kind": "official_broadcaster",
+      "territory": "mexico",
+      "independenceKey": "espn",
+      "ownedBroadcasters": [
+        "ESPN",
+        "ESPN 2",
+        "ESPN2",
+        "ESPN 3",
+        "ESPN 4",
+        "ESPN Premium"
+      ]
+    },
+    {
+      "id": "espn-argentina",
+      "adapter": "espn_schedule",
+      "enabled": true,
+      "url": "https://www.espn.com.ar/futbol/calendario",
+      "kind": "official_broadcaster",
+      "territory": "argentina",
+      "independenceKey": "espn",
+      "ownedBroadcasters": [
+        "ESPN",
+        "ESPN 2",
+        "ESPN2",
+        "ESPN 3",
+        "ESPN 4",
+        "ESPN Premium"
+      ]
+    }
+  ],
+  "teamAliases": {
+    "Atlético Nacional": [
+      "At. Nacional"
+    ],
+    "Deportes Tolima": [
+      "Tolima"
+    ],
+    "Fortaleza": [
+      "Fortaleza FC"
+    ],
+    "Flamengo": [
+      "CR Flamengo"
+    ],
+    "Correcaminos UAT": [
+      "Correcaminos"
+    ],
+    "Alebrijes de Oaxaca": [
+      "Alebrijes"
+    ]
+  }
+}
