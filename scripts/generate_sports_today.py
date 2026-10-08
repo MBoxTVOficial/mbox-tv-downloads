@@ -16,6 +16,15 @@ from urllib.parse import urlencode
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
+if __package__:
+    from .sports_channel_rules import ChannelRulesError, validate_references
+    from .sports_daily_broadcasts import (BroadcastError, load_daily_context,
+                                        resolve_broadcasts, apply_daily_assignments)
+else:
+    from sports_channel_rules import ChannelRulesError, validate_references
+    from sports_daily_broadcasts import (BroadcastError, load_daily_context,
+                                       resolve_broadcasts, apply_daily_assignments)
+
 TIMEZONE = "America/Argentina/Buenos_Aires"
 ENDPOINT = "https://v3.football.api-sports.io/fixtures"
 ROOT = Path(__file__).resolve().parents[1]
@@ -474,9 +483,14 @@ def validate_feed(feed):
             raise GenerationError("Feed generado inválido: sección.")
         for event in section["events"]:
             if not isinstance(event, dict) or not event_fields <= set(event) or \
-                    set(event) - event_fields - score_fields or \
+                    set(event) - event_fields - score_fields - {"channels"} or \
                     any(not isinstance(event[key], str) for key in event_fields):
                 raise GenerationError("Feed generado inválido: evento.")
+            if "channels" in event:
+                try:
+                    validate_references(event["channels"], normalize)
+                except ChannelRulesError:
+                    raise GenerationError("Feed generado inválido: referencias de canales.") from None
             present_scores = score_fields.intersection(event)
             if present_scores and (present_scores != score_fields or any(
                 type(event[key]) is not int or event[key] < 0 for key in present_scores
@@ -571,6 +585,38 @@ def log_feed_changes(previous, incoming):
                              new=event["status"] if event["status"] in safe else "UNKNOWN")
 
 
+def daily_context(day):
+    try:
+        return load_daily_context(ROOT / "sports_broadcasts_today.json", day,
+                                  ROOT / "mbox_sports_channels_clean.json", normalize)
+    except (BroadcastError, ChannelRulesError) as error:
+        raise GenerationError(str(error)) from None
+
+
+def apply_broadcast_context(feed, context):
+    config, groups = context
+    if config is not None:
+        try:
+            # Resolve against freshly generated fixtures, never against the cache.
+            apply_daily_assignments(feed, resolve_broadcasts(config, feed, groups, normalize))
+        except BroadcastError as error:
+            raise GenerationError(str(error)) from None
+    validate_feed(feed)
+    return feed
+
+
+def refresh_channels(day, output):
+    """Offline regeneration on current sports data; no API call or timestamp change."""
+    feed = previous_feed(output)
+    if feed is None or feed["date"] != day.isoformat():
+        raise GenerationError("Se requiere un feed válido del día objetivo para regenerar canales.")
+    for section in feed["sections"]:
+        for event in section["events"]:
+            event.pop("channels", None)
+    feed = apply_broadcast_context(feed, daily_context(day))
+    return feed, write_feed_atomic(feed, output)
+
+
 def generate(day, output, input_path=None, now=None, live_only=False):
     now = now or datetime.now(argentina_timezone())
     previous = previous_feed(output)
@@ -578,6 +624,7 @@ def generate(day, output, input_path=None, now=None, live_only=False):
         os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
     if live_only and not manual and not needs_live_refresh(previous, day, now):
         raise RefreshSkipped("no_live_or_near_kickoff")
+    context = daily_context(day)  # Invalid configuration fails before the API request.
     if input_path is not None:
         if output.resolve() == REAL_OUTPUT.resolve():
             raise GenerationError("--input es una prueba: usa una salida distinta de sports_today.json.")
@@ -590,6 +637,7 @@ def generate(day, output, input_path=None, now=None, live_only=False):
     realtime_log("OFFLINE_RESPONSE" if input_path is not None else "REALTIME_RESPONSE",
                  fixtures=len(validate_api_response(payload)))
     feed, ignored = build_feed(payload, day, now)
+    apply_broadcast_context(feed, context)
     realtime_log("LIVE_FIXTURES", count=sum(event["status"] == "LIVE" for section in feed["sections"]
                                            for event in section["events"]),
                  source="offline" if input_path is not None else "api")
@@ -609,10 +657,19 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, help="Ruta alternativa de salida.")
     parser.add_argument("--date", type=date.fromisoformat, help="Fecha YYYY-MM-DD; por defecto hoy en Argentina.")
     parser.add_argument("--live", action="store_true", help="Consultar solo si hay LIVE, inicio cercano o fecha nueva.")
+    parser.add_argument("--refresh-channels", action="store_true",
+                        help="Regenerar canales diarios sobre el feed actual sin consultar APIs ni cambiar metadata.")
     args = parser.parse_args(argv)
+    if args.refresh_channels and (args.input is not None or args.live):
+        parser.error("--refresh-channels no se combina con --input o --live.")
     day = args.date or datetime.now(argentina_timezone()).date()
     output = args.output or (ROOT / "sports_today.preview.json" if args.input else REAL_OUTPUT)
     try:
+        if args.refresh_channels:
+            feed, changed = refresh_channels(day, output)
+            print(f"Date: {feed['date']}")
+            print(f"Changed: {str(changed).lower()}")
+            return 0
         feed, received, ignored, changed = generate(day, output, args.input, live_only=args.live)
     except RefreshSkipped as error:
         realtime_log("REFRESH_SKIPPED", reason=str(error))

@@ -1,0 +1,3108 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "sports_channel_catalog.json",
+  "masterSha256": "62b7542da33786f3765738783c93ee03643f5fc75e44bee9dadc20015afee969",
+  "groups": [
+    {
+      "id": "tnt_sports",
+      "canonicalName": "TNT Sports",
+      "category": "football",
+      "signalRegion": "chile",
+      "aliases": [
+        "TNT SPORTS HD",
+        "TNT SPORTS*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 167697,
+          "name": "TNT SPORTS HD",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 165227,
+          "name": "TNT SPORTS*",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "tnt_sports_premium",
+      "canonicalName": "TNT Sports Premium",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: TNT SPORTS PREMIUM FHD",
+        "ARG: TNT SPORTS PREMIUM HD",
+        "ARG: TNT SPORTS PREMIUM HD+"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada FHD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165664,
+          "name": "ARG: TNT SPORTS PREMIUM FHD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 165666,
+          "name": "ARG: TNT SPORTS PREMIUM HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 165665,
+          "name": "ARG: TNT SPORTS PREMIUM HD+",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "tyc_sports",
+      "canonicalName": "TyC Sports",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: TYC SPORTS HD",
+        "ARG: TYC SPORTS HD*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165660,
+          "name": "ARG: TYC SPORTS HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 165659,
+          "name": "ARG: TYC SPORTS HD*",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "espn",
+      "canonicalName": "ESPN",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: ESPN HD",
+        "ESPN HD (ARG)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165649,
+          "name": "ARG: ESPN HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169952,
+          "name": "ESPN HD (ARG)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "espn_2",
+      "canonicalName": "ESPN 2",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: ESPN 2 HD",
+        "ESPN 2 HD (ARG)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165652,
+          "name": "ARG: ESPN 2 HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169953,
+          "name": "ESPN 2 HD (ARG)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "espn_3",
+      "canonicalName": "ESPN 3",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: ESPN 3 HD",
+        "ESPN 3 (ARG)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165654,
+          "name": "ARG: ESPN 3 HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169954,
+          "name": "ESPN 3 (ARG)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "espn_4",
+      "canonicalName": "ESPN 4",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "ESPN 4 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 170211,
+          "name": "ESPN 4 HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_premium",
+      "canonicalName": "ESPN Premium",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: ESPN PREMIUM FHD",
+        "ARG: ESPN PREMIUM HD",
+        "ARG: ESPN PREMIUM"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada FHD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 183616,
+          "name": "ARG: ESPN PREMIUM FHD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 183615,
+          "name": "ARG: ESPN PREMIUM HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 183614,
+          "name": "ARG: ESPN PREMIUM",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports",
+      "canonicalName": "Fox Sports",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: FOX SPORTS HD",
+        "FOX SPORTS (ARG)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165655,
+          "name": "ARG: FOX SPORTS HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169955,
+          "name": "FOX SPORTS (ARG)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_2",
+      "canonicalName": "Fox Sports 2",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: FOX SPORTS 2 HD",
+        "FOX SPORTS 2 (ARG)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165656,
+          "name": "ARG: FOX SPORTS 2 HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169957,
+          "name": "FOX SPORTS 2 (ARG)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_3",
+      "canonicalName": "Fox Sports 3",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: FOX SPORTS 3 HD",
+        "FOX SPORTS 3 (ARG) HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165657,
+          "name": "ARG: FOX SPORTS 3 HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169960,
+          "name": "FOX SPORTS 3 (ARG) HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "dsports",
+      "canonicalName": "DSports",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "DSPORTS AR*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169947,
+          "name": "DSPORTS AR*",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_2",
+      "canonicalName": "DSports 2",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "DSPORTS 2 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169946,
+          "name": "DSPORTS 2 HD",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_plus",
+      "canonicalName": "DSports Plus",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "DSPORTS +"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165647,
+          "name": "DSPORTS +",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "band_sports",
+      "canonicalName": "Band Sports",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: BAND SPORTS FHD",
+        "BR: BAND SPORTS HD",
+        "BR: BAND SPORTS",
+        "BR: BAND SPORTS SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada FHD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563430,
+          "name": "BR: BAND SPORTS FHD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563429,
+          "name": "BR: BAND SPORTS HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 563427,
+          "name": "BR: BAND SPORTS",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        },
+        {
+          "streamId": 563428,
+          "name": "BR: BAND SPORTS SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 4,
+          "role": "backup_3"
+        }
+      ]
+    },
+    {
+      "id": "bein_sports_xtra_spanish",
+      "canonicalName": "beIN Sports XTRA Ñ",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "BEIN SPORTS XTRA Ñ"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 113990,
+          "name": "BEIN SPORTS XTRA Ñ",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cbs_sports_golazo_usa",
+      "canonicalName": "CBS Sports Golazo (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "CBS Sports Golazo"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 480845,
+          "name": "CBS Sports Golazo",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "deportv",
+      "canonicalName": "DeporTV",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: DEPORTV HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 220250,
+          "name": "ARG: DEPORTV HD",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_chile",
+      "canonicalName": "DSports (Chile)",
+      "category": "football",
+      "signalRegion": "chile",
+      "aliases": [
+        "DSPORTS CH*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169906,
+          "name": "DSPORTS CH*",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_colombia",
+      "canonicalName": "DSports (Colombia)",
+      "category": "football",
+      "signalRegion": "colombia",
+      "aliases": [
+        "DSPORTS CO"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 166600,
+          "name": "DSPORTS CO",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_ecuador",
+      "canonicalName": "DSports (Ecuador)",
+      "category": "football",
+      "signalRegion": "ecuador",
+      "aliases": [
+        "DSPORTS EC*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165697,
+          "name": "DSPORTS EC*",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_peru",
+      "canonicalName": "DSports (Perú)",
+      "category": "football",
+      "signalRegion": "peru",
+      "aliases": [
+        "DSPORTS PE*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165215,
+          "name": "DSPORTS PE*",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_premium_uruguay",
+      "canonicalName": "DSports Premium (Uruguay)",
+      "category": "football",
+      "signalRegion": "uruguay",
+      "aliases": [
+        "UR: DSPORTS PREMIUM"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165693,
+          "name": "UR: DSPORTS PREMIUM",
+          "providerCategoryId": "31",
+          "providerCategoryName": "URUGUAY",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dsports_uruguay",
+      "canonicalName": "DSports (Uruguay)",
+      "category": "football",
+      "signalRegion": "uruguay",
+      "aliases": [
+        "DSPORTS URU"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 164325,
+          "name": "DSPORTS URU",
+          "providerCategoryId": "187",
+          "providerCategoryName": "DIRECTV SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_2_brazil",
+      "canonicalName": "ESPN 2 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: ESPN 2"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563448,
+          "name": "BR: ESPN 2",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_2_mexico",
+      "canonicalName": "ESPN 2 (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢ESPN 2 HD",
+        "ESPN 2 MX"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165504,
+          "name": "MX〢ESPN 2 HD",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169914,
+          "name": "ESPN 2 MX",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "espn_2_sur",
+      "canonicalName": "ESPN 2 (SUR)",
+      "category": "football",
+      "signalRegion": "sur",
+      "aliases": [
+        "ESPN 2 SUR HD*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169913,
+          "name": "ESPN 2 SUR HD*",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_2_usa",
+      "canonicalName": "ESPN 2 (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: ESPN 2"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195745,
+          "name": "USA: ESPN 2",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_3_brazil",
+      "canonicalName": "ESPN 3 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: ESPN 3"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563449,
+          "name": "BR: ESPN 3",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_3_mexico",
+      "canonicalName": "ESPN 3 (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢ESPN 3 HD",
+        "ESPN 3 MX"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165506,
+          "name": "MX〢ESPN 3 HD",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169916,
+          "name": "ESPN 3 MX",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "espn_3_sur",
+      "canonicalName": "ESPN 3 (SUR)",
+      "category": "football",
+      "signalRegion": "sur",
+      "aliases": [
+        "ESPN 3 SUR HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169915,
+          "name": "ESPN 3 SUR HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_4_mexico",
+      "canonicalName": "ESPN 4 (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢ESPN 4 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 452302,
+          "name": "MX〢ESPN 4 HD",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_5",
+      "canonicalName": "ESPN 5",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "ESPN 5 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169918,
+          "name": "ESPN 5 HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_6",
+      "canonicalName": "ESPN 6",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "ESPN 6 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169961,
+          "name": "ESPN 6 HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_7",
+      "canonicalName": "ESPN 7",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "ESPN 7 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169958,
+          "name": "ESPN 7 HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_brazil",
+      "canonicalName": "ESPN (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: ESPN"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563447,
+          "name": "BR: ESPN",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_chile",
+      "canonicalName": "ESPN (Chile)",
+      "category": "football",
+      "signalRegion": "chile",
+      "aliases": [
+        "ESPN CHILE"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 530395,
+          "name": "ESPN CHILE",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_deportes",
+      "canonicalName": "ESPN Deportes",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "ESPN DEPORTES"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169910,
+          "name": "ESPN DEPORTES",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_deportes_usa",
+      "canonicalName": "ESPN Deportes (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: ESPN DEPORTES"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195752,
+          "name": "USA: ESPN DEPORTES",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_mexico",
+      "canonicalName": "ESPN (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢ESPN HD*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165502,
+          "name": "MX〢ESPN HD*",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_norte",
+      "canonicalName": "ESPN (NORTE)",
+      "category": "football",
+      "signalRegion": "norte",
+      "aliases": [
+        "ESPN NORTE"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169912,
+          "name": "ESPN NORTE",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_premium_chile",
+      "canonicalName": "ESPN Premium (Chile)",
+      "category": "football",
+      "signalRegion": "chile",
+      "aliases": [
+        "ESPN PREMIUM"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 409071,
+          "name": "ESPN PREMIUM",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_sur",
+      "canonicalName": "ESPN (SUR)",
+      "category": "football",
+      "signalRegion": "sur",
+      "aliases": [
+        "ESPN SUR HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169911,
+          "name": "ESPN SUR HD",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "espn_usa",
+      "canonicalName": "ESPN (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: ESPN HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195743,
+          "name": "USA: ESPN HD",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "estadio_tnt_sports_2_brazil",
+      "canonicalName": "Estadio TNT Sports 2 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: ESTADIO TNT SPORTS 2 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563455,
+          "name": "BR: ESTADIO TNT SPORTS 2 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "estadio_tnt_sports_3_brazil",
+      "canonicalName": "Estadio TNT Sports 3 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: ESTADIO TNT SPORTS 3 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563456,
+          "name": "BR: ESTADIO TNT SPORTS 3 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "estadio_tnt_sports_4_brazil",
+      "canonicalName": "Estadio TNT Sports 4 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: ESTADIO TNT SPORTS 4 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563457,
+          "name": "BR: ESTADIO TNT SPORTS 4 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_deportes_usa",
+      "canonicalName": "Fox Deportes (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: FOX DEPORTES HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195771,
+          "name": "USA: FOX DEPORTES HD",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_soccer_plus_usa",
+      "canonicalName": "Fox Soccer Plus (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: FOX SOCCER PLUS"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195772,
+          "name": "USA: FOX SOCCER PLUS",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_1_usa",
+      "canonicalName": "Fox Sports 1 (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: Fox Sports 1 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195769,
+          "name": "USA: Fox Sports 1 HD",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_2_mexico",
+      "canonicalName": "Fox Sports 2 (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢FOX SPORTS 2 HD",
+        "MX〢FOX SPORTS 2",
+        "FOX SPORTS 2 (MX)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 208741,
+          "name": "MX〢FOX SPORTS 2 HD",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 208742,
+          "name": "MX〢FOX SPORTS 2",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 169959,
+          "name": "FOX SPORTS 2 (MX)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_2_usa",
+      "canonicalName": "Fox Sports 2 (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "USA: Fox Sports 2 HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 195770,
+          "name": "USA: Fox Sports 2 HD",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_3_mexico",
+      "canonicalName": "Fox Sports 3 (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢FOX SPORTS 3 HD*",
+        "MX〢FOX SPORTS 3"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 208743,
+          "name": "MX〢FOX SPORTS 3 HD*",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 208744,
+          "name": "MX〢FOX SPORTS 3",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_3_norte",
+      "canonicalName": "Fox Sports 3 (NORTE)",
+      "category": "football",
+      "signalRegion": "norte",
+      "aliases": [
+        "FOX SPORTS 3 NORTE HD*"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169962,
+          "name": "FOX SPORTS 3 NORTE HD*",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_mexico",
+      "canonicalName": "Fox Sports (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢FOX SPORTS HD*",
+        "MX〢FOX SPORTS"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; marca * conservada sin asumir su significado; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 208738,
+          "name": "MX〢FOX SPORTS HD*",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 208740,
+          "name": "MX〢FOX SPORTS",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_norte",
+      "canonicalName": "Fox Sports (NORTE)",
+      "category": "football",
+      "signalRegion": "norte",
+      "aliases": [
+        "FOX SPORTS NORTE"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169920,
+          "name": "FOX SPORTS NORTE",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fox_sports_premium_mexico",
+      "canonicalName": "Fox Sports Premium (México)",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "MX〢FOX SPORTS PREMIUM"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 207757,
+          "name": "MX〢FOX SPORTS PREMIUM",
+          "providerCategoryId": "42",
+          "providerCategoryName": "MEXICO",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "futbol_canal_2_bolivia",
+      "canonicalName": "Fútbol Canal 2 (Bolivia)",
+      "category": "football",
+      "signalRegion": "bolivia",
+      "aliases": [
+        "BO: FUTBOL CANAL 2"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 483579,
+          "name": "BO: FUTBOL CANAL 2",
+          "providerCategoryId": "24",
+          "providerCategoryName": "BOLIVIA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "futbol_canal_bolivia",
+      "canonicalName": "Fútbol Canal (Bolivia)",
+      "category": "football",
+      "signalRegion": "bolivia",
+      "aliases": [
+        "BO: FUTBOL CANAL"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 482633,
+          "name": "BO: FUTBOL CANAL",
+          "providerCategoryId": "24",
+          "providerCategoryName": "BOLIVIA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "liga_futsal_2_brazil",
+      "canonicalName": "Liga Futsal 2 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: LIGA FUTSAL 2"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563472,
+          "name": "BR: LIGA FUTSAL 2",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "liga_futsal_brazil",
+      "canonicalName": "Liga Futsal (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: LIGA FUTSAL"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563471,
+          "name": "BR: LIGA FUTSAL",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "premiere_2_brazil",
+      "canonicalName": "Premiere 2 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE 2 HD",
+        "BR: PREMIERE 2 SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563437,
+          "name": "BR: PREMIERE 2 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563436,
+          "name": "BR: PREMIERE 2 SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "premiere_3_brazil",
+      "canonicalName": "Premiere 3 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE 3 HD",
+        "BR: PREMIERE 3  SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563439,
+          "name": "BR: PREMIERE 3 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563438,
+          "name": "BR: PREMIERE 3  SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "premiere_4_brazil",
+      "canonicalName": "Premiere 4 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE 4 HD",
+        "BR: PREMIERE 4",
+        "BR: PREMIERE 4  SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563442,
+          "name": "BR: PREMIERE 4 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563441,
+          "name": "BR: PREMIERE 4",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 563440,
+          "name": "BR: PREMIERE 4  SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "premiere_5_brazil",
+      "canonicalName": "Premiere 5 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE 5 HD",
+        "BR: PREMIERE 5  SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563444,
+          "name": "BR: PREMIERE 5 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563443,
+          "name": "BR: PREMIERE 5  SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "premiere_6_brazil",
+      "canonicalName": "Premiere 6 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE 6"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563445,
+          "name": "BR: PREMIERE 6",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "premiere_7_brazil",
+      "canonicalName": "Premiere 7 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE 7"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563446,
+          "name": "BR: PREMIERE 7",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "premiere_clubes_brazil",
+      "canonicalName": "Premiere Clubes (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE CLUBES FHD",
+        "BR: PREMIERE CLUBES HD",
+        "BR: PREMIERE CLUBES",
+        "BR: PREMIERE CLUBES SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada FHD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563433,
+          "name": "BR: PREMIERE CLUBES FHD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563432,
+          "name": "BR: PREMIERE CLUBES HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 563434,
+          "name": "BR: PREMIERE CLUBES",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        },
+        {
+          "streamId": 563431,
+          "name": "BR: PREMIERE CLUBES SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 4,
+          "role": "backup_3"
+        }
+      ]
+    },
+    {
+      "id": "premiere_clubes_extra_brazil",
+      "canonicalName": "Premiere Clubes Extra (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: PREMIERE CLUBES HD Extra"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563435,
+          "name": "BR: PREMIERE CLUBES HD Extra",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "sky_sports_bundesliga",
+      "canonicalName": "Sky Sports Bundesliga",
+      "category": "football",
+      "signalRegion": null,
+      "aliases": [
+        "SKY SPORTS BUNDESLIGA"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 440276,
+          "name": "SKY SPORTS BUNDESLIGA",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "sportv_2_brazil",
+      "canonicalName": "SporTV 2 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: SPORTV 2 HD",
+        "BR: SPORTV 2",
+        "BR: SPORTV 2 SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563423,
+          "name": "BR: SPORTV 2 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563422,
+          "name": "BR: SPORTV 2",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 563421,
+          "name": "BR: SPORTV 2 SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "sportv_3_brazil",
+      "canonicalName": "SporTV 3 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: SPORTV 3 HD",
+        "BR: SPORTV 3",
+        "BR: SPORTV 3  SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563426,
+          "name": "BR: SPORTV 3 HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563425,
+          "name": "BR: SPORTV 3",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 563424,
+          "name": "BR: SPORTV 3  SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "sportv_brazil",
+      "canonicalName": "SporTV (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: SPORTV HD",
+        "BR: SPORTV",
+        "BR: SPORTV SD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563418,
+          "name": "BR: SPORTV HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 563420,
+          "name": "BR: SPORTV",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 563417,
+          "name": "BR: SPORTV SD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "tnt_sports_2_brazil",
+      "canonicalName": "TNT Sports 2 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: TNT SPORTS 2"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563453,
+          "name": "BR: TNT SPORTS 2",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tnt_sports_3_brazil",
+      "canonicalName": "TNT Sports 3 (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: TNT SPORTS 3"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563454,
+          "name": "BR: TNT SPORTS 3",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tnt_sports_brazil",
+      "canonicalName": "TNT Sports (Brasil)",
+      "category": "football",
+      "signalRegion": "brazil",
+      "aliases": [
+        "BR: TNT Sports HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 563452,
+          "name": "BR: TNT Sports HD",
+          "providerCategoryId": "235",
+          "providerCategoryName": "BRASIL SPORTS",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tnt_sports_premium_chile",
+      "canonicalName": "TNT Sports Premium (Chile)",
+      "category": "football",
+      "signalRegion": "chile",
+      "aliases": [
+        "TNT SPORTS PREMIUM FHD",
+        "TNT SPORTS PREMIUM HD",
+        "TNT SPORTS PREMIUM"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada FHD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165228,
+          "name": "TNT SPORTS PREMIUM FHD",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 165224,
+          "name": "TNT SPORTS PREMIUM HD",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 165223,
+          "name": "TNT SPORTS PREMIUM",
+          "providerCategoryId": "26",
+          "providerCategoryName": "CHILE",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    },
+    {
+      "id": "tudn",
+      "canonicalName": "TUDN",
+      "category": "football",
+      "signalRegion": "mexico",
+      "aliases": [
+        "TUDN HD (MX)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; sin confirmación regional adicional por categoría; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 169942,
+          "name": "TUDN HD (MX)",
+          "providerCategoryId": "138",
+          "providerCategoryName": "DEPORTES LAT",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tudn_usa",
+      "canonicalName": "TUDN (USA)",
+      "category": "football",
+      "signalRegion": "usa",
+      "aliases": [
+        "TUDN HD (USA)"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 484891,
+          "name": "TUDN HD (USA)",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 169924,
+          "name": "TUDN HD (USA)",
+          "providerCategoryId": "181",
+          "providerCategoryName": "SPORTS USA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "tyc_sports_international",
+      "canonicalName": "TyC Sports Internacional",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [
+        "ARG: TYC SPORTS INT"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; sin calidad declarada; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 165658,
+          "name": "ARG: TYC SPORTS INT",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "win_sports",
+      "canonicalName": "Win Sports",
+      "category": "football",
+      "signalRegion": "colombia",
+      "aliases": [
+        "CO: WIN SPORTS HD",
+        "CO: Win Sports"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 166591,
+          "name": "CO: WIN SPORTS HD",
+          "providerCategoryId": "27",
+          "providerCategoryName": "COLOMBIA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 166589,
+          "name": "CO: Win Sports",
+          "providerCategoryId": "27",
+          "providerCategoryName": "COLOMBIA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
+      "id": "win_sports_plus",
+      "canonicalName": "Win Sports Plus",
+      "category": "football",
+      "signalRegion": "colombia",
+      "aliases": [
+        "CO: Win Sports + HD",
+        "CO: WIN SPORTS + HD"
+      ],
+      "selectionReason": "Misma identidad y edición regional dentro del grupo; categoría regional concordante; calidad declarada HD; nombre sin asterisco; orden original del maestro como desempate. Sin prueba de reproducción.",
+      "streams": [
+        {
+          "streamId": 166592,
+          "name": "CO: Win Sports + HD",
+          "providerCategoryId": "27",
+          "providerCategoryName": "COLOMBIA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 166590,
+          "name": "CO: Win Sports + HD",
+          "providerCategoryId": "27",
+          "providerCategoryName": "COLOMBIA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        },
+        {
+          "streamId": 166594,
+          "name": "CO: WIN SPORTS + HD",
+          "providerCategoryId": "27",
+          "providerCategoryName": "COLOMBIA",
+          "enabled": true,
+          "priority": 3,
+          "role": "backup_2"
+        }
+      ]
+    }
+  ],
+  "temporaryFootballEvents": [
+    {
+      "streamId": 359337,
+      "name": "EVENTO 01 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359338,
+      "name": "EVENTO 02 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359339,
+      "name": "EVENTO 03 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359340,
+      "name": "EVENTO 04 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359341,
+      "name": "EVENTO 05 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359342,
+      "name": "EVENTO 06 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359343,
+      "name": "EVENTO 07 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359344,
+      "name": "EVENTO 08 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359345,
+      "name": "EVENTO 09 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359346,
+      "name": "EVENTO 10 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359347,
+      "name": "EVENTO 11 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359348,
+      "name": "EVENTO 12 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359349,
+      "name": "EVENTO 13 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359350,
+      "name": "EVENTO 14 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359351,
+      "name": "EVENTO 15 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359352,
+      "name": "EVENTO 16 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359353,
+      "name": "EVENTO 17 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359354,
+      "name": "EVENTO 18 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359355,
+      "name": "EVENTO 19 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359356,
+      "name": "EVENTO 20 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359357,
+      "name": "EVENTO 21 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359358,
+      "name": "EVENTO 22 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359359,
+      "name": "EVENTO 23 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359360,
+      "name": "EVENTO 24 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359361,
+      "name": "EVENTO 25 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359362,
+      "name": "EVENTO 26 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359363,
+      "name": "EVENTO 27 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359364,
+      "name": "EVENTO 28 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359365,
+      "name": "EVENTO 29 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 359366,
+      "name": "EVENTO 30 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435602,
+      "name": "EVENTO 31 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435603,
+      "name": "EVENTO 32 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435604,
+      "name": "EVENTO 33 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435605,
+      "name": "EVENTO 34 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435606,
+      "name": "EVENTO 35 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435607,
+      "name": "EVENTO 36 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435608,
+      "name": "EVENTO 37 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 435609,
+      "name": "EVENTO 38 |",
+      "providerCategoryId": "218",
+      "providerCategoryName": "EVENTOS DIARIOS",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": false,
+      "reviewRequired": true
+    },
+    {
+      "streamId": 526002,
+      "name": "UR: PPV FUTBOL URUGUAY",
+      "providerCategoryId": "31",
+      "providerCategoryName": "URUGUAY",
+      "enabled": true,
+      "temporary": true,
+      "footballConfirmed": true,
+      "reviewRequired": false
+    }
+  ],
+  "libertadoresEvents": [
+    {
+      "streamId": 283061,
+      "name": "LIBERTADORES 1 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 1
+    },
+    {
+      "streamId": 283062,
+      "name": "LIBERTADORES 2 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 2
+    },
+    {
+      "streamId": 283065,
+      "name": "LIBERTADORES 3 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 3
+    },
+    {
+      "streamId": 283066,
+      "name": "LIBERTADORES 4 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 4
+    },
+    {
+      "streamId": 283067,
+      "name": "LIBERTADORES 5 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 5
+    },
+    {
+      "streamId": 283068,
+      "name": "LIBERTADORES 6 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 6
+    },
+    {
+      "streamId": 283069,
+      "name": "LIBERTADORES 7 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 7
+    }
+  ],
+  "sudamericanaEvents": [
+    {
+      "streamId": 283070,
+      "name": "SUDAMERICANA 1 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 1
+    },
+    {
+      "streamId": 283071,
+      "name": "SUDAMERICANA 2 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 2
+    },
+    {
+      "streamId": 283074,
+      "name": "SUDAMERICANA 3 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 3
+    },
+    {
+      "streamId": 283077,
+      "name": "SUDAMERICANA 4 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 4
+    },
+    {
+      "streamId": 283078,
+      "name": "SUDAMERICANA 5 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 5
+    },
+    {
+      "streamId": 410552,
+      "name": "SUDAMERICANA 6 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 6
+    },
+    {
+      "streamId": 535754,
+      "name": "SUDAMERICANA 7 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 7
+    },
+    {
+      "streamId": 542241,
+      "name": "SUDAMERICANA 8 |",
+      "providerCategoryId": "232",
+      "providerCategoryName": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "temporary": true,
+      "eventNumber": 8
+    }
+  ],
+  "disabledCandidates": [
+    {
+      "streamId": 288432,
+      "name": "Flo Sports 26: OFF",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288433,
+      "name": "Flo Sports 27: OFF",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288434,
+      "name": "Flo Sports 28: OFF",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288435,
+      "name": "Flo Sports 29: OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288436,
+      "name": "Flo Sports 31: OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288437,
+      "name": "Flo Sports 32:OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288438,
+      "name": "Flo Sports 33:OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288439,
+      "name": "Flo Sports 34:OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288440,
+      "name": "Flo Sports 35: OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 288441,
+      "name": "Flo Sports 30: OFFLINE",
+      "providerCategoryId": "220",
+      "providerCategoryName": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 509566,
+      "name": "NCAAF 136 | OFFLINE",
+      "providerCategoryId": "216",
+      "providerCategoryName": "NFL║NFL SD ║NCAAF",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 509567,
+      "name": "NCAAF 137 | OFFLINE",
+      "providerCategoryId": "216",
+      "providerCategoryName": "NFL║NFL SD ║NCAAF",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 509568,
+      "name": "NCAAF 138 | OFFLINE",
+      "providerCategoryId": "216",
+      "providerCategoryName": "NFL║NFL SD ║NCAAF",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    },
+    {
+      "streamId": 563458,
+      "name": "BR: OFF",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": false,
+      "reason": "OFF/OFFLINE o disabled en el maestro; nunca principal."
+    }
+  ],
+  "reviewCandidates": [
+    {
+      "streamId": 530558,
+      "name": "ZAPPING SPORTS",
+      "providerCategoryId": "28",
+      "providerCategoryName": "ECUADOR",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 522626,
+      "name": "FOX ONE",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527792,
+      "name": "FOX ONE 8",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527791,
+      "name": "FOX ONE 7",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527790,
+      "name": "FOX ONE 6",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527789,
+      "name": "FOX ONE 5",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527788,
+      "name": "FOX ONE 4",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527787,
+      "name": "FOX ONE 3",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527786,
+      "name": "FOX ONE 2",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 527785,
+      "name": "FOX ONE 1",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 424318,
+      "name": "CLARO SPORTS (MX)",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 413794,
+      "name": "MX: ITV DEPORTES",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 509699,
+      "name": "CLARO SPORTS (SUR)",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 532706,
+      "name": "CLARO SPORTS 2 (SUR)",
+      "providerCategoryId": "138",
+      "providerCategoryName": "DEPORTES LAT",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 381373,
+      "name": "MX〢AZTECA DEPORTES",
+      "providerCategoryId": "42",
+      "providerCategoryName": "MEXICO",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 165501,
+      "name": "MX〢ADRENALINA SPORTS HD",
+      "providerCategoryId": "42",
+      "providerCategoryName": "MEXICO",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 165497,
+      "name": "MX〢AYM SPORTS HD",
+      "providerCategoryId": "42",
+      "providerCategoryName": "MEXICO",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563461,
+      "name": "BR: ELEVEN SPORTS CANAL 1",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563462,
+      "name": "BR: ELEVEN SPORTS CANAL 2",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563463,
+      "name": "BR: ELEVEN SPORTS CANAL 3",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563464,
+      "name": "BR: ELEVEN SPORTS CANAL 4",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563465,
+      "name": "BR: ELEVEN SPORTS CANAL 5",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563466,
+      "name": "BR: ELEVEN SPORTS CANAL 6",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563467,
+      "name": "BR: ELEVEN SPORTS CANAL 7",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563468,
+      "name": "BR: ELEVEN SPORTS CANAL 8",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563469,
+      "name": "BR: ELEVEN SPORTS CANAL 9",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563470,
+      "name": "BR: ELEVEN SPORTS CANAL 10",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563475,
+      "name": "BR: TV NSPORTS HD (JOGO 1)",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563476,
+      "name": "BR: TV NSPORTS HD (JOGO 2)",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 563477,
+      "name": "BR: TV NSPORTS HD (JOGO 3)",
+      "providerCategoryId": "235",
+      "providerCategoryName": "BRASIL SPORTS",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    },
+    {
+      "streamId": 166286,
+      "name": "PE: Movistar Deportes",
+      "providerCategoryId": "30",
+      "providerCategoryName": "PERU",
+      "enabled": true,
+      "reviewRequired": true,
+      "reason": "Identidad o programación futbolística insuficientemente clara."
+    }
+  ],
+  "possibleDuplicateGroups": [
+    {
+      "normalizedName": "arg tyc sports hd",
+      "streamIds": [
+        165660,
+        165659
+      ]
+    },
+    {
+      "normalizedName": "tudn hd usa",
+      "streamIds": [
+        484891,
+        169924
+      ]
+    },
+    {
+      "normalizedName": "co win sports plus hd",
+      "streamIds": [
+        166592,
+        166590,
+        166594
+      ]
+    }
+  ],
+  "statistics": {
+    "originalLiveStreamsReported": 2819,
+    "originalSportsEntries": 724,
+    "uniqueSportsStreamsAnalyzed": 724,
+    "permanentFootballStreams": 123,
+    "canonicalGroups": 82,
+    "backupStreams": 41,
+    "temporaryFootballEvents": 39,
+    "unconfirmedTemporaryEvents": 38,
+    "libertadoresEvents": 7,
+    "sudamericanaEvents": 8,
+    "selectedFootballCandidates": 177,
+    "disabledCandidates": 14,
+    "reviewCandidates": 31,
+    "possibleDuplicateGroups": 3,
+    "excludedStreams": 502,
+    "exclusionReasons": {
+      "deporte_no_futbolistico": 308,
+      "fuera_del_alcance_o_no_verificado": 194
+    }
+  }
+}
