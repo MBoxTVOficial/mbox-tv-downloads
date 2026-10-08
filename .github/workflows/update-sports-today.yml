@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # UTC -> Argentina: 08:00, 12:00, 17:00, 20:00.
+    - cron: '5 3 * * *'
     - cron: '0 11 * * *'
     - cron: '0 15 * * *'
     - cron: '0 20 * * *'
