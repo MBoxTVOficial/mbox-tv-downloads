@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-09",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-09T03:00:53-03:00",
+  "updatedAt": "2026-10-09T07:24:46-03:00",
   "demo": false,
   "sections": [
     {
@@ -146,122 +146,6 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1507076",
-          "sport": "football",
-          "competition": "K League 1",
-          "homeTeam": "Daejeon Citizen",
-          "awayTeam": "Jeonbuk Motors",
-          "homeLogo": "https://media.api-sports.io/football/teams/2750.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2762.png",
-          "startTime": "02:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1510459",
-          "sport": "football",
-          "competition": "K League 2",
-          "homeTeam": "Suwon City FC",
-          "awayTeam": "Hwaseong",
-          "homeLogo": "https://media.api-sports.io/football/teams/2756.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7087.png",
-          "startTime": "02:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1520569",
-          "sport": "football",
-          "competition": "K3 League",
-          "homeTeam": "Yangpyeong",
-          "awayTeam": "Ulsan Citizen",
-          "homeLogo": "https://media.api-sports.io/football/teams/7111.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7108.png",
-          "startTime": "02:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1507077",
-          "sport": "football",
-          "competition": "K League 1",
-          "homeTeam": "Gangwon FC",
-          "awayTeam": "Bucheon FC 1995",
-          "homeLogo": "https://media.api-sports.io/football/teams/2746.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2745.png",
-          "startTime": "04:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1507078",
-          "sport": "football",
-          "competition": "K League 1",
-          "homeTeam": "Incheon United",
-          "awayTeam": "Pohang Steelers",
-          "homeLogo": "https://media.api-sports.io/football/teams/2763.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2764.png",
-          "startTime": "04:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1510460",
-          "sport": "football",
-          "competition": "K League 2",
-          "homeTeam": "Cheongju",
-          "awayTeam": "Seongnam FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/7061.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2757.png",
-          "startTime": "04:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1510461",
-          "sport": "football",
-          "competition": "K League 2",
-          "homeTeam": "Gimpo Citizen",
-          "awayTeam": "Seoul E-Land FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/7078.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2749.png",
-          "startTime": "04:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1507451",
-          "sport": "football",
-          "competition": "Liga 3",
-          "homeTeam": "Didube 2014",
-          "awayTeam": "Lokomotivi Tbilisi",
-          "homeLogo": "https://media.api-sports.io/football/teams/14857.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3500.png",
-          "startTime": "05:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1565118",
-          "sport": "football",
-          "competition": "1. Liga U19",
-          "homeTeam": "Viktoria Plzeň U19",
-          "awayTeam": "Dukla Praha U19",
-          "homeLogo": "https://media.api-sports.io/football/teams/7970.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19200.png",
-          "startTime": "05:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1565120",
-          "sport": "football",
-          "competition": "1. Liga U19",
-          "homeTeam": "České Budějovice U19",
-          "awayTeam": "Karviná U19",
-          "homeLogo": "https://media.api-sports.io/football/teams/14841.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/14832.png",
-          "startTime": "05:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1622781",
           "sport": "football",
           "competition": "Liga 1",
@@ -270,18 +154,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/4241.png",
           "awayLogo": "https://media.api-sports.io/football/teams/2444.png",
           "startTime": "05:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1637661",
-          "sport": "football",
-          "competition": "Liga 2",
-          "homeTeam": "Persipura Jayapura",
-          "awayTeam": "RANS Nusantara",
-          "homeLogo": "https://media.api-sports.io/football/teams/2440.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4229.png",
-          "startTime": "05:30",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 0
         },
         {
           "id": "fixture-1640107",
@@ -292,7 +167,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/5013.png",
           "awayLogo": "https://media.api-sports.io/football/teams/20780.png",
           "startTime": "05:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 3
         },
         {
           "id": "fixture-1640108",
@@ -303,18 +180,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/28429.png",
           "awayLogo": "https://media.api-sports.io/football/teams/28428.png",
           "startTime": "05:45",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1640109",
-          "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Mohammedan Dhaka",
-          "awayTeam": "Arambagh",
-          "homeLogo": "https://media.api-sports.io/football/teams/5014.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5011.png",
-          "startTime": "05:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1640110",
@@ -325,7 +193,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/5017.png",
           "awayLogo": "https://media.api-sports.io/football/teams/26882.png",
           "startTime": "05:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1565169",
@@ -336,7 +206,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/7969.png",
           "awayLogo": "https://media.api-sports.io/football/teams/27891.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 6,
+          "awayScore": 0
         },
         {
           "id": "fixture-1581931",
@@ -347,7 +219,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/14437.png",
           "awayLogo": "https://media.api-sports.io/football/teams/13223.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1599248",
@@ -358,7 +232,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/20590.png",
           "awayLogo": "https://media.api-sports.io/football/teams/16391.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 2
         },
         {
           "id": "fixture-1621632",
@@ -369,7 +245,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/17996.png",
           "awayLogo": "https://media.api-sports.io/football/teams/6195.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
         },
         {
           "id": "fixture-1634835",
@@ -380,7 +258,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/12526.png",
           "awayLogo": "https://media.api-sports.io/football/teams/12532.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1634836",
@@ -391,7 +271,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/12528.png",
           "awayLogo": "https://media.api-sports.io/football/teams/12533.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1638889",
@@ -402,18 +284,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/2523.png",
           "awayLogo": "https://media.api-sports.io/football/teams/2504.png",
           "startTime": "06:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1593041",
-          "sport": "football",
-          "competition": "Druha Liga",
-          "homeTeam": "Metalurh Zaporizhya",
-          "awayTeam": "SC Poltava 2",
-          "homeLogo": "https://media.api-sports.io/football/teams/5627.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/28008.png",
-          "startTime": "06:15",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 3,
+          "awayScore": 0
         },
         {
           "id": "fixture-1555738",
@@ -424,7 +297,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/4324.png",
           "awayLogo": "https://media.api-sports.io/football/teams/317.png",
           "startTime": "06:30",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 2
         },
         {
           "id": "fixture-1519168",
@@ -435,7 +310,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/17151.png",
           "awayLogo": "https://media.api-sports.io/football/teams/16595.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1519229",
@@ -446,7 +323,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/27473.png",
           "awayLogo": "https://media.api-sports.io/football/teams/7985.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 0
         },
         {
           "id": "fixture-1534864",
@@ -457,7 +336,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/4551.png",
           "awayLogo": "https://media.api-sports.io/football/teams/18805.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1555737",
@@ -468,7 +349,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/7138.png",
           "awayLogo": "https://media.api-sports.io/football/teams/300.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1556085",
@@ -479,7 +362,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/290.png",
           "awayLogo": "https://media.api-sports.io/football/teams/293.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1556086",
@@ -490,7 +375,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/281.png",
           "awayLogo": "https://media.api-sports.io/football/teams/289.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1565119",
@@ -501,7 +388,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/14839.png",
           "awayLogo": "https://media.api-sports.io/football/teams/14834.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1565121",
@@ -512,7 +401,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/14836.png",
           "awayLogo": "https://media.api-sports.io/football/teams/14830.png",
           "startTime": "07:00",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1565122",
@@ -523,6 +414,71 @@
           "homeLogo": "https://media.api-sports.io/football/teams/14831.png",
           "awayLogo": "https://media.api-sports.io/football/teams/14840.png",
           "startTime": "07:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1614284",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 6",
+          "homeTeam": "Torrent",
+          "awayTeam": "Hércules II",
+          "homeLogo": "https://media.api-sports.io/football/teams/15348.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9693.png",
+          "startTime": "07:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1621359",
+          "sport": "football",
+          "competition": "Liga Alef",
+          "homeTeam": "Beitar Nahariya",
+          "awayTeam": "Hapoel Umm al-Fahm",
+          "homeLogo": "https://media.api-sports.io/football/teams/6134.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4492.png",
+          "startTime": "07:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1628901",
+          "sport": "football",
+          "competition": "Liga Alef",
+          "homeTeam": "Ironi Beit Shemesh",
+          "awayTeam": "Tzeirey Tira",
+          "homeLogo": "https://media.api-sports.io/football/teams/22856.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7609.png",
+          "startTime": "07:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1629440",
+          "sport": "football",
+          "competition": "U19 league",
+          "homeTeam": "Galatasaray U19",
+          "awayTeam": "Kasimpasa U19",
+          "homeLogo": "https://media.api-sports.io/football/teams/7900.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/28249.png",
+          "startTime": "07:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1640109",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Mohammedan Dhaka",
+          "awayTeam": "Arambagh",
+          "homeLogo": "https://media.api-sports.io/football/teams/5014.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5011.png",
+          "startTime": "05:45",
           "status": "SCHEDULED"
         },
         {
@@ -537,39 +493,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1614284",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 6",
-          "homeTeam": "Torrent",
-          "awayTeam": "Hércules II",
-          "homeLogo": "https://media.api-sports.io/football/teams/15348.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/9693.png",
-          "startTime": "07:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1621359",
-          "sport": "football",
-          "competition": "Liga Alef",
-          "homeTeam": "Beitar Nahariya",
-          "awayTeam": "Hapoel Umm al-Fahm",
-          "homeLogo": "https://media.api-sports.io/football/teams/6134.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4492.png",
-          "startTime": "07:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1628901",
-          "sport": "football",
-          "competition": "Liga Alef",
-          "homeTeam": "Ironi Beit Shemesh",
-          "awayTeam": "Tzeirey Tira",
-          "homeLogo": "https://media.api-sports.io/football/teams/22856.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7609.png",
-          "startTime": "07:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1633657",
           "sport": "football",
           "competition": "Liga III - Serie 7",
@@ -578,6 +501,17 @@
           "homeLogo": "https://media.api-sports.io/football/teams/6865.png",
           "awayLogo": "https://media.api-sports.io/football/teams/7483.png",
           "startTime": "07:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1527742",
+          "sport": "football",
+          "competition": "Vysshaya Liga",
+          "homeTeam": "Parvoz",
+          "awayTeam": "Khujand",
+          "homeLogo": "https://media.api-sports.io/football/teams/12271.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/8031.png",
+          "startTime": "07:30",
           "status": "SCHEDULED"
         },
         {
@@ -1274,13 +1208,46 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1645148",
+          "id": "fixture-1645232",
           "sport": "football",
-          "competition": "Friendlies Women",
-          "homeTeam": "Malaysia W",
-          "awayTeam": "Saudi Arabia W",
-          "homeLogo": "https://media.api-sports.io/football/teams/18268.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20453.png",
+          "competition": "Premier League",
+          "homeTeam": "Al Nawaeir",
+          "awayTeam": "Jaish",
+          "homeLogo": "https://media.api-sports.io/football/teams/9112.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/8040.png",
+          "startTime": "09:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645233",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Damascus Al-Ahli",
+          "awayTeam": "Foutoua",
+          "homeLogo": "https://media.api-sports.io/football/teams/27269.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9114.png",
+          "startTime": "09:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645234",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Wathba",
+          "awayTeam": "Hottin",
+          "homeLogo": "https://media.api-sports.io/football/teams/9118.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9115.png",
+          "startTime": "09:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645235",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Qamishli",
+          "awayTeam": "Al Wahda",
+          "homeLogo": "https://media.api-sports.io/football/teams/28525.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/8035.png",
           "startTime": "09:00",
           "status": "SCHEDULED"
         },
@@ -1326,28 +1293,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/2926.png",
           "awayLogo": "https://media.api-sports.io/football/teams/28335.png",
           "startTime": "09:25",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1527742",
-          "sport": "football",
-          "competition": "Vysshaya Liga",
-          "homeTeam": "Parvoz",
-          "awayTeam": "Khujand",
-          "homeLogo": "https://media.api-sports.io/football/teams/12271.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/8031.png",
-          "startTime": "09:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1527743",
-          "sport": "football",
-          "competition": "Vysshaya Liga",
-          "homeTeam": "Sardor Tursunzoda",
-          "awayTeam": "Eskhata",
-          "homeLogo": "https://media.api-sports.io/football/teams/27266.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16494.png",
-          "startTime": "09:30",
           "status": "SCHEDULED"
         },
         {
@@ -1417,17 +1362,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1639323",
-          "sport": "football",
-          "competition": "Nasjonal U19 Champions League",
-          "homeTeam": "Fredrikstad FK U19",
-          "awayTeam": "Brann U19",
-          "homeLogo": "https://media.api-sports.io/football/teams/27414.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16554.png",
-          "startTime": "09:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1634310",
           "sport": "football",
           "competition": "Division 2",
@@ -1446,6 +1380,17 @@
           "awayTeam": "Mudhar Club",
           "homeLogo": "https://media.api-sports.io/football/teams/2973.png",
           "awayLogo": "https://media.api-sports.io/football/teams/27482.png",
+          "startTime": "09:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1639323",
+          "sport": "football",
+          "competition": "Nasjonal U19 Champions League",
+          "homeTeam": "Fredrikstad FK U19",
+          "awayTeam": "Brann U19",
+          "homeLogo": "https://media.api-sports.io/football/teams/27414.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16554.png",
           "startTime": "09:45",
           "status": "SCHEDULED"
         },
@@ -1538,17 +1483,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1629066",
-          "sport": "football",
-          "competition": "FKF Premier League",
-          "homeTeam": "Nairobi United",
-          "awayTeam": "KCB",
-          "homeLogo": "https://media.api-sports.io/football/teams/22231.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2476.png",
-          "startTime": "10:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1641307",
           "sport": "football",
           "competition": "Premier League",
@@ -1589,6 +1523,17 @@
           "awayTeam": "Turkey U19 W",
           "homeLogo": "https://media.api-sports.io/football/teams/27184.png",
           "awayLogo": "https://media.api-sports.io/football/teams/27205.png",
+          "startTime": "10:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645312",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Malawi W",
+          "awayTeam": "Zimbabwe W",
+          "homeLogo": "https://media.api-sports.io/football/teams/22550.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/10877.png",
           "startTime": "10:00",
           "status": "SCHEDULED"
         },
@@ -1802,14 +1747,14 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1619576",
+          "id": "fixture-1645313",
           "sport": "football",
-          "competition": "Ligue A",
-          "homeTeam": "Musongati",
-          "awayTeam": "Le Messager Ngozi",
-          "homeLogo": "https://media.api-sports.io/football/teams/12184.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/8104.png",
-          "startTime": "10:45",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Congo DR W",
+          "awayTeam": "Ivory Coast W",
+          "homeLogo": "https://media.api-sports.io/football/teams/22716.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1734.png",
+          "startTime": "10:30",
           "status": "SCHEDULED"
         },
         {
@@ -2264,6 +2209,17 @@
           "status": "SCHEDULED"
         },
         {
+          "id": "fixture-1645314",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Angola W",
+          "awayTeam": "Namibia W",
+          "homeLogo": "https://media.api-sports.io/football/teams/16923.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16939.png",
+          "startTime": "12:00",
+          "status": "SCHEDULED"
+        },
+        {
           "id": "fixture-1557247",
           "sport": "football",
           "competition": "World Cup - Women - Qualification Europe",
@@ -2627,6 +2583,17 @@
           "status": "SCHEDULED"
         },
         {
+          "id": "fixture-1628544",
+          "sport": "football",
+          "competition": "NPFL",
+          "homeTeam": "Katsina United",
+          "awayTeam": "Enyimba",
+          "homeLogo": "https://media.api-sports.io/football/teams/5184.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5177.png",
+          "startTime": "13:00",
+          "status": "SCHEDULED"
+        },
+        {
           "id": "fixture-1633524",
           "sport": "football",
           "competition": "Liga III - Serie 6",
@@ -2678,6 +2645,28 @@
           "awayTeam": "Al Riffa",
           "homeLogo": "https://media.api-sports.io/football/teams/5486.png",
           "awayLogo": "https://media.api-sports.io/football/teams/5482.png",
+          "startTime": "13:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645148",
+          "sport": "football",
+          "competition": "Friendlies Women",
+          "homeTeam": "Malaysia W",
+          "awayTeam": "Saudi Arabia W",
+          "homeLogo": "https://media.api-sports.io/football/teams/18268.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20453.png",
+          "startTime": "13:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645315",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Madagascar W",
+          "awayTeam": "South Africa W",
+          "homeLogo": "https://media.api-sports.io/football/teams/28526.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1978.png",
           "startTime": "13:00",
           "status": "SCHEDULED"
         },
@@ -2821,17 +2810,6 @@
           "awayTeam": "Buñol",
           "homeLogo": "https://media.api-sports.io/football/teams/9702.png",
           "awayLogo": "https://media.api-sports.io/football/teams/15524.png",
-          "startTime": "13:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1628544",
-          "sport": "football",
-          "competition": "NPFL",
-          "homeTeam": "Katsina United",
-          "awayTeam": "Enyimba",
-          "homeLogo": "https://media.api-sports.io/football/teams/5184.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5177.png",
           "startTime": "13:30",
           "status": "SCHEDULED"
         },
@@ -3415,6 +3393,39 @@
           "awayTeam": "Luxembourg W",
           "homeLogo": "https://media.api-sports.io/football/teams/1763.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1758.png",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645316",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Botswana W",
+          "awayTeam": "Tanzania W",
+          "homeLogo": "https://media.api-sports.io/football/teams/16925.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/21437.png",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645317",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Central Africa W",
+          "awayTeam": "Algeria W",
+          "homeLogo": "https://media.api-sports.io/football/teams/28528.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/18257.png",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1645318",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Comoros W",
+          "awayTeam": "Nigeria W",
+          "homeLogo": "https://media.api-sports.io/football/teams/20805.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1730.png",
           "startTime": "14:00",
           "status": "SCHEDULED"
         },
@@ -4222,17 +4233,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1640026",
-          "sport": "football",
-          "competition": "Friendlies Women",
-          "homeTeam": "Haiti W",
-          "awayTeam": "Japan W",
-          "homeLogo": "https://media.api-sports.io/football/teams/14459.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1720.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1643515",
           "sport": "football",
           "competition": "Paulista - U20",
@@ -4761,6 +4761,17 @@
           "status": "SCHEDULED"
         },
         {
+          "id": "fixture-1645294",
+          "sport": "football",
+          "competition": "Paraense A3",
+          "homeTeam": "Tesla",
+          "awayTeam": "Pinheirense",
+          "homeLogo": "https://media.api-sports.io/football/teams/23745.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/25001.png",
+          "startTime": "16:00",
+          "status": "SCHEDULED"
+        },
+        {
           "id": "fixture-1575512",
           "sport": "football",
           "competition": "Primeira Liga",
@@ -4937,6 +4948,17 @@
           "status": "SCHEDULED"
         },
         {
+          "id": "fixture-1606339",
+          "sport": "football",
+          "competition": "Goiano - 2",
+          "homeTeam": "Trindade",
+          "awayTeam": "Tupy FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/23307.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/24773.png",
+          "startTime": "19:00",
+          "status": "SCHEDULED"
+        },
+        {
           "id": "fixture-1644251",
           "sport": "football",
           "competition": "Division Intermedia",
@@ -5058,6 +5080,17 @@
           "status": "SCHEDULED"
         },
         {
+          "id": "fixture-1640026",
+          "sport": "football",
+          "competition": "Friendlies Women",
+          "homeTeam": "Haiti W",
+          "awayTeam": "Japan W",
+          "homeLogo": "https://media.api-sports.io/football/teams/14459.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1720.png",
+          "startTime": "21:00",
+          "status": "SCHEDULED"
+        },
+        {
           "id": "fixture-1641293",
           "sport": "football",
           "competition": "Torneo Federal A",
@@ -5149,10 +5182,10 @@
           "id": "fixture-1641087",
           "sport": "football",
           "competition": "Friendlies Women",
-          "homeTeam": "Paraguay W",
-          "awayTeam": "El Salvador W",
-          "homeLogo": "https://media.api-sports.io/football/teams/16941.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16927.png",
+          "homeTeam": "El Salvador W",
+          "awayTeam": "Paraguay W",
+          "homeLogo": "https://media.api-sports.io/football/teams/16927.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16941.png",
           "startTime": "22:30",
           "status": "SCHEDULED"
         },
@@ -5199,6 +5232,17 @@
           "awayLogo": "https://media.api-sports.io/football/teams/20646.png",
           "startTime": "23:00",
           "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1593041",
+          "sport": "football",
+          "competition": "Druha Liga",
+          "homeTeam": "Metalurh Zaporizhya",
+          "awayTeam": "SC Poltava 2",
+          "homeLogo": "https://media.api-sports.io/football/teams/5627.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/28008.png",
+          "startTime": "06:15",
+          "status": "POSTPONED"
         },
         {
           "id": "fixture-1629105",
@@ -5309,6 +5353,162 @@
           "awayLogo": "https://media.api-sports.io/football/teams/28130.png",
           "startTime": "10:00",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1645310",
+          "sport": "football",
+          "competition": "Olympics Women - Qualification CAF",
+          "homeTeam": "Congo W",
+          "awayTeam": "Morocco W",
+          "homeLogo": "https://media.api-sports.io/football/teams/19415.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/14461.png",
+          "startTime": "11:00",
+          "status": "WO",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1565118",
+          "sport": "football",
+          "competition": "1. Liga U19",
+          "homeTeam": "Viktoria Plzeň U19",
+          "awayTeam": "Dukla Praha U19",
+          "homeLogo": "https://media.api-sports.io/football/teams/7970.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19200.png",
+          "startTime": "05:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1565120",
+          "sport": "football",
+          "competition": "1. Liga U19",
+          "homeTeam": "České Budějovice U19",
+          "awayTeam": "Karviná U19",
+          "homeLogo": "https://media.api-sports.io/football/teams/14841.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/14832.png",
+          "startTime": "05:30",
+          "status": "FINISHED",
+          "homeScore": 5,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1637661",
+          "sport": "football",
+          "competition": "Liga 2",
+          "homeTeam": "Persipura Jayapura",
+          "awayTeam": "RANS Nusantara",
+          "homeLogo": "https://media.api-sports.io/football/teams/2440.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4229.png",
+          "startTime": "05:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1507451",
+          "sport": "football",
+          "competition": "Liga 3",
+          "homeTeam": "Didube 2014",
+          "awayTeam": "Lokomotivi Tbilisi",
+          "homeLogo": "https://media.api-sports.io/football/teams/14857.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3500.png",
+          "startTime": "05:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1507077",
+          "sport": "football",
+          "competition": "K League 1",
+          "homeTeam": "Gangwon FC",
+          "awayTeam": "Bucheon FC 1995",
+          "homeLogo": "https://media.api-sports.io/football/teams/2746.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2745.png",
+          "startTime": "04:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1507078",
+          "sport": "football",
+          "competition": "K League 1",
+          "homeTeam": "Incheon United",
+          "awayTeam": "Pohang Steelers",
+          "homeLogo": "https://media.api-sports.io/football/teams/2763.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2764.png",
+          "startTime": "04:30",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1510460",
+          "sport": "football",
+          "competition": "K League 2",
+          "homeTeam": "Cheongju",
+          "awayTeam": "Seongnam FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/7061.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2757.png",
+          "startTime": "04:30",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1510461",
+          "sport": "football",
+          "competition": "K League 2",
+          "homeTeam": "Gimpo Citizen",
+          "awayTeam": "Seoul E-Land FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/7078.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2749.png",
+          "startTime": "04:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1507076",
+          "sport": "football",
+          "competition": "K League 1",
+          "homeTeam": "Daejeon Citizen",
+          "awayTeam": "Jeonbuk Motors",
+          "homeLogo": "https://media.api-sports.io/football/teams/2750.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2762.png",
+          "startTime": "02:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1510459",
+          "sport": "football",
+          "competition": "K League 2",
+          "homeTeam": "Suwon City FC",
+          "awayTeam": "Hwaseong",
+          "homeLogo": "https://media.api-sports.io/football/teams/2756.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7087.png",
+          "startTime": "02:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1520569",
+          "sport": "football",
+          "competition": "K3 League",
+          "homeTeam": "Yangpyeong",
+          "awayTeam": "Ulsan Citizen",
+          "homeLogo": "https://media.api-sports.io/football/teams/7111.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7108.png",
+          "startTime": "02:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
         }
       ]
     }
