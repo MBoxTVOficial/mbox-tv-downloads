@@ -508,7 +508,11 @@ class PipelineTest(unittest.TestCase):
                 event.pop('channels', None)
         self.write('output.json', stripped)
         again = self.generate(payload(status='FT', score=2), discover=False)
-        self.assertEqual(channels, self.channels(again))
+        self.assertEqual({}, self.channels(again))
+        for section in again['sections']:
+            for event in section['events']:
+                self.assertEqual('FINISHED', event['status'])
+                self.assertEqual(2, event['homeScore'])
         tomorrow = DAY + timedelta(days=1)
         with patch.object(generator, 'discover_from_root', return_value=(entries(day=tomorrow), {},
               {'investigated': 6, 'requests': 0, 'counts': {'CONFIRMED_MBOX': 0}}, {})):

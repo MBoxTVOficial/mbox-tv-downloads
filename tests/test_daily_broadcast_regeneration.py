@@ -207,7 +207,7 @@ class DailyRegenerationTest(unittest.TestCase):
             event.pop('channels', None)
         self.write(self.output, before)
         with patch.object(generator, 'fetch_fixtures', side_effect=AssertionError('No API')):
-            result, changed = generator.refresh_channels(DAY, self.output)
+            result, changed = generator.refresh_channels(DAY, self.output, now=NOW)
         self.assertTrue(changed)
         self.assert_channels(result)
         restored = copy.deepcopy(result)
@@ -219,7 +219,7 @@ class DailyRegenerationTest(unittest.TestCase):
         self.run_generator()
         self.config['broadcasts'][0]['confidence'] = 'unknown'
         self.write(self.config_path, self.config)
-        result, _ = generator.refresh_channels(DAY, self.output)
+        result, _ = generator.refresh_channels(DAY, self.output, now=NOW)
         self.assertNotIn('channels', self.events(result)['fixture-100'])
 
     def test_published_daily_config_and_groups_are_valid(self):
@@ -234,7 +234,7 @@ class DailyRegenerationTest(unittest.TestCase):
 
     def test_new_production_helpers_have_no_stream_id_literals(self):
         root = Path(generator.__file__).resolve().parents[1]
-        for name in ('sports_channel_rules.py', 'sports_daily_broadcasts.py'):
+        for name in ('sports_channel_rules.py', 'sports_daily_broadcasts.py', 'sports_playback_policy.py'):
             tree = ast.parse((root/'scripts'/name).read_text(encoding='utf-8'))
             for node in ast.walk(tree):
                 if isinstance(node, ast.Dict):

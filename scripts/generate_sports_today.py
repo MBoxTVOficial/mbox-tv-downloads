@@ -2,6 +2,7 @@
 """Generate MBox's daily football feed using only Python's standard library."""
 
 import argparse
+import copy
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from http.client import HTTPException
@@ -21,11 +22,13 @@ if __package__:
     from .sports_daily_broadcasts import (BroadcastError, load_daily_context,
                                         resolve_broadcasts, apply_daily_assignments, write_broadcasts_atomic)
     from .broadcaster_discovery import DiscoveryError, discover_from_root, atomic_json
+    from .sports_playback_policy import apply_playback_policy
 else:
     from sports_channel_rules import ChannelRulesError, validate_references
     from sports_daily_broadcasts import (BroadcastError, load_daily_context,
                                        resolve_broadcasts, apply_daily_assignments, write_broadcasts_atomic)
     from broadcaster_discovery import DiscoveryError, discover_from_root, atomic_json
+    from sports_playback_policy import apply_playback_policy
 
 TIMEZONE = "America/Argentina/Buenos_Aires"
 ENDPOINT = "https://v3.football.api-sports.io/fixtures"
@@ -595,7 +598,7 @@ def daily_context(day):
         raise GenerationError(str(error)) from None
 
 
-def apply_broadcast_context(feed, context):
+def apply_broadcast_context(feed, context, now=None):
     config, groups = context
     if config is not None:
         try:
@@ -603,11 +606,13 @@ def apply_broadcast_context(feed, context):
             apply_daily_assignments(feed, resolve_broadcasts(config, feed, groups, normalize))
         except BroadcastError as error:
             raise GenerationError(str(error)) from None
+    # Evidence remains in the daily file; availability is decided after every expansion.
+    apply_playback_policy(feed, now or datetime.now(argentina_timezone()), argentina_timezone(), groups)
     validate_feed(feed)
     return feed
 
 
-def refresh_channels(day, output):
+def refresh_channels(day, output, now=None):
     """Offline regeneration on current sports data; no API call or timestamp change."""
     feed = previous_feed(output)
     if feed is None or feed["date"] != day.isoformat():
@@ -615,7 +620,7 @@ def refresh_channels(day, output):
     for section in feed["sections"]:
         for event in section["events"]:
             event.pop("channels", None)
-    feed = apply_broadcast_context(feed, daily_context(day))
+    feed = apply_broadcast_context(feed, daily_context(day), now)
     return feed, write_feed_atomic(feed, output)
 
 
@@ -628,9 +633,19 @@ def generate(day, output, input_path=None, now=None, live_only=False, discover_b
     previous = previous_feed(output)
     manual = input_path is None and os.environ.get("GITHUB_ACTIONS") == "true" and \
         os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    context = daily_context(day)  # Validate dependencies before any write or API request.
     if live_only and not manual and not needs_live_refresh(previous, day, now):
+        # Legacy finished caches may still expose channels even without an API candidate.
+        if previous is not None and previous["date"] == day.isoformat():
+            safe = apply_playback_policy(copy.deepcopy(previous), now, argentina_timezone(), context[1])
+            if safe != previous:
+                if real_clock and datetime.now(argentina_timezone()).date() != started_day:
+                    raise RefreshSkipped("argentina_day_changed")
+                safe["updatedAt"] = now.astimezone(argentina_timezone()).isoformat(timespec="seconds")
+                changed = write_feed_atomic(safe, output)
+                realtime_log("PLAYBACK_CACHE_SANITIZED", source="cache", api_calls=0)
+                return safe, sum(len(s["events"]) for s in safe["sections"]), 0, changed
         raise RefreshSkipped("no_live_or_near_kickoff")
-    context = daily_context(day)  # Invalid configuration fails before the API request.
     if input_path is not None:
         if output.resolve() == REAL_OUTPUT.resolve():
             raise GenerationError("--input es una prueba: usa una salida distinta de sports_today.json.")
@@ -677,7 +692,7 @@ def generate(day, output, input_path=None, now=None, live_only=False, discover_b
                 'counts': {state: sum(row['state'] == state for row in details) for state in
                     ('CONFIRMED_MBOX', 'CONFIRMED_EXTERNAL', 'REVIEW', 'UNRESOLVED')}})
         context = (config, groups)
-    apply_broadcast_context(feed, context)
+    apply_broadcast_context(feed, context, now)
     realtime_log("LIVE_FIXTURES", count=sum(event["status"] == "LIVE" for section in feed["sections"]
                                            for event in section["events"]),
                  source="offline" if input_path is not None else "api")
