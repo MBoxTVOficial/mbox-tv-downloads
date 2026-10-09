@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-08",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-08T23:50:13-03:00",
+  "updatedAt": "2026-10-08T23:56:51-03:00",
   "demo": false,
   "sections": [
     {
@@ -100,7 +100,7 @@
           "startTime": "22:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 0,
+          "awayScore": 1,
           "channels": [
             {
               "name": "MX〢ESPN 2 HD",
@@ -135,7 +135,7 @@
           "startTime": "22:10",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0,
+          "awayScore": 1,
           "channels": [
             {
               "name": "CO: Win Sports + HD",
