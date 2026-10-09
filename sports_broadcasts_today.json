@@ -4,6 +4,15 @@
   "timezone": "America/Argentina/Buenos_Aires",
   "broadcasts": [
     {
+      "fixtureId": 1492396,
+      "channelGroups": [
+        "win_sports"
+      ],
+      "confidence": "confirmed",
+      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
+      "source": "manual"
+    },
+    {
       "fixtureId": 1492398,
       "channelGroups": [
         "win_sports"
@@ -13,9 +22,9 @@
       "source": "manual"
     },
     {
-      "fixtureId": 1492396,
+      "fixtureId": 1520912,
       "channelGroups": [
-        "win_sports"
+        "espn_brazil"
       ],
       "confidence": "confirmed",
       "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
@@ -34,15 +43,6 @@
       "fixtureId": 1549817,
       "channelGroups": [
         "win_sports_plus"
-      ],
-      "confidence": "confirmed",
-      "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",
-      "source": "manual"
-    },
-    {
-      "fixtureId": 1520912,
-      "channelGroups": [
-        "espn_brazil"
       ],
       "confidence": "confirmed",
       "notes": "Transmisión confirmada para 2026-10-08; señal y edición regional verificadas en programación pública.",

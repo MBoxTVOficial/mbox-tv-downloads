@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-08",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-08T20:14:56-03:00",
+  "updatedAt": "2026-10-08T21:06:41-03:00",
   "demo": false,
   "sections": [
     {
@@ -77,19 +77,6 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1612077",
-          "sport": "football",
-          "competition": "Reserve League",
-          "homeTeam": "Boca Juniors Res.",
-          "awayTeam": "Colón Res.",
-          "homeLogo": "https://media.api-sports.io/football/teams/18681.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/18683.png",
-          "startTime": "19:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1492398",
           "sport": "football",
           "competition": "Serie A",
@@ -100,7 +87,7 @@
           "startTime": "19:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1,
+          "awayScore": 2,
           "channels": [
             {
               "name": "CO: WIN SPORTS HD",
@@ -172,7 +159,7 @@
           "startTime": "20:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1639228",
@@ -184,7 +171,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/12954.png",
           "startTime": "20:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -244,6 +231,19 @@
               ]
             }
           ]
+        },
+        {
+          "id": "fixture-1619715",
+          "sport": "football",
+          "competition": "Copa de la División Profesional",
+          "homeTeam": "Blooming",
+          "awayTeam": "Bolívar",
+          "homeLogo": "https://media.api-sports.io/football/teams/3701.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3702.png",
+          "startTime": "21:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1645143",
@@ -320,17 +320,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/22363.png",
           "awayLogo": "https://media.api-sports.io/football/teams/18306.png",
           "startTime": "19:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1619715",
-          "sport": "football",
-          "competition": "Copa de la División Profesional",
-          "homeTeam": "Blooming",
-          "awayTeam": "Bolívar",
-          "homeLogo": "https://media.api-sports.io/football/teams/3701.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3702.png",
-          "startTime": "21:00",
           "status": "SCHEDULED"
         },
         {
@@ -533,6 +522,19 @@
           "awayLogo": "https://media.api-sports.io/football/teams/3741.png",
           "startTime": "13:00",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1612077",
+          "sport": "football",
+          "competition": "Reserve League",
+          "homeTeam": "Boca Juniors Res.",
+          "awayTeam": "Colón Res.",
+          "homeLogo": "https://media.api-sports.io/football/teams/18681.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/18683.png",
+          "startTime": "19:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
         },
         {
           "id": "fixture-1549505",
