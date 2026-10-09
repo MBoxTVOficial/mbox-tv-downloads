@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-09",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-09T19:32:48-03:00",
+  "updatedAt": "2026-10-09T20:46:51-03:00",
   "demo": false,
   "sections": [
     {
@@ -35,19 +35,6 @@
       "priority": 5,
       "events": [
         {
-          "id": "fixture-1493170",
-          "sport": "football",
-          "competition": "Liga Profesional Argentina",
-          "homeTeam": "Gimnasia L.P.",
-          "awayTeam": "Atletico Tucuman",
-          "homeLogo": "https://media.api-sports.io/football/teams/434.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/455.png",
-          "startTime": "18:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1493172",
           "sport": "football",
           "competition": "Liga Profesional Argentina",
@@ -56,7 +43,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/478.png",
           "awayLogo": "https://media.api-sports.io/football/teams/451.png",
           "startTime": "19:30",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1493181",
@@ -68,6 +57,19 @@
           "awayLogo": "https://media.api-sports.io/football/teams/442.png",
           "startTime": "21:45",
           "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1493170",
+          "sport": "football",
+          "competition": "Liga Profesional Argentina",
+          "homeTeam": "Gimnasia L.P.",
+          "awayTeam": "Atletico Tucuman",
+          "homeLogo": "https://media.api-sports.io/football/teams/434.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/455.png",
+          "startTime": "18:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1493167",
@@ -154,32 +156,6 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1636815",
-          "sport": "football",
-          "competition": "Liga Nacional",
-          "homeTeam": "Platense FC",
-          "awayTeam": "Juticalpa",
-          "homeLogo": "https://media.api-sports.io/football/teams/1057.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1053.png",
-          "startTime": "18:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1582347",
-          "sport": "football",
-          "competition": "Mineiro - 3",
-          "homeTeam": "Sao Joao del Rei",
-          "awayTeam": "Paracatu",
-          "homeLogo": "https://media.api-sports.io/football/teams/27965.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/26744.png",
-          "startTime": "18:30",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1606339",
           "sport": "football",
           "competition": "Goiano - 2",
@@ -190,7 +166,7 @@
           "startTime": "19:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1644251",
@@ -201,6 +177,110 @@
           "homeLogo": "https://media.api-sports.io/football/teams/1177.png",
           "awayLogo": "https://media.api-sports.io/football/teams/20786.png",
           "startTime": "19:30",
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1499676",
+          "sport": "football",
+          "competition": "Primera B Metropolitana",
+          "homeTeam": "Excursionistas",
+          "awayTeam": "Villa San Carlos",
+          "homeLogo": "https://media.api-sports.io/football/teams/8385.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/8380.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1499680",
+          "sport": "football",
+          "competition": "Primera B Metropolitana",
+          "homeTeam": "Talleres Remedios",
+          "awayTeam": "Deportivo Camioneros",
+          "homeLogo": "https://media.api-sports.io/football/teams/1927.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3943.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1549813",
+          "sport": "football",
+          "competition": "Primera A",
+          "homeTeam": "Alianza Valledupar",
+          "awayTeam": "Águilas Doradas",
+          "homeLogo": "https://media.api-sports.io/football/teams/1141.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1144.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1581442",
+          "sport": "football",
+          "competition": "Liga de Expansión MX",
+          "homeTeam": "Tapatío",
+          "awayTeam": "CA La Paz",
+          "homeLogo": "https://media.api-sports.io/football/teams/14278.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19024.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1628974",
+          "sport": "football",
+          "competition": "Friendlies Women",
+          "homeTeam": "Canada W",
+          "awayTeam": "Denmark W",
+          "homeLogo": "https://media.api-sports.io/football/teams/1717.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1779.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1640286",
+          "sport": "football",
+          "competition": "Copa do Brasil U20",
+          "homeTeam": "Palmeiras U20",
+          "awayTeam": "Santos U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/12968.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/13055.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1643168",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Deportivo Maldonado",
+          "awayTeam": "Liverpool Montevideo",
+          "homeLogo": "https://media.api-sports.io/football/teams/2370.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2358.png",
+          "startTime": "20:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1493733",
+          "sport": "football",
+          "competition": "USL Championship",
+          "homeTeam": "Lexington",
+          "awayTeam": "FC Tulsa",
+          "homeLogo": "https://media.api-sports.io/football/teams/20808.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4022.png",
+          "startTime": "20:30",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -613,39 +693,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1499676",
-          "sport": "football",
-          "competition": "Primera B Metropolitana",
-          "homeTeam": "Excursionistas",
-          "awayTeam": "Villa San Carlos",
-          "homeLogo": "https://media.api-sports.io/football/teams/8385.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/8380.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1499680",
-          "sport": "football",
-          "competition": "Primera B Metropolitana",
-          "homeTeam": "Talleres Remedios",
-          "awayTeam": "Deportivo Camioneros",
-          "homeLogo": "https://media.api-sports.io/football/teams/1927.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3943.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1549813",
-          "sport": "football",
-          "competition": "Primera A",
-          "homeTeam": "Alianza Valledupar",
-          "awayTeam": "Águilas Doradas",
-          "homeLogo": "https://media.api-sports.io/football/teams/1141.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1144.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1557213",
           "sport": "football",
           "competition": "USL Super League",
@@ -654,61 +701,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/25855.png",
           "awayLogo": "https://media.api-sports.io/football/teams/24659.png",
           "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1581442",
-          "sport": "football",
-          "competition": "Liga de Expansión MX",
-          "homeTeam": "Tapatío",
-          "awayTeam": "CA La Paz",
-          "homeLogo": "https://media.api-sports.io/football/teams/14278.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19024.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1628974",
-          "sport": "football",
-          "competition": "Friendlies Women",
-          "homeTeam": "Canada W",
-          "awayTeam": "Denmark W",
-          "homeLogo": "https://media.api-sports.io/football/teams/1717.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1779.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1640286",
-          "sport": "football",
-          "competition": "Copa do Brasil U20",
-          "homeTeam": "Palmeiras U20",
-          "awayTeam": "Santos U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/12968.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/13055.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1643168",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Deportivo Maldonado",
-          "awayTeam": "Liverpool Montevideo",
-          "homeLogo": "https://media.api-sports.io/football/teams/2370.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2358.png",
-          "startTime": "20:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1493733",
-          "sport": "football",
-          "competition": "USL Championship",
-          "homeTeam": "Lexington",
-          "awayTeam": "FC Tulsa",
-          "homeLogo": "https://media.api-sports.io/football/teams/20808.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4022.png",
-          "startTime": "20:30",
           "status": "SCHEDULED"
         },
         {
@@ -1031,6 +1023,32 @@
           "status": "WO",
           "homeScore": 0,
           "awayScore": 0
+        },
+        {
+          "id": "fixture-1582347",
+          "sport": "football",
+          "competition": "Mineiro - 3",
+          "homeTeam": "Sao Joao del Rei",
+          "awayTeam": "Paracatu",
+          "homeLogo": "https://media.api-sports.io/football/teams/27965.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/26744.png",
+          "startTime": "18:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1636815",
+          "sport": "football",
+          "competition": "Liga Nacional",
+          "homeTeam": "Platense FC",
+          "awayTeam": "Juticalpa",
+          "homeLogo": "https://media.api-sports.io/football/teams/1057.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1053.png",
+          "startTime": "18:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1639821",
