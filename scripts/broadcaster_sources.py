@@ -10,7 +10,8 @@ import subprocess
 import sys
 import time
 import unicodedata
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urljoin
+from threading import Lock
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
@@ -79,7 +80,7 @@ class PublicTransport:
         # public request an actual wall-clock bound, including DNS and TLS.
         try:
             result = subprocess.run([sys.executable, __file__, '--fetch-public', url, str(self.timeout)],
-                stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=self.timeout * 2,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=self.timeout,
                 creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0), check=False)
         except subprocess.TimeoutExpired:
             raise TimeoutError('provider_deadline') from None
@@ -146,6 +147,7 @@ class Evidence:
     official: bool
     trusted: bool
     url: str
+    source_type: str = ''
 
 
 def instant(value):
@@ -219,6 +221,62 @@ class Tree(HTMLParser):
 
 
 MONTHS = dict(zip(('enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre').split(), range(1, 13)))
+
+
+class RequestBudget:
+    """Shared hard GET budget, including linked articles; no redirects or retries."""
+    def __init__(self, transport, maximum):
+        self.transport, self.maximum, self.requests = transport, maximum, 0
+        self.lock = Lock()
+
+    def fetch(self, url):
+        with self.lock:
+            if self.requests >= self.maximum:
+                raise DiscoveryError('Límite de requests públicos alcanzado.')
+            self.requests += 1
+        return self.transport.fetch(url)
+
+
+def lpf_listings(html, day):
+    """Official agenda only: publication date is never used as the match date."""
+    tree = Tree(html)
+    article = next((n for n in tree.root.walk() if n.has_class('entry-content') or
+                    n.has_class('elementor-widget-theme-post-content')), None)
+    if article is None:
+        raise DiscoveryError('LPF: agenda sin contenido reconocido.')
+    text = article.text()
+    if not re.search(r'\b(clausura|apertura|liga profesional)\b', norm(text)):
+        raise DiscoveryError('LPF: competición de agenda no identificada.')
+    if set(re.findall(r'\b20\d{2}\b', text)) != {str(day.year)}:
+        raise DiscoveryError('LPF: año de agenda ambiguo o ausente.')
+    current, result = None, []
+    pattern = r'(?P<date>\b(?:Lunes|Martes|Miércoles|Miercoles|Jueves|Viernes|Sábado|Sabado|Domingo)\s+\d{1,2}\s+de\s+\w+)|(?P<clock>\b\d{1,2}[.:]\d{2}\s+)'
+    tokens = list(re.finditer(pattern, text, re.IGNORECASE))
+    for index, token in enumerate(tokens):
+        end = tokens[index + 1].start() if index + 1 < len(tokens) else len(text)
+        if token.group('date'):
+            heading = norm(token.group('date')).split()
+            try:
+                current = date(day.year, MONTHS[heading[-1]], int(heading[-3]))
+            except (KeyError, ValueError):
+                current = None
+            continue
+        if current != day:
+            continue
+        body = text[token.end():end].strip()
+        signals = re.findall(r'\((ESPN(?: Premium|\s*\d+)?|TNT Sports(?: Premium)?|TyC Sports(?: Play)?|'
+                             r'FOX Sports(?: Argentina|\s*\d+)?|DSports(?:\s*\d+|\+)?|Telefe|TV Pública|Disney\+)\)',
+                             body, re.IGNORECASE)
+        teams = re.split(r'\s+[–—-]\s+', body.split('(')[0].strip())
+        if not signals or len(teams) != 2 or not all(safe_text(name) for name in teams):
+            continue
+        try:
+            hour, minute = map(int, token.group('clock').strip().replace('.', ':').split(':'))
+            kickoff = datetime(day.year, day.month, day.day, hour, minute, tzinfo=ZONE)
+        except ValueError:
+            continue
+        result.append(Listing(*teams, kickoff, 'Liga Profesional Argentina', tuple(signals)))
+    return result
 
 
 def tyc_listings(html, day):
@@ -379,7 +437,7 @@ def football_tv_listings(html, day):
     return result
 
 
-PARSERS = {'tyc_agenda': tyc_listings, 'espn_schedule': espn_listings,
+PARSERS = {'lpf_agenda': lpf_listings, 'tyc_agenda': tyc_listings, 'espn_schedule': espn_listings,
            'win_schedule': win_listings, 'jsonld': jsonld_listings, 'football_tv': football_tv_listings}
 
 
@@ -388,12 +446,40 @@ class BroadcasterProvider:
         self.config, self.aliases = config, aliases
         self.sourceName = config['id']
         self.listings = []
+        self.fixture_context = []
+        self.listing_urls = {}
+
+    def bind_fixtures(self, fixtures):
+        self.fixture_context = [fixture for fixture in fixtures if self.supports(fixture)]
 
     def supports(self, fixture):
+        if self.config['adapter'] == 'lpf_agenda' and fixture.country and norm(fixture.country) != 'argentina':
+            return False
         competitions = self.config.get('competitions', [])
         return not competitions or norm(fixture.competition) in {norm(value) for value in competitions}
 
     def prepare(self, day, transport):
+        if self.config['adapter'] == 'lpf_agenda':
+            tree = Tree(transport.fetch(self.config['url']))
+            links = []
+            for node in tree.root.walk():
+                if node.tag != 'a' or not re.search(r'\b(agenda|programacion|cambios)\b', norm(node.text())):
+                    continue
+                link = urljoin(self.config['url'], node.attrs.get('href', ''))
+                parsed = urlsplit(link)
+                if parsed.hostname == 'www.ligaprofesional.ar' and re.fullmatch(
+                        r'/notas/primera/\d{4}/\d{2}/\d{2}/[^/]+/', parsed.path):
+                    if link not in links:
+                        links.append(link)
+            self.listings, self.listing_urls = [], {}
+            if not links:
+                raise DiscoveryError('LPF: no se encontraron enlaces de agenda oficiales.')
+            # Newest articles first. At most two articles in addition to the index.
+            for link in sorted(links, reverse=True)[:2]:
+                for listing in lpf_listings(transport.fetch(link), day):
+                    self.listings.append(listing)
+                    self.listing_urls[listing] = link
+            return
         self.listings = PARSERS[self.config['adapter']](transport.fetch(self.config['url']), day)
 
     def team(self, name):
@@ -403,8 +489,29 @@ class BroadcasterProvider:
     def lookup(self, fixture):
         found = []
         for listing in self.listings:
-            if self.team(listing.home) != self.team(fixture.home) or self.team(listing.away) != self.team(fixture.away) or \
-                    listing.kickoff != fixture.kickoff:
+            if listing.kickoff != fixture.kickoff:
+                continue
+            exact = self.team(listing.home) == self.team(fixture.home) and self.team(listing.away) == self.team(fixture.away)
+            if self.config['adapter'] == 'lpf_agenda':
+                # Publisher short labels require a unique complete pair, competition and instant.
+                # Compare full tokens, never substrings; reject youth/women/reserve identities.
+                def team_match(label, name):
+                    left, right = self.team(label).split(), self.team(name).split()
+                    variants = {'women', 'femenino', 'femenina', 'reserves', 'reserva', 'olympic'}
+                    if any(t in variants or re.fullmatch(r'u\d+', t) for t in left + right):
+                        return False
+                    if not left or not set(left) - {'club', 'fc', 'ca', 'cd', 'deportivo', 'atletico'}:
+                        return False
+                    return left == right or (len(left) < len(right) and right[:len(left)] == left)
+                names = {name for f in self.fixture_context for name in (f.home, f.away)}
+                if any(len({self.team(name) for name in names if team_match(label, name)}) != 1
+                       for label in (listing.home, listing.away)):
+                    continue
+                matches = [f for f in self.fixture_context if f.kickoff == listing.kickoff and
+                           team_match(listing.home, f.home) and team_match(listing.away, f.away)]
+                if len(matches) != 1 or matches[0].fixture_id != fixture.fixture_id:
+                    continue
+            elif not exact:
                 continue
             for name in listing.broadcasters:
                 if not safe_text(name):
@@ -414,7 +521,7 @@ class BroadcasterProvider:
                     self.config['territory'], self.sourceName, self.config['independenceKey'],
                     self.config['kind'] in ('official_league', 'official_club') or
                     self.config['kind'] == 'official_broadcaster' and owned,
-                    True, self.config['url']))
+                    True, self.listing_urls.get(listing, self.config['url']), self.config['kind']))
         return found
 
 

@@ -12,11 +12,13 @@ import tempfile
 
 if __package__:
     from .broadcaster_sources import (BroadcasterProvider, DiscoveryError, Evidence, Fixture,
-        PARSERS, PublicTransport, ZONE, instant, norm, public_url, safe_text)
+        PARSERS, PublicTransport, RequestBudget, ZONE, instant, norm, public_url, safe_text)
+    from .sports_competition_broadcasters import validate_registry, search_hints, territory
     from .sports_daily_broadcasts import validate_broadcasts, resolve_broadcasts, TIMEZONE
 else:
     from broadcaster_sources import (BroadcasterProvider, DiscoveryError, Evidence, Fixture,
-        PARSERS, PublicTransport, ZONE, instant, norm, public_url, safe_text)
+        PARSERS, PublicTransport, RequestBudget, ZONE, instant, norm, public_url, safe_text)
+    from sports_competition_broadcasters import validate_registry, search_hints, territory
     from sports_daily_broadcasts import validate_broadcasts, resolve_broadcasts, TIMEZONE
 
 STATES = ('CONFIRMED_MBOX', 'CONFIRMED_EXTERNAL', 'REVIEW', 'UNRESOLVED')
@@ -97,8 +99,6 @@ def validate_settings(sources, mapping, groups):
         if host in owners and owners[host] != provider['independenceKey']:
             raise DiscoveryError('Un dominio no puede contar como dos fuentes independientes.')
         owners[host] = provider['independenceKey']
-    if sum(provider['enabled'] for provider in providers) > limits['maxRequests']:
-        raise DiscoveryError('Providers habilitados exceden el límite de requests.')
     aliases = {}
     if not isinstance(sources['teamAliases'], dict):
         raise DiscoveryError('teamAliases inválido.')
@@ -121,6 +121,10 @@ def validate_settings(sources, mapping, groups):
             raise DiscoveryError('Señal de mapping inválida.')
         if signal['channelGroup'] is not None and signal['channelGroup'] not in groups:
             raise DiscoveryError('Unknown channelGroup en mapping.')
+        if signal['channelGroup'] is not None:
+            actual = groups[signal['channelGroup']].get('signalRegion', '')
+            if actual and territory(actual) != territory(signal['territory']):
+                raise DiscoveryError('Territorio de señal no coincide con channelGroup.')
         key = (norm(signal['name']), norm(signal['territory']))
         if key in keys:
             raise DiscoveryError('Señal de mapping duplicada.')
@@ -141,6 +145,8 @@ def broadcaster_key(name):
 def map_signal(name, territory, mapping):
     key, region = broadcaster_key(name), REGIONS.get(norm(territory), norm(territory))
     explicit = next((canonical for word, canonical in REGIONS.items() if re.search(rf'\b{word}\b', key)), None)
+    if explicit and explicit != region:
+        return name, territory, None, True
     matches = []
     for signal in mapping['signals']:
         aliases = {broadcaster_key(value) for value in [signal['name']]+signal['aliases']}
@@ -156,6 +162,14 @@ def map_signal(name, territory, mapping):
 
 
 def confidence(fixture, evidence, mapping, groups):
+    # The organisation's explicit fixture listing wins over competing generic/guide claims.
+    organisation = [item for item in evidence if isinstance(item, Evidence) and item.official and item.trusted
+        and item.source_type == 'official_league' and item.fixture_id == fixture.fixture_id
+        and instant(item.kickoff) == fixture.kickoff]
+    if organisation:
+        # Discard weaker guide claims, but retain other explicit official listings
+        # so genuinely incompatible official evidence is still REVIEW.
+        evidence = [item for item in evidence if isinstance(item, Evidence) and item.official is True]
     valid, owners, market_sets, ambiguous = [], {}, {}, False
     for item in evidence:
         if not isinstance(item, Evidence) or item.fixture_id != fixture.fixture_id or \
@@ -176,19 +190,21 @@ def confidence(fixture, evidence, mapping, groups):
     conflict = any(not left.intersection(right) for sources in market_sets.values()
                    for owner, left in sources.items() for other, right in sources.items() if owner < other)
     if not valid:
-        return {'state': 'UNRESOLVED', 'broadcaster': [], 'channelGroups': [], 'evidenceCount': 0, 'evidence': []}
+        return {'state': 'UNRESOLVED', 'broadcaster': [], 'channelGroups': [], 'evidenceCount': 0, 'evidence': [], 'evidenceLevel': 'UNKNOWN'}
     strong = [key for key, independent in owners.items() if (
         any(item.official for candidate, item in valid if candidate == key) or len(independent) >= 2
     )]
     confirmed = not ambiguous and not conflict and bool(strong)
     channel_groups = list(dict.fromkeys(key[2] for key in strong if key[2] is not None))
-    if any(not any(s['enabled'] for s in groups[group]['streams']) for group in channel_groups):
+    if any(not groups[group].get('signalRegion') or
+           not any(s['enabled'] for s in groups[group]['streams']) for group in channel_groups):
         confirmed = False
     return {'state': ('CONFIRMED_MBOX' if channel_groups else 'CONFIRMED_EXTERNAL') if confirmed else 'REVIEW',
             'broadcaster': list(dict.fromkeys(key[0] for key in strong if confirmed)) if confirmed else list(dict.fromkeys(key[0] for key in owners)),
             'channelGroups': channel_groups if confirmed else [],
             'evidenceCount': len({item.owner for _, item in valid}),
-            'evidence': [asdict(item) for _, item in valid]}
+            'evidence': [asdict(item) for _, item in valid],
+            'evidenceLevel': ('A' if any(item.official for key, item in valid if key in strong) else 'C') if confirmed else 'UNKNOWN'}
 
 
 def fixtures_from_feed(feed, countries=None):
@@ -218,8 +234,10 @@ def priority(fixture):
 
 
 def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None, providers=None,
-             transport=None, scope='all', countries=None):
+             transport=None, scope='all', countries=None, registry=None):
     aliases = validate_settings(sources, mapping, groups)
+    if registry is not None:
+        validate_registry(registry)
     now = now or datetime.now(ZONE)
     if now.tzinfo is None or scope not in ('all', 'unresolved') or now.astimezone(ZONE).date().isoformat() != feed['date']:
         raise DiscoveryError('Día/alcance de descubrimiento inválido.')
@@ -233,7 +251,7 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
              if previous['date'] == feed['date'] and item['fixtureId'] in identifiers}
     manual = {identifier: item for identifier, item in prior.items()
               if item.get('source', 'manual') == 'manual' and item['confidence'] == 'confirmed'}
-    fingerprint = digest([sources, mapping])
+    fingerprint = digest([sources, mapping, registry, groups])
     cached = cache if isinstance(cache, dict) and type(cache.get('schemaVersion')) is int and cache['schemaVersion'] == 1 and \
         cache.get('date') == feed['date'] and cache.get('configDigest') == fingerprint and isinstance(cache.get('fixtures'), dict) else {}
     records, pending, cache_hits = {}, [], 0
@@ -271,25 +289,45 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
                     continue
             except (ValueError, TypeError, KeyError):
                 pass
-        if scope == 'unresolved' and fixture.kickoff <= now:
+        if all_events[identifier]['status'] not in ('SCHEDULED', 'LIVE'):
+            records[identifier] = {'state': 'UNRESOLVED', 'broadcaster': [], 'channelGroups': [], 'evidenceCount': 0, 'evidence': [], 'evidenceLevel': 'UNKNOWN'}
+        elif scope == 'unresolved' and fixture.kickoff <= now:
             records[identifier] = {'state': 'UNRESOLVED', 'broadcaster': [], 'channelGroups': [], 'evidenceCount': 0, 'evidence': []}
         elif len(pending) < sources['limits']['maxFixtures']:
             pending.append(fixture)
     provider_list = list(providers) if providers is not None else [BroadcasterProvider(config, aliases)
         for config in sources['providers'] if config['enabled']]
-    if len(provider_list) > sources['limits']['maxRequests']:
+    if providers is not None and len(provider_list) > sources['limits']['maxRequests']:
         raise DiscoveryError('Providers exceden límite de requests.')
     selected = [provider for provider in provider_list if any(provider.supports(fixture) for fixture in pending)]
-    transport = transport or PublicTransport(sources['limits']['timeoutSeconds'])
+    def provider_priority(provider):
+        config = getattr(provider, 'config', {})
+        hints = {broadcaster_key(n) for f in pending for n in search_hints(registry, f.competition, f.kickoff.date(), f.country)}
+        owned = {broadcaster_key(n) for n in config.get('ownedBroadcasters', [])}
+        return (0 if config.get('adapter') == 'lpf_agenda' else 1 if territory(config.get('territory', '')) == 'argentina'
+                and hints & owned else 2)
+    selected.sort(key=provider_priority)
+    transport = RequestBudget(transport or PublicTransport(sources['limits']['timeoutSeconds']), sources['limits']['maxRequests'])
     failures, ready = [], []
     def prepare(provider):
         try:
+            if hasattr(provider, 'bind_fixtures'):
+                provider.bind_fixtures(pending)
             provider.prepare(now.astimezone(ZONE).date(), transport)
             return provider, None
         except Exception as error:
             return provider, {'provider': provider.sourceName, 'error': type(error).__name__}
+    lpf = [p for p in selected if getattr(p, 'config', {}).get('adapter') == 'lpf_agenda']
+    for provider in lpf:
+        prepared, failure = prepare(provider)
+        if failure:
+            failures.append(failure)
+        else:
+            ready.append(prepared)
+    remaining = [p for p in selected if p not in lpf][:sources['limits']['maxRequests'] - transport.requests]
+    selected = lpf + remaining
     with ThreadPoolExecutor(max_workers=sources['limits']['concurrency']) as pool:
-        for provider, failure in pool.map(prepare, selected):
+        for provider, failure in pool.map(prepare, remaining):
             if failure:
                 failures.append(failure)
             else:
@@ -321,7 +359,7 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
         record = records.get(fixture.fixture_id, {'state': 'UNRESOLVED'})
         if fixture.fixture_id in manual:
             assignments.append(manual[fixture.fixture_id])
-        elif record['state'] == 'CONFIRMED_MBOX':
+        elif record['state'] == 'CONFIRMED_MBOX' and all_events[fixture.fixture_id]['status'] in ('SCHEDULED', 'LIVE'):
             if record.get('preserved'):
                 assignments.append(prior[fixture.fixture_id])
             else:
@@ -342,7 +380,9 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
             new_cache['fixtures'][str(fixture.fixture_id)] = {'fingerprint': digest(fixture.fingerprint),
                 'timestamp': timestamp, 'result': record}
         details.append({'fixtureId': fixture.fixture_id, 'homeTeam': fixture.home, 'awayTeam': fixture.away,
-            'competition': fixture.competition, 'startTime': fixture.kickoff.isoformat(), **record})
+            'competition': fixture.competition, 'startTime': fixture.kickoff.isoformat(),
+            'rightsLevel': 'B' if search_hints(registry, fixture.competition, fixture.kickoff.date(), fixture.country) else 'UNKNOWN',
+            'searchCandidates': search_hints(registry, fixture.competition, fixture.kickoff.date(), fixture.country), **record})
     timed_ids = {fixture.fixture_id for fixture in fixtures}
     for identifier, event in all_events.items():
         if identifier not in timed_ids:
@@ -355,7 +395,7 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
     report = {'schemaVersion': 1, 'date': feed['date'], 'timezone': TIMEZONE,
         'totalFixtures': sum(len(section['events']) for section in feed['sections']),
         'investigated': len(pending), 'cacheHits': cache_hits, 'manualPreserved': len(manual),
-        'requests': len(selected), 'limits': sources['limits'], 'providerWarnings': failures,
+        'requests': transport.requests, 'limits': sources['limits'], 'providerWarnings': failures,
         'counts': {state: counts[state] for state in STATES}, 'fixtures': details}
     return config, new_cache, report
 
@@ -368,6 +408,7 @@ def discover_from_root(feed, root, previous=None, now=None, scope='all', countri
         from sports_channel_rules import load_clean_groups
     sources = read_json(root / 'sports_broadcaster_sources.json')
     mapping = read_json(root / 'sports_broadcaster_mapping.json')
+    registry = read_json(root / 'sports_competition_broadcasters.json', optional=True)
     groups = load_clean_groups(root / 'mbox_sports_channels_clean.json', norm)
     warning = None
     try:
@@ -375,7 +416,7 @@ def discover_from_root(feed, root, previous=None, now=None, scope='all', countri
     except DiscoveryError:
         cache, warning = None, {'provider': 'cache', 'error': 'InvalidCache'}
     config, cache, report = discover(feed, groups, sources, mapping, previous, cache, now,
-                                   scope=scope, countries=countries)
+                                   scope=scope, countries=countries, registry=registry)
     if warning:
         report['providerWarnings'].append(warning)
     return config, cache, report, groups
@@ -384,7 +425,9 @@ def discover_from_root(feed, root, previous=None, now=None, scope='all', countri
 def cache_key(root, day=None):
     day = day or datetime.now(ZONE).date()
     return day.isoformat() + '-' + digest([read_json(root / 'sports_broadcaster_sources.json'),
-                                          read_json(root / 'sports_broadcaster_mapping.json')])[:16]
+        read_json(root / 'sports_broadcaster_mapping.json'),
+        read_json(root / 'sports_competition_broadcasters.json', optional=True),
+        read_json(root / 'mbox_sports_channels_clean.json', optional=True)])[:16]
 
 
 if __name__ == '__main__':

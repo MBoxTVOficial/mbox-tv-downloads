@@ -128,6 +128,19 @@ def resolve_broadcasts(config, feed, groups, normalize):
         try:
             resolved = resolve_channel_groups(validate_config({"schemaVersion": 1, "rules": [rule]}, normalize), groups)
             result[identifier] = channels_for_event(events[identifier], resolved, normalize)
+            if item.get('source') == 'auto':
+                # Confirmed official primaries first, then real backups; never new signals.
+                primary_ids = [next((s['streamId'] for s in groups[g]['streams'] if s['enabled']), None)
+                               for g in item['channelGroups']]
+                channels = result[identifier]
+                ordered = [c for sid in primary_ids for c in channels if c['streamId'] == sid]
+                ordered += [c for c in channels if c['streamId'] not in primary_ids]
+                unique, ids = [], set()
+                for channel in ordered:
+                    if channel['streamId'] not in ids:
+                        ids.add(channel['streamId'])
+                        unique.append({**channel, 'priority': len(unique) + 1})
+                result[identifier] = unique[:5]
         except ChannelRulesError as error:
             raise BroadcastError(str(error)) from None
     return result

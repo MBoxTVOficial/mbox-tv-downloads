@@ -9,6 +9,22 @@
   },
   "providers": [
     {
+      "id": "lpf-official",
+      "adapter": "lpf_agenda",
+      "enabled": true,
+      "url": "https://www.ligaprofesional.ar/categoria/primera/",
+      "kind": "official_league",
+      "territory": "Argentina",
+      "independenceKey": "lpf",
+      "ownedBroadcasters": [],
+      "competitions": [
+        "Liga Profesional Argentina",
+        "Liga Profesional",
+        "Primera Division",
+        "Primera División Argentina"
+      ]
+    },
+    {
       "id": "football-tv-colombia",
       "adapter": "football_tv",
       "enabled": true,

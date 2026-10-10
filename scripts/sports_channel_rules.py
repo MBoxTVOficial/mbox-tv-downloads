@@ -129,7 +129,10 @@ def validate_clean_groups(config, normalize):
                 name = clean_text(raw_name, "name de stream", normalize)
             streams.append({"name": name, "streamId": stream_id, "priority": priority, "enabled": enabled,
                 "aliases": clean_aliases(item.get("aliases", []), "aliases de stream", normalize)})
-        result[identifier] = {"id": identifier, "canonicalName": canonical, "aliases": aliases,
+        region = value.get('signalRegion') or ''
+        if not isinstance(region, str):
+            clean_fail('signalRegion')
+        result[identifier] = {"id": identifier, "canonicalName": canonical, "aliases": aliases, "signalRegion": region,
                               "streams": sorted(streams, key=lambda item: item["priority"])}
     return result
 

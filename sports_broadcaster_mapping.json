@@ -155,24 +155,22 @@
       "intrinsicRegion": false
     },
     {
-      "name": "TNT Sports",
-      "territory": "Argentina",
-      "channelGroup": "tnt_sports",
-      "aliases": [],
-      "intrinsicRegion": false
-    },
-    {
       "name": "TNT Sports Premium",
       "territory": "Argentina",
       "channelGroup": "tnt_sports_premium",
-      "aliases": [],
+      "aliases": [
+        "TNT Sports",
+        "TNT Sports Argentina"
+      ],
       "intrinsicRegion": false
     },
     {
       "name": "Fox Sports",
       "territory": "Argentina",
       "channelGroup": "fox_sports",
-      "aliases": [],
+      "aliases": [
+        "FOX Sports Argentina"
+      ],
       "intrinsicRegion": false
     },
     {

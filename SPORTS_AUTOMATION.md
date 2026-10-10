@@ -293,3 +293,65 @@ Para activar la automatización, estos nuevos archivos deben incorporarse a `mai
 y el secreto debe existir. La preparación local no hizo commit ni push manual
 y no creó el secreto. No cambió APKs, Android, RemoteConfig, `update.json`,
 GitHub Pages, releases, versionado ni canales IPTV.
+
+## Descubrimiento por competición y confirmación del fixture
+
+`sports_competition_broadcasters.json` contiene fuentes oficiales, territorio AR,
+competición/país, temporada y alcance de los derechos. Las fechas desconocidas
+permanecen null; `validUntilSeason` conserva fines expresados por temporada sin
+inventar fechas. Los ciclos pendientes tienen broadcasters vacíos. Un registro
+de derechos **B** solo orienta búsquedas; nunca genera channels por sí mismo.
+Sin temporada conocida, no se considera una vigencia contractual comprobada.
+Los hints desconocidos no se reutilizan perpetuamente fuera de su ciclo anual.
+
+La fuente `lpf-official` consulta el índice oficial de Primera y hasta dos agendas
+recientes. Valida el año del contenido, el encabezado de fecha de cada bloque,
+equipos local/visitante y horario completo en America/Argentina/Buenos_Aires.
+Ignora noticias de árbitros, enlaces externos, otros días y fixtures no presentes.
+Las etiquetas cortas oficiales se comparan por tokens completos y únicamente si
+el par de equipos, competición y kickoff identifica un solo fixture del feed;
+si hay ambigüedad, categorías juveniles/femeninas o desconocidas, no confirma.
+No existen reglas por equipos ni por IDs de partidos históricos en producción.
+
+La evidencia A confirma el fixture en la organización o en el broadcaster de su
+propia señal; C requiere dos propietarios editoriales independientes. UNKNOWN
+no permite autoasignación. Una programación explícita de la organización gana
+sobre una guía contradictoria. Dos fuentes oficiales incompatibles requieren
+REVIEW. Un canal oficial inesperado puede confirmar el fixture aunque no figure
+entre los candidatos del registro. Los resultados siguen separados en
+CONFIRMED_MBOX / CONFIRMED_EXTERNAL / REVIEW / UNRESOLVED.
+
+TNT Sports en contexto Argentina resuelve exclusivamente `tnt_sports_premium`;
+`tnt_sports` de Chile no se utiliza como sustituto. FOX Sports Argentina tiene
+alias regional explícito. El mapping valida signalRegion de la base curada;
+una región desconocida impide autoasignación (actualmente espn_4, dsports_2 y
+dsports_plus requieren verificar ese dato en la base antes de confirmar).
+Disney+ no implica ningún canal ESPN lineal. No se cambió la base curada.
+
+Las asignaciones manuales confirmed ganan sobre descubrimiento y siguen intactas.
+Las nuevas autoasignaciones se limitan a SCHEDULED/LIVE del día objetivo; FINISHED
+no se investiga. La generación conserva la política de playback existente y
+no modifica scores ni statuses. Autoasignaciones con varios grupos expanden
+principales primero, luego respaldos, deduplicados y con máximo cinco opciones.
+El formato Android y schemaVersion 1 permanecen iguales.
+
+GENERAL tiene un presupuesto compartido de **6 GET** incluyendo índice/artículos
+LPF, concurrencia máxima 2, deadline real 8 segundos por request, sin reintentos
+ni redirecciones. LPF se prepara primero y los providers restantes usan solo los
+slots disponibles. No se consultan URLs por cada fixture. La cobertura puede ser
+parcial: agotado el presupuesto no se inventan transmisiones. Los errores figuran
+por provider en el reporte y no abortan la agenda ni borran confirmados válidos
+del mismo día. Cache diario: fecha + fixture + sources/mapping/registry/base curada.
+Una modificación de esos archivos invalida el cache. LIVE no consulta fuentes ni
+derechos: reaplica asignaciones existentes y la política de reproducción.
+No cambian workflows, scheduler ni MAX_DAILY_API_CALLS=90.
+
+CONMEBOL: el registro conserva evidencia de PDFs oficiales, pero no se habilitó
+un scraper PDF de producción. Hace falta verificar columna AR, versión, timezone
+y señal exacta antes de automatizar la extracción; marcas como DirecTV o
+ESPN/Disney+ no bastan para seleccionar una señal numerada.
+
+`tests/test_competition_broadcasters.py` incluye la regresión **histórica** de
+Instituto–Boca del 09/10/2026 y los streams verificados del grupo TNT argentino.
+Ese caso no crea configuraciones actuales ni se inserta en feeds posteriores.
+Los tests usan transporte mock y no requieren internet, API-Football ni IPTV.

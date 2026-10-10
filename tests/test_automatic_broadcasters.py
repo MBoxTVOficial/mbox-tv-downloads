@@ -50,6 +50,7 @@ def clean():
     counts = {case[6]: case[7] for case in CASES}
     return {'schemaVersion': 1, 'groups': [
         {'id': group['id'], 'canonicalName': group['canonicalName'], 'aliases': ['Test alias'],
+         'signalRegion': group.get('signalRegion') or next((signal['territory'] for signal in mapping()['signals'] if signal['channelGroup'] == group['id']), ''),
          'streams': [{'streamId': 10000 + index * 10 + number,
                       'name': f'Test signal {index} option {number}', 'priority': number, 'enabled': True}
                      for number in range(1, counts.get(group['id'], 1) + 1)]}
@@ -162,7 +163,7 @@ class DiscoveryTest(unittest.TestCase):
 
     def test_espn_regional_variants_are_distinct(self):
         for name, region, group in [('ESPN', 'Argentina', 'espn'), ('ESPN', 'Brasil', 'espn_brazil'),
-              ('ESPN Brazil', 'Argentina', 'espn_brazil'), ('ESPN2 México', 'México', 'espn_2_mexico'),
+              ('ESPN Brazil', 'Argentina', None), ('ESPN2 México', 'México', 'espn_2_mexico'),
               ('ESPN Premium', 'Argentina', 'espn_premium'), ('ESPN 2', 'Argentina', 'espn_2')]:
             with self.subTest(name=name, region=region):
                 self.assertEqual(group, discovery.map_signal(name, region, self.mapping)[2])
@@ -339,7 +340,7 @@ class DiscoveryTest(unittest.TestCase):
                     counts['active'] -= 1
         _, _, report = self.run_discovery(providers=[Counted(str(i)) for i in range(6)])
         self.assertEqual(6, counts['requests'])
-        self.assertEqual(6, report['requests'])
+        self.assertEqual(0, report['requests'])  # Mock prepare performs no transport fetches.
         self.assertLessEqual(counts['peak'], 2)
 
     def test_future_cache_timestamp_does_not_reuse_evidence(self):
@@ -438,7 +439,7 @@ class ProviderTest(unittest.TestCase):
             with self.assertRaises(TimeoutError):
                 sources.PublicTransport(8).fetch('https://example.com/programme')
         worker.assert_called_once()
-        self.assertEqual(16, worker.call_args.kwargs['timeout'])
+        self.assertEqual(8, worker.call_args.kwargs['timeout'])
 
     def test_timeout_cannot_exceed_eight_seconds(self):
         for timeout in (True, 0, 9, 16, '8'):

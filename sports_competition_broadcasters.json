@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "territory": "AR",
+  "competitions": [
+    {
+      "competitionId": "lpf",
+      "name": "Liga Profesional Argentina",
+      "aliases": [
+        "Liga Profesional",
+        "Primera Division",
+        "Primera División Argentina"
+      ],
+      "season": "2026",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "TNT Sports Premium",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.ligaprofesional.ar/notas/primera/2026/09/26/cambios-de-la-fecha-11-y-toda-la-12/",
+          "sourceDate": "2026-09-26",
+          "notes": "Titulares en jornadas publicadas; confirmar cada fixture."
+        },
+        {
+          "name": "ESPN Premium",
+          "aliases": [],
+          "priority": 2,
+          "sourceType": "official",
+          "sourceUrl": "https://www.ligaprofesional.ar/notas/primera/2026/09/26/cambios-de-la-fecha-11-y-toda-la-12/",
+          "sourceDate": "2026-09-26",
+          "notes": "Titulares en jornadas publicadas; confirmar cada fixture."
+        }
+      ],
+      "competitionCountry": "Argentina"
+    },
+    {
+      "competitionId": "copa_argentina",
+      "name": "Copa Argentina",
+      "aliases": [],
+      "season": "2026",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "TyC Sports",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official_broadcaster",
+          "sourceUrl": "https://www.tycsports.com/copa-argentina/se-confirmo-el-cronograma-de-la-primera-ronda-de-la-copa-argentina-id706712.html",
+          "sourceDate": "2026-01-06",
+          "notes": "Primera ronda enumerada; no extender a otras fases."
+        }
+      ],
+      "competitionCountry": "Argentina"
+    },
+    {
+      "competitionId": "libertadores",
+      "name": "CONMEBOL Libertadores",
+      "aliases": [
+        "Copa Libertadores"
+      ],
+      "season": "2026",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://cdn.conmebol.com/wp-content/uploads/2026/01/Fixture_CONMEBOL-Libertadores-2026_Fase-2_v13.02.pdf",
+          "sourceDate": "2026-02-13",
+          "notes": "Columna hispanohablante; ESPN/Disney no identifica señal lineal exacta."
+        },
+        {
+          "name": "Disney+",
+          "aliases": [],
+          "priority": 2,
+          "sourceType": "official",
+          "sourceUrl": "https://cdn.conmebol.com/wp-content/uploads/2026/01/Fixture_CONMEBOL-Libertadores-2026_Fase-2_v13.02.pdf",
+          "sourceDate": "2026-02-13",
+          "notes": "Columna hispanohablante; ESPN/Disney no identifica señal lineal exacta."
+        }
+      ],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "sudamericana",
+      "name": "CONMEBOL Sudamericana",
+      "aliases": [
+        "Copa Sudamericana"
+      ],
+      "season": "2026",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "DirecTV",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://cdn.conmebol.com/wp-content/uploads/2026/02/Fixture_CONMEBOL-Sudamericana-2026_Primera-Fase_v23.02.pdf",
+          "sourceDate": "2026-02-23",
+          "notes": "DirecTV corresponde a primera fase; ESPN confirmado en programación posterior. No elegir señal por marca."
+        },
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 2,
+          "sourceType": "official_broadcaster",
+          "sourceUrl": "https://latinamerica.espnpressroom.com/press-releases/2026/04/espn-trae-el-inicio-de-la-conmebol-libertadores-y-sudamericana-2026/",
+          "sourceDate": "2026-04-06",
+          "notes": "DirecTV corresponde a primera fase; ESPN confirmado en programación posterior. No elegir señal por marca."
+        }
+      ],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "laliga",
+      "name": "La Liga",
+      "aliases": [
+        "LALIGA EA SPORTS",
+        "Primera Division España"
+      ],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": "2031/32",
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.laliga.com/noticias/laliga-renueva-con-espn-y-dsports-para-seguir-acercando-el-mejor-futbol-espanol-a-millones-de-aficionados-en-sudamerica-hasta-2031-32",
+          "sourceDate": "2026-08-11",
+          "notes": "Argentina dentro de Sudamérica hispanohablante."
+        },
+        {
+          "name": "DSPORTS",
+          "aliases": [],
+          "priority": 2,
+          "sourceType": "official",
+          "sourceUrl": "https://www.laliga.com/noticias/laliga-renueva-con-espn-y-dsports-para-seguir-acercando-el-mejor-futbol-espanol-a-millones-de-aficionados-en-sudamerica-hasta-2031-32",
+          "sourceDate": "2026-08-11",
+          "notes": "Argentina dentro de Sudamérica hispanohablante."
+        }
+      ],
+      "competitionCountry": "Spain"
+    },
+    {
+      "competitionId": "premier",
+      "name": "Premier League",
+      "aliases": [],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": "2027/28",
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.premierleague.com/es/media/broadcasters",
+          "sourceDate": null,
+          "notes": "Ciclo 2025/26-2027/28."
+        }
+      ],
+      "competitionCountry": "England"
+    },
+    {
+      "competitionId": "ligue1",
+      "name": "Ligue 1",
+      "aliases": [],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official_broadcaster",
+          "sourceUrl": "https://latinamerica.espnpressroom.com/press-releases/2026/09/espn-trae-el-clasico-de-madrid-en-otro-gran-fin-de-semana-de-futbol-europeo/",
+          "sourceDate": null,
+          "notes": "Programación concreta septiembre; alcance contractual completo pendiente."
+        }
+      ],
+      "competitionCountry": "France"
+    },
+    {
+      "competitionId": "seriea",
+      "name": "Serie A",
+      "aliases": [],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official_broadcaster",
+          "sourceUrl": "https://latinamerica.espnpressroom.com/press-releases/2026/09/espn-trae-el-clasico-de-madrid-en-otro-gran-fin-de-semana-de-futbol-europeo/",
+          "sourceDate": null,
+          "notes": "Italia únicamente; programación concreta, contrato completo pendiente."
+        }
+      ],
+      "competitionCountry": "Italy"
+    },
+    {
+      "competitionId": "champions",
+      "name": "UEFA Champions League",
+      "aliases": [
+        "Champions League"
+      ],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "FOX Sports Argentina",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0253-0d82037aaedd-f371c464f919-1000--where-to-watch-the-champions-league-tv-broadcast-partners-streams/",
+          "sourceDate": "2026-10-09",
+          "notes": "Argentina; marca no determina señal de fixture."
+        },
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 2,
+          "sourceType": "official",
+          "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0253-0d82037aaedd-f371c464f919-1000--where-to-watch-the-champions-league-tv-broadcast-partners-streams/",
+          "sourceDate": "2026-10-09",
+          "notes": "Argentina; marca no determina señal de fixture."
+        }
+      ],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "europa",
+      "name": "UEFA Europa League",
+      "aliases": [
+        "Europa League"
+      ],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/",
+          "sourceDate": "2026-10-07",
+          "notes": "Sudamérica excluyendo Brasil."
+        }
+      ],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "conference",
+      "name": "UEFA Conference League",
+      "aliases": [
+        "UEFA Europa Conference League"
+      ],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "ESPN",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.uefa.com/uefaconferenceleague/news/0285-18f79eae3aac-5c7eb199a66d-1000--where-to-watch-the-uefa-europa-conference-league-tv-broadcas/",
+          "sourceDate": "2026-10-07",
+          "notes": "Sudamérica excluyendo Brasil."
+        }
+      ],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "nations",
+      "name": "UEFA Nations League",
+      "aliases": [],
+      "season": "2026/27",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [
+        {
+          "name": "Disney+",
+          "aliases": [],
+          "priority": 1,
+          "sourceType": "official",
+          "sourceUrl": "https://www.uefa.com/uefanationsleague/news/02a9-219ae5c877f5-740390ccb3e5-1000--where-to-watch-the-nations-league-tv-broadcast-partners-li/",
+          "sourceDate": "2026-10-06",
+          "notes": "Argentina: plataforma, no canal ESPN implícito."
+        }
+      ],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "conmebol_qualifiers",
+      "name": "World Cup - Qualification South America",
+      "aliases": [
+        "CONMEBOL World Cup Qualifiers",
+        "World Cup Qualification CONMEBOL"
+      ],
+      "season": "pending confirmation",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "uefa_qualifiers",
+      "name": "World Cup - Qualification Europe",
+      "aliases": [
+        "UEFA World Cup Qualifiers"
+      ],
+      "season": "pending confirmation",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [],
+      "competitionCountry": ""
+    },
+    {
+      "competitionId": "national_friendlies",
+      "name": "Friendlies",
+      "aliases": [
+        "International Friendlies"
+      ],
+      "season": "pending confirmation",
+      "territory": "AR",
+      "validFrom": null,
+      "validUntil": null,
+      "validUntilSeason": null,
+      "officialBroadcasters": [],
+      "competitionCountry": ""
+    }
+  ]
+}
