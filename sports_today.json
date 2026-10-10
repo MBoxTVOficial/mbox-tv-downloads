@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T18:10:57-03:00",
+  "updatedAt": "2026-10-10T18:20:58-03:00",
   "demo": false,
   "sections": [
     {
@@ -429,19 +429,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1638629",
-          "sport": "football",
-          "competition": "Úrvalsdeild",
-          "homeTeam": "Fram Reykjavik",
-          "awayTeam": "KR Reykjavik",
-          "homeLogo": "https://media.api-sports.io/football/teams/2117.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/271.png",
-          "startTime": "16:15",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 2
-        },
-        {
           "id": "fixture-1575509",
           "sport": "football",
           "competition": "Primeira Liga",
@@ -451,7 +438,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/230.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -465,7 +452,7 @@
           "startTime": "16:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1576502",
@@ -492,19 +479,6 @@
           "status": "LIVE",
           "homeScore": 3,
           "awayScore": 1
-        },
-        {
-          "id": "fixture-1645222",
-          "sport": "football",
-          "competition": "Segunda División",
-          "homeTeam": "Monagas II",
-          "awayTeam": "Atletico Avila FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/11371.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/27527.png",
-          "startTime": "16:30",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
         },
         {
           "id": "fixture-1645336",
@@ -569,7 +543,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 2
+          "awayScore": 3
         },
         {
           "id": "fixture-1632030",
@@ -659,7 +633,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7774.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -672,7 +646,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2320.png",
           "startTime": "17:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -685,7 +659,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2346.png",
           "startTime": "17:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -741,6 +715,19 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1494036",
+          "sport": "football",
+          "competition": "USL League One",
+          "homeTeam": "Union Omaha",
+          "awayTeam": "Fort Wayne",
+          "homeLogo": "https://media.api-sports.io/football/teams/10283.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16679.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1551693",
           "sport": "football",
           "competition": "Primera División",
@@ -776,7 +763,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/24530.png",
           "startTime": "18:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -2698,17 +2685,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1494036",
-          "sport": "football",
-          "competition": "USL League One",
-          "homeTeam": "Union Omaha",
-          "awayTeam": "Fort Wayne",
-          "homeLogo": "https://media.api-sports.io/football/teams/10283.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16679.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1640030",
           "sport": "football",
           "competition": "Friendlies Women",
@@ -3767,6 +3743,32 @@
           "awayLogo": "https://media.api-sports.io/football/teams/15620.png",
           "startTime": "20:15",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1645222",
+          "sport": "football",
+          "competition": "Segunda División",
+          "homeTeam": "Monagas II",
+          "awayTeam": "Atletico Avila FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/11371.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/27527.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1638629",
+          "sport": "football",
+          "competition": "Úrvalsdeild",
+          "homeTeam": "Fram Reykjavik",
+          "awayTeam": "KR Reykjavik",
+          "homeLogo": "https://media.api-sports.io/football/teams/2117.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/271.png",
+          "startTime": "16:15",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 2
         },
         {
           "id": "fixture-1552183",
@@ -19254,19 +19256,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/9514.png",
           "awayLogo": "https://media.api-sports.io/football/teams/880.png",
           "startTime": "12:30",
-          "status": "CANCELLED",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1493744",
-          "sport": "football",
-          "competition": "USL Championship",
-          "homeTeam": "Sporting JAX",
-          "awayTeam": "Birmingham Legion",
-          "homeLogo": "https://media.api-sports.io/football/teams/25959.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3989.png",
-          "startTime": "14:00",
           "status": "CANCELLED",
           "homeScore": 0,
           "awayScore": 0
