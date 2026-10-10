@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T18:00:56-03:00",
+  "updatedAt": "2026-10-10T18:10:57-03:00",
   "demo": false,
   "sections": [
     {
@@ -569,7 +569,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1632030",
@@ -715,6 +715,32 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1492409",
+          "sport": "football",
+          "competition": "Serie A",
+          "homeTeam": "Vasco DA Gama",
+          "awayTeam": "Remo",
+          "homeLogo": "https://media.api-sports.io/football/teams/133.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1198.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1494034",
+          "sport": "football",
+          "competition": "USL League One",
+          "homeTeam": "Portland Hearts of Pine",
+          "awayTeam": "Boise",
+          "homeLogo": "https://media.api-sports.io/football/teams/25486.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/27251.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1551693",
           "sport": "football",
           "competition": "Primera División",
@@ -728,6 +754,32 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1559662",
+          "sport": "football",
+          "competition": "Liga Nacional",
+          "homeTeam": "Aurora",
+          "awayTeam": "Xelajú",
+          "homeLogo": "https://media.api-sports.io/football/teams/10154.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3667.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1600625",
+          "sport": "football",
+          "competition": "Primera Division",
+          "homeTeam": "Fuerte San Francisco",
+          "awayTeam": "Cacahuatique",
+          "homeLogo": "https://media.api-sports.io/football/teams/22157.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/24530.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1636817",
           "sport": "football",
           "competition": "Liga Nacional",
@@ -735,6 +787,19 @@
           "awayTeam": "CD Olimpia",
           "homeLogo": "https://media.api-sports.io/football/teams/21858.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1051.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1638778",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Portuguesa FC",
+          "awayTeam": "Deportivo La Guaira",
+          "homeLogo": "https://media.api-sports.io/football/teams/2814.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2813.png",
           "startTime": "18:00",
           "status": "LIVE",
           "homeScore": 0,
@@ -1951,28 +2016,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1627730",
-          "sport": "football",
-          "competition": "1st Division",
-          "homeTeam": "Hungry Lions",
-          "awayTeam": "Casric Stars",
-          "homeLogo": "https://media.api-sports.io/football/teams/10561.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19997.png",
-          "startTime": "10:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1627731",
-          "sport": "football",
-          "competition": "1st Division",
-          "homeTeam": "Lerumo Lions",
-          "awayTeam": "Hope FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/25526.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/28235.png",
-          "startTime": "10:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1645162",
           "sport": "football",
           "competition": "Premier League",
@@ -2655,28 +2698,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1492409",
-          "sport": "football",
-          "competition": "Serie A",
-          "homeTeam": "Vasco DA Gama",
-          "awayTeam": "Remo",
-          "homeLogo": "https://media.api-sports.io/football/teams/133.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1198.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1494034",
-          "sport": "football",
-          "competition": "USL League One",
-          "homeTeam": "Portland Hearts of Pine",
-          "awayTeam": "Boise",
-          "homeLogo": "https://media.api-sports.io/football/teams/25486.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/27251.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1494036",
           "sport": "football",
           "competition": "USL League One",
@@ -2684,39 +2705,6 @@
           "awayTeam": "Fort Wayne",
           "homeLogo": "https://media.api-sports.io/football/teams/10283.png",
           "awayLogo": "https://media.api-sports.io/football/teams/16679.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1559662",
-          "sport": "football",
-          "competition": "Liga Nacional",
-          "homeTeam": "Aurora",
-          "awayTeam": "Xelajú",
-          "homeLogo": "https://media.api-sports.io/football/teams/10154.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3667.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1600625",
-          "sport": "football",
-          "competition": "Primera Division",
-          "homeTeam": "Fuerte San Francisco",
-          "awayTeam": "Cacahuatique",
-          "homeLogo": "https://media.api-sports.io/football/teams/22157.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/24530.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1638778",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Portuguesa FC",
-          "awayTeam": "Deportivo La Guaira",
-          "homeLogo": "https://media.api-sports.io/football/teams/2814.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2813.png",
           "startTime": "18:00",
           "status": "SCHEDULED"
         },
@@ -11306,6 +11294,32 @@
           "status": "FINISHED",
           "homeScore": 0,
           "awayScore": 4
+        },
+        {
+          "id": "fixture-1627730",
+          "sport": "football",
+          "competition": "1st Division",
+          "homeTeam": "Hungry Lions",
+          "awayTeam": "Casric Stars",
+          "homeLogo": "https://media.api-sports.io/football/teams/10561.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19997.png",
+          "startTime": "10:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1627731",
+          "sport": "football",
+          "competition": "1st Division",
+          "homeTeam": "Lerumo Lions",
+          "awayTeam": "Hope FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/25526.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/28235.png",
+          "startTime": "10:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1627732",
