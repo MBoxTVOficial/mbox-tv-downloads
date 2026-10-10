@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T17:20:54-03:00",
+  "updatedAt": "2026-10-10T17:30:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -34,19 +34,6 @@
       "title": "Fútbol - Argentina",
       "priority": 5,
       "events": [
-        {
-          "id": "fixture-1498866",
-          "sport": "football",
-          "competition": "Primera Nacional",
-          "homeTeam": "Almagro",
-          "awayTeam": "Chacarita Juniors",
-          "homeLogo": "https://media.api-sports.io/football/teams/482.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/447.png",
-          "startTime": "15:30",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 1
-        },
         {
           "id": "fixture-1493168",
           "sport": "football",
@@ -97,7 +84,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1493180",
@@ -120,6 +107,19 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2424.png",
           "startTime": "21:30",
           "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1498866",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "Almagro",
+          "awayTeam": "Chacarita Juniors",
+          "homeLogo": "https://media.api-sports.io/football/teams/482.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/447.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
         },
         {
           "id": "fixture-1498873",
@@ -176,7 +176,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/533.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -451,60 +451,8 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1604.png",
           "startTime": "15:30",
           "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1499675",
-          "sport": "football",
-          "competition": "Primera B Metropolitana",
-          "homeTeam": "Deportivo Armenio",
-          "awayTeam": "Comunicaciones",
-          "homeLogo": "https://media.api-sports.io/football/teams/2427.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/8008.png",
-          "startTime": "15:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1565268",
-          "sport": "football",
-          "competition": "Liga I",
-          "homeTeam": "FCSB",
-          "awayTeam": "Oţelul",
-          "homeLogo": "https://media.api-sports.io/football/teams/559.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/6886.png",
-          "startTime": "15:30",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1576194",
-          "sport": "football",
-          "competition": "2. Bundesliga",
-          "homeTeam": "1. FC Nürnberg",
-          "awayTeam": "VfL Wolfsburg",
-          "homeLogo": "https://media.api-sports.io/football/teams/171.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/161.png",
-          "startTime": "15:30",
-          "status": "LIVE",
-          "homeScore": 3,
-          "awayScore": 3
-        },
-        {
-          "id": "fixture-1600718",
-          "sport": "football",
-          "competition": "Segunda División",
-          "homeTeam": "Santiago City",
-          "awayTeam": "Colchagua",
-          "homeLogo": "https://media.api-sports.io/football/teams/21117.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5633.png",
-          "startTime": "15:30",
-          "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 3
+          "awayScore": 1
         },
         {
           "id": "fixture-1604194",
@@ -518,32 +466,6 @@
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 2
-        },
-        {
-          "id": "fixture-1608698",
-          "sport": "football",
-          "competition": "Serie C - Girone B",
-          "homeTeam": "Spezia",
-          "awayTeam": "Gubbio",
-          "homeLogo": "https://media.api-sports.io/football/teams/515.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/866.png",
-          "startTime": "15:30",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1623140",
-          "sport": "football",
-          "competition": "1a Divisió",
-          "homeTeam": "Ordino",
-          "awayTeam": "Inter Club d'Escaldes",
-          "homeLogo": "https://media.api-sports.io/football/teams/3344.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3342.png",
-          "startTime": "15:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 4
         },
         {
           "id": "fixture-1558646",
@@ -608,7 +530,7 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1619321",
@@ -633,7 +555,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 7,
+          "homeScore": 8,
           "awayScore": 0
         },
         {
@@ -711,8 +633,8 @@
           "awayLogo": "https://media.api-sports.io/football/teams/28295.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
+          "homeScore": 2,
+          "awayScore": 2
         },
         {
           "id": "fixture-1638629",
@@ -819,6 +741,19 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1557214",
+          "sport": "football",
+          "competition": "USL Super League",
+          "homeTeam": "Brooklyn W",
+          "awayTeam": "Dallas Trinity W",
+          "homeLogo": "https://media.api-sports.io/football/teams/24657.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/24660.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1600717",
           "sport": "football",
           "competition": "Segunda División",
@@ -854,7 +789,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1187.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -869,6 +804,19 @@
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
+        },
+        {
+          "id": "fixture-1636706",
+          "sport": "football",
+          "competition": "Liga Pro Serie B",
+          "homeTeam": "Gualaceo SC",
+          "awayTeam": "Cumbayá",
+          "homeLogo": "https://media.api-sports.io/football/teams/1986.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16476.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1637852",
@@ -919,7 +867,46 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7774.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1511700",
+          "sport": "football",
+          "competition": "Primera B",
+          "homeTeam": "Deportes Temuco",
+          "awayTeam": "Deportes Santa Cruz",
+          "homeLogo": "https://media.api-sports.io/football/teams/2317.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2346.png",
+          "startTime": "17:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1549502",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Comerciantes Unidos",
+          "awayTeam": "Juan Pablo II College",
+          "homeLogo": "https://media.api-sports.io/football/teams/2558.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/22479.png",
+          "startTime": "17:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1549821",
+          "sport": "football",
+          "competition": "Primera A",
+          "homeTeam": "Deportivo Pereira",
+          "awayTeam": "Deportivo Cali",
+          "homeLogo": "https://media.api-sports.io/football/teams/1462.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1127.png",
+          "startTime": "17:30",
+          "status": "LIVE",
+          "homeScore": 0,
           "awayScore": 0
         },
         {
@@ -2683,17 +2670,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1619743",
-          "sport": "football",
-          "competition": "Premier Division",
-          "homeTeam": "St Joseph S Fc",
-          "awayTeam": "Lions Gibraltar",
-          "homeLogo": "https://media.api-sports.io/football/teams/698.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16133.png",
-          "startTime": "14:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1578351",
           "sport": "football",
           "competition": "Second Amateur Division - VFV B",
@@ -2745,17 +2721,6 @@
           "awayTeam": "Ostiches",
           "homeLogo": "https://media.api-sports.io/football/teams/5764.png",
           "awayLogo": "https://media.api-sports.io/football/teams/5893.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1600260",
-          "sport": "football",
-          "competition": "Carioca - 2",
-          "homeTeam": "Serrano RJ",
-          "awayTeam": "Macaé",
-          "homeLogo": "https://media.api-sports.io/football/teams/13117.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7815.png",
           "startTime": "15:00",
           "status": "SCHEDULED"
         },
@@ -2881,17 +2846,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1557214",
-          "sport": "football",
-          "competition": "USL Super League",
-          "homeTeam": "Brooklyn W",
-          "awayTeam": "Dallas Trinity W",
-          "homeLogo": "https://media.api-sports.io/football/teams/24657.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/24660.png",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1597997",
           "sport": "football",
           "competition": "Copa Santa Catarina",
@@ -2954,50 +2908,6 @@
           "awayTeam": "O'Higgins",
           "homeLogo": "https://media.api-sports.io/football/teams/2328.png",
           "awayLogo": "https://media.api-sports.io/football/teams/2320.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1511700",
-          "sport": "football",
-          "competition": "Primera B",
-          "homeTeam": "Deportes Temuco",
-          "awayTeam": "Deportes Santa Cruz",
-          "homeLogo": "https://media.api-sports.io/football/teams/2317.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2346.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1549502",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Comerciantes Unidos",
-          "awayTeam": "Juan Pablo II College",
-          "homeLogo": "https://media.api-sports.io/football/teams/2558.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/22479.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1549821",
-          "sport": "football",
-          "competition": "Primera A",
-          "homeTeam": "Deportivo Pereira",
-          "awayTeam": "Deportivo Cali",
-          "homeLogo": "https://media.api-sports.io/football/teams/1462.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1127.png",
-          "startTime": "17:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1636706",
-          "sport": "football",
-          "competition": "Liga Pro Serie B",
-          "homeTeam": "Gualaceo SC",
-          "awayTeam": "Cumbayá",
-          "homeLogo": "https://media.api-sports.io/football/teams/1986.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16476.png",
           "startTime": "17:30",
           "status": "SCHEDULED"
         },
@@ -4150,6 +4060,84 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1499675",
+          "sport": "football",
+          "competition": "Primera B Metropolitana",
+          "homeTeam": "Deportivo Armenio",
+          "awayTeam": "Comunicaciones",
+          "homeLogo": "https://media.api-sports.io/football/teams/2427.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/8008.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1565268",
+          "sport": "football",
+          "competition": "Liga I",
+          "homeTeam": "FCSB",
+          "awayTeam": "Oţelul",
+          "homeLogo": "https://media.api-sports.io/football/teams/559.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/6886.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1576194",
+          "sport": "football",
+          "competition": "2. Bundesliga",
+          "homeTeam": "1. FC Nürnberg",
+          "awayTeam": "VfL Wolfsburg",
+          "homeLogo": "https://media.api-sports.io/football/teams/171.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/161.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 4,
+          "awayScore": 4
+        },
+        {
+          "id": "fixture-1600718",
+          "sport": "football",
+          "competition": "Segunda División",
+          "homeTeam": "Santiago City",
+          "awayTeam": "Colchagua",
+          "homeLogo": "https://media.api-sports.io/football/teams/21117.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5633.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1608698",
+          "sport": "football",
+          "competition": "Serie C - Girone B",
+          "homeTeam": "Spezia",
+          "awayTeam": "Gubbio",
+          "homeLogo": "https://media.api-sports.io/football/teams/515.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/866.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1623140",
+          "sport": "football",
+          "competition": "1a Divisió",
+          "homeTeam": "Ordino",
+          "awayTeam": "Inter Club d'Escaldes",
+          "homeLogo": "https://media.api-sports.io/football/teams/3344.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3342.png",
+          "startTime": "15:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 4
+        },
+        {
           "id": "fixture-1553183",
           "sport": "football",
           "competition": "Ekstraklasa",
@@ -4579,6 +4567,19 @@
           "awayScore": 1
         },
         {
+          "id": "fixture-1600260",
+          "sport": "football",
+          "competition": "Carioca - 2",
+          "homeTeam": "Serrano RJ",
+          "awayTeam": "Macaé",
+          "homeLogo": "https://media.api-sports.io/football/teams/13117.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7815.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1603040",
           "sport": "football",
           "competition": "Pro League",
@@ -4824,6 +4825,19 @@
           "status": "FINISHED",
           "homeScore": 2,
           "awayScore": 1
+        },
+        {
+          "id": "fixture-1619743",
+          "sport": "football",
+          "competition": "Premier Division",
+          "homeTeam": "St Joseph S Fc",
+          "awayTeam": "Lions Gibraltar",
+          "homeLogo": "https://media.api-sports.io/football/teams/698.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16133.png",
+          "startTime": "14:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
         },
         {
           "id": "fixture-1627991",
