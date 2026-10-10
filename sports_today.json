@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T15:10:58-03:00",
+  "updatedAt": "2026-10-10T15:20:57-03:00",
   "demo": false,
   "sections": [
     {
@@ -211,7 +211,7 @@
           "startTime": "13:30",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1557418",
@@ -407,45 +407,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1555516",
-          "sport": "football",
-          "competition": "Ligat Ha'al",
-          "homeTeam": "Hapoel Petah Tikva",
-          "awayTeam": "Maccabi Netanya",
-          "homeLogo": "https://media.api-sports.io/football/teams/4488.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4505.png",
-          "startTime": "13:15",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1555519",
-          "sport": "football",
-          "competition": "Ligat Ha'al",
-          "homeTeam": "Ironi Kiryat Shmona",
-          "awayTeam": "Hapoel Tel Aviv",
-          "homeLogo": "https://media.api-sports.io/football/teams/4510.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4501.png",
-          "startTime": "13:15",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 3
-        },
-        {
-          "id": "fixture-1558648",
-          "sport": "football",
-          "competition": "Jupiler Pro League",
-          "homeTeam": "RAAL La Louvière",
-          "awayTeam": "Club Brugge KV",
-          "homeLogo": "https://media.api-sports.io/football/teams/5902.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/569.png",
-          "startTime": "13:15",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 3
-        },
-        {
           "id": "fixture-1614895",
           "sport": "football",
           "competition": "Tercera División RFEF - Group 8",
@@ -546,20 +507,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/169.png",
           "startTime": "13:30",
           "status": "LIVE",
-          "homeScore": 5,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1582805",
-          "sport": "football",
-          "competition": "Premijer Liga",
-          "homeTeam": "Borac Banja Luka",
-          "awayTeam": "BSK Banja Luka",
-          "homeLogo": "https://media.api-sports.io/football/teams/3364.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/21736.png",
-          "startTime": "13:30",
-          "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 6,
           "awayScore": 0
         },
         {
@@ -573,7 +521,7 @@
           "startTime": "13:30",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 3
+          "awayScore": 4
         },
         {
           "id": "fixture-1590065",
@@ -611,7 +559,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1124.png",
           "startTime": "13:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -638,19 +586,6 @@
           "startTime": "13:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1615503",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 10",
-          "homeTeam": "Bollullos",
-          "awayTeam": "Chiclana",
-          "homeLogo": "https://media.api-sports.io/football/teams/20257.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/21905.png",
-          "startTime": "13:30",
-          "status": "LIVE",
-          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -728,7 +663,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9595.png",
           "startTime": "13:45",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 2
         },
         {
@@ -806,7 +741,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/854.png",
           "startTime": "14:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -820,7 +755,7 @@
           "startTime": "14:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1558533",
@@ -937,7 +872,7 @@
           "startTime": "14:05",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1506538",
@@ -976,7 +911,7 @@
           "startTime": "14:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1601543",
@@ -1001,7 +936,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/28105.png",
           "startTime": "14:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1131,7 +1066,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/415.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1144,7 +1079,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1301.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1170,7 +1105,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/24612.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1183,7 +1118,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9412.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1287,7 +1222,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/6216.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1300,7 +1235,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/5825.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1365,7 +1300,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2938.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1378,7 +1313,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9625.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1442,6 +1377,32 @@
           "homeLogo": "https://media.api-sports.io/football/teams/4512.png",
           "awayLogo": "https://media.api-sports.io/football/teams/4511.png",
           "startTime": "15:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1553183",
+          "sport": "football",
+          "competition": "Ekstraklasa",
+          "homeTeam": "Jagiellonia",
+          "awayTeam": "Gornik Zabrze",
+          "homeLogo": "https://media.api-sports.io/football/teams/336.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/340.png",
+          "startTime": "15:15",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1558022",
+          "sport": "football",
+          "competition": "1. SNL",
+          "homeTeam": "Olimpija Ljubljana",
+          "awayTeam": "Mura",
+          "homeLogo": "https://media.api-sports.io/football/teams/677.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4197.png",
+          "startTime": "15:15",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -3262,17 +3223,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1616116",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 12",
-          "homeTeam": "Laguna de Duero",
-          "awayTeam": "Panadería Pulido",
-          "homeLogo": "https://media.api-sports.io/football/teams/22143.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/9800.png",
-          "startTime": "13:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1645333",
           "sport": "football",
           "competition": "Premier League",
@@ -3655,28 +3605,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/23491.png",
           "awayLogo": "https://media.api-sports.io/football/teams/12971.png",
           "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1553183",
-          "sport": "football",
-          "competition": "Ekstraklasa",
-          "homeTeam": "Jagiellonia",
-          "awayTeam": "Gornik Zabrze",
-          "homeLogo": "https://media.api-sports.io/football/teams/336.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/340.png",
-          "startTime": "15:15",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1558022",
-          "sport": "football",
-          "competition": "1. SNL",
-          "homeTeam": "Olimpija Ljubljana",
-          "awayTeam": "Mura",
-          "homeLogo": "https://media.api-sports.io/football/teams/677.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4197.png",
-          "startTime": "15:15",
           "status": "SCHEDULED"
         },
         {
@@ -5444,6 +5372,71 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1582805",
+          "sport": "football",
+          "competition": "Premijer Liga",
+          "homeTeam": "Borac Banja Luka",
+          "awayTeam": "BSK Banja Luka",
+          "homeLogo": "https://media.api-sports.io/football/teams/3364.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/21736.png",
+          "startTime": "13:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1615503",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 10",
+          "homeTeam": "Bollullos",
+          "awayTeam": "Chiclana",
+          "homeLogo": "https://media.api-sports.io/football/teams/20257.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/21905.png",
+          "startTime": "13:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1555516",
+          "sport": "football",
+          "competition": "Ligat Ha'al",
+          "homeTeam": "Hapoel Petah Tikva",
+          "awayTeam": "Maccabi Netanya",
+          "homeLogo": "https://media.api-sports.io/football/teams/4488.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4505.png",
+          "startTime": "13:15",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1555519",
+          "sport": "football",
+          "competition": "Ligat Ha'al",
+          "homeTeam": "Ironi Kiryat Shmona",
+          "awayTeam": "Hapoel Tel Aviv",
+          "homeLogo": "https://media.api-sports.io/football/teams/4510.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4501.png",
+          "startTime": "13:15",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1558648",
+          "sport": "football",
+          "competition": "Jupiler Pro League",
+          "homeTeam": "RAAL La Louvière",
+          "awayTeam": "Club Brugge KV",
+          "homeLogo": "https://media.api-sports.io/football/teams/5902.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/569.png",
+          "startTime": "13:15",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 4
+        },
+        {
           "id": "fixture-1575983",
           "sport": "football",
           "competition": "Premier League",
@@ -5975,6 +5968,19 @@
           "status": "FINISHED",
           "homeScore": 0,
           "awayScore": 2
+        },
+        {
+          "id": "fixture-1616116",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 12",
+          "homeTeam": "Laguna de Duero",
+          "awayTeam": "Panadería Pulido",
+          "homeLogo": "https://media.api-sports.io/football/teams/22143.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9800.png",
+          "startTime": "13:00",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 4
         },
         {
           "id": "fixture-1616421",
