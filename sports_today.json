@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T18:40:56-03:00",
+  "updatedAt": "2026-10-10T18:50:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -34,19 +34,6 @@
       "title": "Fútbol - Argentina",
       "priority": 5,
       "events": [
-        {
-          "id": "fixture-1498878",
-          "sport": "football",
-          "competition": "Primera Nacional",
-          "homeTeam": "Midland",
-          "awayTeam": "Atletico DE Rafaela",
-          "homeLogo": "https://media.api-sports.io/football/teams/1963.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/465.png",
-          "startTime": "16:30",
-          "status": "LIVE",
-          "homeScore": 3,
-          "awayScore": 0
-        },
         {
           "id": "fixture-1493169",
           "sport": "football",
@@ -81,6 +68,19 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2424.png",
           "startTime": "21:30",
           "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1498878",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "Midland",
+          "awayTeam": "Atletico DE Rafaela",
+          "homeLogo": "https://media.api-sports.io/football/teams/1963.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/465.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 4,
+          "awayScore": 0
         },
         {
           "id": "fixture-1498880",
@@ -429,19 +429,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1645336",
-          "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Nouadhibou",
-          "awayTeam": "Nouakchott Academie",
-          "homeLogo": "https://media.api-sports.io/football/teams/6427.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/26812.png",
-          "startTime": "16:50",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1517362",
           "sport": "football",
           "competition": "Canadian Premier League",
@@ -481,19 +468,6 @@
           "awayScore": 2
         },
         {
-          "id": "fixture-1601459",
-          "sport": "football",
-          "competition": "Liga de Ascenso",
-          "homeTeam": "CS Uruguay",
-          "awayTeam": "Santa Ana",
-          "homeLogo": "https://media.api-sports.io/football/teams/2058.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2057.png",
-          "startTime": "17:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 4
-        },
-        {
           "id": "fixture-1632030",
           "sport": "football",
           "competition": "Division Profesional - Clausura",
@@ -504,7 +478,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1634919",
@@ -516,7 +490,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/16139.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -542,7 +516,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/753.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -608,7 +582,7 @@
           "startTime": "17:30",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1549502",
@@ -686,7 +660,7 @@
           "startTime": "18:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1559662",
@@ -699,7 +673,7 @@
           "startTime": "18:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1600625",
@@ -712,7 +686,7 @@
           "startTime": "18:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1636817",
@@ -2317,17 +2291,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1609694",
-          "sport": "football",
-          "competition": "1. Liga Classic - Group 3",
-          "homeTeam": "St. Gallen II",
-          "awayTeam": "Freienbach",
-          "homeLogo": "https://media.api-sports.io/football/teams/12718.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/6625.png",
-          "startTime": "12:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1620680",
           "sport": "football",
           "competition": "Championnat National",
@@ -2544,17 +2507,6 @@
           "awayTeam": "Jette",
           "homeLogo": "https://media.api-sports.io/football/teams/5964.png",
           "awayLogo": "https://media.api-sports.io/football/teams/5836.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1582883",
-          "sport": "football",
-          "competition": "Second Amateur Division - ACFF",
-          "homeTeam": "Braine",
-          "awayTeam": "Ostiches",
-          "homeLogo": "https://media.api-sports.io/football/teams/5764.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5893.png",
           "startTime": "15:00",
           "status": "SCHEDULED"
         },
@@ -3696,6 +3648,32 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1601459",
+          "sport": "football",
+          "competition": "Liga de Ascenso",
+          "homeTeam": "CS Uruguay",
+          "awayTeam": "Santa Ana",
+          "homeLogo": "https://media.api-sports.io/football/teams/2058.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2057.png",
+          "startTime": "17:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 5
+        },
+        {
+          "id": "fixture-1645336",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Nouadhibou",
+          "awayTeam": "Nouakchott Academie",
+          "homeLogo": "https://media.api-sports.io/football/teams/6427.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/26812.png",
+          "startTime": "16:50",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1575509",
           "sport": "football",
           "competition": "Primeira Liga",
@@ -4435,6 +4413,19 @@
           "status": "FINISHED",
           "homeScore": 1,
           "awayScore": 4
+        },
+        {
+          "id": "fixture-1582883",
+          "sport": "football",
+          "competition": "Second Amateur Division - ACFF",
+          "homeTeam": "Braine",
+          "awayTeam": "Ostiches",
+          "homeLogo": "https://media.api-sports.io/football/teams/5764.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5893.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1582884",
@@ -6943,6 +6934,19 @@
           "startTime": "12:00",
           "status": "FINISHED",
           "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1609694",
+          "sport": "football",
+          "competition": "1. Liga Classic - Group 3",
+          "homeTeam": "St. Gallen II",
+          "awayTeam": "Freienbach",
+          "homeLogo": "https://media.api-sports.io/football/teams/12718.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/6625.png",
+          "startTime": "12:00",
+          "status": "FINISHED",
+          "homeScore": 1,
           "awayScore": 0
         },
         {
