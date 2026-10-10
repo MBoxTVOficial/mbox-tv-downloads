@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T17:10:58-03:00",
+  "updatedAt": "2026-10-10T17:20:54-03:00",
   "demo": false,
   "sections": [
     {
@@ -83,7 +83,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/465.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -346,7 +346,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1298.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 1
         },
         {
@@ -442,32 +442,6 @@
           "awayScore": 1
         },
         {
-          "id": "fixture-1553183",
-          "sport": "football",
-          "competition": "Ekstraklasa",
-          "homeTeam": "Jagiellonia",
-          "awayTeam": "Gornik Zabrze",
-          "homeLogo": "https://media.api-sports.io/football/teams/336.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/340.png",
-          "startTime": "15:15",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 2
-        },
-        {
-          "id": "fixture-1613360",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 3",
-          "homeTeam": "Atlético Albericia",
-          "awayTeam": "Castro",
-          "homeLogo": "https://media.api-sports.io/football/teams/9637.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/15336.png",
-          "startTime": "15:15",
-          "status": "LIVE",
-          "homeScore": 4,
-          "awayScore": 2
-        },
-        {
           "id": "fixture-1490511",
           "sport": "football",
           "competition": "Major League Soccer",
@@ -517,7 +491,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 3,
-          "awayScore": 2
+          "awayScore": 3
         },
         {
           "id": "fixture-1600718",
@@ -530,7 +504,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 2
+          "awayScore": 3
         },
         {
           "id": "fixture-1604194",
@@ -569,7 +543,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 3
+          "awayScore": 4
         },
         {
           "id": "fixture-1558646",
@@ -620,7 +594,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9585.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 3,
+          "homeScore": 4,
           "awayScore": 0
         },
         {
@@ -659,7 +633,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 6,
+          "homeScore": 7,
           "awayScore": 0
         },
         {
@@ -737,8 +711,8 @@
           "awayLogo": "https://media.api-sports.io/football/teams/28295.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1638629",
@@ -790,7 +764,7 @@
           "startTime": "16:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1641088",
@@ -802,7 +776,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1782.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -832,6 +806,19 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1517362",
+          "sport": "football",
+          "competition": "Canadian Premier League",
+          "homeTeam": "Supra du Quebec",
+          "awayTeam": "Vancouver FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/27461.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20881.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1600717",
           "sport": "football",
           "competition": "Segunda División",
@@ -841,7 +828,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/5643.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 1
         },
         {
@@ -907,7 +894,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1637854",
@@ -932,7 +919,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7774.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -2663,28 +2650,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1613367",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 3",
-          "homeTeam": "Sámano",
-          "awayTeam": "Velarde",
-          "homeLogo": "https://media.api-sports.io/football/teams/9648.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20451.png",
-          "startTime": "13:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1578107",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV A",
-          "homeTeam": "Zulte Waregem II",
-          "awayTeam": "Londerzeel",
-          "homeLogo": "https://media.api-sports.io/football/teams/19898.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5862.png",
-          "startTime": "13:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1634078",
           "sport": "football",
           "competition": "Premier League",
@@ -2718,39 +2683,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1578108",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV A",
-          "homeTeam": "Ninove",
-          "awayTeam": "Mechelen II",
-          "homeLogo": "https://media.api-sports.io/football/teams/5884.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19900.png",
-          "startTime": "14:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1582881",
-          "sport": "football",
-          "competition": "Second Amateur Division - ACFF",
-          "homeTeam": "Huy",
-          "awayTeam": "AS Eupen II",
-          "homeLogo": "https://media.api-sports.io/football/teams/5832.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/24386.png",
-          "startTime": "14:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1582885",
-          "sport": "football",
-          "competition": "Second Amateur Division - ACFF",
-          "homeTeam": "Stade Verviers",
-          "awayTeam": "SG-Tertre-Hautrage",
-          "homeLogo": "https://media.api-sports.io/football/teams/22256.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5917.png",
-          "startTime": "14:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1619743",
           "sport": "football",
           "competition": "Premier Division",
@@ -2759,39 +2691,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/698.png",
           "awayLogo": "https://media.api-sports.io/football/teams/16133.png",
           "startTime": "14:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1578110",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV A",
-          "homeTeam": "Diksmuide",
-          "awayTeam": "Oostkamp",
-          "homeLogo": "https://media.api-sports.io/football/teams/14157.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5890.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1578112",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV A",
-          "homeTeam": "VW Hamme",
-          "awayTeam": "FC Lebbeke",
-          "homeLogo": "https://media.api-sports.io/football/teams/5966.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5803.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1578349",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV B",
-          "homeTeam": "Bocholt",
-          "awayTeam": "Tempo Overijse",
-          "homeLogo": "https://media.api-sports.io/football/teams/5760.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5947.png",
-          "startTime": "15:00",
           "status": "SCHEDULED"
         },
         {
@@ -2846,17 +2745,6 @@
           "awayTeam": "Ostiches",
           "homeLogo": "https://media.api-sports.io/football/teams/5764.png",
           "awayLogo": "https://media.api-sports.io/football/teams/5893.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1582884",
-          "sport": "football",
-          "competition": "Second Amateur Division - ACFF",
-          "homeTeam": "Richelle United",
-          "awayTeam": "RUS Binche",
-          "homeLogo": "https://media.api-sports.io/football/teams/5913.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20403.png",
           "startTime": "15:00",
           "status": "SCHEDULED"
         },
@@ -2990,17 +2878,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/27963.png",
           "awayLogo": "https://media.api-sports.io/football/teams/27964.png",
           "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1517362",
-          "sport": "football",
-          "competition": "Canadian Premier League",
-          "homeTeam": "Supra du Quebec",
-          "awayTeam": "Vancouver FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/27461.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20881.png",
-          "startTime": "17:00",
           "status": "SCHEDULED"
         },
         {
@@ -3198,17 +3075,6 @@
           "awayTeam": "CD Olimpia",
           "homeLogo": "https://media.api-sports.io/football/teams/21858.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1051.png",
-          "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1638584",
-          "sport": "football",
-          "competition": "Friendlies Women",
-          "homeTeam": "Panama W",
-          "awayTeam": "New Zealand W",
-          "homeLogo": "https://media.api-sports.io/football/teams/1781.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1716.png",
           "startTime": "18:00",
           "status": "SCHEDULED"
         },
@@ -4284,6 +4150,19 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1553183",
+          "sport": "football",
+          "competition": "Ekstraklasa",
+          "homeTeam": "Jagiellonia",
+          "awayTeam": "Gornik Zabrze",
+          "homeLogo": "https://media.api-sports.io/football/teams/336.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/340.png",
+          "startTime": "15:15",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 3
+        },
+        {
           "id": "fixture-1558022",
           "sport": "football",
           "competition": "1. SNL",
@@ -4295,6 +4174,19 @@
           "status": "FINISHED",
           "homeScore": 3,
           "awayScore": 3
+        },
+        {
+          "id": "fixture-1613360",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 3",
+          "homeTeam": "Atlético Albericia",
+          "awayTeam": "Castro",
+          "homeLogo": "https://media.api-sports.io/football/teams/9637.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/15336.png",
+          "startTime": "15:15",
+          "status": "FINISHED",
+          "homeScore": 4,
+          "awayScore": 2
         },
         {
           "id": "fixture-1499673",
@@ -4505,6 +4397,45 @@
           "awayScore": 1
         },
         {
+          "id": "fixture-1578110",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV A",
+          "homeTeam": "Diksmuide",
+          "awayTeam": "Oostkamp",
+          "homeLogo": "https://media.api-sports.io/football/teams/14157.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5890.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1578112",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV A",
+          "homeTeam": "VW Hamme",
+          "awayTeam": "FC Lebbeke",
+          "homeLogo": "https://media.api-sports.io/football/teams/5966.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5803.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1578349",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV B",
+          "homeTeam": "Bocholt",
+          "awayTeam": "Tempo Overijse",
+          "homeLogo": "https://media.api-sports.io/football/teams/5760.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5947.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
           "id": "fixture-1579831",
           "sport": "football",
           "competition": "First Amateur Division",
@@ -4581,6 +4512,19 @@
           "status": "FINISHED",
           "homeScore": 1,
           "awayScore": 4
+        },
+        {
+          "id": "fixture-1582884",
+          "sport": "football",
+          "competition": "Second Amateur Division - ACFF",
+          "homeTeam": "Richelle United",
+          "awayTeam": "RUS Binche",
+          "homeLogo": "https://media.api-sports.io/football/teams/5913.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20403.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1597995",
@@ -4765,6 +4709,19 @@
           "awayScore": 2
         },
         {
+          "id": "fixture-1578108",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV A",
+          "homeTeam": "Ninove",
+          "awayTeam": "Mechelen II",
+          "homeLogo": "https://media.api-sports.io/football/teams/5884.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19900.png",
+          "startTime": "14:30",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 2
+        },
+        {
           "id": "fixture-1578109",
           "sport": "football",
           "competition": "Second Amateur Division - VFV A",
@@ -4815,6 +4772,32 @@
           "status": "FINISHED",
           "homeScore": 0,
           "awayScore": 0
+        },
+        {
+          "id": "fixture-1582881",
+          "sport": "football",
+          "competition": "Second Amateur Division - ACFF",
+          "homeTeam": "Huy",
+          "awayTeam": "AS Eupen II",
+          "homeLogo": "https://media.api-sports.io/football/teams/5832.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/24386.png",
+          "startTime": "14:30",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1582885",
+          "sport": "football",
+          "competition": "Second Amateur Division - ACFF",
+          "homeTeam": "Stade Verviers",
+          "awayTeam": "SG-Tertre-Hautrage",
+          "homeLogo": "https://media.api-sports.io/football/teams/22256.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5917.png",
+          "startTime": "14:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 4
         },
         {
           "id": "fixture-1601543",
@@ -5256,6 +5239,19 @@
           "startTime": "13:30",
           "status": "FINISHED",
           "homeScore": 6,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1578107",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV A",
+          "homeTeam": "Zulte Waregem II",
+          "awayTeam": "Londerzeel",
+          "homeLogo": "https://media.api-sports.io/football/teams/19898.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5862.png",
+          "startTime": "13:30",
+          "status": "FINISHED",
+          "homeScore": 0,
           "awayScore": 0
         },
         {
@@ -5946,6 +5942,19 @@
           "status": "FINISHED",
           "homeScore": 2,
           "awayScore": 1
+        },
+        {
+          "id": "fixture-1613367",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 3",
+          "homeTeam": "Sámano",
+          "awayTeam": "Velarde",
+          "homeLogo": "https://media.api-sports.io/football/teams/9648.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20451.png",
+          "startTime": "13:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 0
         },
         {
           "id": "fixture-1613368",
@@ -19213,6 +19222,17 @@
           "status": "CANCELLED",
           "homeScore": 0,
           "awayScore": 0
+        },
+        {
+          "id": "fixture-1638584",
+          "sport": "football",
+          "competition": "Friendlies Women",
+          "homeTeam": "Panama W",
+          "awayTeam": "New Zealand W",
+          "homeLogo": "https://media.api-sports.io/football/teams/1781.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1716.png",
+          "startTime": "18:00",
+          "status": "CANCELLED"
         }
       ]
     }
