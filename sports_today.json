@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T18:30:56-03:00",
+  "updatedAt": "2026-10-10T18:40:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -478,7 +478,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1601459",
@@ -581,7 +581,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7774.png",
           "startTime": "17:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -673,7 +673,7 @@
           "startTime": "18:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1551693",
@@ -741,6 +741,71 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1645225",
+          "sport": "football",
+          "competition": "Segunda División",
+          "homeTeam": "Yaracuyanos FC",
+          "awayTeam": "Fundación Lara Deportiva",
+          "homeLogo": "https://media.api-sports.io/football/teams/2829.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/10091.png",
+          "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 3,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1600255",
+          "sport": "football",
+          "competition": "Carioca - 2",
+          "homeTeam": "Carapebus",
+          "awayTeam": "Niteroiense",
+          "homeLogo": "https://media.api-sports.io/football/teams/17737.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/23637.png",
+          "startTime": "18:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1631759",
+          "sport": "football",
+          "competition": "Liga Premier Serie A",
+          "homeTeam": "Delfines Coatzacoalcos",
+          "awayTeam": "Artesanos Metepec",
+          "homeLogo": "https://media.api-sports.io/football/teams/28303.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/22049.png",
+          "startTime": "18:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1635990",
+          "sport": "football",
+          "competition": "Primera Premier",
+          "homeTeam": "Racing de Veracruz",
+          "awayTeam": "Celaya",
+          "homeLogo": "https://media.api-sports.io/football/teams/22046.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2308.png",
+          "startTime": "18:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1635991",
+          "sport": "football",
+          "competition": "Primera Premier",
+          "homeTeam": "Cordobés",
+          "awayTeam": "Tigres de Alica",
+          "homeLogo": "https://media.api-sports.io/football/teams/24939.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/24952.png",
+          "startTime": "18:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1639850",
           "sport": "football",
           "competition": "Liga Pro",
@@ -748,6 +813,19 @@
           "awayTeam": "Emelec",
           "homeLogo": "https://media.api-sports.io/football/teams/1159.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1148.png",
+          "startTime": "18:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1643171",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Penarol",
+          "awayTeam": "Progreso",
+          "homeLogo": "https://media.api-sports.io/football/teams/2348.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2363.png",
           "startTime": "18:30",
           "status": "LIVE",
           "homeScore": 0,
@@ -2602,17 +2680,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1645225",
-          "sport": "football",
-          "competition": "Segunda División",
-          "homeTeam": "Yaracuyanos FC",
-          "awayTeam": "Fundación Lara Deportiva",
-          "homeLogo": "https://media.api-sports.io/football/teams/2829.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/10091.png",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1645295",
           "sport": "football",
           "competition": "Paraense A3",
@@ -2643,61 +2710,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/18264.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1737.png",
           "startTime": "18:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1600255",
-          "sport": "football",
-          "competition": "Carioca - 2",
-          "homeTeam": "Carapebus",
-          "awayTeam": "Niteroiense",
-          "homeLogo": "https://media.api-sports.io/football/teams/17737.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/23637.png",
-          "startTime": "18:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1631759",
-          "sport": "football",
-          "competition": "Liga Premier Serie A",
-          "homeTeam": "Delfines Coatzacoalcos",
-          "awayTeam": "Artesanos Metepec",
-          "homeLogo": "https://media.api-sports.io/football/teams/28303.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/22049.png",
-          "startTime": "18:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1635990",
-          "sport": "football",
-          "competition": "Primera Premier",
-          "homeTeam": "Racing de Veracruz",
-          "awayTeam": "Celaya",
-          "homeLogo": "https://media.api-sports.io/football/teams/22046.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2308.png",
-          "startTime": "18:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1635991",
-          "sport": "football",
-          "competition": "Primera Premier",
-          "homeTeam": "Cordobés",
-          "awayTeam": "Tigres de Alica",
-          "homeLogo": "https://media.api-sports.io/football/teams/24939.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/24952.png",
-          "startTime": "18:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1643171",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Penarol",
-          "awayTeam": "Progreso",
-          "homeLogo": "https://media.api-sports.io/football/teams/2348.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2363.png",
-          "startTime": "18:30",
           "status": "SCHEDULED"
         },
         {
