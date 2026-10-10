@@ -9,15 +9,15 @@ from scripts import generate_sports_today as generator
 
 
 class ApiErrorDiagnosticsTest(unittest.TestCase):
-    def capture(self, errors):
+    def capture(self, errors, annotation=False):
         out = io.StringIO()
-        with contextlib.redirect_stdout(out), self.assertRaises(generator.GenerationError):
+        with patch.dict(os.environ, {'GITHUB_ACTIONS': 'true' if annotation else 'false'}), contextlib.redirect_stdout(out), self.assertRaises(generator.GenerationError):
             generator.validate_api_response({'errors': errors})
         return out.getvalue()
 
     def test_annotation_uses_only_sanitized_text(self):
         with patch.dict(os.environ, {'GITHUB_ACTIONS': 'true', 'API_FOOTBALL_KEY': 'test-secret'}):
-            log = self.capture({'requests': 'test-secret limit reached'})
+            log = self.capture({'requests': 'test-secret limit reached'}, annotation=True)
         self.assertIn('::error title=API-Football diagnostics::', log)
         self.assertNotIn('test-secret', log)
 
