@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T17:00:57-03:00",
+  "updatedAt": "2026-10-10T17:10:58-03:00",
   "demo": false,
   "sections": [
     {
@@ -44,7 +44,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/447.png",
           "startTime": "15:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -57,7 +57,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/445.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -83,7 +83,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/465.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -320,7 +320,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/114.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -334,7 +334,7 @@
           "startTime": "15:45",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1552780",
@@ -346,7 +346,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1298.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -442,84 +442,6 @@
           "awayScore": 1
         },
         {
-          "id": "fixture-1505531",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Cobresal",
-          "awayTeam": "Universidad de Concepcion",
-          "homeLogo": "https://media.api-sports.io/football/teams/2331.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2324.png",
-          "startTime": "15:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1575041",
-          "sport": "football",
-          "competition": "Carioca U20",
-          "homeTeam": "Maricá U20",
-          "awayTeam": "Fluminense U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/25595.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/13008.png",
-          "startTime": "15:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 3
-        },
-        {
-          "id": "fixture-1575042",
-          "sport": "football",
-          "competition": "Carioca U20",
-          "homeTeam": "Nova Iguaçu U20",
-          "awayTeam": "Volta Redonda U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/13032.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/13074.png",
-          "startTime": "15:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1575043",
-          "sport": "football",
-          "competition": "Carioca U20",
-          "homeTeam": "Sampaio Correa FE U20",
-          "awayTeam": "Madureira U20",
-          "homeLogo": "https://media.api-sports.io/football/teams/23387.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20762.png",
-          "startTime": "15:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1600256",
-          "sport": "football",
-          "competition": "Carioca - 2",
-          "homeTeam": "Duque de Caxias",
-          "awayTeam": "Audax Rio",
-          "homeLogo": "https://media.api-sports.io/football/teams/12278.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/13107.png",
-          "startTime": "15:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1600259",
-          "sport": "football",
-          "competition": "Carioca - 2",
-          "homeTeam": "São Cristóvão RJ",
-          "awayTeam": "Goytacaz",
-          "homeLogo": "https://media.api-sports.io/football/teams/23664.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/13112.png",
-          "startTime": "15:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1553183",
           "sport": "football",
           "competition": "Ekstraklasa",
@@ -533,19 +455,6 @@
           "awayScore": 2
         },
         {
-          "id": "fixture-1558022",
-          "sport": "football",
-          "competition": "1. SNL",
-          "homeTeam": "Olimpija Ljubljana",
-          "awayTeam": "Mura",
-          "homeLogo": "https://media.api-sports.io/football/teams/677.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/4197.png",
-          "startTime": "15:15",
-          "status": "LIVE",
-          "homeScore": 3,
-          "awayScore": 3
-        },
-        {
           "id": "fixture-1613360",
           "sport": "football",
           "competition": "Tercera División RFEF - Group 3",
@@ -556,7 +465,7 @@
           "startTime": "15:15",
           "status": "LIVE",
           "homeScore": 4,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1490511",
@@ -672,7 +581,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/734.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -803,7 +712,7 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 3
+          "awayScore": 4
         },
         {
           "id": "fixture-1644448",
@@ -854,7 +763,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/230.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -881,7 +790,7 @@
           "startTime": "16:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1641088",
@@ -893,7 +802,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1782.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -933,7 +842,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1601459",
@@ -969,6 +878,58 @@
           "awayTeam": "Delfines Del Este",
           "homeLogo": "https://media.api-sports.io/football/teams/16140.png",
           "awayLogo": "https://media.api-sports.io/football/teams/16139.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1637852",
+          "sport": "football",
+          "competition": "Serie C",
+          "homeTeam": "Botafogo PB",
+          "awayTeam": "Santa Cruz",
+          "homeLogo": "https://media.api-sports.io/football/teams/1197.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/753.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1637853",
+          "sport": "football",
+          "competition": "Serie C",
+          "homeTeam": "Brusque",
+          "awayTeam": "Paysandu",
+          "homeLogo": "https://media.api-sports.io/football/teams/1211.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/149.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1637854",
+          "sport": "football",
+          "competition": "Serie C",
+          "homeTeam": "Ferroviária",
+          "awayTeam": "Inter De Limeira",
+          "homeLogo": "https://media.api-sports.io/football/teams/7826.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1201.png",
+          "startTime": "17:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1637855",
+          "sport": "football",
+          "competition": "Serie C",
+          "homeTeam": "Maringá",
+          "awayTeam": "Floresta",
+          "homeLogo": "https://media.api-sports.io/football/teams/7833.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7774.png",
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
@@ -3065,50 +3026,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1637852",
-          "sport": "football",
-          "competition": "Serie C",
-          "homeTeam": "Botafogo PB",
-          "awayTeam": "Santa Cruz",
-          "homeLogo": "https://media.api-sports.io/football/teams/1197.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/753.png",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1637853",
-          "sport": "football",
-          "competition": "Serie C",
-          "homeTeam": "Brusque",
-          "awayTeam": "Paysandu",
-          "homeLogo": "https://media.api-sports.io/football/teams/1211.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/149.png",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1637854",
-          "sport": "football",
-          "competition": "Serie C",
-          "homeTeam": "Ferroviária",
-          "awayTeam": "Inter De Limeira",
-          "homeLogo": "https://media.api-sports.io/football/teams/7826.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1201.png",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1637855",
-          "sport": "football",
-          "competition": "Serie C",
-          "homeTeam": "Maringá",
-          "awayTeam": "Floresta",
-          "homeLogo": "https://media.api-sports.io/football/teams/7833.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7774.png",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1643429",
           "sport": "football",
           "competition": "Pernambucano - U20",
@@ -4367,6 +4284,19 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1558022",
+          "sport": "football",
+          "competition": "1. SNL",
+          "homeTeam": "Olimpija Ljubljana",
+          "awayTeam": "Mura",
+          "homeLogo": "https://media.api-sports.io/football/teams/677.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/4197.png",
+          "startTime": "15:15",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 3
+        },
+        {
           "id": "fixture-1499673",
           "sport": "football",
           "competition": "Primera B Metropolitana",
@@ -4426,6 +4356,19 @@
           "awayTeam": "Liniers",
           "homeLogo": "https://media.api-sports.io/football/teams/481.png",
           "awayLogo": "https://media.api-sports.io/football/teams/8395.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1505531",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Cobresal",
+          "awayTeam": "Universidad de Concepcion",
+          "homeLogo": "https://media.api-sports.io/football/teams/2331.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2324.png",
           "startTime": "15:00",
           "status": "FINISHED",
           "homeScore": 1,
@@ -4523,6 +4466,45 @@
           "awayScore": 2
         },
         {
+          "id": "fixture-1575041",
+          "sport": "football",
+          "competition": "Carioca U20",
+          "homeTeam": "Maricá U20",
+          "awayTeam": "Fluminense U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/25595.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/13008.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1575042",
+          "sport": "football",
+          "competition": "Carioca U20",
+          "homeTeam": "Nova Iguaçu U20",
+          "awayTeam": "Volta Redonda U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/13032.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/13074.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1575043",
+          "sport": "football",
+          "competition": "Carioca U20",
+          "homeTeam": "Sampaio Correa FE U20",
+          "awayTeam": "Madureira U20",
+          "homeLogo": "https://media.api-sports.io/football/teams/23387.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20762.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
           "id": "fixture-1579831",
           "sport": "football",
           "competition": "First Amateur Division",
@@ -4614,6 +4596,19 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1600256",
+          "sport": "football",
+          "competition": "Carioca - 2",
+          "homeTeam": "Duque de Caxias",
+          "awayTeam": "Audax Rio",
+          "homeLogo": "https://media.api-sports.io/football/teams/12278.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/13107.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1600258",
           "sport": "football",
           "competition": "Carioca - 2",
@@ -4625,6 +4620,19 @@
           "status": "FINISHED",
           "homeScore": 3,
           "awayScore": 0
+        },
+        {
+          "id": "fixture-1600259",
+          "sport": "football",
+          "competition": "Carioca - 2",
+          "homeTeam": "São Cristóvão RJ",
+          "awayTeam": "Goytacaz",
+          "homeLogo": "https://media.api-sports.io/football/teams/23664.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/13112.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1603040",
