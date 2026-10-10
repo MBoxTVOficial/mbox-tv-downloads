@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T16:30:56-03:00",
+  "updatedAt": "2026-10-10T16:40:57-03:00",
   "demo": false,
   "sections": [
     {
@@ -487,7 +487,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1499682",
@@ -526,7 +526,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1549500",
@@ -577,7 +577,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/6220.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 3,
+          "homeScore": 4,
           "awayScore": 1
         },
         {
@@ -591,7 +591,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 2
+          "awayScore": 4
         },
         {
           "id": "fixture-1573307",
@@ -603,7 +603,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9412.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 2
         },
         {
@@ -759,7 +759,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/13087.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -838,7 +838,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1644743",
@@ -864,7 +864,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1553183",
@@ -876,7 +876,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/340.png",
           "startTime": "15:15",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 2
         },
         {
@@ -889,7 +889,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/4197.png",
           "startTime": "15:15",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 1
         },
         {
@@ -902,7 +902,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/15336.png",
           "startTime": "15:15",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -954,7 +954,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/161.png",
           "startTime": "15:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 2
         },
         {
@@ -1007,7 +1007,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 2
+          "awayScore": 3
         },
         {
           "id": "fixture-1558646",
@@ -1058,7 +1058,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9585.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -1097,7 +1097,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 3,
+          "homeScore": 5,
           "awayScore": 0
         },
         {
@@ -1110,7 +1110,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1151.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1149,8 +1149,8 @@
           "awayLogo": "https://media.api-sports.io/football/teams/964.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 1
+          "homeScore": 1,
+          "awayScore": 2
         },
         {
           "id": "fixture-1644448",
@@ -1176,7 +1176,7 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1638629",
@@ -1188,8 +1188,60 @@
           "awayLogo": "https://media.api-sports.io/football/teams/271.png",
           "startTime": "16:15",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 1
+        },
+        {
+          "id": "fixture-1575509",
+          "sport": "football",
+          "competition": "Primeira Liga",
+          "homeTeam": "Academico Viseu",
+          "awayTeam": "Estoril",
+          "homeLogo": "https://media.api-sports.io/football/teams/238.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/230.png",
+          "startTime": "16:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1575513",
+          "sport": "football",
+          "competition": "Primeira Liga",
+          "homeTeam": "Casa Pia",
+          "awayTeam": "Santa Clara",
+          "homeLogo": "https://media.api-sports.io/football/teams/4716.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/227.png",
+          "startTime": "16:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1576502",
+          "sport": "football",
+          "competition": "Segunda Liga",
+          "homeTeam": "Vizela",
+          "awayTeam": "Sporting CP B",
+          "homeLogo": "https://media.api-sports.io/football/teams/810.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/761.png",
+          "startTime": "16:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1641088",
+          "sport": "football",
+          "competition": "Friendlies Women",
+          "homeTeam": "Brazil W",
+          "awayTeam": "Argentina W",
+          "homeLogo": "https://media.api-sports.io/football/teams/1726.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1782.png",
+          "startTime": "16:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1645222",
@@ -2767,17 +2819,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1613668",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 4",
-          "homeTeam": "Erandio",
-          "awayTeam": "Deportivo Alavés III",
-          "homeLogo": "https://media.api-sports.io/football/teams/28099.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/22134.png",
-          "startTime": "12:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1620680",
           "sport": "football",
           "competition": "Championnat National",
@@ -3325,50 +3366,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/27963.png",
           "awayLogo": "https://media.api-sports.io/football/teams/27964.png",
           "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1575509",
-          "sport": "football",
-          "competition": "Primeira Liga",
-          "homeTeam": "Academico Viseu",
-          "awayTeam": "Estoril",
-          "homeLogo": "https://media.api-sports.io/football/teams/238.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/230.png",
-          "startTime": "16:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1575513",
-          "sport": "football",
-          "competition": "Primeira Liga",
-          "homeTeam": "Casa Pia",
-          "awayTeam": "Santa Clara",
-          "homeLogo": "https://media.api-sports.io/football/teams/4716.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/227.png",
-          "startTime": "16:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1576502",
-          "sport": "football",
-          "competition": "Segunda Liga",
-          "homeTeam": "Vizela",
-          "awayTeam": "Sporting CP B",
-          "homeLogo": "https://media.api-sports.io/football/teams/810.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/761.png",
-          "startTime": "16:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1641088",
-          "sport": "football",
-          "competition": "Friendlies Women",
-          "homeTeam": "Brazil W",
-          "awayTeam": "Argentina W",
-          "homeLogo": "https://media.api-sports.io/football/teams/1726.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1782.png",
-          "startTime": "16:30",
           "status": "SCHEDULED"
         },
         {
@@ -6995,6 +6992,19 @@
           "startTime": "12:00",
           "status": "FINISHED",
           "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1613668",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 4",
+          "homeTeam": "Erandio",
+          "awayTeam": "Deportivo Alavés III",
+          "homeLogo": "https://media.api-sports.io/football/teams/28099.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/22134.png",
+          "startTime": "12:00",
+          "status": "FINISHED",
+          "homeScore": 0,
           "awayScore": 2
         },
         {
