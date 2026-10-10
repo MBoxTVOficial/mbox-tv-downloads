@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T17:40:57-03:00",
+  "updatedAt": "2026-10-10T17:50:58-03:00",
   "demo": false,
   "sections": [
     {
@@ -71,7 +71,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1493180",
@@ -306,34 +306,8 @@
           "homeLogo": "https://media.api-sports.io/football/teams/106.png",
           "awayLogo": "https://media.api-sports.io/football/teams/77.png",
           "startTime": "15:45",
-          "status": "LIVE",
+          "status": "FINISHED",
           "homeScore": 5,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1552778",
-          "sport": "football",
-          "competition": "Ligue 1",
-          "homeTeam": "Monaco",
-          "awayTeam": "Toulouse",
-          "homeLogo": "https://media.api-sports.io/football/teams/91.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/96.png",
-          "startTime": "15:45",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 2
-        },
-        {
-          "id": "fixture-1552780",
-          "sport": "football",
-          "competition": "Ligue 1",
-          "homeTeam": "Paris Saint Germain",
-          "awayTeam": "Le Mans",
-          "homeLogo": "https://media.api-sports.io/football/teams/85.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1298.png",
-          "startTime": "15:45",
-          "status": "LIVE",
-          "homeScore": 3,
           "awayScore": 1
         },
         {
@@ -348,6 +322,32 @@
           "status": "FINISHED",
           "homeScore": 1,
           "awayScore": 0
+        },
+        {
+          "id": "fixture-1552778",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Monaco",
+          "awayTeam": "Toulouse",
+          "homeLogo": "https://media.api-sports.io/football/teams/91.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/96.png",
+          "startTime": "15:45",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1552780",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Paris Saint Germain",
+          "awayTeam": "Le Mans",
+          "homeLogo": "https://media.api-sports.io/football/teams/85.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1298.png",
+          "startTime": "15:45",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 1
         },
         {
           "id": "fixture-1552776",
@@ -429,19 +429,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1493744",
-          "sport": "football",
-          "competition": "USL Championship",
-          "homeTeam": "Sporting JAX",
-          "awayTeam": "Birmingham Legion",
-          "homeLogo": "https://media.api-sports.io/football/teams/25959.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3989.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 1
-        },
-        {
           "id": "fixture-1552183",
           "sport": "football",
           "competition": "Eredivisie",
@@ -465,7 +452,7 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 4,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1570782",
@@ -503,7 +490,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 8,
+          "homeScore": 9,
           "awayScore": 0
         },
         {
@@ -542,7 +529,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2374.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -608,7 +595,7 @@
           "startTime": "16:30",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1575513",
@@ -647,7 +634,7 @@
           "startTime": "16:30",
           "status": "LIVE",
           "homeScore": 3,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1645222",
@@ -659,7 +646,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/27527.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -725,7 +712,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1632030",
@@ -2620,28 +2607,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1578351",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV B",
-          "homeTeam": "Wellen",
-          "awayTeam": "Royal Antwerp II",
-          "homeLogo": "https://media.api-sports.io/football/teams/5989.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19958.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1578352",
-          "sport": "football",
-          "competition": "Second Amateur Division - VFV B",
-          "homeTeam": "Wilrijk",
-          "awayTeam": "Diegem Sport",
-          "homeLogo": "https://media.api-sports.io/football/teams/21831.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/5776.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1582348",
           "sport": "football",
           "competition": "Mineiro - 3",
@@ -2686,17 +2651,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1630330",
-          "sport": "football",
-          "competition": "Gaúcho - 3",
-          "homeTeam": "Farroupilha",
-          "awayTeam": "SC Rio Grande",
-          "homeLogo": "https://media.api-sports.io/football/teams/25078.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/25080.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1630331",
           "sport": "football",
           "competition": "Gaúcho - 3",
@@ -2704,17 +2658,6 @@
           "awayTeam": "Panambi",
           "homeLogo": "https://media.api-sports.io/football/teams/10149.png",
           "awayLogo": "https://media.api-sports.io/football/teams/28277.png",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1630332",
-          "sport": "football",
-          "competition": "Gaúcho - 3",
-          "homeTeam": "FBC Riograndense RS",
-          "awayTeam": "Clube 1992",
-          "homeLogo": "https://media.api-sports.io/football/teams/25077.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/26746.png",
           "startTime": "15:00",
           "status": "SCHEDULED"
         },
@@ -4415,6 +4358,32 @@
           "awayScore": 1
         },
         {
+          "id": "fixture-1578351",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV B",
+          "homeTeam": "Wellen",
+          "awayTeam": "Royal Antwerp II",
+          "homeLogo": "https://media.api-sports.io/football/teams/5989.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19958.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1578352",
+          "sport": "football",
+          "competition": "Second Amateur Division - VFV B",
+          "homeTeam": "Wilrijk",
+          "awayTeam": "Diegem Sport",
+          "homeLogo": "https://media.api-sports.io/football/teams/21831.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/5776.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
           "id": "fixture-1579831",
           "sport": "football",
           "competition": "First Amateur Division",
@@ -4608,6 +4577,32 @@
           "status": "FINISHED",
           "homeScore": 0,
           "awayScore": 3
+        },
+        {
+          "id": "fixture-1630330",
+          "sport": "football",
+          "competition": "Gaúcho - 3",
+          "homeTeam": "Farroupilha",
+          "awayTeam": "SC Rio Grande",
+          "homeLogo": "https://media.api-sports.io/football/teams/25078.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/25080.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1630332",
+          "sport": "football",
+          "competition": "Gaúcho - 3",
+          "homeTeam": "FBC Riograndense RS",
+          "awayTeam": "Clube 1992",
+          "homeLogo": "https://media.api-sports.io/football/teams/25077.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/26746.png",
+          "startTime": "15:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 2
         },
         {
           "id": "fixture-1631756",
@@ -19237,6 +19232,19 @@
           "homeLogo": "https://media.api-sports.io/football/teams/9514.png",
           "awayLogo": "https://media.api-sports.io/football/teams/880.png",
           "startTime": "12:30",
+          "status": "CANCELLED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1493744",
+          "sport": "football",
+          "competition": "USL Championship",
+          "homeTeam": "Sporting JAX",
+          "awayTeam": "Birmingham Legion",
+          "homeLogo": "https://media.api-sports.io/football/teams/25959.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3989.png",
+          "startTime": "14:00",
           "status": "CANCELLED",
           "homeScore": 0,
           "awayScore": 0
