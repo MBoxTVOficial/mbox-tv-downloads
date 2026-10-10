@@ -316,14 +316,35 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn("generate_sports_today.py --live", live)
         self.assertIn('git commit -m "Update live sports scores"', live)
 
-    def test_crons_have_sixty_live_slots_plus_four_unchanged_general_slots(self):
-        live = (generator.ROOT / ".github/workflows/update-sports-live.yml").read_text(encoding="utf-8")
-        self.assertIn("7,17,27,37,47,57 18-23 * * *", live)
-        self.assertIn("7,17,27,37,47,57 0-3 * * *", live)
-        self.assertEqual(60, len(range(18, 24)) * 6 + len(range(0, 4)) * 6)
-        general = (generator.ROOT / ".github/workflows/update-sports-today.yml").read_text(encoding="utf-8")
-        for hour in (11, 15, 20, 23):
-            self.assertIn(f"cron: '0 {hour} * * *'", general)
+    def test_hourly_live_fallback_and_external_scheduler_stay_under_budget(self):
+        workflows = generator.ROOT / ".github/workflows"
+        live = (workflows / "update-sports-live.yml").read_text(encoding="utf-8")
+        live_crons = [line.split("cron:", 1)[1].strip().strip("'")
+                      for line in live.splitlines() if line.strip().startswith("- cron:")]
+        self.assertEqual(["37 18-23 * * *", "37 0-3 * * *"], live_crons)
+        self.assertIn("workflow_dispatch:", live)
+        fallback_slots = sum(int(cron.split()[1].split("-")[1]) -
+                             int(cron.split()[1].split("-")[0]) + 1 for cron in live_crons)
+        general = (workflows / "update-sports-today.yml").read_text(encoding="utf-8")
+        general_crons = [line.split("cron:", 1)[1].strip().strip("'")
+                         for line in general.splitlines() if line.strip().startswith("- cron:")]
+        self.assertEqual(["5 3 * * *", "0 11 * * *", "0 15 * * *",
+                          "0 20 * * *", "0 23 * * *"], general_crons)
+        worker = (generator.ROOT / "cloudflare/live-scheduler/wrangler.toml").read_text(encoding="utf-8")
+        self.assertIn('crons = ["*/10 * * * *"]', worker)
+        worker_slots = 10 * 6  # 15:00-00:59 ART; one tick every ten minutes.
+        automatic_slots = worker_slots + fallback_slots + len(general_crons)
+        self.assertEqual(10, fallback_slots)
+        utc_hours = [hour for cron in live_crons
+                     for hour in range(int(cron.split()[1].split("-")[0]),
+                                       int(cron.split()[1].split("-")[1]) + 1)]
+        art_slots = [datetime(2026, 10, 10, hour, 37, tzinfo=timezone.utc)
+                     .astimezone(generator.argentina_timezone()).strftime("%H:%M")
+                     for hour in utc_hours]
+        self.assertEqual([f"{hour:02d}:37" for hour in range(15, 24)] + ["00:37"], art_slots)
+        self.assertEqual(90, generator.MAX_DAILY_API_CALLS)
+        self.assertEqual(75, automatic_slots)
+        self.assertLess(automatic_slots, generator.MAX_DAILY_API_CALLS)
 
 
 if __name__ == "__main__":

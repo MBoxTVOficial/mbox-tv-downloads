@@ -1,0 +1,14 @@
+{
+  "name": "mbox-live-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "lint": "node scripts/check.js",
+    "simulate": "node scripts/simulate.js",
+    "dev": "wrangler dev --local --test-scheduled"
+  },
+  "devDependencies": { "wrangler": "4.149.0" }
+}
