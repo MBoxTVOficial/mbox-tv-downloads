@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-09",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-09T22:53:16-03:00",
+  "updatedAt": "2026-10-09T23:10:06-03:00",
   "demo": false,
   "sections": [
     {
@@ -158,19 +158,6 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1600624",
-          "sport": "football",
-          "competition": "Primera Division",
-          "homeTeam": "Inca Aruba",
-          "awayTeam": "Platense",
-          "homeLogo": "https://media.api-sports.io/football/teams/28019.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19763.png",
-          "startTime": "21:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 3
-        },
-        {
           "id": "fixture-1641293",
           "sport": "football",
           "competition": "Torneo Federal A",
@@ -270,6 +257,58 @@
           "homeLogo": "https://media.api-sports.io/football/teams/16927.png",
           "awayLogo": "https://media.api-sports.io/football/teams/16941.png",
           "startTime": "22:30",
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1536724",
+          "sport": "football",
+          "competition": "Second League - Group 3",
+          "homeTeam": "SKA Khabarovsk II",
+          "awayTeam": "Kvant",
+          "homeLogo": "https://media.api-sports.io/football/teams/17721.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/6807.png",
+          "startTime": "23:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1601458",
+          "sport": "football",
+          "competition": "Liga de Ascenso",
+          "homeTeam": "AD Carmelita",
+          "awayTeam": "Guadalupe FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/814.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/821.png",
+          "startTime": "23:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1635989",
+          "sport": "football",
+          "competition": "Primera Premier",
+          "homeTeam": "Reboceros La Piedad",
+          "awayTeam": "Los Cabos United",
+          "homeLogo": "https://media.api-sports.io/football/teams/15937.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19908.png",
+          "startTime": "23:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1639027",
+          "sport": "football",
+          "competition": "National League - National",
+          "homeTeam": "Auckland City",
+          "awayTeam": "Wellington Olympic",
+          "homeLogo": "https://media.api-sports.io/football/teams/2537.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20646.png",
+          "startTime": "23:00",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -393,50 +432,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/14459.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1720.png",
           "startTime": "21:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1536724",
-          "sport": "football",
-          "competition": "Second League - Group 3",
-          "homeTeam": "SKA Khabarovsk II",
-          "awayTeam": "Kvant",
-          "homeLogo": "https://media.api-sports.io/football/teams/17721.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/6807.png",
-          "startTime": "23:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1601458",
-          "sport": "football",
-          "competition": "Liga de Ascenso",
-          "homeTeam": "AD Carmelita",
-          "awayTeam": "Guadalupe FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/814.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/821.png",
-          "startTime": "23:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1635989",
-          "sport": "football",
-          "competition": "Primera Premier",
-          "homeTeam": "Reboceros La Piedad",
-          "awayTeam": "Los Cabos United",
-          "homeLogo": "https://media.api-sports.io/football/teams/15937.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/19908.png",
-          "startTime": "23:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1639027",
-          "sport": "football",
-          "competition": "National League - National",
-          "homeTeam": "Auckland City",
-          "awayTeam": "Wellington Olympic",
-          "homeLogo": "https://media.api-sports.io/football/teams/2537.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20646.png",
-          "startTime": "23:00",
           "status": "SCHEDULED"
         },
         {
@@ -618,6 +613,19 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2888.png",
           "startTime": "22:30",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1600624",
+          "sport": "football",
+          "competition": "Primera Division",
+          "homeTeam": "Inca Aruba",
+          "awayTeam": "Platense",
+          "homeLogo": "https://media.api-sports.io/football/teams/28019.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/19763.png",
+          "startTime": "21:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 4
         },
         {
           "id": "fixture-1493733",
