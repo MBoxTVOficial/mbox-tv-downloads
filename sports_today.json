@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T15:40:55-03:00",
+  "updatedAt": "2026-10-10T15:50:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -57,7 +57,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/447.png",
           "startTime": "15:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -69,7 +69,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/2432.png",
           "awayLogo": "https://media.api-sports.io/football/teams/445.png",
           "startTime": "15:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1498880",
@@ -296,7 +298,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/106.png",
           "awayLogo": "https://media.api-sports.io/football/teams/77.png",
           "startTime": "15:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1552777",
@@ -307,7 +311,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/97.png",
           "awayLogo": "https://media.api-sports.io/football/teams/114.png",
           "startTime": "15:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1552778",
@@ -318,7 +324,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/91.png",
           "awayLogo": "https://media.api-sports.io/football/teams/96.png",
           "startTime": "15:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1552780",
@@ -329,7 +337,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/85.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1298.png",
           "startTime": "15:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1552776",
@@ -360,7 +370,9 @@
           "homeLogo": "https://media.api-sports.io/football/teams/492.png",
           "awayLogo": "https://media.api-sports.io/football/teams/512.png",
           "startTime": "15:45",
-          "status": "SCHEDULED"
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1550141",
@@ -409,32 +421,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1571161",
-          "sport": "football",
-          "competition": "Primera División RFEF - Group 2",
-          "homeTeam": "Real Jaén",
-          "awayTeam": "Villarreal II",
-          "homeLogo": "https://media.api-sports.io/football/teams/5274.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/9595.png",
-          "startTime": "13:45",
-          "status": "LIVE",
-          "homeScore": 3,
-          "awayScore": 3
-        },
-        {
-          "id": "fixture-1627990",
-          "sport": "football",
-          "competition": "Iraqi League",
-          "homeTeam": "Al Kahrabaa",
-          "awayTeam": "Karbala",
-          "homeLogo": "https://media.api-sports.io/football/teams/11064.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20464.png",
-          "startTime": "13:45",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
           "id": "fixture-1490512",
           "sport": "football",
           "competition": "Major League Soccer",
@@ -470,7 +456,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7020.png",
           "startTime": "14:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -510,7 +496,7 @@
           "startTime": "14:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 2
+          "awayScore": 3
         },
         {
           "id": "fixture-1558533",
@@ -549,7 +535,7 @@
           "startTime": "14:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1597932",
@@ -561,7 +547,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2898.png",
           "startTime": "14:00",
           "status": "LIVE",
-          "homeScore": 4,
+          "homeScore": 5,
           "awayScore": 0
         },
         {
@@ -600,8 +586,8 @@
           "awayLogo": "https://media.api-sports.io/football/teams/972.png",
           "startTime": "14:00",
           "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "id": "fixture-1644207",
@@ -613,7 +599,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/974.png",
           "startTime": "14:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -639,7 +625,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/4177.png",
           "startTime": "14:30",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -666,7 +652,7 @@
           "startTime": "14:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1601543",
@@ -718,7 +704,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1499677",
@@ -848,7 +834,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1570778",
@@ -912,7 +898,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/20762.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1068,7 +1054,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9625.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -1082,7 +1068,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1631756",
@@ -1094,7 +1080,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/17804.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 3
         },
         {
@@ -1159,7 +1145,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/4197.png",
           "startTime": "15:15",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1171,6 +1157,19 @@
           "homeLogo": "https://media.api-sports.io/football/teams/9637.png",
           "awayLogo": "https://media.api-sports.io/football/teams/15336.png",
           "startTime": "15:15",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1490511",
+          "sport": "football",
+          "competition": "Major League Soccer",
+          "homeTeam": "Chicago Fire",
+          "awayTeam": "New York City FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/1607.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1604.png",
+          "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -1212,7 +1211,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1600718",
@@ -1224,7 +1223,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/5633.png",
           "startTime": "15:30",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 1
         },
         {
@@ -1238,7 +1237,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1608698",
@@ -1262,6 +1261,32 @@
           "homeLogo": "https://media.api-sports.io/football/teams/3344.png",
           "awayLogo": "https://media.api-sports.io/football/teams/3342.png",
           "startTime": "15:30",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1558646",
+          "sport": "football",
+          "competition": "Jupiler Pro League",
+          "homeTeam": "Genk",
+          "awayTeam": "Kortrijk",
+          "homeLogo": "https://media.api-sports.io/football/teams/742.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/734.png",
+          "startTime": "15:45",
+          "status": "LIVE",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1558651",
+          "sport": "football",
+          "competition": "Jupiler Pro League",
+          "homeTeam": "Zulte Waregem",
+          "awayTeam": "Gent",
+          "homeLogo": "https://media.api-sports.io/football/teams/600.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/631.png",
+          "startTime": "15:45",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -2972,17 +2997,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1645364",
-          "sport": "football",
-          "competition": "Ligue 1",
-          "homeTeam": "Stade d'Abidjan",
-          "awayTeam": "ES Agboville",
-          "homeLogo": "https://media.api-sports.io/football/teams/4525.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/26340.png",
-          "startTime": "12:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1568520",
           "sport": "football",
           "competition": "III Liga - Group 3",
@@ -3423,17 +3437,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1490511",
-          "sport": "football",
-          "competition": "Major League Soccer",
-          "homeTeam": "Chicago Fire",
-          "awayTeam": "New York City FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/1607.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1604.png",
-          "startTime": "15:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1602099",
           "sport": "football",
           "competition": "Brasiliense B",
@@ -3464,28 +3467,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/7859.png",
           "awayLogo": "https://media.api-sports.io/football/teams/26742.png",
           "startTime": "15:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1558646",
-          "sport": "football",
-          "competition": "Jupiler Pro League",
-          "homeTeam": "Genk",
-          "awayTeam": "Kortrijk",
-          "homeLogo": "https://media.api-sports.io/football/teams/742.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/734.png",
-          "startTime": "15:45",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1558651",
-          "sport": "football",
-          "competition": "Jupiler Pro League",
-          "homeTeam": "Zulte Waregem",
-          "awayTeam": "Gent",
-          "homeLogo": "https://media.api-sports.io/football/teams/600.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/631.png",
-          "startTime": "15:45",
           "status": "SCHEDULED"
         },
         {
@@ -5127,6 +5108,32 @@
           "awayScore": 0
         },
         {
+          "id": "fixture-1571161",
+          "sport": "football",
+          "competition": "Primera División RFEF - Group 2",
+          "homeTeam": "Real Jaén",
+          "awayTeam": "Villarreal II",
+          "homeLogo": "https://media.api-sports.io/football/teams/5274.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9595.png",
+          "startTime": "13:45",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1627990",
+          "sport": "football",
+          "competition": "Iraqi League",
+          "homeTeam": "Al Kahrabaa",
+          "awayTeam": "Karbala",
+          "homeLogo": "https://media.api-sports.io/football/teams/11064.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20464.png",
+          "startTime": "13:45",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1551350",
           "sport": "football",
           "competition": "1. Division",
@@ -6373,6 +6380,19 @@
           "status": "FINISHED",
           "homeScore": 0,
           "awayScore": 3
+        },
+        {
+          "id": "fixture-1645364",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Stade d'Abidjan",
+          "awayTeam": "ES Agboville",
+          "homeLogo": "https://media.api-sports.io/football/teams/4525.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/26340.png",
+          "startTime": "12:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1601549",
