@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T16:07:49-03:00",
+  "updatedAt": "2026-10-10T16:10:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -425,19 +425,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1490512",
-          "sport": "football",
-          "competition": "Major League Soccer",
-          "homeTeam": "Toronto FC",
-          "awayTeam": "CF Montreal",
-          "homeLogo": "https://media.api-sports.io/football/teams/1601.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1614.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 1
-        },
-        {
           "id": "fixture-1493744",
           "sport": "football",
           "competition": "USL Championship",
@@ -449,19 +436,6 @@
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 1
-        },
-        {
-          "id": "fixture-1551117",
-          "sport": "football",
-          "competition": "First League",
-          "homeTeam": "Botev Plovdiv",
-          "awayTeam": "Slavia Sofia",
-          "homeLogo": "https://media.api-sports.io/football/teams/634.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/854.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
         },
         {
           "id": "fixture-1506538",
@@ -538,7 +512,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/15544.png",
           "startTime": "14:30",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 1
         },
         {
@@ -551,7 +525,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/8387.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 1
         },
         {
@@ -708,7 +682,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 0
+          "awayScore": 2
         },
         {
           "id": "fixture-1575041",
@@ -773,7 +747,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1579833",
@@ -825,7 +799,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1597995",
@@ -1072,7 +1046,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1604194",
@@ -1097,7 +1071,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/866.png",
           "startTime": "15:30",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -1149,7 +1123,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/413.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1188,7 +1162,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/20252.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 2
         },
         {
@@ -1201,7 +1175,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1254,7 +1228,7 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1644448",
@@ -1279,7 +1253,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/28295.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -4919,6 +4893,19 @@
           "awayScore": 2
         },
         {
+          "id": "fixture-1490512",
+          "sport": "football",
+          "competition": "Major League Soccer",
+          "homeTeam": "Toronto FC",
+          "awayTeam": "CF Montreal",
+          "homeLogo": "https://media.api-sports.io/football/teams/1601.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1614.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
           "id": "fixture-1496172",
           "sport": "football",
           "competition": "2. Division - Group 1",
@@ -4943,6 +4930,19 @@
           "status": "FINISHED",
           "homeScore": 1,
           "awayScore": 4
+        },
+        {
+          "id": "fixture-1551117",
+          "sport": "football",
+          "competition": "First League",
+          "homeTeam": "Botev Plovdiv",
+          "awayTeam": "Slavia Sofia",
+          "homeLogo": "https://media.api-sports.io/football/teams/634.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/854.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
         },
         {
           "id": "fixture-1553882",
