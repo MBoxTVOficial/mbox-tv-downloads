@@ -318,10 +318,51 @@ def decode_json(raw):
         raise GenerationError("JSON remoto/de entrada inválido; se conserva la salida anterior.") from error
 
 
+def emit_api_error(kind, message=None):
+    line = f'SPORTS_REALTIME API_ERROR type={kind}'
+    if message is not None:
+        line += ' message=' + json.dumps(message, ensure_ascii=True)
+    print(line)
+    if os.environ.get('GITHUB_ACTIONS') == 'true':
+        # Same sanitized text, accessible through read-only check annotations.
+        print('::error title=API-Football diagnostics::' + line.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A'))
+
+
+def log_api_errors(errors):
+    """Only bounded simple error text; never dump payloads, headers or secrets."""
+    allowed = {'requests', 'requests_limit', 'rate_limit', 'subscription', 'token',
+               'key', 'access', 'plan', 'date', 'timezone', 'parameters', 'endpoint'}
+    if isinstance(errors, dict) and 0 < len(errors) <= 8 and all(
+            isinstance(k, str) and isinstance(v, str) for k, v in errors.items()):
+        items = list(errors.items())
+    elif isinstance(errors, list) and 0 < len(errors) <= 8 and all(isinstance(v, str) for v in errors):
+        items = [('unknown', v) for v in errors]
+    elif isinstance(errors, str):
+        items = [('unknown', errors)]
+    else:
+        emit_api_error('unknown')
+        return
+    for kind, message in items:
+        kind = kind if kind in allowed else 'unknown'
+        if len(message) > 4096 or any(ord(c) < 32 for c in message):
+            emit_api_error('unknown')
+            continue
+        # Values are used only for redaction, never included as diagnostic fields.
+        for name, value in os.environ.items():
+            if value and re.search(r'KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL|AUTH', name, re.I):
+                message = message.replace(value, '[REDACTED]')
+        message = re.sub(r'https?://\S+', '[REDACTED_URL]', message, flags=re.I)
+        message = re.sub(r'(?:authorization|bearer|api[_-]?key|token|password|username)\s*[:=]?\s*[^\s,;]+',
+                         '[REDACTED]', message, flags=re.I)
+        message = re.sub(r'[A-Za-z0-9_+/=-]{24,}', '[REDACTED]', message)
+        emit_api_error(kind, message[:500])
+
+
 def validate_api_response(payload):
     if not isinstance(payload, dict):
         raise GenerationError("Respuesta API inválida: se esperaba un objeto.")
     if payload.get("errors") not in ([], {}):
+        log_api_errors(payload.get("errors"))
         raise GenerationError("API-Football devolvió errors; se conserva la salida anterior.")
     fixtures, results = payload.get("response"), payload.get("results")
     if not isinstance(fixtures, list) or type(results) is not int or results != len(fixtures):
