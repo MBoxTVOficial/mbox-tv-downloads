@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T18:20:58-03:00",
+  "updatedAt": "2026-10-10T18:30:56-03:00",
   "demo": false,
   "sections": [
     {
@@ -44,7 +44,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/465.png",
           "startTime": "16:30",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -429,58 +429,6 @@
           "awayScore": 0
         },
         {
-          "id": "fixture-1575509",
-          "sport": "football",
-          "competition": "Primeira Liga",
-          "homeTeam": "Academico Viseu",
-          "awayTeam": "Estoril",
-          "homeLogo": "https://media.api-sports.io/football/teams/238.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/230.png",
-          "startTime": "16:30",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1575513",
-          "sport": "football",
-          "competition": "Primeira Liga",
-          "homeTeam": "Casa Pia",
-          "awayTeam": "Santa Clara",
-          "homeLogo": "https://media.api-sports.io/football/teams/4716.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/227.png",
-          "startTime": "16:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1576502",
-          "sport": "football",
-          "competition": "Segunda Liga",
-          "homeTeam": "Vizela",
-          "awayTeam": "Sporting CP B",
-          "homeLogo": "https://media.api-sports.io/football/teams/810.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/761.png",
-          "startTime": "16:30",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 2
-        },
-        {
-          "id": "fixture-1641088",
-          "sport": "football",
-          "competition": "Friendlies Women",
-          "homeTeam": "Brazil W",
-          "awayTeam": "Argentina W",
-          "homeLogo": "https://media.api-sports.io/football/teams/1726.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1782.png",
-          "startTime": "16:30",
-          "status": "LIVE",
-          "homeScore": 3,
-          "awayScore": 1
-        },
-        {
           "id": "fixture-1645336",
           "sport": "football",
           "competition": "Premier League",
@@ -504,7 +452,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1557214",
@@ -543,7 +491,7 @@
           "startTime": "17:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 3
+          "awayScore": 4
         },
         {
           "id": "fixture-1632030",
@@ -788,6 +736,19 @@
           "homeLogo": "https://media.api-sports.io/football/teams/2814.png",
           "awayLogo": "https://media.api-sports.io/football/teams/2813.png",
           "startTime": "18:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1639850",
+          "sport": "football",
+          "competition": "Liga Pro",
+          "homeTeam": "Guayaquil City FC",
+          "awayTeam": "Emelec",
+          "homeLogo": "https://media.api-sports.io/football/teams/1159.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1148.png",
+          "startTime": "18:30",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -2113,17 +2074,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1566817",
-          "sport": "football",
-          "competition": "Oberliga - Bayern Nord",
-          "homeTeam": "Jahn Regensburg II",
-          "awayTeam": "Stadeln",
-          "homeLogo": "https://media.api-sports.io/football/teams/12798.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/26067.png",
-          "startTime": "11:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1578670",
           "sport": "football",
           "competition": "Football League - Lowland League",
@@ -2736,17 +2686,6 @@
           "awayTeam": "Tigres de Alica",
           "homeLogo": "https://media.api-sports.io/football/teams/24939.png",
           "awayLogo": "https://media.api-sports.io/football/teams/24952.png",
-          "startTime": "18:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1639850",
-          "sport": "football",
-          "competition": "Liga Pro",
-          "homeTeam": "Guayaquil City FC",
-          "awayTeam": "Emelec",
-          "homeLogo": "https://media.api-sports.io/football/teams/1159.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1148.png",
           "startTime": "18:30",
           "status": "SCHEDULED"
         },
@@ -3743,6 +3682,58 @@
           "awayLogo": "https://media.api-sports.io/football/teams/15620.png",
           "startTime": "20:15",
           "status": "POSTPONED"
+        },
+        {
+          "id": "fixture-1575509",
+          "sport": "football",
+          "competition": "Primeira Liga",
+          "homeTeam": "Academico Viseu",
+          "awayTeam": "Estoril",
+          "homeLogo": "https://media.api-sports.io/football/teams/238.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/230.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1575513",
+          "sport": "football",
+          "competition": "Primeira Liga",
+          "homeTeam": "Casa Pia",
+          "awayTeam": "Santa Clara",
+          "homeLogo": "https://media.api-sports.io/football/teams/4716.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/227.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1576502",
+          "sport": "football",
+          "competition": "Segunda Liga",
+          "homeTeam": "Vizela",
+          "awayTeam": "Sporting CP B",
+          "homeLogo": "https://media.api-sports.io/football/teams/810.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/761.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1641088",
+          "sport": "football",
+          "competition": "Friendlies Women",
+          "homeTeam": "Brazil W",
+          "awayTeam": "Argentina W",
+          "homeLogo": "https://media.api-sports.io/football/teams/1726.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1782.png",
+          "startTime": "16:30",
+          "status": "FINISHED",
+          "homeScore": 3,
+          "awayScore": 1
         },
         {
           "id": "fixture-1645222",
@@ -8903,6 +8894,19 @@
           "startTime": "11:00",
           "status": "FINISHED",
           "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1566817",
+          "sport": "football",
+          "competition": "Oberliga - Bayern Nord",
+          "homeTeam": "Jahn Regensburg II",
+          "awayTeam": "Stadeln",
+          "homeLogo": "https://media.api-sports.io/football/teams/12798.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/26067.png",
+          "startTime": "11:00",
+          "status": "FINISHED",
+          "homeScore": 0,
           "awayScore": 0
         },
         {
