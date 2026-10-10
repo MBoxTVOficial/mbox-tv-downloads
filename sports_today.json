@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T15:50:56-03:00",
+  "updatedAt": "2026-10-10T16:00:55-03:00",
   "demo": false,
   "sections": [
     {
@@ -58,7 +58,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1493168",
@@ -70,7 +70,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/445.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -299,7 +299,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/77.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -447,32 +447,6 @@
           "awayScore": 1
         },
         {
-          "id": "fixture-1496172",
-          "sport": "football",
-          "competition": "2. Division - Group 1",
-          "homeTeam": "Mjondalen",
-          "awayTeam": "Pors Grenland",
-          "homeLogo": "https://media.api-sports.io/football/teams/2152.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/7020.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1507229",
-          "sport": "football",
-          "competition": "Erovnuli Liga 2",
-          "homeTeam": "Aragvi Dusheti",
-          "awayTeam": "Telavi",
-          "homeLogo": "https://media.api-sports.io/football/teams/10015.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/3511.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 4
-        },
-        {
           "id": "fixture-1551117",
           "sport": "football",
           "competition": "First League",
@@ -483,84 +457,6 @@
           "startTime": "14:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1553882",
-          "sport": "football",
-          "competition": "Super Liga",
-          "homeTeam": "Radnicki 1923",
-          "awayTeam": "FK Crvena Zvezda",
-          "homeLogo": "https://media.api-sports.io/football/teams/2644.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/598.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 3
-        },
-        {
-          "id": "fixture-1558533",
-          "sport": "football",
-          "competition": "First League",
-          "homeTeam": "Buducnost Podgorica",
-          "awayTeam": "Sutjeska",
-          "homeLogo": "https://media.api-sports.io/football/teams/579.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/673.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1568514",
-          "sport": "football",
-          "competition": "III Liga - Group 3",
-          "homeTeam": "Odra Bytom Odrzański",
-          "awayTeam": "Zagłębie Lubin II",
-          "homeLogo": "https://media.api-sports.io/football/teams/21455.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/6963.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 1
-        },
-        {
-          "id": "fixture-1575515",
-          "sport": "football",
-          "competition": "Primeira Liga",
-          "homeTeam": "Maritimo",
-          "awayTeam": "FC Porto",
-          "homeLogo": "https://media.api-sports.io/football/teams/214.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/212.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 1,
-          "awayScore": 2
-        },
-        {
-          "id": "fixture-1597932",
-          "sport": "football",
-          "competition": "Stars League",
-          "homeTeam": "Al Ahli Doha",
-          "awayTeam": "Al-Sailiya",
-          "homeLogo": "https://media.api-sports.io/football/teams/2896.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2898.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 5,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1613062",
-          "sport": "football",
-          "competition": "Tercera División RFEF - Group 2",
-          "homeTeam": "Mosconia",
-          "awayTeam": "Ceares",
-          "homeLogo": "https://media.api-sports.io/football/teams/9629.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/9620.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -575,32 +471,6 @@
           "status": "LIVE",
           "homeScore": 3,
           "awayScore": 0
-        },
-        {
-          "id": "fixture-1641174",
-          "sport": "football",
-          "competition": "Botola 2",
-          "homeTeam": "Ittihad Khemisset",
-          "awayTeam": "Olympique Khouribga",
-          "homeLogo": "https://media.api-sports.io/football/teams/3452.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/972.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 0,
-          "awayScore": 0
-        },
-        {
-          "id": "fixture-1644207",
-          "sport": "football",
-          "competition": "Botola Pro",
-          "homeTeam": "Kawkab Marrakech",
-          "awayTeam": "Ittihad Tanger",
-          "homeLogo": "https://media.api-sports.io/football/teams/971.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/974.png",
-          "startTime": "14:00",
-          "status": "LIVE",
-          "homeScore": 2,
-          "awayScore": 1
         },
         {
           "id": "fixture-1622648",
@@ -873,7 +743,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1575042",
@@ -899,7 +769,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 1,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1579831",
@@ -1172,7 +1042,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1499675",
@@ -1211,7 +1081,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1600718",
@@ -1237,7 +1107,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1608698",
@@ -1263,7 +1133,7 @@
           "startTime": "15:30",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 2
         },
         {
           "id": "fixture-1558646",
@@ -1275,7 +1145,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/734.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -1287,6 +1157,58 @@
           "homeLogo": "https://media.api-sports.io/football/teams/600.png",
           "awayLogo": "https://media.api-sports.io/football/teams/631.png",
           "startTime": "15:45",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1619321",
+          "sport": "football",
+          "competition": "Primera División",
+          "homeTeam": "Universitario de Vinto",
+          "awayTeam": "Real Oruro",
+          "homeLogo": "https://media.api-sports.io/football/teams/17762.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/20252.png",
+          "startTime": "16:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1639822",
+          "sport": "football",
+          "competition": "Liga Pro",
+          "homeTeam": "Manta FC",
+          "awayTeam": "Tecnico Universitario",
+          "homeLogo": "https://media.api-sports.io/football/teams/1980.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/1151.png",
+          "startTime": "16:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1644208",
+          "sport": "football",
+          "competition": "Botola Pro",
+          "homeTeam": "Amal Tiznit",
+          "awayTeam": "Difaa EL Jadida",
+          "homeLogo": "https://media.api-sports.io/football/teams/18753.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/964.png",
+          "startTime": "16:00",
+          "status": "LIVE",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1644742",
+          "sport": "football",
+          "competition": "Nacional B",
+          "homeTeam": "Wilstermann Cooperativa",
+          "awayTeam": "Virginia",
+          "homeLogo": "https://media.api-sports.io/football/teams/17763.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/28295.png",
+          "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 0,
           "awayScore": 0
@@ -3041,28 +2963,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1645333",
-          "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Kédia",
-          "awayTeam": "Pompiers",
-          "homeLogo": "https://media.api-sports.io/football/teams/16171.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/21987.png",
-          "startTime": "13:15",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1564886",
-          "sport": "football",
-          "competition": "Championship",
-          "homeTeam": "Annagh United",
-          "awayTeam": "Glenavon FC",
-          "homeLogo": "https://media.api-sports.io/football/teams/11109.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/2275.png",
-          "startTime": "13:30",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1578107",
           "sport": "football",
           "competition": "Second Amateur Division - VFV A",
@@ -3081,17 +2981,6 @@
           "awayTeam": "Platges Calvià",
           "homeLogo": "https://media.api-sports.io/football/teams/28112.png",
           "awayLogo": "https://media.api-sports.io/football/teams/9785.png",
-          "startTime": "13:30",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1645334",
-          "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Kaédi",
-          "awayTeam": "Armée",
-          "homeLogo": "https://media.api-sports.io/football/teams/16169.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/16164.png",
           "startTime": "13:30",
           "status": "SCHEDULED"
         },
@@ -3525,17 +3414,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1619321",
-          "sport": "football",
-          "competition": "Primera División",
-          "homeTeam": "Universitario de Vinto",
-          "awayTeam": "Real Oruro",
-          "homeLogo": "https://media.api-sports.io/football/teams/17762.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/20252.png",
-          "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1628976",
           "sport": "football",
           "competition": "Friendlies Women",
@@ -3543,17 +3421,6 @@
           "awayTeam": "Latvia W",
           "homeLogo": "https://media.api-sports.io/football/teams/1725.png",
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
-          "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1639822",
-          "sport": "football",
-          "competition": "Liga Pro",
-          "homeTeam": "Manta FC",
-          "awayTeam": "Tecnico Universitario",
-          "homeLogo": "https://media.api-sports.io/football/teams/1980.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/1151.png",
           "startTime": "16:00",
           "status": "SCHEDULED"
         },
@@ -3580,17 +3447,6 @@
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1644208",
-          "sport": "football",
-          "competition": "Botola Pro",
-          "homeTeam": "Amal Tiznit",
-          "awayTeam": "Difaa EL Jadida",
-          "homeLogo": "https://media.api-sports.io/football/teams/18753.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/964.png",
-          "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
           "id": "fixture-1644448",
           "sport": "football",
           "competition": "Torneo Federal A",
@@ -3598,17 +3454,6 @@
           "awayTeam": "Gimnasia Chivilcoy",
           "homeLogo": "https://media.api-sports.io/football/teams/27572.png",
           "awayLogo": "https://media.api-sports.io/football/teams/25758.png",
-          "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1644742",
-          "sport": "football",
-          "competition": "Nacional B",
-          "homeTeam": "Wilstermann Cooperativa",
-          "awayTeam": "Virginia",
-          "homeLogo": "https://media.api-sports.io/football/teams/17763.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/28295.png",
           "startTime": "16:00",
           "status": "SCHEDULED"
         },
@@ -5069,6 +4914,136 @@
           "status": "POSTPONED"
         },
         {
+          "id": "fixture-1496172",
+          "sport": "football",
+          "competition": "2. Division - Group 1",
+          "homeTeam": "Mjondalen",
+          "awayTeam": "Pors Grenland",
+          "homeLogo": "https://media.api-sports.io/football/teams/2152.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/7020.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1507229",
+          "sport": "football",
+          "competition": "Erovnuli Liga 2",
+          "homeTeam": "Aragvi Dusheti",
+          "awayTeam": "Telavi",
+          "homeLogo": "https://media.api-sports.io/football/teams/10015.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/3511.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 4
+        },
+        {
+          "id": "fixture-1553882",
+          "sport": "football",
+          "competition": "Super Liga",
+          "homeTeam": "Radnicki 1923",
+          "awayTeam": "FK Crvena Zvezda",
+          "homeLogo": "https://media.api-sports.io/football/teams/2644.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/598.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 3
+        },
+        {
+          "id": "fixture-1558533",
+          "sport": "football",
+          "competition": "First League",
+          "homeTeam": "Buducnost Podgorica",
+          "awayTeam": "Sutjeska",
+          "homeLogo": "https://media.api-sports.io/football/teams/579.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/673.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1568514",
+          "sport": "football",
+          "competition": "III Liga - Group 3",
+          "homeTeam": "Odra Bytom Odrzański",
+          "awayTeam": "Zagłębie Lubin II",
+          "homeLogo": "https://media.api-sports.io/football/teams/21455.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/6963.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1575515",
+          "sport": "football",
+          "competition": "Primeira Liga",
+          "homeTeam": "Maritimo",
+          "awayTeam": "FC Porto",
+          "homeLogo": "https://media.api-sports.io/football/teams/214.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/212.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1597932",
+          "sport": "football",
+          "competition": "Stars League",
+          "homeTeam": "Al Ahli Doha",
+          "awayTeam": "Al-Sailiya",
+          "homeLogo": "https://media.api-sports.io/football/teams/2896.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2898.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 5,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1613062",
+          "sport": "football",
+          "competition": "Tercera División RFEF - Group 2",
+          "homeTeam": "Mosconia",
+          "awayTeam": "Ceares",
+          "homeLogo": "https://media.api-sports.io/football/teams/9629.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/9620.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "id": "fixture-1641174",
+          "sport": "football",
+          "competition": "Botola 2",
+          "homeTeam": "Ittihad Khemisset",
+          "awayTeam": "Olympique Khouribga",
+          "homeLogo": "https://media.api-sports.io/football/teams/3452.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/972.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "id": "fixture-1644207",
+          "sport": "football",
+          "competition": "Botola Pro",
+          "homeTeam": "Kawkab Marrakech",
+          "awayTeam": "Ittihad Tanger",
+          "homeLogo": "https://media.api-sports.io/football/teams/971.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/974.png",
+          "startTime": "14:00",
+          "status": "FINISHED",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
           "id": "fixture-1552181",
           "sport": "football",
           "competition": "Eredivisie",
@@ -5171,6 +5146,19 @@
           "status": "FINISHED",
           "homeScore": 2,
           "awayScore": 3
+        },
+        {
+          "id": "fixture-1564886",
+          "sport": "football",
+          "competition": "Championship",
+          "homeTeam": "Annagh United",
+          "awayTeam": "Glenavon FC",
+          "homeLogo": "https://media.api-sports.io/football/teams/11109.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/2275.png",
+          "startTime": "13:30",
+          "status": "FINISHED",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "id": "fixture-1569965",
@@ -5355,6 +5343,19 @@
           "awayScore": 1
         },
         {
+          "id": "fixture-1645334",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Kaédi",
+          "awayTeam": "Armée",
+          "homeLogo": "https://media.api-sports.io/football/teams/16169.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/16164.png",
+          "startTime": "13:30",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
           "id": "fixture-1555516",
           "sport": "football",
           "competition": "Ligat Ha'al",
@@ -5418,6 +5419,19 @@
           "status": "FINISHED",
           "homeScore": 5,
           "awayScore": 2
+        },
+        {
+          "id": "fixture-1645333",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Kédia",
+          "awayTeam": "Pompiers",
+          "homeLogo": "https://media.api-sports.io/football/teams/16171.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/21987.png",
+          "startTime": "13:15",
+          "status": "FINISHED",
+          "homeScore": 0,
+          "awayScore": 3
         },
         {
           "id": "fixture-1494778",
