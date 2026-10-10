@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-10-10",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-10-10T16:10:56-03:00",
+  "updatedAt": "2026-10-10T16:20:57-03:00",
   "demo": false,
   "sections": [
     {
@@ -84,7 +84,7 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 0
+          "awayScore": 1
         },
         {
           "id": "fixture-1498878",
@@ -303,7 +303,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/77.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -329,7 +329,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/96.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -375,7 +375,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/512.png",
           "startTime": "15:45",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -460,7 +460,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/2396.png",
           "startTime": "14:30",
           "status": "LIVE",
-          "homeScore": 2,
+          "homeScore": 3,
           "awayScore": 0
         },
         {
@@ -513,7 +513,7 @@
           "startTime": "14:30",
           "status": "LIVE",
           "homeScore": 3,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1499673",
@@ -525,7 +525,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/8387.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 3,
           "awayScore": 1
         },
         {
@@ -552,7 +552,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1499679",
@@ -642,7 +642,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1301.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -655,7 +655,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/6220.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 2,
           "awayScore": 1
         },
         {
@@ -669,7 +669,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 2,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1573307",
@@ -734,7 +734,7 @@
           "startTime": "15:00",
           "status": "LIVE",
           "homeScore": 0,
-          "awayScore": 1
+          "awayScore": 2
         },
         {
           "id": "fixture-1579832",
@@ -772,7 +772,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/5847.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -785,7 +785,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/6216.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -811,7 +811,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/7828.png",
           "startTime": "15:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1136,7 +1136,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/9585.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 0,
+          "homeScore": 1,
           "awayScore": 0
         },
         {
@@ -1162,7 +1162,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/20252.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 0,
           "awayScore": 2
         },
         {
@@ -1175,7 +1175,7 @@
           "awayLogo": "https://media.api-sports.io/football/teams/1754.png",
           "startTime": "16:00",
           "status": "LIVE",
-          "homeScore": 1,
+          "homeScore": 2,
           "awayScore": 0
         },
         {
@@ -1254,6 +1254,19 @@
           "startTime": "16:00",
           "status": "LIVE",
           "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "id": "fixture-1638629",
+          "sport": "football",
+          "competition": "Úrvalsdeild",
+          "homeTeam": "Fram Reykjavik",
+          "awayTeam": "KR Reykjavik",
+          "homeLogo": "https://media.api-sports.io/football/teams/2117.png",
+          "awayLogo": "https://media.api-sports.io/football/teams/271.png",
+          "startTime": "16:15",
+          "status": "LIVE",
+          "homeScore": 0,
           "awayScore": 0
         },
         {
@@ -3421,17 +3434,6 @@
           "homeLogo": "https://media.api-sports.io/football/teams/27963.png",
           "awayLogo": "https://media.api-sports.io/football/teams/27964.png",
           "startTime": "16:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1638629",
-          "sport": "football",
-          "competition": "Úrvalsdeild",
-          "homeTeam": "Fram Reykjavik",
-          "awayTeam": "KR Reykjavik",
-          "homeLogo": "https://media.api-sports.io/football/teams/2117.png",
-          "awayLogo": "https://media.api-sports.io/football/teams/271.png",
-          "startTime": "16:15",
           "status": "SCHEDULED"
         },
         {
