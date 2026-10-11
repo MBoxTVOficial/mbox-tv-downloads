@@ -2,10 +2,12 @@ name: Update live sports scores
 
 on:
   workflow_dispatch:
-  schedule:
+  # TEMPORARILY PAUSED: API-Football account suspended.
+  # Reactivate by uncommenting the schedule block below.
+  # schedule:
     # Hourly fallback; Cloudflare is primary. UTC -> ART: 15:37..00:37 (10 slots/day).
-    - cron: '37 18-23 * * *'
-    - cron: '37 0-3 * * *'
+  #   - cron: '37 18-23 * * *'
+  #   - cron: '37 0-3 * * *'
 
 permissions:
   contents: write
