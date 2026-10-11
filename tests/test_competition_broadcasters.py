@@ -86,11 +86,11 @@ class CompetitionBroadcastersTest(unittest.TestCase):
         result = discovery.confidence(self.fixture, [self.evidence(), self.evidence('TNT Sports', 'guide', False, 'trusted_guide')], self.mapping, self.groups)
         self.assertEqual(['espn_premium'], result['channelGroups'])
 
-    def test_incompatible_official_sources_require_review(self):
+    def test_organisation_overrides_conflicting_broadcaster(self):
         result = discovery.confidence(self.fixture, [self.evidence(),
             self.evidence('TNT Sports', 'holder', True, 'official_broadcaster')], self.mapping, self.groups)
-        self.assertEqual('REVIEW', result['state'])
-        self.assertEqual([], result['channelGroups'])
+        self.assertEqual('CONFIRMED_MBOX', result['state'])
+        self.assertEqual(['espn_premium'], result['channelGroups'])
 
     def test_unexpected_official_signal_is_allowed(self):
         result = discovery.confidence(self.fixture, [self.evidence('TyC Sports')], self.mapping, self.groups)

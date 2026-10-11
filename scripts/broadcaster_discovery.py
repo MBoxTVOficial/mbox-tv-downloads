@@ -167,9 +167,8 @@ def confidence(fixture, evidence, mapping, groups):
         and item.source_type == 'official_league' and item.fixture_id == fixture.fixture_id
         and instant(item.kickoff) == fixture.kickoff]
     if organisation:
-        # Discard weaker guide claims, but retain other explicit official listings
-        # so genuinely incompatible official evidence is still REVIEW.
-        evidence = [item for item in evidence if isinstance(item, Evidence) and item.official is True]
+        # Competition organisation is authoritative over all lower-level claims.
+        evidence = organisation
     valid, owners, market_sets, ambiguous = [], {}, {}, False
     for item in evidence:
         if not isinstance(item, Evidence) or item.fixture_id != fixture.fixture_id or \
@@ -219,7 +218,7 @@ def fixtures_from_feed(feed, countries=None):
             if not re.fullmatch(r'\d{2}:\d{2}', event['startTime']):
                 continue  # TBD: no safe kickoff match, never auto-confirm.
             fixtures.append(Fixture(identifier, event['homeTeam'], event['awayTeam'], event['competition'],
-                instant(f"{feed['date']}T{event['startTime']}:00-03:00"), section['id'],
+                datetime.fromisoformat(f"{feed['date']}T{event['startTime']}:00").replace(tzinfo=ZONE), section['id'],
                 (countries or {}).get(identifier, '')))
     return fixtures
 
@@ -302,7 +301,7 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
     selected = [provider for provider in provider_list if any(provider.supports(fixture) for fixture in pending)]
     def provider_priority(provider):
         config = getattr(provider, 'config', {})
-        hints = {broadcaster_key(n) for f in pending for n in search_hints(registry, f.competition, f.kickoff.date(), f.country)}
+        hints = {broadcaster_key(n) for f in pending for n in search_hints(registry, f.competition, f.kickoff.astimezone(ZONE).date(), f.country)}
         owned = {broadcaster_key(n) for n in config.get('ownedBroadcasters', [])}
         return (0 if config.get('adapter') == 'lpf_agenda' else 1 if territory(config.get('territory', '')) == 'argentina'
                 and hints & owned else 2)
@@ -381,8 +380,8 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
                 'timestamp': timestamp, 'result': record}
         details.append({'fixtureId': fixture.fixture_id, 'homeTeam': fixture.home, 'awayTeam': fixture.away,
             'competition': fixture.competition, 'startTime': fixture.kickoff.isoformat(),
-            'rightsLevel': 'B' if search_hints(registry, fixture.competition, fixture.kickoff.date(), fixture.country) else 'UNKNOWN',
-            'searchCandidates': search_hints(registry, fixture.competition, fixture.kickoff.date(), fixture.country), **record})
+            'rightsLevel': 'B' if search_hints(registry, fixture.competition, fixture.kickoff.astimezone(ZONE).date(), fixture.country) else 'UNKNOWN',
+            'searchCandidates': search_hints(registry, fixture.competition, fixture.kickoff.astimezone(ZONE).date(), fixture.country), **record})
     timed_ids = {fixture.fixture_id for fixture in fixtures}
     for identifier, event in all_events.items():
         if identifier not in timed_ids:
@@ -391,6 +390,9 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
                 'state': 'CONFIRMED_MBOX' if identifier in manual else 'UNRESOLVED',
                 'broadcaster': manual.get(identifier, {}).get('broadcaster', []),
                 'channelGroups': manual.get(identifier, {}).get('channelGroups', []), 'evidenceCount': 0, 'evidence': []})
+    for detail in details:
+        detail['confirmationLevel'] = {'A': 'CONFIRMED_FIXTURE', 'C': 'CONFIRMED_EXTERNAL'}.get(
+            detail.get('evidenceLevel'), 'OFFICIAL_RIGHTSHOLDER' if detail.get('rightsLevel') == 'B' else 'UNKNOWN')
     counts = Counter(item['state'] for item in details)
     report = {'schemaVersion': 1, 'date': feed['date'], 'timezone': TIMEZONE,
         'totalFixtures': sum(len(section['events']) for section in feed['sections']),
