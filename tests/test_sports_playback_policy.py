@@ -143,7 +143,7 @@ class GeneratorPlaybackRegressionTest(unittest.TestCase):
         root = Path(generator.__file__).resolve().parents[1]
         for name in ('today', 'live'):
             text = (root / f'.github/workflows/update-sports-{name}.yml').read_text()
-            self.assertIn('scripts/generate_sports_today.py', text)
+            self.assertIn('scripts.generate_agenda_today' if name == 'today' else 'scripts/generate_sports_today.py', text)
 
     def test_santos_palmeiras_2120_then_2140_using_real_fixture_groups(self):
         identifiers = (1492398, 1492396)

@@ -368,5 +368,36 @@ class CompetitionBroadcastersTest(unittest.TestCase):
                 self.assertEqual([], assignments['broadcasts'])
 
 
+class GimnasiaMendozaRegressionTest(unittest.TestCase):
+    def evidence(self, home='Gimnasia Mendoza', territory='Argentina', signal=' (TNT Sports)'):
+        feed = agenda(home, 'Newells Old Boys', 1271457850, date(2026, 10, 12))
+        feed['sections'][0]['events'][0]['startTime'] = '18:30'
+        fixture = discovery.fixtures_from_feed(feed)[0]
+        settings = json.loads((ROOT / 'sports_broadcaster_sources.json').read_text(encoding='utf8'))
+        config = copy.deepcopy(next(p for p in settings['providers'] if p['id'] == 'lpf-official'))
+        config['territory'] = territory
+        provider = sources.BroadcasterProvider(config, {})
+        provider.bind_fixtures([fixture])
+        provider.listings = sources.lpf_listings(article(
+            '<p>Lunes 12 de octubre<br>18.30 Gimnasia (Mza.) – Newell’s (Zona A)' + signal + '</p>'), date(2026, 10, 12))
+        return provider.lookup(fixture)
+
+    def test_known_mendoza_variants_resolve_exact_fixture_and_time(self):
+        for home in ('Gimnasia Mendoza', 'Gimnasia (Mza.)', 'Gimnasia y Esgrima de Mendoza', 'Gimnasia M.'):
+            with self.subTest(home=home):
+                evidence = self.evidence(home)
+                self.assertEqual(1, len(evidence))
+                self.assertEqual('TNT Sports', evidence[0].broadcaster)
+
+    def test_no_confirmed_signal_no_assignment(self):
+        self.assertEqual([], self.evidence(signal=''))
+
+    def test_other_gimnasia_not_matched(self):
+        self.assertEqual([], self.evidence('Gimnasia La Plata'))
+
+    def test_alias_not_applied_outside_argentina(self):
+        self.assertEqual([], self.evidence(territory='Chile'))
+
+
 if __name__ == '__main__':
     unittest.main()

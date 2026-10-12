@@ -618,14 +618,14 @@ class PipelineTest(unittest.TestCase):
     def test_workflow_discovery_only_in_general(self):
         general = (ROOT / '.github/workflows/update-sports-today.yml').read_text(encoding='utf-8')
         live = (ROOT / '.github/workflows/update-sports-live.yml').read_text(encoding='utf-8')
-        self.assertIn('generate_sports_today.py --discover-broadcasts', general)
+        self.assertIn('scripts.generate_agenda_today --discover-broadcasts', general)
         self.assertNotIn('--discover-broadcasts', live)
         self.assertNotIn('broadcaster_discovery.py', live)
         self.assertIn('run: python scripts/generate_sports_today.py --live', live)
         self.assertIn('git add -- sports_today.json sports_broadcasts_today.json', general)
         self.assertIn('--only -- sports_today.json sports_broadcasts_today.json', general)
         self.assertEqual(90, generator.MAX_DAILY_API_CALLS)
-        self.assertEqual(5, general.count('- cron:'))
+        self.assertEqual(5, general.count('- cron:'))  # Original paused schedule remains documented.
         self.assertEqual(2, live.count('- cron:'))
 
     def test_http403_preserves_auto_and_refreshes_scores(self):

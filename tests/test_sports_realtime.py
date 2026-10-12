@@ -305,7 +305,12 @@ class WorkflowTest(unittest.TestCase):
             text = (workflows / name).read_text(encoding="utf-8")
             self.assertIn("group: sports-today-main", text)
             self.assertIn("cancel-in-progress: false", text)
-            self.assertIn("secrets.API_FOOTBALL_KEY", text)
+            if name == 'update-sports-live.yml':
+                self.assertIn("secrets.API_FOOTBALL_KEY", text)
+            else:
+                self.assertIn("secrets.FOOTBALL_DATA_TOKEN", text)
+                self.assertIn("secrets.FOOTBALL_SOCCER_API_KEY", text)
+                self.assertNotIn("secrets.API_FOOTBALL_KEY", text)
             self.assertIn("GITHUB_TOKEN: ${{ github.token }}", text)
             self.assertIn("actions: read", text)
             self.assertIn("git add -- sports_today.json", text)
@@ -319,17 +324,20 @@ class WorkflowTest(unittest.TestCase):
     def test_hourly_live_fallback_and_external_scheduler_stay_under_budget(self):
         workflows = generator.ROOT / ".github/workflows"
         live = (workflows / "update-sports-live.yml").read_text(encoding="utf-8")
+        self.assertNotIn('\n  schedule:', live)
+        self.assertIn('workflow_dispatch:', live)
         live_crons = [line.split("cron:", 1)[1].strip().strip("'")
-                      for line in live.splitlines() if line.strip().startswith("- cron:")]
+                      for line in live.splitlines() if line.strip().removeprefix("#").strip().startswith("- cron:")]
         self.assertEqual(["37 18-23 * * *", "37 0-3 * * *"], live_crons)
         self.assertIn("workflow_dispatch:", live)
         fallback_slots = sum(int(cron.split()[1].split("-")[1]) -
                              int(cron.split()[1].split("-")[0]) + 1 for cron in live_crons)
         general = (workflows / "update-sports-today.yml").read_text(encoding="utf-8")
+        self.assertNotIn('\n  schedule:', general)
+        self.assertIn('workflow_dispatch:', general)
         general_crons = [line.split("cron:", 1)[1].strip().strip("'")
-                         for line in general.splitlines() if line.strip().startswith("- cron:")]
-        self.assertEqual(["5 3 * * *", "0 11 * * *", "0 15 * * *",
-                          "0 20 * * *", "0 23 * * *"], general_crons)
+                         for line in general.splitlines() if line.strip().removeprefix("#").strip().startswith("- cron:")]
+        self.assertEqual(["5 3 * * *", "0 11 * * *", "0 15 * * *", "0 20 * * *", "0 23 * * *"], general_crons)
         worker = (generator.ROOT / "cloudflare/live-scheduler/wrangler.toml").read_text(encoding="utf-8")
         self.assertIn('crons = ["*/10 * * * *"]', worker)
         worker_slots = 10 * 6  # 15:00-00:59 ART; one tick every ten minutes.
@@ -343,7 +351,7 @@ class WorkflowTest(unittest.TestCase):
                      for hour in utc_hours]
         self.assertEqual([f"{hour:02d}:37" for hour in range(15, 24)] + ["00:37"], art_slots)
         self.assertEqual(90, generator.MAX_DAILY_API_CALLS)
-        self.assertEqual(75, automatic_slots)
+        self.assertEqual(75, automatic_slots)  # Original commented schedules; no automatic runs are enabled.
         self.assertLess(automatic_slots, generator.MAX_DAILY_API_CALLS)
 
 

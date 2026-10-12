@@ -1,0 +1,34 @@
+{
+  "competitionId": "lg_22EEYKR",
+  "provider": "football_soccer_argentina",
+  "state": "LIMITED_AUXILIARY",
+  "exactMatches": 6,
+  "coverage": "partial",
+  "fixtures": [
+    {
+      "providerFixtureId": "mt_15QBJJ7",
+      "homeTeam": "Gimnasia M.",
+      "awayTeam": "Newells Old Boys",
+      "startTime": "2026-10-12T18:30:00-03:00",
+      "officialMatch": "Gimnasia (Mza.) - Newells",
+      "result": "MATCH"
+    },
+    {
+      "providerFixtureId": "mt_32YXEWC",
+      "homeTeam": "Lanus",
+      "awayTeam": "Velez Sarsfield",
+      "startTime": "2026-10-12T16:00:00-03:00",
+      "officialMatch": "Lanus - Velez",
+      "result": "MATCH"
+    },
+    {
+      "providerFixtureId": "mt_36SG94W",
+      "homeTeam": "Talleres Cordoba",
+      "awayTeam": "Independiente",
+      "startTime": "2026-10-11T21:30:00-03:00",
+      "officialMatch": "Talleres - Independiente",
+      "result": "MATCH"
+    }
+  ],
+  "officialSource": "https://www.ligaprofesional.ar/?p=87671"
+}

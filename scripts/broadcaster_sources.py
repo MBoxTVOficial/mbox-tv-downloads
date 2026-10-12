@@ -267,7 +267,9 @@ def lpf_listings(html, day):
         signals = re.findall(r'\((ESPN(?: Premium|\s*\d+)?|TNT Sports(?: Premium)?|TyC Sports(?: Play)?|'
                              r'FOX Sports(?: Argentina|\s*\d+)?|DSports(?:\s*\d+|\+)?|Telefe|TV Pública|Disney\+)\)',
                              body, re.IGNORECASE)
-        teams = re.split(r'\s+[–—-]\s+', body.split('(')[0].strip())
+        # Preserve team qualifiers such as (Mza.); remove only listing metadata.
+        team_text = re.split(r'\s*\((?:Zona\b|Interzonal\b|ESPN\b|TNT Sports\b|TyC Sports\b|FOX Sports\b|DSports\b|Telefe\b|TV Pública\b|Disney\+)', body, maxsplit=1, flags=re.IGNORECASE)[0].strip()
+        teams = re.split(r'\s+[–—-]\s+', team_text)
         if not signals or len(teams) != 2 or not all(safe_text(name) for name in teams):
             continue
         try:
@@ -496,7 +498,21 @@ class BroadcasterProvider:
                 # Publisher short labels require a unique complete pair, competition and instant.
                 # Compare full tokens, never substrings; reject youth/women/reserve identities.
                 def team_match(label, name):
-                    left, right = self.team(label).split(), self.team(name).split()
+                    def scoped_key(value):
+                        key = self.team(value)
+                        if norm(self.config['territory']) not in ('argentina', 'ar'):
+                            return key
+                        aliases = {
+                            'gimnasia mza': 'gimnasia mendoza',
+                            'gimnasia m': 'gimnasia mendoza',
+                            'gimnasia mendoza': 'gimnasia mendoza',
+                            'gimnasia y esgrima de mendoza': 'gimnasia mendoza',
+                            'newell s': 'newells old boys',
+                            'newells': 'newells old boys',
+                            'newells old boys': 'newells old boys',
+                        }
+                        return aliases.get(key, key)
+                    left, right = scoped_key(label).split(), scoped_key(name).split()
                     variants = {'women', 'femenino', 'femenina', 'reserves', 'reserva', 'olympic'}
                     if any(t in variants or re.fullmatch(r'u\d+', t) for t in left + right):
                         return False

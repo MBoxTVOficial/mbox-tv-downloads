@@ -492,6 +492,10 @@ def build_feed(payload, day, now=None):
 
 
 def validate_feed(feed):
+    if isinstance(feed, dict) and "sportsDataMode" in feed:
+        if feed["sportsDataMode"] not in ("NORMAL", "DEGRADED"):
+            raise GenerationError("Invalid sportsDataMode")
+        feed = {key: value for key, value in feed.items() if key != "sportsDataMode"}
     if not isinstance(feed, dict) or set(feed) != {
         "schemaVersion", "date", "timezone", "updatedAt", "demo", "sections"
     }:
@@ -775,6 +779,13 @@ def main(argv=None):
         parser.error('--discover-broadcasts no se combina con LIVE ni modos offline.')
     if args.refresh_channels and (args.input is not None or args.live):
         parser.error("--refresh-channels no se combina con --input o --live.")
+    if args.live and args.input is None:
+        config_path = ROOT / 'sports_agenda_providers.json'
+        if config_path.exists():
+            config = decode_json(config_path.read_bytes())
+            if config.get('apiFootballLiveEnabled') is False:
+                print('SPORTS_REALTIME LIVE_DISABLED api_calls=0')
+                return 0
     day = args.date or datetime.now(argentina_timezone()).date()
     output = args.output or (ROOT / "sports_today.preview.json" if args.input else REAL_OUTPUT)
     try:

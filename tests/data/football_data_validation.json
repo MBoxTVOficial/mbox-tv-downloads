@@ -1,0 +1,276 @@
+{
+  "date": "2026-10-11",
+  "scope": "five fixtures per competition; not full coverage",
+  "competitions": {
+    "PD": {
+      "state": "LIMITED_AUXILIARY",
+      "matches": [
+        {
+          "providerFixtureId": 564704,
+          "homeTeam": "Levante UD",
+          "awayTeam": "Sevilla FC",
+          "providerUTC": "2026-10-12T19:00Z",
+          "officialLocal": "2026-10-12T21:00",
+          "officialTimezone": "Europe/Madrid",
+          "officialSource": "https://www.laliga.com/noticias/horarios-de-la-octava-jornada-de-laliga-ea-sports-2026-27",
+          "result": "MATCH",
+          "kickoffART": "2026-10-12T16:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 564716,
+          "homeTeam": "RC Deportivo La Coruña",
+          "awayTeam": "Levante UD",
+          "providerUTC": "2026-10-16T19:00Z",
+          "officialLocal": "2026-10-16T21:00",
+          "officialTimezone": "Europe/Madrid",
+          "officialSource": "https://www.laliga.com/noticias/horarios-de-la-novena-jornada-de-laliga-ea-sports-2026-27",
+          "result": "MATCH",
+          "kickoffART": "2026-10-16T16:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 564710,
+          "homeTeam": "RCD Espanyol de Barcelona",
+          "awayTeam": "Club Atlético de Madrid",
+          "providerUTC": "2026-10-17T12:00Z",
+          "officialLocal": "2026-10-17T14:00",
+          "officialTimezone": "Europe/Madrid",
+          "officialSource": "https://www.laliga.com/noticias/horarios-de-la-novena-jornada-de-laliga-ea-sports-2026-27",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T09:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 564708,
+          "homeTeam": "Villarreal CF",
+          "awayTeam": "Elche CF",
+          "providerUTC": "2026-10-17T14:15Z",
+          "officialLocal": "2026-10-17T16:15",
+          "officialTimezone": "Europe/Madrid",
+          "officialSource": "https://www.laliga.com/noticias/horarios-de-la-novena-jornada-de-laliga-ea-sports-2026-27",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T11:15:00-03:00"
+        },
+        {
+          "providerFixtureId": 564713,
+          "homeTeam": "Real Betis Balompié",
+          "awayTeam": "FC Barcelona",
+          "providerUTC": "2026-10-17T16:30Z",
+          "officialLocal": "2026-10-17T18:30",
+          "officialTimezone": "Europe/Madrid",
+          "officialSource": "https://www.laliga.com/noticias/horarios-de-la-novena-jornada-de-laliga-ea-sports-2026-27",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T13:30:00-03:00"
+        }
+      ],
+      "exact": 5,
+      "dateMismatch": 0,
+      "timeMismatch": 0,
+      "teamMismatch": 0,
+      "missing": null,
+      "extras": null
+    },
+    "PL": {
+      "state": "LIMITED_AUXILIARY",
+      "matches": [
+        {
+          "providerFixtureId": 560597,
+          "homeTeam": "Coventry City FC",
+          "awayTeam": "Newcastle United FC",
+          "providerUTC": "2026-10-12T19:00Z",
+          "officialLocal": "2026-10-12T20:00",
+          "officialTimezone": "Europe/London",
+          "officialSource": "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season",
+          "result": "MATCH",
+          "kickoffART": "2026-10-12T16:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 560603,
+          "homeTeam": "Everton FC",
+          "awayTeam": "Chelsea FC",
+          "providerUTC": "2026-10-17T11:30Z",
+          "officialLocal": "2026-10-17T12:30",
+          "officialTimezone": "Europe/London",
+          "officialSource": "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T08:30:00-03:00"
+        },
+        {
+          "providerFixtureId": 560611,
+          "homeTeam": "Brentford FC",
+          "awayTeam": "Liverpool FC",
+          "providerUTC": "2026-10-17T14:00Z",
+          "officialLocal": "2026-10-17T15:00",
+          "officialTimezone": "Europe/London",
+          "officialSource": "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T11:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 560610,
+          "homeTeam": "Manchester City FC",
+          "awayTeam": "Ipswich Town FC",
+          "providerUTC": "2026-10-17T14:00Z",
+          "officialLocal": "2026-10-17T15:00",
+          "officialTimezone": "Europe/London",
+          "officialSource": "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T11:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 560602,
+          "homeTeam": "Fulham FC",
+          "awayTeam": "Hull City AFC",
+          "providerUTC": "2026-10-17T14:00Z",
+          "officialLocal": "2026-10-17T15:00",
+          "officialTimezone": "Europe/London",
+          "officialSource": "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T11:00:00-03:00"
+        }
+      ],
+      "exact": 5,
+      "dateMismatch": 0,
+      "timeMismatch": 0,
+      "teamMismatch": 0,
+      "missing": null,
+      "extras": null
+    },
+    "SA": {
+      "state": "LIMITED_AUXILIARY",
+      "matches": [
+        {
+          "providerFixtureId": 558579,
+          "homeTeam": "Atalanta BC",
+          "awayTeam": "Venezia FC",
+          "providerUTC": "2026-10-12T16:30Z",
+          "officialLocal": "2026-10-12T18:30",
+          "officialTimezone": "Europe/Rome",
+          "officialSource": "https://images.legaseriea.it/image/private/fl_attachment/prd/emzdipx98pkg0lgeqgrt.pdf",
+          "result": "MATCH",
+          "kickoffART": "2026-10-12T13:30:00-03:00"
+        },
+        {
+          "providerFixtureId": 558587,
+          "homeTeam": "Torino FC",
+          "awayTeam": "Udinese Calcio",
+          "providerUTC": "2026-10-12T18:45Z",
+          "officialLocal": "2026-10-12T20:45",
+          "officialTimezone": "Europe/Rome",
+          "officialSource": "https://images.legaseriea.it/image/private/fl_attachment/prd/emzdipx98pkg0lgeqgrt.pdf",
+          "result": "MATCH",
+          "kickoffART": "2026-10-12T15:45:00-03:00"
+        },
+        {
+          "providerFixtureId": 558573,
+          "homeTeam": "Frosinone Calcio",
+          "awayTeam": "US Sassuolo Calcio",
+          "providerUTC": "2026-10-16T18:45Z",
+          "officialLocal": "2026-10-16T20:45",
+          "officialTimezone": "Europe/Rome",
+          "officialSource": "https://images.legaseriea.it/image/private/fl_attachment/prd/emzdipx98pkg0lgeqgrt.pdf",
+          "result": "MATCH",
+          "kickoffART": "2026-10-16T15:45:00-03:00"
+        },
+        {
+          "providerFixtureId": 558575,
+          "homeTeam": "Venezia FC",
+          "awayTeam": "SSC Napoli",
+          "providerUTC": "2026-10-17T13:00Z",
+          "officialLocal": "2026-10-17T15:00",
+          "officialTimezone": "Europe/Rome",
+          "officialSource": "https://images.legaseriea.it/image/private/fl_attachment/prd/emzdipx98pkg0lgeqgrt.pdf",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T10:00:00-03:00"
+        },
+        {
+          "providerFixtureId": 558571,
+          "homeTeam": "Bologna FC 1909",
+          "awayTeam": "FC Internazionale Milano",
+          "providerUTC": "2026-10-17T16:00Z",
+          "officialLocal": "2026-10-17T18:00",
+          "officialTimezone": "Europe/Rome",
+          "officialSource": "https://images.legaseriea.it/image/private/fl_attachment/prd/emzdipx98pkg0lgeqgrt.pdf",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T13:00:00-03:00"
+        }
+      ],
+      "exact": 5,
+      "dateMismatch": 0,
+      "timeMismatch": 0,
+      "teamMismatch": 0,
+      "missing": null,
+      "extras": null
+    },
+    "FL1": {
+      "state": "LIMITED_AUXILIARY",
+      "matches": [
+        {
+          "providerFixtureId": 559661,
+          "homeTeam": "Le Mans FC",
+          "awayTeam": "Toulouse FC",
+          "providerUTC": "2026-10-16T18:45Z",
+          "officialLocal": "2026-10-16T20:45",
+          "officialTimezone": "Europe/Paris",
+          "officialSource": "https://ligue1.com/fr/articles/l1_article_5797-",
+          "result": "MATCH",
+          "kickoffART": "2026-10-16T15:45:00-03:00"
+        },
+        {
+          "providerFixtureId": 559662,
+          "homeTeam": "RC Strasbourg Alsace",
+          "awayTeam": "Paris Saint-Germain FC",
+          "providerUTC": "2026-10-17T15:15Z",
+          "officialLocal": "2026-10-17T17:15",
+          "officialTimezone": "Europe/Paris",
+          "officialSource": "https://ligue1.com/fr/articles/l1_article_5797-",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T12:15:00-03:00"
+        },
+        {
+          "providerFixtureId": 559660,
+          "homeTeam": "Lille OSC",
+          "awayTeam": "Stade Brestois 29",
+          "providerUTC": "2026-10-17T18:45Z",
+          "officialLocal": "2026-10-17T20:45",
+          "officialTimezone": "Europe/Paris",
+          "officialSource": "https://ligue1.com/fr/articles/l1_article_5797-",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T15:45:00-03:00"
+        },
+        {
+          "providerFixtureId": 559659,
+          "homeTeam": "ES Troyes AC",
+          "awayTeam": "Racing Club de Lens",
+          "providerUTC": "2026-10-17T18:45Z",
+          "officialLocal": "2026-10-17T20:45",
+          "officialTimezone": "Europe/Paris",
+          "officialSource": "https://ligue1.com/fr/articles/l1_article_5797-",
+          "result": "MATCH",
+          "kickoffART": "2026-10-17T15:45:00-03:00"
+        },
+        {
+          "providerFixtureId": 559664,
+          "homeTeam": "Angers SCO",
+          "awayTeam": "Olympique de Marseille",
+          "providerUTC": "2026-10-18T13:00Z",
+          "officialLocal": "2026-10-18T15:00",
+          "officialTimezone": "Europe/Paris",
+          "officialSource": "https://ligue1.com/fr/articles/l1_article_5797-",
+          "result": "MATCH",
+          "kickoffART": "2026-10-18T10:00:00-03:00"
+        }
+      ],
+      "exact": 5,
+      "dateMismatch": 0,
+      "timeMismatch": 0,
+      "teamMismatch": 0,
+      "missing": null,
+      "extras": null
+    },
+    "CL": {
+      "state": "UNVALIDATED",
+      "teamsDatesConfirmed": 5,
+      "reason": "UEFA article labels time CET in October; explicit offset not verified. Do not assume seasonal offset for exact-time validation.",
+      "source": "https://www.uefa.com/uefachampionsleague/news/02aa-21c5297d7408-32d70b5a4443-1000--champions-league-matchday-2-key-stats-and-what-to-look-o/"
+    }
+  }
+}

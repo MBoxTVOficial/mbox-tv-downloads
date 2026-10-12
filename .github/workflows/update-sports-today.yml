@@ -44,23 +44,26 @@ jobs:
       - name: Restore daily public evidence cache
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
-          path: sports_broadcast_discovery_cache.json
+          path: |
+            sports_broadcast_discovery_cache.json
+            sports_agenda_request_budget.json
           key: broadcasts-${{ steps.discovery-key.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: broadcasts-${{ steps.discovery-key.outputs.key }}-
       - name: Generate today's schedule
         env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+          FOOTBALL_SOCCER_API_KEY: ${{ secrets.FOOTBALL_SOCCER_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/generate_sports_today.py --discover-broadcasts
+        run: python -m scripts.generate_agenda_today --discover-broadcasts
       - name: Commit only daily broadcasts and feed
         shell: bash
         run: |
-          git add -- sports_today.json sports_broadcasts_today.json
-          if git diff --cached --quiet -- sports_today.json sports_broadcasts_today.json; then
+          git add -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json
+          if git diff --cached --quiet -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json; then
             echo "Sports schedule unchanged; no commit."
             exit 0
           fi
           git config user.name "MBox Sports Bot"
           git config user.email "actions@users.noreply.github.com"
-          git commit -m "Update sports schedule" --only -- sports_today.json sports_broadcasts_today.json
+          git commit -m "Update sports schedule" --only -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json
           git push origin HEAD:main
