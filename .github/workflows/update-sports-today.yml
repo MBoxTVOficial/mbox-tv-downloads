@@ -2,15 +2,14 @@ name: Update sports schedule
 
 on:
   workflow_dispatch:
-  # TEMPORARILY PAUSED: API-Football account suspended.
-  # Reactivate by uncommenting the original schedule block below.
-  # schedule:
-  #   # UTC -> Argentina: 00:05, 08:00, 12:00, 17:00, 20:00.
-  #   - cron: '5 3 * * *'
-  #   - cron: '0 11 * * *'
-  #   - cron: '0 15 * * *'
-  #   - cron: '0 20 * * *'
-  #   - cron: '0 23 * * *'
+  # Validated degraded agenda only; API-Football LIVE remains disabled.
+  schedule:
+    # UTC -> Argentina: 00:05, 08:00, 12:00, 17:00, 20:00.
+    - cron: '5 3 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 20 * * *'
+    - cron: '0 23 * * *'
 
 permissions:
   contents: write

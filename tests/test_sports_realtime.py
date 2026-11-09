@@ -333,10 +333,10 @@ class WorkflowTest(unittest.TestCase):
         fallback_slots = sum(int(cron.split()[1].split("-")[1]) -
                              int(cron.split()[1].split("-")[0]) + 1 for cron in live_crons)
         general = (workflows / "update-sports-today.yml").read_text(encoding="utf-8")
-        self.assertNotIn('\n  schedule:', general)
+        self.assertIn('\n  schedule:', general)
         self.assertIn('workflow_dispatch:', general)
         general_crons = [line.split("cron:", 1)[1].strip().strip("'")
-                         for line in general.splitlines() if line.strip().removeprefix("#").strip().startswith("- cron:")]
+                         for line in general.splitlines() if line.strip().startswith("- cron:")]
         self.assertEqual(["5 3 * * *", "0 11 * * *", "0 15 * * *", "0 20 * * *", "0 23 * * *"], general_crons)
         worker = (generator.ROOT / "cloudflare/live-scheduler/wrangler.toml").read_text(encoding="utf-8")
         self.assertIn('crons = ["*/10 * * * *"]', worker)
@@ -351,7 +351,7 @@ class WorkflowTest(unittest.TestCase):
                      for hour in utc_hours]
         self.assertEqual([f"{hour:02d}:37" for hour in range(15, 24)] + ["00:37"], art_slots)
         self.assertEqual(90, generator.MAX_DAILY_API_CALLS)
-        self.assertEqual(75, automatic_slots)  # Original commented schedules; no automatic runs are enabled.
+        self.assertEqual(75, automatic_slots)  # Historical upper bound; only GENERAL is enabled.
         self.assertLess(automatic_slots, generator.MAX_DAILY_API_CALLS)
 
 
