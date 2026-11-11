@@ -402,13 +402,18 @@ def discover(feed, groups, sources, mapping, previous=None, cache=None, now=None
     return config, new_cache, report
 
 
-def discover_from_root(feed, root, previous=None, now=None, scope='all', countries=None):
+def discover_from_root(feed, root, previous=None, now=None, scope='all', countries=None,
+                       request_limit=None, transport=None):
     """Read configuration/cache; return candidates without writing any production file."""
     if __package__:
         from .sports_channel_rules import load_clean_groups
     else:
         from sports_channel_rules import load_clean_groups
     sources = read_json(root / 'sports_broadcaster_sources.json')
+    if request_limit is not None:
+        if type(request_limit) is not int or not 1 <= request_limit <= 6:
+            raise DiscoveryError('Invalid shared public request limit')
+        sources['limits']['maxRequests'] = min(sources['limits']['maxRequests'], request_limit)
     mapping = read_json(root / 'sports_broadcaster_mapping.json')
     registry = read_json(root / 'sports_competition_broadcasters.json', optional=True)
     groups = load_clean_groups(root / 'mbox_sports_channels_clean.json', norm)
@@ -418,7 +423,7 @@ def discover_from_root(feed, root, previous=None, now=None, scope='all', countri
     except DiscoveryError:
         cache, warning = None, {'provider': 'cache', 'error': 'InvalidCache'}
     config, cache, report = discover(feed, groups, sources, mapping, previous, cache, now,
-                                   scope=scope, countries=countries, registry=registry)
+                                   scope=scope, countries=countries, registry=registry, transport=transport)
     if warning:
         report['providerWarnings'].append(warning)
     return config, cache, report, groups

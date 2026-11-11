@@ -1,6 +1,29 @@
 # Multi-provider degraded sports agenda
 
-## Current release scope (2026-10-12)
+## Current production update (2026-11-11)
+
+GENERAL is active at 00:05/08:00/12:00/17:00/20:00ART; LIVE and Cloudflare remain paused.
+Argentina now uses the official LPF Primera schedule (lpf_official), not the paid
+Football Soccer API. That adapter remains available but is disabled. LPF rows
+require explicit teams/date/kickoff, never results, reserve competitions or inferred TV.
+Source-row hashes are MBox-generated identities, not LPF-issued fixture IDs.
+
+LPF uses at most 3 public GETs; agenda and broadcaster discovery share a hard 6
+public GET budget per GENERAL. Existing 8s timeout/no retry remains. Europe still
+uses football-data PD/PL/SA/FL1, at most 4 API calls per normal refresh; daily cap 32.
+CL and CONMEBOL agenda adapters remain disabled/unvalidated. Their IPTV catalog
+entries are not removed and do not themselves identify a fixture's broadcaster.
+
+Successful sources may publish a current-day empty list when the previous feed
+belongs to another day. This means no fixtures are available from the checked
+sources, not proof that no football exists. Same-day real cards are never erased
+by an empty refresh, and all-source failure still preserves the prior file.
+Daily agenda retains earlier kickoffs without importing LIVE/FINISHED or scores.
+Playback expires strictly after 3h and on superseded signals; cards stay visible.
+The remaining sections describe historical stages and must not be read as current
+activation or account-access claims.
+
+## Historical release scope (2026-10-12)
 
 Enabled agenda routes: LPF, PD, PL, SA and FL1, all LIMITED_AUXILIARY.
 CL remains UNVALIDATED; CONMEBOL has no auxiliary route. Auxiliary fields are

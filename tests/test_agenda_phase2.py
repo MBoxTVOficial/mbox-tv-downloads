@@ -130,6 +130,12 @@ class AgendaPhase2Tests(unittest.TestCase):
         self.assertNotIn('channels', next(e for s in moved['sections'] for e in s['events']))
 
     def test_lpf_gate_missing_fails(self):
+        config_path = self.root / 'sports_agenda_providers.json'
+        config = json.loads(config_path.read_text())
+        config['competitions']['Liga Profesional Argentina'] = {
+            'enabled': True, 'provider': 'football_soccer_argentina',
+            'competitionId': 'lg_22EEYKR', 'confidence': 'LIMITED_AUXILIARY'}
+        config_path.write_text(json.dumps(config))
         path = self.root / 'tests/data/lpf_agenda_validation.json'
         value = json.loads(path.read_text())
         value['exactMatches'] = 0

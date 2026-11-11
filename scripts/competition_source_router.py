@@ -75,6 +75,9 @@ def route(day, provider_rows=(), official_rows=(), aliases=None):
     aliases = aliases or {}
     result, conflicts = {}, []
     covered = {r['competition'] for r in official_rows}
+    def official_lpf_row(raw):
+        return raw.get('competition') == 'Liga Profesional Argentina' and raw.get('source') == 'lpf_official' and raw.get('competitionId') == 'lpf-primera'
+    covered.update(r['competition'] for r in provider_rows if official_lpf_row(r))
     for raw in official_rows:
         competition = raw['competition']
         if competition not in POLICIES:
@@ -84,14 +87,15 @@ def route(day, provider_rows=(), official_rows=(), aliases=None):
             if type(raw.get('fixtureId')) is int and raw['fixtureId'] > 0:
                 item['fixtureId'] = raw['fixtureId']
             result[item['_identity']] = item
-    for raw in provider_rows:
+    for raw in sorted(provider_rows, key=lambda r: 0 if official_lpf_row(r) else 1):
         competition = raw.get('competition')
-        policy = POLICIES.get(competition)
-        if not policy or policy[1] not in ('TRUSTED_AUXILIARY', 'LIMITED_AUXILIARY'):
+        official_lpf = official_lpf_row(raw)
+        policy = ('lpf-primera', 'OFFICIAL', 'lpf_official') if official_lpf else POLICIES.get(competition)
+        if not policy or not official_lpf and policy[1] not in ('TRUSTED_AUXILIARY', 'LIMITED_AUXILIARY'):
             continue
         if raw.get('competitionId') != policy[0]:
             continue
-        item = normalize_row(raw, competition, day, policy[2], policy[1], aliases)
+        item = normalize_row(raw, competition, day, 'official' if official_lpf else policy[2], policy[1], aliases)
         if not item:
             continue
         provider_id = raw.get('providerFixtureId')
@@ -102,7 +106,7 @@ def route(day, provider_rows=(), official_rows=(), aliases=None):
             official['providerFixtureId'] = provider_id
             official['provenance'].append({'source': policy[2], 'providerFixtureId': provider_id,
                                           'match': 'EXACT', 'toleranceMinutes': 0})
-        elif competition in covered:
+        elif competition in covered and not official_lpf:
             # Full-name aliases, both teams and orientation; no fuzzy identity.
             same_teams = [r for r in result.values() if r['competition'] == competition
                           and team_key(r['homeTeam'], aliases) == team_key(item['homeTeam'], aliases)
@@ -111,6 +115,9 @@ def route(day, provider_rows=(), official_rows=(), aliases=None):
                               'reason': 'KICKOFF_CONFLICT' if same_teams else 'NOT_IN_OFFICIAL_SNAPSHOT'})
         else:
             item['providerFixtureId'] = provider_id
+            if official_lpf:
+                item['provenance'][0]['source'] = 'lpf_official'
+                item['provenance'][0]['sourceUrl'] = raw.get('sourceUrl')
             item['provenance'][0]['providerFixtureId'] = provider_id
             result.setdefault(item['_identity'], item)
     rows = sorted(result.values(), key=lambda r: (r['startTime'], r['fixtureId']))
@@ -123,9 +130,9 @@ def route(day, provider_rows=(), official_rows=(), aliases=None):
 
 
 def degraded_feed(day, now, rows, discover=None):
-    """Future agenda only: SCHEDULED is a UI projection, never provider status.
+    """Daily agenda only: SCHEDULED is a UI projection, never provider status.
 
-    Past kickoffs are omitted because their actual state is unknown. Existing
+    Same-day kickoffs stay listed without claiming their actual match state. Existing
     broadcaster discovery may be injected, and still requires its own evidence.
     Auxiliary fields never supply scores, logos, states, venues or channels.
     """
@@ -135,7 +142,7 @@ def degraded_feed(day, now, rows, discover=None):
                  'Premier League': 'England', 'Serie A': 'Italy', 'Ligue 1': 'France'}
     for row in rows:
         start = local_start(row['startTime'])
-        if start.date() != day or start < now:
+        if start.date() != day:
             continue
         payload['response'].append({'fixture': {'id': row['fixtureId'], 'date': start.isoformat(),
                                                'status': {'short': 'NS'}},

@@ -14,10 +14,13 @@ from . import generate_sports_today as generator
 from .broadcaster_discovery import read_json, atomic_json, discover_from_root
 from .competition_source_router import route, degraded_feed, football_soccer_snapshot
 from .football_data_provider import FootballDataProvider, ProviderError, NoRedirects
+from .lpf_official_provider import LpfOfficialProvider
+from .broadcaster_sources import PublicTransport, RequestBudget
 from .sports_fixture_identity import IdentityStore
 from .sports_daily_broadcasts import resolve_broadcasts, apply_daily_assignments
 
 MAX_FOOTBALL_SOCCER_API_CALLS = 40
+MAX_GENERAL_PUBLIC_REQUESTS = 6
 
 
 def safe_reason(error):
@@ -25,7 +28,8 @@ def safe_reason(error):
     allowed = {'TOKEN_NOT_AVAILABLE', 'ARGENTINA_TOKEN_NOT_AVAILABLE',
                'DAILY_BUDGET_EXHAUSTED', 'REQUEST_BUDGET_EXHAUSTED',
                'ARGENTINA_REQUEST_FAILED', 'REQUEST_FAILED', 'INVALID_RESPONSE',
-               'INVALID_MATCH', 'RESPONSE_TOO_LARGE', 'CONFLICTING_DUPLICATE'}
+               'INVALID_MATCH', 'RESPONSE_TOO_LARGE', 'CONFLICTING_DUPLICATE',
+               'LPF_OFFICIAL_UNAVAILABLE', 'LPF_OFFICIAL_AMBIGUOUS', 'LPF_OFFICIAL_REQUEST_LIMIT'}
     code = str(error) if isinstance(error, ProviderError) else ''
     if code in allowed or re.fullmatch(r'HTTP_(?:401|403|404|422|429|5\d\d)', code):
         return code
@@ -41,8 +45,12 @@ def validated_config(root):
                 'Premier League': 'PL', 'Serie A': 'SA', 'Ligue 1': 'FL1'}
     for name, item in config['competitions'].items():
         if item.get('enabled'):
+            if name == 'Liga Profesional Argentina' and (item.get('provider'), item.get('competitionId'), item.get('confidence')) == ('lpf_official', 'lpf-primera', 'OFFICIAL'):
+                continue
             if name not in expected or item['competitionId'] != expected[name] or item['confidence'] != 'LIMITED_AUXILIARY':
                 raise ValueError('Competition not validated')
+            if item.get('provider') != ('football_soccer_argentina' if name == 'Liga Profesional Argentina' else 'football_data'):
+                raise ValueError('Provider not validated for competition')
             if name == 'Liga Profesional Argentina':
                 gate = read_json(root / 'tests/data/lpf_agenda_validation.json')
                 if gate.get('exactMatches', 0) < 3 or gate.get('competitionId') != item['competitionId']:
@@ -63,7 +71,7 @@ def reserve(root, provider, day, limit):
     atomic_json(path, state)  # Reserve before request; failed requests count too.
 
 
-def acquire(root, day, config, clients=None, diagnostics=None):
+def acquire(root, day, config, clients=None, diagnostics=None, public_transport=None):
     clients = clients or {}
     diagnostics = diagnostics if diagnostics is not None else {}
     diagnostics.setdefault('sources', [])
@@ -78,7 +86,17 @@ def acquire(root, day, config, clients=None, diagnostics=None):
         try:
             if provider in unavailable:
                 raise ProviderError(unavailable[provider])
-            if provider == 'football_data':
+            if provider == 'lpf_official':
+                if provider in clients:
+                    received = clients[provider].matches(item['competitionId'], day)
+                else:
+                    transport = public_transport or RequestBudget(PublicTransport(8), MAX_GENERAL_PUBLIC_REQUESTS)
+                    before = transport.requests
+                    try:
+                        received = LpfOfficialProvider(transport=transport).matches(item['competitionId'], day)
+                    finally:
+                        diagnostics['requests']['lpf_official'] = transport.requests - before
+            elif provider == 'football_data':
                 if fd is None:
                     fd = FootballDataProvider(os.environ.get('FOOTBALL_DATA_TOKEN', ''))
                     original = fd._fetch
@@ -133,9 +151,10 @@ def generate_agenda(root, output, day, now, provider_rows=None, official_rows=()
     config = validated_config(root)
     previous = generator.previous_feed(output)
     diagnostics = {'sources': [], 'requests': {}}
+    public_transport = RequestBudget(PublicTransport(8), MAX_GENERAL_PUBLIC_REQUESTS)
     stage = 'ACQUIRE'
     try:
-        rows = acquire(root, day, config, clients, diagnostics=diagnostics) if provider_rows is None else provider_rows
+        rows = acquire(root, day, config, clients, diagnostics=diagnostics, public_transport=public_transport) if provider_rows is None else provider_rows
         stage = 'NORMALIZE'
         allowed = {name for name, entry in config['competitions'].items() if entry['enabled'] and config['providers'][entry['provider']]['enabled']}
         rows = [r for r in rows if r['competition'] in allowed]
@@ -151,8 +170,14 @@ def generate_agenda(root, output, day, now, provider_rows=None, official_rows=()
         feed = degraded_feed(day, now, normalized)
         events = [e for s in feed['sections'] for e in s['events']]
         if not events:
+            # Keep real same-day cards on coverage loss; an old month's file is
+            # not today's last-good agenda. A successful source can establish an
+            # empty list of available fixtures without inventing missing matches.
+            previous_today = previous and previous['date'] == day.isoformat() and any(s['events'] for s in previous['sections'])
+            source_available = any(s['state'] == 'OK' for s in diagnostics['sources'])
             reason = 'PROVIDERS_UNAVAILABLE' if any(s['state'] == 'ERROR' for s in diagnostics['sources']) else 'EMPTY_AGENDA'
-            return previous, {'state': 'KEEP_LAST_GOOD', 'reason': reason, 'conflicts': conflicts, **diagnostics}, False
+            if previous_today or not source_available:
+                return previous, {'state': 'KEEP_LAST_GOOD', 'reason': reason, 'conflicts': conflicts, **diagnostics}, False
         if previous and previous['date'] == day.isoformat():
             new_ids = {e['id'] for e in events}
             for section in previous['sections']:
@@ -174,10 +199,12 @@ def generate_agenda(root, output, day, now, provider_rows=None, official_rows=()
         daily, groups = generator.daily_context(day)
         ids = {int(e['id'].removeprefix('fixture-')) for e in events}
         scoped = {**daily, 'broadcasts': [b for b in daily['broadcasts'] if b['fixtureId'] in ids - moved]} if daily else None
-        if discover:
+        remaining_public = MAX_GENERAL_PUBLIC_REQUESTS - public_transport.requests
+        if discover and remaining_public > 0:
             safe = {k: v for k, v in feed.items() if k != 'sportsDataMode'}
             try:
-                scoped, cache, report, groups = discover_from_root(safe, root, previous=scoped, now=now)
+                scoped, cache, report, groups = discover_from_root(safe, root, previous=scoped, now=now,
+                    request_limit=remaining_public, transport=public_transport)
                 atomic_json(root / 'sports_broadcast_discovery_cache.json', cache)
                 atomic_json(root / 'sports_broadcast_discovery_report.json', report)
             except Exception:

@@ -237,21 +237,80 @@ class RequestBudget:
         return self.transport.fetch(url)
 
 
-def lpf_listings(html, day):
+def lpf_article_links(html, index_url, day=None):
+    """Only Primera article URLs; changed post titles cannot widen competition scope."""
+    links = set()
+    for node in Tree(html).root.walk():
+        if node.tag != 'a':
+            continue
+        link = urljoin(index_url, node.attrs.get('href', ''))
+        try:
+            public_url(link)
+        except DiscoveryError:
+            continue
+        part = urlsplit(link)
+        match = re.fullmatch(r'/notas/primera/(\d{4})/(\d{2})/(\d{2})/([^/]+)/', part.path)
+        if part.scheme != 'https' or part.hostname != 'www.ligaprofesional.ar' or \
+                part.username or part.password or part.query or part.fragment or not match:
+            continue
+        try:
+            published = date(*map(int, match.groups()[:3]))
+        except ValueError:
+            continue
+        if day is not None and not -14 <= (day - published).days <= 120:
+            continue
+        if re.search(r'\b(agenda|programacion|cambios|dias y horarios)\b',
+                     norm(node.text() + ' ' + match[4])):
+            links.add(link)
+    return sorted(links, reverse=True)
+
+
+def _lpf_article_text(node):
+    if isinstance(node, str):
+        return node
+    if node.tag in {'script', 'style'}:
+        return ''
+    if node.tag == 'br':
+        return '\n'
+    text = ' '.join(_lpf_article_text(child) for child in node.children)
+    return '\n' + text + '\n' if node.tag in {'p', 'div', 'li', 'h2', 'h3', 'h4'} else text
+
+
+def lpf_listings(html, day, require_broadcaster=True, source_url=None):
     """Official agenda only: publication date is never used as the match date."""
     tree = Tree(html)
     article = next((n for n in tree.root.walk() if n.has_class('entry-content') or
                     n.has_class('elementor-widget-theme-post-content')), None)
     if article is None:
         raise DiscoveryError('LPF: agenda sin contenido reconocido.')
-    text = article.text()
+    text = re.sub(r'[^\S\n]+', ' ', _lpf_article_text(article))
     if not re.search(r'\b(clausura|apertura|liga profesional)\b', norm(text)):
         raise DiscoveryError('LPF: competición de agenda no identificada.')
-    if set(re.findall(r'\b20\d{2}\b', text)) != {str(day.year)}:
+    if re.search(r'\b(proyeccion|reservas?|juveniles|femenin[ao])\b', norm(text)):
+        raise DiscoveryError('LPF: categoría distinta de Primera.')
+    years = set(re.findall(r'\b20\d{2}\b', text))
+    published = None
+    if source_url is not None:
+        public_url(source_url)
+        part = urlsplit(source_url)
+        match = re.fullmatch(r'/notas/primera/(\d{4})/(\d{2})/(\d{2})/[^/]+/', part.path)
+        if part.scheme != 'https' or part.hostname != 'www.ligaprofesional.ar' or \
+                part.username or part.password or part.query or part.fragment or not match:
+            raise DiscoveryError('LPF: contexto oficial inválido.')
+        try:
+            published = date(*map(int, match.groups()))
+        except ValueError:
+            raise DiscoveryError('LPF: fecha de documento inválida.') from None
+    if years != {str(day.year)} and not (not years and published is not None and
+            published.year == day.year and 0 <= (day - published).days <= 92):
         raise DiscoveryError('LPF: año de agenda ambiguo o ausente.')
-    current, result = None, []
-    pattern = r'(?P<date>\b(?:Lunes|Martes|Miércoles|Miercoles|Jueves|Viernes|Sábado|Sabado|Domingo)\s+\d{1,2}\s+de\s+\w+)|(?P<clock>\b\d{1,2}[.:]\d{2}\s+)'
+    current, heading_end, result = None, None, []
+    pattern = r'(?P<date>\b(?:Lunes|Martes|Miércoles|Miercoles|Jueves|Viernes|Sábado|Sabado|Domingo)\s+\d{1,2}[°º]?\s+de\s+\w+)|(?P<clock>\b\d{1,2}[.:]\d{2}\s+)'
+    signal = r'(?:ESPN(?: Premium|\s*\d+)?|TNT Sports(?: Premium)?|TyC Sports(?: Play)?|FOX Sports(?: Argentina|\s*\d+)?|DSports(?:\s*\d+|\+)?|Telefe|TV Pública|Disney\+)'
+    signal_list = signal + r'(?:\s*/\s*' + signal + r')*'
     tokens = list(re.finditer(pattern, text, re.IGNORECASE))
+    if not require_broadcaster and not any(token.group('date') for token in tokens):
+        raise DiscoveryError('LPF: agenda sin fechas de partidos reconocidas.')
     for index, token in enumerate(tokens):
         end = tokens[index + 1].start() if index + 1 < len(tokens) else len(text)
         if token.group('date'):
@@ -260,24 +319,40 @@ def lpf_listings(html, day):
                 current = date(day.year, MONTHS[heading[-1]], int(heading[-3]))
             except (KeyError, ValueError):
                 current = None
+            heading_end = token.end()
             continue
         if current != day:
             continue
+        line_start = text.rfind('\n', 0, token.start()) + 1
+        if text[line_start:token.start()].strip() and \
+                (heading_end is None or text[heading_end:token.start()].strip()):
+            continue  # A clock in narrative text is not a scheduled fixture.
         body = text[token.end():end].strip()
-        signals = re.findall(r'\((ESPN(?: Premium|\s*\d+)?|TNT Sports(?: Premium)?|TyC Sports(?: Play)?|'
-                             r'FOX Sports(?: Argentina|\s*\d+)?|DSports(?:\s*\d+|\+)?|Telefe|TV Pública|Disney\+)\)',
-                             body, re.IGNORECASE)
+        if not body:
+            continue
+        body = body.splitlines()[0].strip()
+        signals, metadata = [], []
+        for wrapper in (r'\((' + signal_list + r')\)',
+                        r'(?:^|\s)[–—-]\s*(' + signal_list + r')\s*[–—-](?=\s|$)'):
+            for match in re.finditer(wrapper, body, re.IGNORECASE):
+                metadata.append(match.start())
+                signals.extend(re.split(r'\s*/\s*', match[1]))
         # Preserve team qualifiers such as (Mza.); remove only listing metadata.
-        team_text = re.split(r'\s*\((?:Zona\b|Interzonal\b|ESPN\b|TNT Sports\b|TyC Sports\b|FOX Sports\b|DSports\b|Telefe\b|TV Pública\b|Disney\+)', body, maxsplit=1, flags=re.IGNORECASE)[0].strip()
+        team_text = body[:min(metadata)] if metadata else body
+        team_text = re.split(r'\s*\((?:Zona\b|Interzonal\b)', team_text,
+                             maxsplit=1, flags=re.IGNORECASE)[0].strip()
+        if re.search(r'\d\s*[–—-]\s*\d', team_text):
+            continue  # Results are not agenda rows; never treat scores as teams.
         teams = re.split(r'\s+[–—-]\s+', team_text)
-        if not signals or len(teams) != 2 or not all(safe_text(name) for name in teams):
+        if (require_broadcaster and not signals) or len(teams) != 2 or not all(safe_text(name) for name in teams):
             continue
         try:
             hour, minute = map(int, token.group('clock').strip().replace('.', ':').split(':'))
             kickoff = datetime(day.year, day.month, day.day, hour, minute, tzinfo=ZONE)
         except ValueError:
             continue
-        result.append(Listing(*teams, kickoff, 'Liga Profesional Argentina', tuple(signals)))
+        signals = tuple(dict.fromkeys(signals))
+        result.append(Listing(*teams, kickoff, 'Liga Profesional Argentina', signals))
     return result
 
 
@@ -462,23 +537,13 @@ class BroadcasterProvider:
 
     def prepare(self, day, transport):
         if self.config['adapter'] == 'lpf_agenda':
-            tree = Tree(transport.fetch(self.config['url']))
-            links = []
-            for node in tree.root.walk():
-                if node.tag != 'a' or not re.search(r'\b(agenda|programacion|cambios)\b', norm(node.text())):
-                    continue
-                link = urljoin(self.config['url'], node.attrs.get('href', ''))
-                parsed = urlsplit(link)
-                if parsed.hostname == 'www.ligaprofesional.ar' and re.fullmatch(
-                        r'/notas/primera/\d{4}/\d{2}/\d{2}/[^/]+/', parsed.path):
-                    if link not in links:
-                        links.append(link)
+            links = lpf_article_links(transport.fetch(self.config['url']), self.config['url'], day)
             self.listings, self.listing_urls = [], {}
             if not links:
                 raise DiscoveryError('LPF: no se encontraron enlaces de agenda oficiales.')
             # Newest articles first. At most two articles in addition to the index.
             for link in sorted(links, reverse=True)[:2]:
-                for listing in lpf_listings(transport.fetch(link), day):
+                for listing in lpf_listings(transport.fetch(link), day, source_url=link):
                     self.listings.append(listing)
                     self.listing_urls[listing] = link
             return

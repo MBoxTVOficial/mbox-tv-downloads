@@ -36,6 +36,11 @@ class AgendaRecoveryTests(unittest.TestCase):
                      'tests/data/lpf_agenda_validation.json'):
             shutil.copyfile(ROOT / name, self.root / name)
         self.config = agenda.validated_config(self.root)
+        # Exercise the retained legacy adapter's recovery contract offline.
+        self.config['providers']['football_soccer_argentina']['enabled'] = True
+        self.config['competitions']['Liga Profesional Argentina'] = {
+            'enabled': True, 'provider': 'football_soccer_argentina',
+            'competitionId': 'lg_22EEYKR', 'confidence': 'LIMITED_AUXILIARY'}
         self.output = self.root / 'sports_today.json'
         self.env = patch.dict(os.environ, {}, clear=True)
         self.env.start()

@@ -91,7 +91,11 @@ class RouterTests(unittest.TestCase):
     def test_past_unknown_status_not_invented(self):
         rows, _ = router.route(DAY, [row(startTime='2026-10-11T10:00:00-03:00')])
         feed = router.degraded_feed(DAY, NOW, rows)
-        self.assertFalse(any(s['events'] for s in feed['sections']))
+        event = next(e for s in feed['sections'] for e in s['events'])
+        self.assertEqual('SCHEDULED', event['status'])
+        self.assertEqual('10:00', event['startTime'])
+        self.assertNotIn('homeScore', event)
+        self.assertNotIn('awayScore', event)
 
     def test_identity_stable(self):
         self.assertEqual(router.route(DAY, [row()])[0], router.route(DAY, [row()])[0])

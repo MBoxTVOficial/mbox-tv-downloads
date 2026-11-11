@@ -60,6 +60,8 @@ def apply_playback_policy(feed, now, zone, groups=None, log=print):
             reason = "INVALID_PLAYBACK_TIME"
         elif status == "LIVE" and football(event) and now > start + LIVE_LIMIT:
             reason = "STALE_LIVE"
+        elif feed.get('sportsDataMode') == 'DEGRADED' and status == 'SCHEDULED' and football(event) and now > start + LIVE_LIMIT:
+            reason = 'AGENDA_WINDOW_EXPIRED'  # Remove playback, never invent a final state/result.
         if reason is not None:
             if event.pop("channels", None):
                 log(f"SPORTS_PLAYBACK {reason} fixtureId={event['id']}")

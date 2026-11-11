@@ -3,11 +3,12 @@
   "apiFootballLiveEnabled": false,
   "refreshTimesART": ["00:05", "12:00", "17:00", "21:00"],
   "providers": {
-    "football_soccer_argentina": {"enabled": true, "maxDailyRequests": 40},
+    "football_soccer_argentina": {"enabled": false, "maxDailyRequests": 40},
+    "lpf_official": {"enabled": true, "maxRequests": 3},
     "football_data": {"enabled": true, "maxDailyRequests": 32}
   },
   "competitions": {
-    "Liga Profesional Argentina": {"enabled": true, "provider": "football_soccer_argentina", "competitionId": "lg_22EEYKR", "confidence": "LIMITED_AUXILIARY"},
+    "Liga Profesional Argentina": {"enabled": true, "provider": "lpf_official", "competitionId": "lpf-primera", "confidence": "OFFICIAL"},
     "LaLiga": {"enabled": true, "provider": "football_data", "competitionId": "PD", "confidence": "LIMITED_AUXILIARY"},
     "Premier League": {"enabled": true, "provider": "football_data", "competitionId": "PL", "confidence": "LIMITED_AUXILIARY"},
     "Serie A": {"enabled": true, "provider": "football_data", "competitionId": "SA", "confidence": "LIMITED_AUXILIARY"},

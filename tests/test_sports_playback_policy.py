@@ -58,6 +58,16 @@ class PlaybackPolicyTest(unittest.TestCase):
     def test_scheduled_future_remains_playable(self):
         self.assertIn('channels', self.event(self.apply(self.make_feed('SCHEDULED', '23:00'))))
 
+    def test_degraded_agenda_keeps_card_but_removes_playback_after_three_hours(self):
+        feed = self.make_feed('SCHEDULED', '19:30')
+        feed['sportsDataMode'] = 'DEGRADED'
+        self.assertIn('channels', self.event(self.apply(copy.deepcopy(feed), 22, 30)))
+        result = self.event(self.apply(feed, 22, 31))
+        self.assertNotIn('channels', result)
+        self.assertEqual('SCHEDULED', result['status'])
+        self.assertEqual('19:30', result['startTime'])
+
+
     def pair(self, first_id=101, second_id=101, second_status='LIVE'):
         feed = self.make_feed(sid=first_id)
         later = self.make_feed(second_status, '21:30', second_id)['sections'][0]['events'][0]
