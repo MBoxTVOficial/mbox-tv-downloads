@@ -4,9 +4,11 @@ import copy
 from datetime import date, datetime, timedelta, timezone
 import json
 import os
+import re
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, build_opener
+from urllib.error import HTTPError
 
 from . import generate_sports_today as generator
 from .broadcaster_discovery import read_json, atomic_json, discover_from_root
@@ -16,6 +18,18 @@ from .sports_fixture_identity import IdentityStore
 from .sports_daily_broadcasts import resolve_broadcasts, apply_daily_assignments
 
 MAX_FOOTBALL_SOCCER_API_CALLS = 40
+
+
+def safe_reason(error):
+    """Never print exception text, credentials, URLs or response bodies."""
+    allowed = {'TOKEN_NOT_AVAILABLE', 'ARGENTINA_TOKEN_NOT_AVAILABLE',
+               'DAILY_BUDGET_EXHAUSTED', 'REQUEST_BUDGET_EXHAUSTED',
+               'ARGENTINA_REQUEST_FAILED', 'REQUEST_FAILED', 'INVALID_RESPONSE',
+               'INVALID_MATCH', 'RESPONSE_TOO_LARGE', 'CONFLICTING_DUPLICATE'}
+    code = str(error) if isinstance(error, ProviderError) else ''
+    if code in allowed or re.fullmatch(r'HTTP_(?:401|403|404|422|429|5\d\d)', code):
+        return code
+    return type(error).__name__
 
 
 def validated_config(root):
@@ -49,53 +63,80 @@ def reserve(root, provider, day, limit):
     atomic_json(path, state)  # Reserve before request; failed requests count too.
 
 
-def acquire(root, day, config, clients=None):
+def acquire(root, day, config, clients=None, diagnostics=None):
     clients = clients or {}
+    diagnostics = diagnostics if diagnostics is not None else {}
+    diagnostics.setdefault('sources', [])
+    diagnostics.setdefault('requests', {})
     rows = []
     fd = clients.get('football_data')
-    if fd is None and any(c['enabled'] and c['provider'] == 'football_data' for c in config['competitions'].values()):
-        fd = FootballDataProvider(os.environ.get('FOOTBALL_DATA_TOKEN', ''))
-        original = fd._fetch
-        def bounded_fetch(path):
-            reserve(root, 'football_data', datetime.now(timezone.utc).date().isoformat(), 32)
-            return original(path)
-        fd._fetch = bounded_fetch
+    unavailable = {}
     for name, item in config['competitions'].items():
         if not item['enabled'] or not config['providers'][item['provider']]['enabled']:
             continue
-        if item['provider'] == 'football_data':
-            rows.extend(fd.matches(item['competitionId'], day))
-        elif item['provider'] in clients:
-            rows.extend(clients[item['provider']].matches(item['competitionId'], day))
-        else:
-            token = os.environ.get('FOOTBALL_SOCCER_API_KEY', '')
-            if not token:
-                raise ProviderError('ARGENTINA_TOKEN_NOT_AVAILABLE')
-            reserve(root, 'football_soccer_argentina', datetime.now(timezone.utc).date().isoformat(), MAX_FOOTBALL_SOCCER_API_CALLS)
-            query = urlencode({'league_id': item['competitionId'], 'date_from': day.isoformat(),
-                               'date_to': (day + timedelta(days=1)).isoformat(), 'limit': 1000})
-            request = Request('https://api.footballsoccerapi.com/v1/matches?' + query,
-                              headers={'X-API-Key': token, 'Accept': 'application/json'})
-            try:
-                with build_opener(NoRedirects()).open(request, timeout=8) as response:
-                    raw = response.read(4_000_001)
-                if len(raw) > 4_000_000:
-                    raise ValueError()
-                payload = json.loads(raw)
-                meta = payload.get('meta', {})
-                if not isinstance(payload.get('data'), list) or len(payload['data']) >= 1000 or meta.get('next_page') or meta.get('next_cursor') or meta.get('total_pages', 1) != 1:
-                    raise ValueError()
-                rows.extend(football_soccer_snapshot(payload['data']))
-            except Exception:
-                raise ProviderError('ARGENTINA_REQUEST_FAILED') from None
+        provider = item['provider']
+        try:
+            if provider in unavailable:
+                raise ProviderError(unavailable[provider])
+            if provider == 'football_data':
+                if fd is None:
+                    fd = FootballDataProvider(os.environ.get('FOOTBALL_DATA_TOKEN', ''))
+                    original = fd._fetch
+                    def bounded_fetch(path):
+                        reserve(root, 'football_data', datetime.now(timezone.utc).date().isoformat(), 32)
+                        diagnostics['requests']['football_data'] = diagnostics['requests'].get('football_data', 0) + 1
+                        return original(path)
+                    fd._fetch = bounded_fetch
+                received = fd.matches(item['competitionId'], day)
+            elif provider in clients:
+                received = clients[provider].matches(item['competitionId'], day)
+            else:
+                token = os.environ.get('FOOTBALL_SOCCER_API_KEY', '')
+                if not token.strip():
+                    raise ProviderError('ARGENTINA_TOKEN_NOT_AVAILABLE')
+                reserve(root, provider, datetime.now(timezone.utc).date().isoformat(), MAX_FOOTBALL_SOCCER_API_CALLS)
+                diagnostics['requests'][provider] = diagnostics['requests'].get(provider, 0) + 1
+                query = urlencode({'league_id': item['competitionId'], 'date_from': day.isoformat(),
+                                   'date_to': (day + timedelta(days=1)).isoformat(), 'limit': 1000})
+                request = Request('https://api.footballsoccerapi.com/v1/matches?' + query,
+                                  headers={'X-API-Key': token, 'Accept': 'application/json'})
+                try:
+                    with build_opener(NoRedirects()).open(request, timeout=8) as response:
+                        raw = response.read(4_000_001)
+                    if len(raw) > 4_000_000:
+                        raise ValueError()
+                    payload = json.loads(raw)
+                    meta = payload.get('meta', {})
+                    if not isinstance(payload.get('data'), list) or len(payload['data']) >= 1000 or meta.get('next_page') or meta.get('next_cursor') or meta.get('total_pages', 1) != 1:
+                        raise ValueError()
+                    received = football_soccer_snapshot(payload['data'])
+                except HTTPError as error:
+                    raise ProviderError(f'HTTP_{error.code}') from None
+                except Exception:
+                    raise ProviderError('ARGENTINA_REQUEST_FAILED') from None
+            # A provider cannot introduce another competition through its response.
+            if any(r.get('competition') != name or r.get('competitionId') != item['competitionId'] for r in received):
+                raise ProviderError('INVALID_RESPONSE')
+            rows.extend(received)
+            diagnostics['sources'].append({'provider': provider, 'competition': name,
+                                           'state': 'OK', 'fixtures': len(received)})
+        except (ProviderError, ValueError, KeyError, TypeError) as error:
+            reason = safe_reason(error)
+            if reason in {'TOKEN_NOT_AVAILABLE', 'ARGENTINA_TOKEN_NOT_AVAILABLE', 'HTTP_401', 'HTTP_429', 'DAILY_BUDGET_EXHAUSTED', 'REQUEST_BUDGET_EXHAUSTED'}:
+                unavailable[provider] = reason
+            diagnostics['sources'].append({'provider': provider, 'competition': name,
+                                           'state': 'ERROR', 'reason': reason, 'fixtures': 0})
     return rows
 
 
 def generate_agenda(root, output, day, now, provider_rows=None, official_rows=(), discover=False, clients=None):
     config = validated_config(root)
     previous = generator.previous_feed(output)
+    diagnostics = {'sources': [], 'requests': {}}
+    stage = 'ACQUIRE'
     try:
-        rows = acquire(root, day, config, clients) if provider_rows is None else provider_rows
+        rows = acquire(root, day, config, clients, diagnostics=diagnostics) if provider_rows is None else provider_rows
+        stage = 'NORMALIZE'
         allowed = {name for name, entry in config['competitions'].items() if entry['enabled'] and config['providers'][entry['provider']]['enabled']}
         rows = [r for r in rows if r['competition'] in allowed]
         normalized, conflicts = route(day, rows, [r for r in official_rows if r['competition'] in allowed])
@@ -110,13 +151,14 @@ def generate_agenda(root, output, day, now, provider_rows=None, official_rows=()
         feed = degraded_feed(day, now, normalized)
         events = [e for s in feed['sections'] for e in s['events']]
         if not events:
-            return previous, {'state': 'KEEP_LAST_GOOD', 'reason': 'EMPTY_AGENDA', 'conflicts': conflicts}, False
+            reason = 'PROVIDERS_UNAVAILABLE' if any(s['state'] == 'ERROR' for s in diagnostics['sources']) else 'EMPTY_AGENDA'
+            return previous, {'state': 'KEEP_LAST_GOOD', 'reason': reason, 'conflicts': conflicts, **diagnostics}, False
         if previous and previous['date'] == day.isoformat():
             new_ids = {e['id'] for e in events}
             for section in previous['sections']:
                 for old in section['events']:
                     if old.get('channels') and old['id'] not in new_ids and old['status'] in ('SCHEDULED', 'LIVE'):
-                        return previous, {'state': 'KEEP_LAST_GOOD', 'reason': 'CONFIRMED_IDENTITY_RECONCILIATION_REQUIRED'}, False
+                        return previous, {'state': 'KEEP_LAST_GOOD', 'reason': 'CONFIRMED_IDENTITY_RECONCILIATION_REQUIRED', **diagnostics}, False
         prior_events = {e['id']: e for s in (previous or {}).get('sections', []) for e in s['events']} if previous and previous['date'] == day.isoformat() else {}
         moved = set()
         for event in events:
@@ -128,6 +170,7 @@ def generate_agenda(root, output, day, now, provider_rows=None, official_rows=()
                 if not identity.kickoff_reconciled(identifier, before, after):
                     moved.add(identifier)
         # Never transfer old API-Football assignments to new identities.
+        stage = 'BROADCASTS'
         daily, groups = generator.daily_context(day)
         ids = {int(e['id'].removeprefix('fixture-')) for e in events}
         scoped = {**daily, 'broadcasts': [b for b in daily['broadcasts'] if b['fixtureId'] in ids - moved]} if daily else None
@@ -149,26 +192,42 @@ def generate_agenda(root, output, day, now, provider_rows=None, official_rows=()
                 if not event.get('channels') and prior.get('channels') and all(event[k] == prior.get(k) for k in ('competition', 'homeTeam', 'awayTeam', 'startTime')):
                     event['channels'] = copy.deepcopy(prior['channels'])
         generator.apply_playback_policy(feed, now, generator.argentina_timezone(), groups)
+        stage = 'VALIDATE'
         generator.validate_feed(feed)
+        stage = 'WRITE'
         atomic_json(root / 'sports_fixture_identity.json', identity.value)
         changed = generator.write_feed_atomic(feed, output)
         if scoped and discover:
             atomic_json(root / 'sports_broadcasts_today.json', scoped)
-        return feed, {'state': 'DEGRADED', 'conflicts': conflicts, 'fixtures': normalized}, changed
+        return feed, {'state': 'DEGRADED', 'conflicts': conflicts, 'fixtures': normalized, **diagnostics}, changed
     except (ProviderError, ValueError, KeyError, generator.GenerationError) as error:
-        return previous, {'state': 'KEEP_LAST_GOOD', 'reason': type(error).__name__}, False
+        return previous, {'state': 'KEEP_LAST_GOOD', 'reason': safe_reason(error), 'stage': stage, **diagnostics}, False
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path)
     parser.add_argument('--discover-broadcasts', action='store_true')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     root = generator.ROOT
     now = datetime.now(generator.argentina_timezone())
     feed, report, changed = generate_agenda(root, args.output or generator.REAL_OUTPUT, now.date(), now, discover=args.discover_broadcasts)
-    print('SPORTS_AGENDA state=' + report['state'] + ' changed=' + str(changed).lower())
-    return 0 if feed is not None else 1
+    available = feed.get('date', 'none') if feed else 'none'
+    events = sum(len(s.get('events', [])) for s in (feed or {}).get('sections', []))
+    # Only whitelisted codes and fixed config names enter diagnostics/annotations.
+    for source in report.get('sources', []):
+        print('SPORTS_AGENDA SOURCE ' + json.dumps(source, ensure_ascii=True))
+        if source['state'] == 'ERROR':
+            print('::warning title=Sports agenda source::provider=' + source['provider'] + ' reason=' + source['reason'])
+    print('SPORTS_AGENDA state=' + report['state'] + ' changed=' + str(changed).lower() +
+          ' requestedDate=' + now.date().isoformat() + ' availableDate=' + available +
+          ' reason=' + report.get('reason', 'OK') + ' stage=' + report.get('stage', 'COMPLETE') +
+          ' events=' + str(events) + ' requests=' + json.dumps(report.get('requests', {}), sort_keys=True))
+    if available != now.date().isoformat():
+        print('::error title=Sports agenda unavailable::requestedDate=' + now.date().isoformat() +
+              ' availableDate=' + available + ' reason=' + report.get('reason', 'NO_CURRENT_FEED'))
+        return 1
+    return 0
 
 
 if __name__ == '__main__':
