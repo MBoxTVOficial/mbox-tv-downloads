@@ -2,5 +2,42 @@
   "schemaVersion": 1,
   "date": "2026-11-12",
   "timezone": "America/Argentina/Buenos_Aires",
-  "broadcasts": []
+  "broadcasts": [
+    {
+      "fixtureId": 1755679305,
+      "channelGroups": [
+        "espn_2"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "ESPN 2 Argentina"
+      ],
+      "evidenceCount": 2
+    },
+    {
+      "fixtureId": 1898324648,
+      "channelGroups": [
+        "espn"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "ESPN Argentina"
+      ],
+      "evidenceCount": 2
+    },
+    {
+      "fixtureId": 1291004555,
+      "channelGroups": [
+        "espn_3"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "ESPN 3 Argentina"
+      ],
+      "evidenceCount": 2
+    }
+  ]
 }

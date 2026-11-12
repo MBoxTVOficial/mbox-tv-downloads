@@ -2,8 +2,9 @@
   "schemaVersion": 1,
   "date": "2026-11-12",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-12T00:28:13-03:00",
+  "updatedAt": "2026-11-12T15:38:37-03:00",
   "demo": false,
+  "sportsDataMode": "DEGRADED",
   "sections": [
     {
       "id": "south_america_qualifiers",
@@ -27,13 +28,235 @@
       "id": "uefa_nations",
       "title": "UEFA Nations League",
       "priority": 4,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1541840213",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Armenia",
+          "awayTeam": "Chipre",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1684913663",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Turquía",
+          "awayTeam": "Bélgica",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1223960694",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Albania",
+          "awayTeam": "Finlandia",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1755679305",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Inglaterra",
+          "awayTeam": "Croacia",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:45",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 2 HD",
+              "streamId": 165652,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN 2 HD (ARG)",
+              "streamId": 169953,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1898324648",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Italia",
+          "awayTeam": "Francia",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:45",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN HD",
+              "streamId": 165649,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN HD",
+                "ESPN HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN HD (ARG)",
+              "streamId": 169952,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN HD",
+                "ESPN HD (ARG)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1838532279",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Montenegro",
+          "awayTeam": "Letonia",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1291004555",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "República Checa",
+          "awayTeam": "España",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:45",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 3 HD",
+              "streamId": 165654,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 3 HD",
+                "ESPN 3 (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN 3 (ARG)",
+              "streamId": 169954,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 3 HD",
+                "ESPN 3 (ARG)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1084655625",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "San Marino",
+          "awayTeam": "Bielorrusia",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        }
+      ]
     },
     {
       "id": "argentina",
       "title": "Fútbol - Argentina",
       "priority": 5,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1127036036",
+          "sport": "football",
+          "competition": "Torneo Proyección",
+          "homeTeam": "Barracas Central Reserva",
+          "awayTeam": "Argentinos Juniors Reserva",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "15:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1570441849",
+          "sport": "football",
+          "competition": "Torneo Proyección",
+          "homeTeam": "CA Colón Reserva",
+          "awayTeam": "Central Córdoba Reserva",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "15:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1427891845",
+          "sport": "football",
+          "competition": "Torneo Proyección",
+          "homeTeam": "CA Huracán Reserva",
+          "awayTeam": "Estudiantes RC Reserva",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "15:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1812222632",
+          "sport": "football",
+          "competition": "Torneo Proyección",
+          "homeTeam": "Godoy Cruz Reserva",
+          "awayTeam": "Gimnasia LP Reserva",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "15:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1677640631",
+          "sport": "football",
+          "competition": "Torneo Proyección",
+          "homeTeam": "Rosario Central Reserva",
+          "awayTeam": "River Plate Reserva",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "15:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1135651234",
+          "sport": "football",
+          "competition": "Torneo Proyección",
+          "homeTeam": "Boca Juniors Reserva",
+          "awayTeam": "Newell's Old Boys Reserva",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "19:00",
+          "status": "SCHEDULED"
+        }
+      ]
     },
     {
       "id": "conmebol",
@@ -75,8 +298,85 @@
       "id": "international",
       "title": "Fútbol - Internacional",
       "priority": 12,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1509731064",
+          "sport": "football",
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Lituania",
+          "awayTeam": "Surinam",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1875966285",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Barbados",
+          "awayTeam": "Guadalupe",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1088026285",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Islas Caimán",
+          "awayTeam": "Guyana",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "16:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1028532295",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Bonaire",
+          "awayTeam": "Cuba",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "17:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1816349188",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Aruba",
+          "awayTeam": "Martinica",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "19:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1523460040",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Antigua y Barbuda",
+          "awayTeam": "Trinidad y Tobago",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "20:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1575478448",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Curazao",
+          "awayTeam": "Panamá",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "21:30",
+          "status": "SCHEDULED"
+        }
+      ]
     }
-  ],
-  "sportsDataMode": "DEGRADED"
+  ]
 }
