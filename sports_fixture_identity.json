@@ -22,5 +22,8 @@
     "argentina_agendas:agenda:b5bb4c4aa79d356b308e1bbfd0bb3e29017de57108bd6dc76f8e910790bf23cc": 1135651234,
     "argentina_agendas:agenda:714f245fe0bba3bb885bbcbe08796c96b4653061e1e30da4dc3312b98334e68a": 1523460040,
     "argentina_agendas:agenda:f66d02a13e781deed711b755a66b1ce34a32c1952135d89cdf4b07086e19999f": 1575478448
+  },
+  "reconciliations": {
+    "lpf_official:lpf:336c7198577149c9e344a69048e489e595686653faff54751a40f90a4d631e29": "argentina_agendas:agenda:b5bb4c4aa79d356b308e1bbfd0bb3e29017de57108bd6dc76f8e910790bf23cc"
   }
 }
