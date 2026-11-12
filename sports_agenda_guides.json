@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "territory": "Argentina",
+  "cacheHours": 2,
+  "providers": [
+    {"id": "futbol-en-vivo-ar", "url": "https://www.futbolenvivoargentina.com/", "owner": "football-on-tv", "adapter": "argentina_tv"},
+    {"id": "ole-agenda", "url": "https://www.ole.com.ar/agenda-deportiva", "owner": "ole-tyc-conservative", "adapter": "ole"},
+    {"id": "tyc-agenda", "url": "https://www.tycsports.com/agenda-deportiva-hoy.html", "owner": "ole-tyc-conservative", "adapter": "tyc"}
+  ],
+  "competitionAliases": {
+    "Liga Profesional Argentina": ["Liga Profesional", "Primera División Argentina", "Liga Argentina", "Torneo Clausura"],
+    "Torneo Proyección": ["Reserva", "Proyección", "Torneo de Reserva", "Torneo Proyección", "Torneo Proyección de Reserva"],
+    "Primera Nacional": ["Primera Nacional Argentina", "Argentina - Primera Nacional"],
+    "CONMEBOL Libertadores": ["Copa Libertadores", "Libertadores"],
+    "CONMEBOL Sudamericana": ["Copa Sudamericana", "Sudamericana"],
+    "LaLiga": ["La Liga", "LALIGA EA SPORTS", "Liga de España", "Primera División España"],
+    "Premier League": ["Inglaterra - Premier League"],
+    "Serie A": ["Serie A Italia", "Serie A Italiana", "Liga Italiana"],
+    "Ligue 1": ["Liga Francesa", "Francia - Ligue 1"],
+    "UEFA Nations League": ["Nations League", "UEFA Nations League - Liga A", "UEFA Nations League - Liga B", "UEFA Nations League - Liga C", "UEFA Nations League - Liga D"],
+    "CONCACAF Nations League": ["Liga de Naciones CONCACAF"],
+    "Amistosos de selecciones": ["Amistoso", "Amistosos", "Amistoso Internacional", "Amistosos Internacionales", "International Friendlies"]
+  },
+  "agendaCompetitions": {
+    "LaLiga": {"id": "agenda-laliga", "section": "spain"},
+    "Premier League": {"id": "agenda-premier", "section": "england"},
+    "Serie A": {"id": "agenda-serie-a-italia", "section": "italy"},
+    "Ligue 1": {"id": "agenda-ligue-1", "section": "france"},
+    "UEFA Nations League": {"id": "agenda-uefa-nations", "section": "uefa_nations"},
+    "CONCACAF Nations League": {"id": "agenda-concacaf-nations", "section": "international"},
+    "Amistosos de selecciones": {"id": "agenda-national-friendlies", "section": "international"}
+  },
+  "argentinaTeamAliases": {
+    "Boca Juniors": ["Boca"],
+    "River Plate": ["River"],
+    "Argentinos Juniors": ["Argentinos"],
+    "Newells Old Boys": ["Newell’s", "Newell's", "Newell s", "Newells", "Newell's Old Boys"],
+    "Gimnasia Mendoza": ["Gimnasia (Mza.)", "Gimnasia M.", "Gimnasia y Esgrima de Mendoza"],
+    "Estudiantes Río Cuarto": ["Estudiantes (Río Cuarto)", "Estudiantes de Río Cuarto", "Estudiantes RC"],
+    "Colón": ["CA Colón"],
+    "Huracán": ["CA Huracán"]
+  },
+  "reserveTeamAliases": {"Gimnasia LP": ["Gimnasia", "Gimnasia La Plata"]},
+  "signalAliases": {"LPF Play": ["LPF Play (plan plus)"]}
+}

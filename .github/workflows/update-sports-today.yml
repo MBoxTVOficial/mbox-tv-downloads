@@ -2,10 +2,10 @@ name: Update sports schedule
 
 on:
   workflow_dispatch:
-  # Validated degraded agenda only; API-Football LIVE remains disabled.
+  # Public-site agenda only; all sports APIs and API-Football LIVE remain unused here.
   schedule:
-    # UTC -> Argentina: 00:05, 08:00, 12:00, 17:00, 20:00.
-    - cron: '5 3 * * *'
+    # UTC -> Argentina: 00:00, 08:00, 12:00, 17:00, 20:00.
+    - cron: '0 3 * * *'
     - cron: '0 11 * * *'
     - cron: '0 15 * * *'
     - cron: '0 20 * * *'
@@ -46,14 +46,16 @@ jobs:
           path: |
             sports_broadcast_discovery_cache.json
             sports_agenda_request_budget.json
+            official_source_cache.json
+            argentina_guide_cache.json
           key: broadcasts-${{ steps.discovery-key.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: broadcasts-${{ steps.discovery-key.outputs.key }}-
+          restore-keys: |
+            broadcasts-${{ steps.discovery-key.outputs.key }}-
+            broadcasts-
       - name: Generate today's schedule
         env:
-          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
-          FOOTBALL_SOCCER_API_KEY: ${{ secrets.FOOTBALL_SOCCER_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python -m scripts.generate_agenda_today --discover-broadcasts
+        run: python -m scripts.generate_agenda_today --discover-broadcasts --official-sites
       - name: Commit only daily broadcasts and feed
         shell: bash
         run: |

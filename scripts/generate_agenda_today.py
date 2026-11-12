@@ -235,17 +235,28 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path)
     parser.add_argument('--discover-broadcasts', action='store_true')
+    parser.add_argument('--official-sites', action='store_true', help='Official sites and Argentina guides; no sports API requests.')
     args = parser.parse_args(argv)
     root = generator.ROOT
     now = datetime.now(generator.argentina_timezone())
-    feed, report, changed = generate_agenda(root, args.output or generator.REAL_OUTPUT, now.date(), now, discover=args.discover_broadcasts)
+    if args.official_sites:
+        from .generate_official_agenda import generate_official_agenda
+        feed, report, changed = generate_official_agenda(root, args.output or generator.REAL_OUTPUT, now.date(), now)
+    else:
+        feed, report, changed = generate_agenda(root, args.output or generator.REAL_OUTPUT, now.date(), now, discover=args.discover_broadcasts)
     available = feed.get('date', 'none') if feed else 'none'
     events = sum(len(s.get('events', [])) for s in (feed or {}).get('sections', []))
     # Only whitelisted codes and fixed config names enter diagnostics/annotations.
     for source in report.get('sources', []):
         print('SPORTS_AGENDA SOURCE ' + json.dumps(source, ensure_ascii=True))
-        if source['state'] == 'ERROR':
-            print('::warning title=Sports agenda source::provider=' + source['provider'] + ' reason=' + source['reason'])
+        if source['state'] in {'ERROR', 'ERROR_USING_CACHE', 'REVIEW'}:
+            print('::warning title=Sports agenda source::provider=' + source.get('provider', source.get('source', 'unknown')) +
+                  ' reason=' + source.get('reason', source['state']))
+    for guide in report.get('guides', []):
+        print('SPORTS_AGENDA GUIDE ' + json.dumps(guide, ensure_ascii=True))
+    if args.official_sites:
+        print('SPORTS_AGENDA PUBLIC requests=' + str(report.get('publicRequests', 0)) +
+              ' sportsApiRequests=' + str(report.get('sportsApiRequests', 0)))
     print('SPORTS_AGENDA state=' + report['state'] + ' changed=' + str(changed).lower() +
           ' requestedDate=' + now.date().isoformat() + ' availableDate=' + available +
           ' reason=' + report.get('reason', 'OK') + ' stage=' + report.get('stage', 'COMPLETE') +

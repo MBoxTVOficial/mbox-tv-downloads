@@ -308,8 +308,9 @@ class WorkflowTest(unittest.TestCase):
             if name == 'update-sports-live.yml':
                 self.assertIn("secrets.API_FOOTBALL_KEY", text)
             else:
-                self.assertIn("secrets.FOOTBALL_DATA_TOKEN", text)
-                self.assertIn("secrets.FOOTBALL_SOCCER_API_KEY", text)
+                self.assertIn("--official-sites", text)
+                self.assertNotIn("secrets.FOOTBALL_DATA_TOKEN", text)
+                self.assertNotIn("secrets.FOOTBALL_SOCCER_API_KEY", text)
                 self.assertNotIn("secrets.API_FOOTBALL_KEY", text)
             self.assertIn("GITHUB_TOKEN: ${{ github.token }}", text)
             self.assertIn("actions: read", text)
@@ -337,7 +338,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn('workflow_dispatch:', general)
         general_crons = [line.split("cron:", 1)[1].strip().strip("'")
                          for line in general.splitlines() if line.strip().startswith("- cron:")]
-        self.assertEqual(["5 3 * * *", "0 11 * * *", "0 15 * * *", "0 20 * * *", "0 23 * * *"], general_crons)
+        self.assertEqual(["0 3 * * *", "0 11 * * *", "0 15 * * *", "0 20 * * *", "0 23 * * *"], general_crons)
         worker = (generator.ROOT / "cloudflare/live-scheduler/wrangler.toml").read_text(encoding="utf-8")
         self.assertIn('crons = ["*/10 * * * *"]', worker)
         worker_slots = 10 * 6  # 15:00-00:59 ART; one tick every ten minutes.

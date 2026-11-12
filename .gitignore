@@ -5,3 +5,7 @@ sports_broadcast_discovery_report.json
 sports_today.json.tmp
 sports_today.preview.json
 sports_today.preview.json.tmp
+official_source_cache.json
+argentina_guide_cache.json
+official_agenda_report.json
+official_agenda_generation_report.json

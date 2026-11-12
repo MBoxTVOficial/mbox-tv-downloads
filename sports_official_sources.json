@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "mode": "LOCAL_PREVIEW_ONLY",
+  "limits": {"maxRequests": 6, "timeoutSeconds": 8, "cacheHours": 6},
+  "sources": [
+    {"id": "lpf-primera", "competition": "Liga Profesional Argentina", "provider": "lpf_official", "section": "argentina", "adapter": "lpf", "url": "https://www.ligaprofesional.ar/categoria/primera/", "articles": 2, "requestCeiling": 3},
+    {"id": "lpf-proyeccion", "competition": "Torneo Proyección", "provider": "lpf_official", "section": "argentina", "adapter": "lpf", "url": "https://www.ligaprofesional.ar/categoria/proyeccion/", "articles": 1, "requestCeiling": 2},
+    {"id": "primera-nacional", "competition": "Primera Nacional", "provider": "afa_official", "section": "argentina", "adapter": "afa", "url": "https://www.afa.com.ar/es/", "articles": 1, "requestCeiling": 2},
+    {"id": "libertadores", "competition": "CONMEBOL Libertadores", "provider": "conmebol_official", "section": "conmebol", "adapter": "conmebol", "url": "https://gol.conmebol.com/libertadores/es", "articles": 0, "requestCeiling": 1},
+    {"id": "sudamericana", "competition": "CONMEBOL Sudamericana", "provider": "conmebol_official", "section": "conmebol", "adapter": "conmebol", "url": "https://gol.conmebol.com/sudamericana/es", "articles": 0, "requestCeiling": 1}
+  ]
+}
