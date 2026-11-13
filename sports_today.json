@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-13",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-13T15:16:14-03:00",
+  "updatedAt": "2026-11-13T18:14:02-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -94,29 +94,7 @@
           "homeLogo": "https://static.futbolenlatv.com/img/32/20130528083921-Moldavia.webp",
           "awayLogo": "https://static.futbolenlatv.com/img/32/20130318120627_kazajistan.webp",
           "startTime": "14:00",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN 2 HD",
-              "streamId": 165652,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 2 HD",
-                "ESPN 2 HD (ARG)"
-              ]
-            },
-            {
-              "name": "ESPN 2 HD (ARG)",
-              "streamId": 169953,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 2 HD",
-                "ESPN 2 HD (ARG)"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         },
         {
           "id": "fixture-1421538483",
