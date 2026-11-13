@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-12",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-12T18:45:43-03:00",
+  "updatedAt": "2026-11-12T21:58:47-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -71,29 +71,7 @@
           "homeLogo": "",
           "awayLogo": "",
           "startTime": "16:45",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN 2 HD",
-              "streamId": 165652,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 2 HD",
-                "ESPN 2 HD (ARG)"
-              ]
-            },
-            {
-              "name": "ESPN 2 HD (ARG)",
-              "streamId": 169953,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 2 HD",
-                "ESPN 2 HD (ARG)"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         },
         {
           "id": "fixture-1898324648",
@@ -104,29 +82,7 @@
           "homeLogo": "",
           "awayLogo": "",
           "startTime": "16:45",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN HD",
-              "streamId": 165649,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN HD",
-                "ESPN HD (ARG)"
-              ]
-            },
-            {
-              "name": "ESPN HD (ARG)",
-              "streamId": 169952,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN HD",
-                "ESPN HD (ARG)"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         },
         {
           "id": "fixture-1838532279",
@@ -148,29 +104,7 @@
           "homeLogo": "",
           "awayLogo": "",
           "startTime": "16:45",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN 3 HD",
-              "streamId": 165654,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 3 HD",
-                "ESPN 3 (ARG)"
-              ]
-            },
-            {
-              "name": "ESPN 3 (ARG)",
-              "streamId": 169954,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 3 HD",
-                "ESPN 3 (ARG)"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         },
         {
           "id": "fixture-1084655625",
