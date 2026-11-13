@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-13",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-13T07:26:31-03:00",
+  "updatedAt": "2026-11-13T15:16:14-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -37,29 +37,7 @@
           "homeLogo": "https://static.futbolenlatv.com/img/32/20130204101418_argentina.webp",
           "awayLogo": "https://static.futbolenlatv.com/img/32/20130108083741_uruguay.webp",
           "startTime": "20:00",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: TYC SPORTS HD",
-              "streamId": 165660,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: TYC SPORTS HD",
-                "ARG: TYC SPORTS HD*"
-              ]
-            },
-            {
-              "name": "ARG: TYC SPORTS HD*",
-              "streamId": 165659,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: TYC SPORTS HD",
-                "ARG: TYC SPORTS HD*"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         },
         {
           "id": "fixture-1115235317",
