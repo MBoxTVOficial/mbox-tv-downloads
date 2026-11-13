@@ -28,6 +28,7 @@ MAX_REQUESTS = 2
 LIVE_TTL = timedelta(minutes=15)
 MAX_DAILY_REQUESTS = 120
 MIN_REQUEST_INTERVAL = timedelta(minutes=4)
+FINAL_CATCHUP_WINDOW = timedelta(hours=8)
 # Exact Opta competition IDs and names verified in the public bulk response.
 COMPETITIONS = {
     'cesdwwnxbc5fmajgroc0hqzy2': ('Friendlies', 'Amistosos de selecciones'),
@@ -295,7 +296,9 @@ def pending_events(eligible, day, now, guides, previous=None, state=None):
     for identifier, event in eligible.items():
         key = fixture_key(event, day, guides)
         start = _stamp(key[3])
-        if key[0] not in supported or not start - timedelta(minutes=10) <= now <= start + timedelta(hours=3):
+        # A delayed scheduled job must still retrieve an unobserved final. This
+        # changes request eligibility only, never the app's three-hour launch guard.
+        if key[0] not in supported or not start - timedelta(minutes=10) <= now <= start + FINAL_CATCHUP_WINDOW:
             continue
         old = (previous or {}).get('matches', {}).get(identifier)
         final = (previous or {}).get('date') == day.isoformat() and old is not None and \

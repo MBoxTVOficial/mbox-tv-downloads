@@ -322,13 +322,39 @@ class MatchUpdatesTests(unittest.TestCase):
 
     def test_pending_only_requests_supported_fixtures_near_kickoff(self):
         eligible = eligible_events(feed(), DAY, self.guides, GROUPS)
-        for now in (instant('2026-11-13T13:49:00-03:00'), instant('2026-11-13T17:01:00-03:00')):
+        for now in (instant('2026-11-13T13:49:00-03:00'), instant('2026-11-13T22:01:00-03:00')):
             with self.subTest(now=now):
                 self.assertEqual({}, pending_events(eligible, DAY, now, self.guides))
         self.assertEqual({'fixture-1'}, set(pending_events(eligible, DAY,
                          instant('2026-11-13T13:50:00-03:00'), self.guides)))
         unsupported = eligible_events(feed(event(competition='Premier League')), DAY, self.guides, GROUPS)
         self.assertEqual({}, pending_events(unsupported, DAY, NOW, self.guides))
+
+    def test_delayed_job_can_fetch_an_unobserved_final_after_three_hours(self):
+        eligible = eligible_events(feed(), DAY, self.guides, GROUPS)
+        for now in (instant('2026-11-13T17:01:00-03:00'), instant('2026-11-13T20:00:00-03:00')):
+            with self.subTest(now=now):
+                self.assertEqual({'fixture-1'}, set(pending_events(eligible, DAY, now, self.guides)))
+        # The clock makes a lookup eligible; it cannot manufacture the result.
+        value, _ = merge_updates(feed(), DAY, instant('2026-11-13T20:00:00-03:00'),
+                                 None, self.guides, GROUPS)
+        self.assertIsNone(value)
+
+    def test_netherlands_greece_final_matches_the_existing_holanda_card(self):
+        # Regression from the public snapshot captured at 19:15 ART, after the TV
+        # signal had moved on to other programming. No channel is assigned here.
+        target = event(identifier='fixture-1312853287', home='Holanda', away='Grecia', start='16:45')
+        row = replace(self.live_row(), match_id='7f2uuphgt26zk1eh9x152wb2s',
+                      home='Netherlands', away='Greece', kickoff=instant('2026-11-13T16:45:00-03:00'),
+                      status='FINISHED', source_updated=instant('2026-11-13T18:53:51-03:00'),
+                      home_score=7, away_score=0)
+        value, _ = merge_updates(feed(target), DAY, instant('2026-11-13T19:15:00-03:00'),
+                                 [row], self.guides, GROUPS)
+        entry = value['matches'][target['id']]
+        self.assertEqual(('FINISHED', 7, 0), (entry['status'], entry['homeScore'], entry['awayScore']))
+        self.assertEqual(target['homeTeam'], entry['fixture']['homeTeam'])
+        self.assertEqual('16:45', entry['fixture']['startTime'])
+        self.assertNotIn('channels', entry)
 
     def test_old_live_snapshot_cannot_receive_a_new_observation_expiry(self):
         value, _ = self.merge(rows=[self.live_row(source_updated=NOW - LIVE_TTL - timedelta(seconds=1))])
