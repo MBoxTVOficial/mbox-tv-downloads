@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "timezone": "America/Argentina/Buenos_Aires",
   "broadcasts": [
     {
-      "fixtureId": 1755679305,
+      "fixtureId": 1179873950,
       "channelGroups": [
         "espn_2"
       ],
@@ -16,7 +16,19 @@
       "evidenceCount": 2
     },
     {
-      "fixtureId": 1898324648,
+      "fixtureId": 1312853287,
+      "channelGroups": [
+        "espn_2"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "ESPN 2 Argentina"
+      ],
+      "evidenceCount": 2
+    },
+    {
+      "fixtureId": 1029132733,
       "channelGroups": [
         "espn"
       ],
@@ -28,14 +40,15 @@
       "evidenceCount": 2
     },
     {
-      "fixtureId": 1291004555,
+      "fixtureId": 1529707342,
       "channelGroups": [
-        "espn_3"
+        "tyc_sports"
       ],
       "confidence": "confirmed",
       "source": "auto",
       "broadcaster": [
-        "ESPN 3 Argentina"
+        "Telefe",
+        "TyC Sports"
       ],
       "evidenceCount": 2
     }

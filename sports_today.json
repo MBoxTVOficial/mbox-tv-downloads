@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-12T23:59:27-03:00",
+  "updatedAt": "2026-11-13T00:54:27-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -16,7 +16,85 @@
       "id": "south_america_national_teams",
       "title": "Selecciones Sudamericanas",
       "priority": 2,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1095058531",
+          "sport": "football",
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Singapur",
+          "awayTeam": "Paraguay",
+          "homeLogo": "https://statics-files.tycsports.com/escudos/6992.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/170.png?v=6?v=2",
+          "startTime": "09:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1529707342",
+          "sport": "football",
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Argentina",
+          "awayTeam": "Uruguay",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130204101418_argentina.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130108083741_uruguay.webp",
+          "startTime": "20:00",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: TYC SPORTS HD",
+              "streamId": 165660,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: TYC SPORTS HD",
+                "ARG: TYC SPORTS HD*"
+              ]
+            },
+            {
+              "name": "ARG: TYC SPORTS HD*",
+              "streamId": 165659,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: TYC SPORTS HD",
+                "ARG: TYC SPORTS HD*"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1115235317",
+          "sport": "football",
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Colombia",
+          "awayTeam": "Chile",
+          "homeLogo": "https://ole.com.ar/collections/escudos/832.png",
+          "awayLogo": "https://ole.com.ar/collections/escudos/831.png",
+          "startTime": "21:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1956923495",
+          "sport": "football",
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Ecuador",
+          "awayTeam": "Costa Rica",
+          "homeLogo": "https://statics-files.tycsports.com/escudos/169.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/278.png?v=6?v=2",
+          "startTime": "21:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1737723648",
+          "sport": "football",
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Perú",
+          "awayTeam": "Bolivia",
+          "homeLogo": "https://statics-files.tycsports.com/escudos/171.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/166.png?v=6?v=2",
+          "startTime": "22:00",
+          "status": "SCHEDULED"
+        }
+      ]
     },
     {
       "id": "uefa_qualifiers",
@@ -30,92 +108,180 @@
       "priority": 4,
       "events": [
         {
-          "id": "fixture-1541840213",
+          "id": "fixture-1179873950",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "Armenia",
-          "awayTeam": "Chipre",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Moldavia",
+          "awayTeam": "Kazajistán",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130528083921-Moldavia.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130318120627_kazajistan.webp",
           "startTime": "14:00",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 2 HD",
+              "streamId": 165652,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN 2 HD (ARG)",
+              "streamId": 169953,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            }
+          ]
         },
         {
-          "id": "fixture-1684913663",
+          "id": "fixture-1421538483",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "Turquía",
-          "awayTeam": "Bélgica",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "14:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1223960694",
-          "sport": "football",
-          "competition": "UEFA Nations League",
-          "homeTeam": "Albania",
-          "awayTeam": "Finlandia",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Andorra",
+          "awayTeam": "Gibraltar",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130829095957-andorra.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20140423084037-gibraltar.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1755679305",
+          "id": "fixture-1546239841",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "Inglaterra",
-          "awayTeam": "Croacia",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Bulgaria",
+          "awayTeam": "Islandia",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130528081800-Bulgaria.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20171107062145-islandia.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1898324648",
+          "id": "fixture-1122553710",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "Italia",
-          "awayTeam": "Francia",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Escocia",
+          "awayTeam": "Macedonia Norte",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130425075433_escocia.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130528081503-Macedonia.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1838532279",
+          "id": "fixture-1165169466",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "Montenegro",
-          "awayTeam": "Letonia",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Eslovaquia",
+          "awayTeam": "Islas Feroe",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130410124517_eslovaquia.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130528080156-Islas-Feroe.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1291004555",
+          "id": "fixture-1283082435",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "República Checa",
-          "awayTeam": "España",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Eslovenia",
+          "awayTeam": "Suiza",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130204101247_eslovenia.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130410124433_suiza.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1084655625",
+          "id": "fixture-1312853287",
           "sport": "football",
           "competition": "UEFA Nations League",
-          "homeTeam": "San Marino",
-          "awayTeam": "Bielorrusia",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Holanda",
+          "awayTeam": "Grecia",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130130075711_holanda.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20140624094707-grecia.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 2 HD",
+              "streamId": 165652,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN 2 HD (ARG)",
+              "streamId": 169953,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1613896403",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Liechtenstein",
+          "awayTeam": "Azerbaiyán",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130531114532-Liechtenstein.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130323115040_azerbaijan.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1212218067",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Luxemburgo",
+          "awayTeam": "Estonia",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130606115125-luxemburgo.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130531113736-Estonia.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1029132733",
+          "sport": "football",
+          "competition": "UEFA Nations League",
+          "homeTeam": "Serbia",
+          "awayTeam": "Alemania",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130318120848_serbia.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130130075653_alemania.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN HD",
+              "streamId": 165649,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN HD",
+                "ESPN HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN HD (ARG)",
+              "streamId": 169952,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN HD",
+                "ESPN HD (ARG)"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -123,74 +289,7 @@
       "id": "argentina",
       "title": "Fútbol - Argentina",
       "priority": 5,
-      "events": [
-        {
-          "id": "fixture-1127036036",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "Barracas Central Reserva",
-          "awayTeam": "Argentinos Juniors Reserva",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1570441849",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "CA Colón Reserva",
-          "awayTeam": "Central Córdoba Reserva",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1427891845",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "CA Huracán Reserva",
-          "awayTeam": "Estudiantes RC Reserva",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1812222632",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "Godoy Cruz Reserva",
-          "awayTeam": "Gimnasia LP Reserva",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1677640631",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "Rosario Central Reserva",
-          "awayTeam": "River Plate Reserva",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1135651234",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "Boca",
-          "awayTeam": "Newell’s",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "19:00",
-          "status": "SCHEDULED"
-        }
-      ]
+      "events": []
     },
     {
       "id": "conmebol",
@@ -234,80 +333,80 @@
       "priority": 12,
       "events": [
         {
-          "id": "fixture-1509731064",
+          "id": "fixture-1379896085",
           "sport": "football",
           "competition": "Amistosos de selecciones",
-          "homeTeam": "Lituania",
-          "awayTeam": "Surinam",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "14:00",
+          "homeTeam": "Emiratos Árabes Unidos",
+          "awayTeam": "Honduras",
+          "homeLogo": "https://statics-files.tycsports.com/escudos/478.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/472.png?v=6?v=2",
+          "startTime": "13:30",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1875966285",
+          "id": "fixture-1611463034",
           "sport": "football",
           "competition": "CONCACAF Nations League",
-          "homeTeam": "Barbados",
-          "awayTeam": "Guadalupe",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Bermudas",
+          "awayTeam": "Santa Lucía",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20170224102921-bermudas.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20190825102541-santa-lucia.webp",
           "startTime": "16:00",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1088026285",
+          "id": "fixture-1433941273",
           "sport": "football",
           "competition": "CONCACAF Nations League",
-          "homeTeam": "Islas Caimán",
-          "awayTeam": "Guyana",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Puerto Rico",
+          "awayTeam": "Dominica",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130727123545-puerto-rico.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20181103122340-dominica.webp",
           "startTime": "16:00",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1028532295",
+          "id": "fixture-1995961026",
           "sport": "football",
           "competition": "CONCACAF Nations League",
-          "homeTeam": "Bonaire",
-          "awayTeam": "Cuba",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Granada",
+          "awayTeam": "San Cristóbal y Nieves",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20181104071345-granada-pais.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20170219022627-san-cristobal.webp",
           "startTime": "17:00",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1816349188",
+          "id": "fixture-1146483932",
           "sport": "football",
           "competition": "CONCACAF Nations League",
-          "homeTeam": "Aruba",
-          "awayTeam": "Martinica",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "19:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1523460040",
-          "sport": "football",
-          "competition": "CONCACAF Nations League",
-          "homeTeam": "Antigua y Barbuda",
-          "awayTeam": "Trinidad y Tobago",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Saint-Martin",
+          "awayTeam": "El Salvador",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20181028115527-saint-martin.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130513110531_el-salvador.webp",
           "startTime": "20:00",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1575478448",
+          "id": "fixture-1233928447",
           "sport": "football",
           "competition": "CONCACAF Nations League",
-          "homeTeam": "Curazao",
-          "awayTeam": "Panamá",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "21:30",
+          "homeTeam": "Montserrat",
+          "awayTeam": "Nicaragua",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20210324113213-montserrat.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20140903103529-nicaragua.webp",
+          "startTime": "21:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1648621443",
+          "sport": "football",
+          "competition": "CONCACAF Nations League",
+          "homeTeam": "Guatemala",
+          "awayTeam": "Canadá",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20140913092220-guatemala.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130625051127-Canada.webp",
+          "startTime": "23:00",
           "status": "SCHEDULED"
         }
       ]

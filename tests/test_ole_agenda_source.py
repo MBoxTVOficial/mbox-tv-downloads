@@ -102,8 +102,9 @@ class OleAgendaSourceTests(unittest.TestCase):
         row = event()
         row.update({'homeScore': 7, 'status': 'LIVE', 'venue': 'Unverified venue', 'channels': ['wrong']})
         listing = parse_ole_listings(document([row]), DAY)[0]
-        self.assertEqual({'home', 'away', 'kickoff', 'competition', 'broadcasters'}, set(vars(listing)))
+        self.assertEqual({'home', 'away', 'kickoff', 'competition', 'broadcasters', 'home_logo', 'away_logo'}, set(vars(listing)))
         self.assertEqual((), listing.broadcasters)
+        self.assertEqual(('', ''), (listing.home_logo, listing.away_logo))
 
     def test_duplicate_events_merge_only_explicit_tags(self):
         rows = parse_ole_listings(document([event(channels=['ESPN']), event(channels=['ESPN', 'Disney+'])]), DAY)

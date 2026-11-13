@@ -134,6 +134,8 @@ class Listing:
     kickoff: datetime
     competition: str
     broadcasters: tuple
+    home_logo: str = ''
+    away_logo: str = ''
 
 
 @dataclass(frozen=True)

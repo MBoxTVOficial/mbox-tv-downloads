@@ -3,8 +3,11 @@ from datetime import date
 from html.parser import HTMLParser
 import json
 import re
+from urllib.parse import urlsplit
 
-from .broadcaster_sources import DiscoveryError, Listing, instant, safe_text
+from .broadcaster_sources import DiscoveryError, Listing, Tree, instant, norm, safe_text
+from .sports_national_agenda import national_key
+from .sports_team_logos import accepted_image_url
 
 SOURCE_URL = 'https://www.ole.com.ar/agenda-deportiva'
 MAX_HTML = 2_000_000
@@ -63,6 +66,63 @@ def _broadcasters(event):
     return tuple(names)
 
 
+def _event_path(url):
+    """Join HTML and JSON by the exact event URL, never a title substring."""
+    if not isinstance(url, str):
+        return None
+    try:
+        part = urlsplit(url)
+        if part.query or part.fragment or part.username or part.password or part.port not in (None, 443):
+            return None
+        if part.netloc and (part.scheme != 'https' or part.hostname not in ('ole.com.ar', 'www.ole.com.ar')):
+            return None
+        if part.scheme and part.scheme != 'https':
+            return None
+        return part.path if re.fullmatch(r'/eventos-argentina/futbol/[^/]+\.html', part.path) else None
+    except ValueError:
+        return None
+
+
+def _html_team_logos(html):
+    """Read paired fixture-card raster images; ignore site navigation SVG badges."""
+    found, ambiguous = {}, set()
+    for card in (node for node in Tree(html).root.walk() if node.has_class('event-canal-box')):
+        links = [node for node in card.walk() if node.tag == 'a' and node.has_class('event-link')]
+        if len(links) != 1:
+            continue
+        path = _event_path(links[0].attrs.get('href'))
+        if path is None:
+            continue
+        paired = []
+        for side in ('home', 'visitor'):
+            groups = [node for node in card.walk() if node.has_class('event-info_team_group') and node.has_class(side)]
+            if len(groups) != 1:
+                break
+            names = [node.text() for node in groups[0].walk() if node.tag == 'h3' and node.has_class('event-name')]
+            images = [node for node in groups[0].walk() if node.tag == 'img']
+            if len(names) != 1 or len(images) != 1 or norm(images[0].attrs.get('alt')) != norm(names[0]):
+                break
+            paired.append((names[0], accepted_image_url('ole-agenda', images[0].attrs.get('src'))))
+        if len(paired) == 2:
+            if path in found and found[path] != paired:
+                ambiguous.add(path)
+            found[path] = paired
+    return {path: pair for path, pair in found.items() if path not in ambiguous}
+
+
+def _fixture_badges(event, home, away, images):
+    pair = images.get(_event_path(event.get('url')))
+    if pair is None:
+        return '', ''
+    # Source HTML sometimes names nations in English; only the explicit national
+    # alias catalog may reconcile those names. Club names still require equality.
+    def team(value):
+        return norm(national_key(value) or value)
+    if team(pair[0][0]) != team(home) or team(pair[1][0]) != team(away):
+        return '', ''
+    return pair[0][1], pair[1][1]
+
+
 def parse_ole_listings(html, day):
     """Read only the canonical agenda's Next.js event records.
 
@@ -87,6 +147,7 @@ def parse_ole_listings(html, day):
     except (KeyError, TypeError, ValueError):
         raise DiscoveryError('OLE_UNRECOGNIZED_AGENDA') from None
     listings = {}
+    images = _html_team_logos(html)
     for event in events:
         if not isinstance(event, dict):
             raise DiscoveryError('OLE_INVALID_EVENT')
@@ -118,8 +179,11 @@ def parse_ole_listings(html, day):
         if home.casefold() == away.casefold():
             continue
         channels = _broadcasters(event)
+        home_logo, away_logo = _fixture_badges(event, home, away, images)
         key = (home, away, kickoff, competition)
         if key in listings:
             channels = tuple(dict.fromkeys(listings[key].broadcasters + channels))
-        listings[key] = Listing(home, away, kickoff, competition, channels)
+            home_logo = listings[key].home_logo or home_logo
+            away_logo = listings[key].away_logo or away_logo
+        listings[key] = Listing(home, away, kickoff, competition, channels, home_logo, away_logo)
     return sorted(listings.values(), key=lambda item: (item.kickoff, item.competition, item.home, item.away))

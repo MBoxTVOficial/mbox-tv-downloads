@@ -126,13 +126,13 @@ def checked_rows(rows, source, day):
     return sorted(result.values(), key=lambda row: (row['startTime'], row['providerFixtureId']))
 
 
-def acquire(config, day, now, cache=None, transport=None, offline=False, budget=None):
+def acquire(config, day, now, cache=None, transport=None, offline=False, budget=None, reuse_future_rows=False):
     config = validate_registry(config)
     now = instant(now.isoformat())
     fingerprint = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     # Discovery cache is date-scoped. Yesterday's assignments never become today's.
     same_registry = isinstance(cache, dict) and cache.get('registryHash') == fingerprint
-    previous = cache if same_registry and cache.get('date') == day.isoformat() else {}
+    previous = cache if same_registry and (cache.get('date') == day.isoformat() or reuse_future_rows) else {}
     entries = copy.deepcopy(previous.get('sources', {}))
     if not previous and same_registry and isinstance(cache.get('sources'), dict):
         # Carry scheduling metadata only, never yesterday's fixtures/assignments.
@@ -224,6 +224,9 @@ def preview(rows, day, now, config, groups, mapping, identity=None, daily=None, 
         event = {'id': f'fixture-{identifier}', 'sport': 'football', 'competition': row['competition'],
                  'homeTeam': row['homeTeam'], 'awayTeam': row['awayTeam'], 'homeLogo': '', 'awayLogo': '',
                  'startTime': start.strftime('%H:%M'), 'status': 'SCHEDULED'}
+        if guide_records is not None and guide_config is not None:
+            from .sports_team_logos import fixture_logos
+            event.update(fixture_logos(row, guide_records, guide_config))
         section = spec['section']
         if row['competition'] == 'Amistosos de selecciones':
             from .sports_national_agenda import confederation
@@ -264,7 +267,10 @@ def preview(rows, day, now, config, groups, mapping, identity=None, daily=None, 
     broadcasts = {'schemaVersion': 1, 'date': day.isoformat(), 'timezone': generator.TIMEZONE,
                   'broadcasts': assignments}
     apply_daily_assignments(feed, resolve_broadcasts(broadcasts, feed, groups, generator.normalize))
-    apply_playback_policy(feed, now, ZONE, groups, log=lambda message: None)
+    if day <= instant(now.isoformat()).date():
+        apply_playback_policy(feed, now, ZONE, groups, log=lambda message: None)
+    # Future confirmed options are delivered in advance; Android evaluates their
+    # playback window locally. updatedAt above always retains the real clock.
     for section in sections:
         section['events'].sort(key=generator.event_sort_key)
     generator.validate_feed(feed)

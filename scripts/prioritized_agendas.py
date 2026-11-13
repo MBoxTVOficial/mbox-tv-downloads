@@ -1,5 +1,6 @@
 """Argentina guide order and exact reconciliation; official organisations keep authority."""
 import copy
+from datetime import date, timedelta
 import hashlib
 import json
 import re
@@ -126,6 +127,11 @@ def checked_records(listings, provider, day, config, canonicalized=False):
         row = {'competition': competition, 'homeTeam': item.home, 'awayTeam': item.away,
                'startTime': start.isoformat(), 'broadcasters': list(dict.fromkeys(signal_name(value, config) for value in item.broadcasters)),
                'guideId': provider['id'], 'sourceUrl': provider['url']}
+        from .sports_team_logos import accepted_image_url
+        for field, attribute in (('homeLogo', 'home_logo'), ('awayLogo', 'away_logo')):
+            logo = accepted_image_url(provider['id'], getattr(item, attribute, ''))
+            if logo:
+                row[field] = logo
         key = exact_key(row, config)
         pair = pair_key(row, config)
         if pair in seen and seen[pair] != key:
@@ -147,7 +153,8 @@ def cached_records(raw, provider, day, config):
     for row in raw:
         if not isinstance(row, dict) or row.get('guideId') != provider['id'] or row.get('sourceUrl') != provider['url']:
             raise DiscoveryError('ARGENTINA_GUIDE_CACHE_INVALID')
-        listings.append(Listing(row['homeTeam'], row['awayTeam'], instant(row['startTime']), row['competition'], row['broadcasters']))
+        listings.append(Listing(row['homeTeam'], row['awayTeam'], instant(row['startTime']), row['competition'], row['broadcasters'],
+                                home_logo=row.get('homeLogo', ''), away_logo=row.get('awayLogo', '')))
     return checked_records(listings, provider, day, config, canonicalized=True)
 
 
@@ -303,16 +310,42 @@ def acquire_guides(config, day, now, pages, official_rows, official_config, grou
 
 
 def acquire_all(official_config, config, day, now, groups, mapping, official_cache=None, guide_cache=None,
-                transport=None, offline=False):
+                transport=None, offline=False, window_days=1):
     from .official_football_bot import acquire, PublicPages, PublicTransport, RequestBudget
+    if type(window_days) is not int or not 1 <= window_days <= 3:
+        raise DiscoveryError('ARGENTINA_WINDOW_INVALID')
     # Existing official cache provides exact targets without moving guide network priority.
-    cached_official, _, _ = acquire(official_config, day, now, official_cache, offline=True)
+    cached_official, _, _ = acquire(official_config, day, now, official_cache, offline=True,
+                                   reuse_future_rows=window_days > 1)
     budget = RequestBudget(transport or PublicTransport(8), 6)
-    records, guide_cache, guide_report = acquire_guides(config, day, now, PublicPages(budget), cached_official,
-        official_config, groups, mapping, guide_cache, offline)
+    pages = PublicPages(budget)
+    old_guide_cache = guide_cache
+    day_caches, records_by_day, reports_by_day = {}, {}, {}
+    for offset in range(window_days):
+        target = day + timedelta(days=offset)
+        stored = old_guide_cache.get('days', {}).get(target.isoformat()) if isinstance(old_guide_cache, dict) and isinstance(old_guide_cache.get('days'), dict) else None
+        if stored is None and isinstance(old_guide_cache, dict) and old_guide_cache.get('date') == target.isoformat():
+            stored = old_guide_cache
+        records, current_cache, guide_report = acquire_guides(config, target, now, pages,
+            [row for row in cached_official if instant(row['startTime']).date() == target],
+            official_config, groups, mapping, stored, offline)
+        day_caches[target.isoformat()] = current_cache
+        records_by_day[target.isoformat()] = records
+        reports_by_day[target.isoformat()] = guide_report
+    records, guide_report = records_by_day[day.isoformat()], reports_by_day[day.isoformat()]
+    guide_cache = day_caches[day.isoformat()]
+    if window_days > 1:
+        guide_cache = {**guide_cache, 'days': day_caches}
     official_rows, official_cache, report = acquire(official_config, day, now, official_cache,
-        offline=offline, budget=budget)
+        offline=offline, budget=budget, reuse_future_rows=window_days > 1)
     rows, conflicts = merge_rows(official_rows, records, day, official_config, config)
     report.update(guides=guide_report, conflicts=conflicts, publicRequests=budget.requests,
                   blockedCompetitions=[source['competition'] for source in report['sources'] if source['state'] == 'REVIEW'])
+    if window_days > 1:
+        report['windowRecords'] = records_by_day
+        report['windowGuides'] = reports_by_day
+        report['windowRows'] = {target: merge_rows(
+            [row for row in official_rows if instant(row['startTime']).date().isoformat() == target],
+            records_by_day[target], date.fromisoformat(target), official_config, config)[0]
+            for target in records_by_day}
     return rows, official_cache, guide_cache, records, report

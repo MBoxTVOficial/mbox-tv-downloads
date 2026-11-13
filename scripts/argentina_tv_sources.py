@@ -8,6 +8,7 @@ from datetime import date, datetime
 import re
 
 from .broadcaster_sources import DiscoveryError, Listing, MAX_BODY, MONTHS, Tree, ZONE, norm, safe_text
+from .sports_team_logos import accepted_image_url
 
 
 ARGENTINA_TV_URL = 'https://www.futbolenvivoargentina.com/'
@@ -47,9 +48,25 @@ def _merge(rows):
         if key in result:
             old = result[key]
             row = Listing(row.home, row.away, row.kickoff, row.competition,
-                          tuple(dict.fromkeys(old.broadcasters + row.broadcasters)))
+                          tuple(dict.fromkeys(old.broadcasters + row.broadcasters)),
+                          old.home_logo or row.home_logo, old.away_logo or row.away_logo)
         result[key] = row
     return sorted(result.values(), key=lambda row: (row.kickoff, row.competition, row.home, row.away))
+
+
+def _team_logo(node, name, provider, lazy=False):
+    """Only the image belonging to this team cell, never a league/channel badge."""
+    images = [image for image in node.walk() if image.tag == 'img' and
+              norm(image.attrs.get('alt', '')) == norm(name)]
+    if len(images) != 1:
+        return ''
+    image = images[0]
+    # TyC's src is the generic escudo-err placeholder until its lazy load runs.
+    for field in ('data-src', 'src') if lazy else ('src',):
+        url = accepted_image_url(provider, image.attrs.get(field))
+        if url:
+            return url
+    return ''
 
 
 def parse_argentina_tv_listings(html, day):
@@ -95,7 +112,9 @@ def parse_argentina_tv_listings(html, day):
             if norm(home.text()) == norm(away.text()):
                 continue
             channels = _channels(row.find('listaCanales'), 'li')
-            result.append(Listing(home.text(), away.text(), kickoff, competition, channels))
+            result.append(Listing(home.text(), away.text(), kickoff, competition, channels,
+                _team_logo(home, home.text(), 'futbol-en-vivo-ar'),
+                _team_logo(away, away.text(), 'futbol-en-vivo-ar')))
     return _merge(result)
 
 
@@ -131,12 +150,16 @@ def parse_tyc_listings(html, day):
                 teams, clock = item.find('text-teams-agenda'), item.find('hs-item-agenda')
                 if teams is None or clock is None:
                     continue
-                names = [n.attrs.get('alt', '') for n in teams.walk() if n.tag == 'img']
+                images = [n for n in teams.walk() if n.tag == 'img']
+                names = [n.attrs.get('alt', '') for n in images]
                 kickoff = _kickoff(current, clock.text())
                 if len(names) != 2 or kickoff is None or not all(safe_text(value) for value in [*names, competition]):
                     continue
                 if norm(names[0]) == norm(names[1]):
                     continue
                 channels = _channels(item.find('text-channels-agenda'), 'span')
-                result.append(Listing(*names, kickoff, competition, channels))
+                def badge(image):
+                    return (accepted_image_url('tyc-agenda', image.attrs.get('data-src')) or
+                            accepted_image_url('tyc-agenda', image.attrs.get('src')))
+                result.append(Listing(*names, kickoff, competition, channels, badge(images[0]), badge(images[1])))
     return _merge(result)

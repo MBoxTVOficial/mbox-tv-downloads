@@ -5,7 +5,7 @@ before the feed, assignments and persistent identities are committed together.
 """
 import argparse
 import copy
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import os
 from pathlib import Path
@@ -20,6 +20,7 @@ from .sports_channel_rules import load_clean_groups
 from .sports_daily_broadcasts import read_broadcasts, validate_broadcasts, resolve_broadcasts, apply_daily_assignments
 from .sports_playback_policy import apply_playback_policy
 from .sports_fixture_identity import IdentityStore
+from .sports_agenda_window import build_agenda_window, validate_window
 
 
 def _events(feed):
@@ -118,6 +119,7 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
 
     try:
         protected = {'sports_fixture_identity.json', 'sports_broadcasts_today.json',
+                     'sports_agenda_window.json',
                      'mbox_sports_channels_clean.json', 'sports_broadcaster_mapping.json',
                      'sports_official_sources.json', 'sports_agenda_guides.json',
                      'mbox_config.json', 'update.json'}
@@ -133,11 +135,16 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
         mapping = read_json(root / 'sports_broadcaster_mapping.json')
         identity = read_json(root / 'sports_fixture_identity.json', optional=True)
         IdentityStore(identity)  # Invalid identity files must never be replaced silently.
+        previous_window = read_json(root / 'sports_agenda_window.json', optional=True)
+        if previous_window is not None:
+            validate_window(previous_window)
+        baseline = previous if previous and previous['date'] == day.isoformat() else \
+            (previous_window or {}).get('days', {}).get(day.isoformat())
         daily = read_broadcasts(root / 'sports_broadcasts_today.json')
         rows, official_cache, guide_cache, records, acquired = acquire_all(
             config, guides, day, local_now, groups, mapping,
             cache('official_source_cache.json'), cache('argentina_guide_cache.json'),
-            transport=transport, offline=offline)
+            transport=transport, offline=offline, window_days=3)
         report.update(acquired)
         if type(report['publicRequests']) is not int or not 0 <= report['publicRequests'] <= 6 or report.get('sportsApiRequests') != 0:
             return keep('REQUEST_BUDGET_INVALID')
@@ -155,15 +162,15 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
         blocked = set(report.get('blockedCompetitions', [])) | {
             item['competition'] for item in report.get('sources', [])
             if item.get('state') == 'REVIEW' and 'competition' in item}
-        identity = _reconcile_exact_rows(rows, previous, identity, guides, report, day)
+        identity = _reconcile_exact_rows(rows, baseline, identity, guides, report, day)
         feed, broadcasts, details, updated_identity = bot.preview(
             rows, day, local_now, config, groups, mapping, identity=identity,
             daily=daily if daily and daily['date'] == day.isoformat() else None,
             guide_records=records, guide_config=guides, blocked_competitions=blocked)
-        incoming, old = _events(feed), _events(previous)
+        incoming, old = _events(feed), _events(baseline)
         # A failed TV lookup cannot erase today's previously confirmed exact fixture.
         # A new conflict/quarantine is different: it must remain non-playable.
-        if daily and daily['date'] == day.isoformat() and previous and previous['date'] == day.isoformat() and any(
+        if daily and daily['date'] == day.isoformat() and baseline and any(
                 source.get('state') in {'ERROR', 'ERROR_USING_CACHE', 'DEFERRED_BUDGET'}
                 for source in report.get('sources', []) + report.get('guides', [])):
             by_old = {event['id']: event for event in old}
@@ -181,11 +188,11 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
             apply_daily_assignments(feed, resolve_broadcasts(broadcasts, feed, groups, generator.normalize))
             apply_playback_policy(feed, local_now, ZONE, groups, log=lambda message: None)
         if not incoming:
-            if previous and previous['date'] == day.isoformat() and old:
+            if baseline and old:
                 return keep('EMPTY_AGENDA')
             if not _valid_empty(report):
                 return keep('NO_VALID_SOURCE')
-        if previous and previous['date'] == day.isoformat():
+        if baseline:
             identifiers = {event['id'] for event in incoming}
             if any(event.get('channels') and event['id'] not in identifiers for event in old):
                 return keep('IDENTITY_RECONCILIATION_REQUIRED')
@@ -198,11 +205,21 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
         generator.validate_feed(feed)
         validate_broadcasts(broadcasts)
         IdentityStore(updated_identity)
-        changed_paths = _publish([(root / 'sports_fixture_identity.json', updated_identity),
-                                  (root / 'sports_broadcasts_today.json', broadcasts), (output, feed)])
+        window, updated_identity, window_report = build_agenda_window(day, local_now, feed,
+            config, guides, groups, mapping, updated_identity, report, previous_window,
+            reconcile=_reconcile_exact_rows, daily=daily)
+        values = [(root / 'sports_fixture_identity.json', updated_identity)]
+        if daily and day.isoformat() < daily['date'] <= (day + timedelta(days=2)).isoformat() and \
+                any(item.get('source', 'manual') == 'manual' for item in daily['broadcasts']):
+            report['warnings'].append('FUTURE_MANUAL_CONFIGURATION_PRESERVED')
+        else:
+            values.append((root / 'sports_broadcasts_today.json', broadcasts))
+        values.extend([(root / 'sports_agenda_window.json', window), (output, feed)])
+        changed_paths = _publish(values)
         changed = output in changed_paths
         report.update(state='DEGRADED', feedDate=feed['date'], changed=changed,
                       fixtures=details, totalFixtures=len(incoming),
+                      windowDays=window_report, availableDates=sorted(window['days']),
                       withChannels=sum(bool(event.get('channels')) for event in incoming))
         _diagnostic(root, report)
         return feed, report, changed

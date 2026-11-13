@@ -56,15 +56,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python -m scripts.generate_agenda_today --discover-broadcasts --official-sites
-      - name: Commit only daily broadcasts and feed
+      - name: Commit only sports agenda artifacts
         shell: bash
         run: |
           git add -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json
-          if git diff --cached --quiet -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json; then
+          window_files=()
+          if [ -f sports_agenda_window.json ]; then
+            window_files=(sports_agenda_window.json)
+            git add -- "${window_files[@]}"
+          fi
+          if git diff --cached --quiet -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json "${window_files[@]}"; then
             echo "Sports schedule unchanged; no commit."
             exit 0
           fi
           git config user.name "MBox Sports Bot"
           git config user.email "actions@users.noreply.github.com"
-          git commit -m "Update sports schedule" --only -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json
+          git commit -m "Update sports schedule" --only -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json "${window_files[@]}"
           git push origin HEAD:main
