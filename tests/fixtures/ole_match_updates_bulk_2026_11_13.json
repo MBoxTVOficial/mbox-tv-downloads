@@ -1,0 +1,308 @@
+{
+  "code": 200,
+  "data": {
+    "fixture": [
+      {
+        "match": [
+          {
+            "matchInfo": {
+              "id": "5mz4ghtu4ewty2n7g60sxyj2s",
+              "date": "2026-11-13Z",
+              "time": "12:00:00Z",
+              "lastUpdated": "2026-11-13T13:55:09Z",
+              "description": "Singapore vs Paraguay",
+              "competition": {
+                "id": "cesdwwnxbc5fmajgroc0hqzy2",
+                "name": "Friendlies",
+                "knownName": "Internationals",
+                "competitionCode": "FRI",
+                "competitionFormat": "International cup",
+                "country": {
+                  "id": "7yasa43laq1nb2e6f8bfuvxed",
+                  "name": "World"
+                }
+              },
+              "contestant": [
+                {
+                  "id": "3gi71ps2lp5x7xfoe9kn5jw4q",
+                  "name": "Singapore",
+                  "shortName": "Singapore",
+                  "officialName": "Singapore",
+                  "code": "SGP",
+                  "position": "home",
+                  "optaSymId": "SGP",
+                  "country": {
+                    "id": "i5ym1phxb6fliphj1xd6pydv",
+                    "name": "Singapore"
+                  }
+                },
+                {
+                  "id": "3cwjdmekfdouwg990mqdq9fh0",
+                  "name": "Paraguay",
+                  "shortName": "Paraguay",
+                  "officialName": "Paraguay",
+                  "code": "PAR",
+                  "position": "away",
+                  "optaShortName": "Paraguay",
+                  "optaSymId": "PAR",
+                  "nickname": "La Albirroja",
+                  "country": {
+                    "id": "4snnlul02xmgkkb024q2bqyn9",
+                    "name": "Paraguay"
+                  }
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "periodId": 14,
+                "matchStatus": "Played",
+                "winner": "away",
+                "matchLengthMin": 95,
+                "matchLengthSec": 1,
+                "period": [
+                  {
+                    "id": 1,
+                    "start": "2026-11-13T12:01:14Z",
+                    "end": "2026-11-13T12:48:15Z",
+                    "lengthMin": 47,
+                    "lengthSec": 1,
+                    "announcedInjuryTime": 60
+                  },
+                  {
+                    "id": 2,
+                    "start": "2026-11-13T13:06:17Z",
+                    "end": "2026-11-13T13:54:17Z",
+                    "lengthMin": 48,
+                    "lengthSec": 0,
+                    "announcedInjuryTime": 180
+                  }
+                ],
+                "scores": {
+                  "ht": {
+                    "home": 1,
+                    "away": 2
+                  },
+                  "ft": {
+                    "home": 1,
+                    "away": 4
+                  },
+                  "total": {
+                    "home": 1,
+                    "away": 4
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "9xs81le77u4xfupf8p61p5bf8",
+              "date": "2026-11-13Z",
+              "time": "23:00:00Z",
+              "lastUpdated": "2026-11-09T12:27:30Z",
+              "description": "Argentina vs Uruguay",
+              "competition": {
+                "id": "cesdwwnxbc5fmajgroc0hqzy2",
+                "name": "Friendlies",
+                "knownName": "Internationals",
+                "competitionCode": "FRI",
+                "competitionFormat": "International cup",
+                "country": {
+                  "id": "7yasa43laq1nb2e6f8bfuvxed",
+                  "name": "World"
+                }
+              },
+              "contestant": [
+                {
+                  "id": "ak48fkypnql8y4n69cvcq5ghc",
+                  "name": "Argentina",
+                  "shortName": "Argentina",
+                  "officialName": "Argentina",
+                  "code": "ARG",
+                  "position": "home",
+                  "optaShortName": "Argentina",
+                  "optaOfficialName": "Argentina",
+                  "optaSymId": "ARG",
+                  "nickname": "La Albiceleste",
+                  "country": {
+                    "id": "2vovxa97k7v7ofa85dah2xktb",
+                    "name": "Argentina"
+                  }
+                },
+                {
+                  "id": "9l06impjllgop0gte8fldb4zo",
+                  "name": "Uruguay",
+                  "shortName": "Uruguay",
+                  "officialName": "Uruguay",
+                  "code": "URU",
+                  "position": "away",
+                  "optaShortName": "Uruguay",
+                  "optaSymId": "URU",
+                  "nickname": "La Celeste",
+                  "country": {
+                    "id": "286fwlvd6dzntv6ewv3cyvb0p",
+                    "name": "Uruguay"
+                  }
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "periodId": 16,
+                "matchStatus": "Fixture"
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "1jpjop6resgb4rdrg9s6rgs9g",
+              "date": "2026-11-13Z",
+              "time": "17:00:00Z",
+              "lastUpdated": "2026-11-13T18:53:36Z",
+              "description": "Moldova vs Kazakhstan",
+              "competition": {
+                "id": "595nsvo7ykvoe690b1e4u5n56",
+                "name": "UEFA Nations League",
+                "knownName": "UEFA Nations League",
+                "competitionCode": "NAT",
+                "competitionFormat": "International cup",
+                "country": {
+                  "id": "7yiwjcnhat6jo3f901h266cwl",
+                  "name": "Europe"
+                }
+              },
+              "contestant": [
+                {
+                  "id": "bl6qj4us3s4dnaylqqs2lgrlt",
+                  "name": "Moldova",
+                  "shortName": "Moldova",
+                  "officialName": "Moldova",
+                  "code": "MDA",
+                  "position": "home",
+                  "optaShortName": "Moldova",
+                  "optaSymId": "MDA",
+                  "country": {
+                    "id": "389mdnq78a55g2gr040a3mmtj",
+                    "name": "Moldova"
+                  }
+                },
+                {
+                  "id": "bjfbr79r75nhf4oz80jxarv8f",
+                  "name": "Kazakhstan",
+                  "shortName": "Kazakhstan",
+                  "officialName": "Kazakhstan",
+                  "code": "KAZ",
+                  "position": "away",
+                  "optaShortName": "Kazakhstan",
+                  "optaSymId": "KAZ",
+                  "country": {
+                    "id": "6kewn14jj4ncyzghlbu61hna6",
+                    "name": "Kazakhstan"
+                  }
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "periodId": 14,
+                "matchStatus": "Played",
+                "winner": "home",
+                "matchLengthMin": 94,
+                "matchLengthSec": 0,
+                "period": [
+                  {
+                    "id": 1,
+                    "start": "2026-11-13T17:01:06Z",
+                    "end": "2026-11-13T17:46:07Z",
+                    "lengthMin": 45,
+                    "lengthSec": 1
+                  },
+                  {
+                    "id": 2,
+                    "start": "2026-11-13T18:02:30Z",
+                    "end": "2026-11-13T18:51:29Z",
+                    "lengthMin": 48,
+                    "lengthSec": 59,
+                    "announcedInjuryTime": 240
+                  }
+                ],
+                "scores": {
+                  "ht": {
+                    "home": 1,
+                    "away": 0
+                  },
+                  "ft": {
+                    "home": 2,
+                    "away": 1
+                  },
+                  "total": {
+                    "home": 2,
+                    "away": 1
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "7f2uuphgt26zk1eh9x152wb2s",
+              "date": "2026-11-13Z",
+              "time": "19:45:00Z",
+              "lastUpdated": "2026-11-13T18:39:31Z",
+              "description": "Netherlands vs Greece",
+              "competition": {
+                "id": "595nsvo7ykvoe690b1e4u5n56",
+                "name": "UEFA Nations League",
+                "knownName": "UEFA Nations League",
+                "competitionCode": "NAT",
+                "competitionFormat": "International cup",
+                "country": {
+                  "id": "7yiwjcnhat6jo3f901h266cwl",
+                  "name": "Europe"
+                }
+              },
+              "contestant": [
+                {
+                  "id": "657oha8nkne1ybba2bouzkbo7",
+                  "name": "Netherlands",
+                  "shortName": "Netherlands",
+                  "officialName": "Netherlands",
+                  "code": "NED",
+                  "position": "home",
+                  "optaShortName": "Netherlands",
+                  "optaSymId": "NED",
+                  "nickname": "Oranje",
+                  "country": {
+                    "id": "6hzi5pltnz67q4la8yli9qfv6",
+                    "name": "Netherlands"
+                  }
+                },
+                {
+                  "id": "9rno14cqmifl7hxuxmsnd8j87",
+                  "name": "Greece",
+                  "shortName": "Greece",
+                  "officialName": "Greece",
+                  "code": "GRE",
+                  "position": "away",
+                  "optaShortName": "Greece",
+                  "optaSymId": "GRC",
+                  "country": {
+                    "id": "6lpgd60z890no2v46zdecrcss",
+                    "name": "Greece"
+                  }
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "periodId": 16,
+                "matchStatus": "Fixture"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

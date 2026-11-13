@@ -1,0 +1,59 @@
+name: Update confirmed football match states
+
+on:
+  workflow_dispatch:
+  schedule:
+    # A separate optional sidecar; the API-Football LIVE workflow remains paused.
+    - cron: '2-57/5 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  # Serialize publication with GENERAL; never overwrite an agenda commit.
+  group: sports-today-main
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Test match state handling offline
+        run: python -m unittest discover -s tests -p "test_sports_match_updates.py"
+      - name: Refresh confirmed match states
+        # No sports account keys. No discovery, channel assignments or IPTV requests.
+        run: python -m scripts.generate_sports_match_updates
+      - name: Commit only match state artifacts
+        shell: bash
+        run: |
+          files=()
+          for file in sports_match_updates.json sports_match_updates_state.json; do
+            if [ -f "$file" ]; then
+              files+=("$file")
+            fi
+          done
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No match state artifacts to publish."
+            exit 0
+          fi
+          git add -- "${files[@]}"
+          if git diff --cached --quiet -- "${files[@]}"; then
+            echo "Match states unchanged; no commit."
+            exit 0
+          fi
+          git config user.name "MBox Sports Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Update confirmed football match states" --only -- "${files[@]}"
+          git push origin HEAD:main
