@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-13",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-13T18:14:02-03:00",
+  "updatedAt": "2026-11-13T21:50:00-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -160,29 +160,7 @@
           "homeLogo": "https://static.futbolenlatv.com/img/32/20130130075711_holanda.webp",
           "awayLogo": "https://static.futbolenlatv.com/img/32/20140624094707-grecia.webp",
           "startTime": "16:45",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN 2 HD",
-              "streamId": 165652,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 2 HD",
-                "ESPN 2 HD (ARG)"
-              ]
-            },
-            {
-              "name": "ESPN 2 HD (ARG)",
-              "streamId": 169953,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN 2 HD",
-                "ESPN 2 HD (ARG)"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         },
         {
           "id": "fixture-1613896403",
@@ -215,29 +193,7 @@
           "homeLogo": "https://static.futbolenlatv.com/img/32/20130318120848_serbia.webp",
           "awayLogo": "https://static.futbolenlatv.com/img/32/20130130075653_alemania.webp",
           "startTime": "16:45",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN HD",
-              "streamId": 165649,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN HD",
-                "ESPN HD (ARG)"
-              ]
-            },
-            {
-              "name": "ESPN HD (ARG)",
-              "streamId": 169952,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN HD",
-                "ESPN HD (ARG)"
-              ]
-            }
-          ]
+          "status": "SCHEDULED"
         }
       ]
     },
