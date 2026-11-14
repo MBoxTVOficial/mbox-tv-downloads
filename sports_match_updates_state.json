@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "date": "2026-11-14",
   "timezone": "America/Argentina/Buenos_Aires",
-  "requests": 5,
-  "lastAttemptAt": "2026-11-14T20:48:16-03:00",
+  "requests": 6,
+  "lastAttemptAt": "2026-11-14T20:56:47-03:00",
   "settled": {
     "fixture-1481947416": [
       "f1xiwulsj0cnwtavtrhm4wsus",
@@ -18,6 +18,13 @@
       "noruega",
       "gales",
       "2026-11-14T14:00:00-03:00"
+    ],
+    "fixture-1379475023": [
+      "7gt276fn6v2d5h1g4q03zeivo",
+      "UEFA Nations League",
+      "portugal",
+      "dinamarca",
+      "2026-11-14T16:45:00-03:00"
     ]
   }
 }
