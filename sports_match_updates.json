@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-14",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-14T17:14:56-03:00",
+  "updatedAt": "2026-11-14T20:48:16-03:00",
   "matches": {
     "fixture-1481947416": {
       "status": "FINISHED",
@@ -55,7 +55,7 @@
       "awayScore": 1
     },
     "fixture-1379475023": {
-      "status": "LIVE",
+      "status": "FINISHED",
       "fixture": {
         "competition": "UEFA Nations League",
         "homeTeam": "Portugal",
@@ -68,16 +68,16 @@
         "dinamarca",
         "2026-11-14T16:45:00-03:00"
       ],
-      "observedAt": "2026-11-14T17:14:56-03:00",
-      "expiresAt": "2026-11-14T17:29:56-03:00",
+      "observedAt": "2026-11-14T20:48:16-03:00",
+      "expiresAt": "2026-11-15T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "7gt276fn6v2d5h1g4q03zeivo",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-14T17:06:09-03:00",
-      "homeScore": 0,
-      "awayScore": 0
+      "sourceUpdatedAt": "2026-11-14T19:50:45-03:00",
+      "homeScore": 1,
+      "awayScore": 4
     }
   }
 }
