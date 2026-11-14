@@ -308,7 +308,7 @@ class WorkflowTest(unittest.TestCase):
             if name == 'update-sports-live.yml':
                 self.assertIn("secrets.API_FOOTBALL_KEY", text)
             else:
-                self.assertIn("--official-sites", text)
+                self.assertIn("scripts.generate_public_agenda", text)
                 self.assertNotIn("secrets.FOOTBALL_DATA_TOKEN", text)
                 self.assertNotIn("secrets.FOOTBALL_SOCCER_API_KEY", text)
                 self.assertNotIn("secrets.API_FOOTBALL_KEY", text)

@@ -618,7 +618,7 @@ class PipelineTest(unittest.TestCase):
     def test_workflow_discovery_only_in_general(self):
         general = (ROOT / '.github/workflows/update-sports-today.yml').read_text(encoding='utf-8')
         live = (ROOT / '.github/workflows/update-sports-live.yml').read_text(encoding='utf-8')
-        self.assertIn('scripts.generate_agenda_today --discover-broadcasts', general)
+        self.assertIn('scripts.generate_public_agenda', general)
         self.assertNotIn('--discover-broadcasts', live)
         self.assertNotIn('broadcaster_discovery.py', live)
         self.assertIn('run: python scripts/generate_sports_today.py --live', live)
