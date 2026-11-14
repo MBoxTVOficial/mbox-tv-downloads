@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-14",
+  "sources": [
+    {
+      "guideId": "futbol-en-vivo-ar",
+      "sourceUrl": "https://www.futbolenvivoargentina.com/",
+      "records": [
+        {
+          "competition": "Copa Argentina",
+          "homeTeam": "Banfield",
+          "awayTeam": "Boca Juniors",
+          "startTime": "2026-11-14T19:00:00-03:00",
+          "broadcasters": ["TyC Sports", "TyC Sports Play"]
+        }
+      ]
+    },
+    {
+      "guideId": "ole-agenda",
+      "sourceUrl": "https://www.ole.com.ar/agenda-deportiva",
+      "records": [
+        {
+          "competition": "Copa Argentina",
+          "homeTeam": "Banfield",
+          "awayTeam": "Boca Juniors",
+          "startTime": "2026-11-14T19:00:00-03:00",
+          "broadcasters": ["TyC Sports"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-14T13:47:28-03:00",
+  "generatedAt": "2026-11-14T13:54:16-03:00",
   "days": {
     "2026-11-14": {
       "schemaVersion": 1,
       "date": "2026-11-14",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-14T13:47:28-03:00",
+      "updatedAt": "2026-11-14T13:54:16-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -208,18 +208,7 @@
           "priority": 5,
           "events": [
             {
-              "id": "fixture-1146799022",
-              "sport": "football",
-              "competition": "Primera Nacional",
-              "homeTeam": "Atlanta",
-              "awayTeam": "Estudiantes",
-              "homeLogo": "",
-              "awayLogo": "",
-              "startTime": "15:00",
-              "status": "SCHEDULED"
-            },
-            {
-              "id": "fixture-1652067996",
+              "id": "fixture-1600255604",
               "sport": "football",
               "competition": "Primera Nacional",
               "homeTeam": "CA Atlanta",
@@ -234,33 +223,55 @@
               "sport": "football",
               "competition": "Primera Nacional",
               "homeTeam": "Temperley",
-              "awayTeam": "Ciudad de Bolívar",
+              "awayTeam": "Ciudad de Bolivar",
               "homeLogo": "https://static.futbolenlatv.com/img/32/20140814114320-temperley.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20260103212408-club-ciudad-bolivar.webp",
               "startTime": "16:00",
               "status": "SCHEDULED"
             },
             {
-              "id": "fixture-1851204896",
+              "id": "fixture-1087525276",
               "sport": "football",
               "competition": "Primera Nacional",
-              "homeTeam": "Colón",
-              "awayTeam": "F.C. Midland",
-              "homeLogo": "",
-              "awayLogo": "",
+              "homeTeam": "CA Colón",
+              "awayTeam": "Midland",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051345_colón-de-santa-fe.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20161024102433-midland.webp",
               "startTime": "18:00",
               "status": "SCHEDULED"
             },
             {
-              "id": "fixture-1298094757",
+              "id": "fixture-1673347178",
               "sport": "football",
-              "competition": "Primera Nacional",
-              "homeTeam": "Colón Santa Fe",
-              "awayTeam": "Ferrocarril Midland",
-              "homeLogo": "https://ole.com.ar/collections/escudos/1027.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/9295.png",
-              "startTime": "18:00",
-              "status": "SCHEDULED"
+              "competition": "Copa Argentina",
+              "homeTeam": "Banfield",
+              "awayTeam": "Boca Juniors",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20140621094222-banfield.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051310_boca-juniors.webp",
+              "startTime": "19:00",
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: TYC SPORTS HD",
+                  "streamId": 165660,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: TYC SPORTS HD",
+                    "ARG: TYC SPORTS HD*"
+                  ]
+                },
+                {
+                  "name": "ARG: TYC SPORTS HD*",
+                  "streamId": 165659,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: TYC SPORTS HD",
+                    "ARG: TYC SPORTS HD*"
+                  ]
+                }
+              ]
             },
             {
               "id": "fixture-1104282838",
@@ -274,13 +285,13 @@
               "status": "SCHEDULED"
             },
             {
-              "id": "fixture-1405282514",
+              "id": "fixture-1146901096",
               "sport": "football",
               "competition": "Primera Nacional",
-              "homeTeam": "Gimnasia y Esgrima (J)",
+              "homeTeam": "Gimnasia Jujuy",
               "awayTeam": "Almirante Brown",
-              "homeLogo": "",
-              "awayLogo": "",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20220908113721-gimnasia-jujuy.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20140817113901-almirante-brown.webp",
               "startTime": "20:00",
               "status": "SCHEDULED"
             }
@@ -379,7 +390,7 @@
       "schemaVersion": 1,
       "date": "2026-11-15",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-14T13:47:28-03:00",
+      "updatedAt": "2026-11-14T13:54:16-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -583,7 +594,7 @@
               "sport": "football",
               "competition": "Primera Nacional",
               "homeTeam": "Godoy Cruz",
-              "awayTeam": "Tristán Suarez",
+              "awayTeam": "Tristán Suárez",
               "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051410_godoy-cruz.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20140815014026-tristan-suarez.webp",
               "startTime": "17:00",
@@ -662,7 +673,7 @@
       "schemaVersion": 1,
       "date": "2026-11-16",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-14T13:47:28-03:00",
+      "updatedAt": "2026-11-14T13:54:16-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [

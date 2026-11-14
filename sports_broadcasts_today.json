@@ -40,6 +40,18 @@
         "ESPN Argentina"
       ],
       "evidenceCount": 2
+    },
+    {
+      "fixtureId": 1673347178,
+      "channelGroups": [
+        "tyc_sports"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "TyC Sports"
+      ],
+      "evidenceCount": 2
     }
   ]
 }

@@ -13,12 +13,12 @@ import tempfile
 
 from . import generate_sports_today as generator
 from . import official_football_bot as bot
-from .broadcaster_discovery import atomic_json, read_json
-from .broadcaster_sources import ZONE, instant
-from .prioritized_agendas import acquire_all, pair_key, validate_guides
+from .broadcaster_discovery import atomic_json, map_signal, read_json
+from .broadcaster_sources import ZONE, instant, norm
+from .prioritized_agendas import acquire_all, guide_conflict, pair_key, signal_conflict, validate_guides
 from .sports_channel_rules import load_clean_groups
+from .sports_competition_broadcasters import territory
 from .sports_daily_broadcasts import read_broadcasts, validate_broadcasts, resolve_broadcasts, apply_daily_assignments
-from .sports_playback_policy import apply_playback_policy
 from .sports_fixture_identity import IdentityStore
 from .sports_agenda_window import build_agenda_window, validate_window
 
@@ -97,6 +97,85 @@ def _reconcile_exact_rows(rows, previous, identity, guides, report, day):
     return store.value
 
 
+def _retain_confirmed_tv(feed, broadcasts, details, baseline, daily, records, guides, groups, mapping, blocked):
+    """An omitted TV claim does not retract this date's exact prior confirmation.
+
+    Current positive contradictions still win. Historical assignments remain
+    identifiable in diagnostics instead of being presented as fresh evidence.
+    """
+    if not daily or daily['date'] != feed['date'] or not baseline or baseline['date'] != feed['date']:
+        return False
+    previous = {event['id']: event for event in _events(baseline)}
+    prior_auto = {f"fixture-{item['fixtureId']}": item for item in daily['broadcasts']
+                  if item.get('source') == 'auto' and item['confidence'] == 'confirmed'}
+    current = {f"fixture-{item['fixtureId']}": item for item in broadcasts['broadcasts']}
+    decisions = {f"fixture-{item['fixtureId']}": item for item in details}
+    changed = False
+    for event in _events(feed):
+        prior, assignment = previous.get(event['id']), prior_auto.get(event['id'])
+        present, decision = current.get(event['id']), decisions[event['id']]
+        if not prior or not assignment or not prior.get('channels') or \
+                (present and present.get('source', 'manual') == 'manual'):
+            continue
+        missing = [group for group in assignment['channelGroups']
+                   if group not in (present or {}).get('channelGroups', [])]
+        if not missing:
+            continue
+        reason = None
+        if event['startTime'] != prior['startTime'] or pair_key(event, guides) != pair_key(prior, guides):
+            reason = 'FIXTURE_IDENTITY_CHANGED'
+        elif event['competition'] in blocked:
+            reason = 'OFFICIAL_SOURCE_REVIEW'
+        elif guide_conflict(decision, records, guides) or signal_conflict(decision, records, guides, mapping):
+            reason = 'CURRENT_SOURCE_CONFLICT'
+        evidence = decision.get('evidence', [])
+        if reason is None and any(map_signal(item['broadcaster'], item['territory'], mapping)[3] for item in evidence):
+            reason = 'AMBIGUOUS_CURRENT_SIGNAL'
+        known_names = {norm(signal['name']) for signal in mapping['signals']}
+        previous_names = {norm(name) for name in assignment.get('broadcaster', [])}
+        if reason is None and any(norm(map_signal(item['broadcaster'], item['territory'], mapping)[0])
+                                  not in known_names | previous_names for item in evidence):
+            reason = 'UNRECOGNIZED_CURRENT_SIGNAL'
+        if reason is None and any(item['official'] and item['source_type'] == 'official_league' for item in evidence):
+            reason = 'CURRENT_OFFICIAL_TV_REPLACES_PRIOR'
+        # Each current page's explicit TV list can contradict a prior assignment;
+        # an external platform or an empty list alone cannot do so.
+        claims = {}
+        for item in evidence:
+            group = map_signal(item['broadcaster'], item['territory'], mapping)[2]
+            if group is not None:
+                claims.setdefault((item['owner'], item['source_name']), set()).add(group)
+        if reason is None and any(not claim.intersection(assignment['channelGroups']) for claim in claims.values()):
+            reason = 'CURRENT_TV_CONTRADICTS_PRIOR'
+        prior_ids = {channel['streamId'] for channel in prior['channels'] if channel.get('enabled', True)}
+        retained = [identifier for identifier in missing if identifier in groups and
+                    groups[identifier].get('signalRegion') and
+                    any(stream['enabled'] for stream in groups[identifier]['streams']) and
+                    any(stream['streamId'] in prior_ids for stream in groups[identifier]['streams']) and
+                    any(signal['channelGroup'] == identifier and
+                        territory(signal['territory']) == territory(groups[identifier]['signalRegion'])
+                        for signal in mapping['signals'])]
+        if reason is not None or not retained:
+            decision['preservationBlockedReason'] = reason or 'PRIOR_GROUP_UNAVAILABLE'
+            continue
+        restored = copy.deepcopy(present or assignment)
+        restored['channelGroups'] = list(dict.fromkeys((present or {}).get('channelGroups', []) + retained))
+        historical_names = [name for name in assignment.get('broadcaster', [])
+                            if map_signal(name, 'Argentina', mapping)[2] in retained]
+        restored['broadcaster'] = list(dict.fromkeys((present or {}).get('broadcaster', []) + historical_names))
+        restored['evidenceCount'] = max((present or {}).get('evidenceCount', 0), assignment.get('evidenceCount', 0))
+        if present:
+            broadcasts['broadcasts'].remove(present)
+        broadcasts['broadcasts'].append(restored)
+        decision.update(currentEvidenceState=decision['state'], state='CONFIRMED_MBOX',
+                        channelGroups=restored['channelGroups'], broadcaster=restored['broadcaster'],
+                        evidenceCount=restored['evidenceCount'], preservedConfirmed=True,
+                        preservationReason='INCOMPLETE_CURRENT_TV_EVIDENCE',
+                        preservedChannelGroups=retained, preservedAssignment=copy.deepcopy(assignment))
+        changed = True
+    return changed
+
+
 def generate_official_agenda(root, output, day, now, *, transport=None, offline=False):
     root, output = Path(root), Path(output)
     previous = generator.previous_feed(output)
@@ -168,25 +247,9 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
             daily=daily if daily and daily['date'] == day.isoformat() else None,
             guide_records=records, guide_config=guides, blocked_competitions=blocked)
         incoming, old = _events(feed), _events(baseline)
-        # A failed TV lookup cannot erase today's previously confirmed exact fixture.
-        # A new conflict/quarantine is different: it must remain non-playable.
-        if daily and daily['date'] == day.isoformat() and baseline and any(
-                source.get('state') in {'ERROR', 'ERROR_USING_CACHE', 'DEFERRED_BUDGET'}
-                for source in report.get('sources', []) + report.get('guides', [])):
-            by_old = {event['id']: event for event in old}
-            decisions = {f"fixture-{item['fixtureId']}": item for item in details}
-            prior_auto = {f"fixture-{item['fixtureId']}": item for item in daily['broadcasts']
-                          if item.get('source') == 'auto' and item['confidence'] == 'confirmed'}
-            for event in incoming:
-                prior, assignment, decision = by_old.get(event['id']), prior_auto.get(event['id']), decisions[event['id']]
-                if not event.get('channels') and prior and assignment and decision['state'] == 'UNRESOLVED' and \
-                        event['competition'] not in blocked and event['startTime'] == prior['startTime'] and \
-                        pair_key(event, guides) == pair_key(prior, guides):
-                    broadcasts['broadcasts'].append(copy.deepcopy(assignment))
-                    decision.update(state='CONFIRMED_MBOX', channelGroups=assignment['channelGroups'],
-                                    broadcaster=assignment.get('broadcaster', []), preservedConfirmed=True)
+        if _retain_confirmed_tv(feed, broadcasts, details, baseline, daily, records,
+                                guides, groups, mapping, blocked):
             apply_daily_assignments(feed, resolve_broadcasts(broadcasts, feed, groups, generator.normalize))
-            apply_playback_policy(feed, local_now, ZONE, groups, log=lambda message: None)
         if not incoming:
             if baseline and old:
                 return keep('EMPTY_AGENDA')

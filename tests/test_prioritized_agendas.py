@@ -154,6 +154,116 @@ class GuidePolicyTests(unittest.TestCase):
         self.assertEqual([], self.records(item=listing(competition='Champions League Femenina')))
         self.assertIsNone(guides.canonical_competition('UEFA Champions League', self.config))
 
+    def copa_records(self, source_indexes=(0, 1), signals=True):
+        # Sanitized rows parsed from both public guides on 14 November 2026.
+        snapshot = json.loads((ROOT / 'tests/fixtures/copa_argentina_guides_2026_11_14.json').read_text(encoding='utf8'))
+        day = date.fromisoformat(snapshot['date'])
+        records = []
+        for index in source_indexes:
+            source = snapshot['sources'][index]
+            provider = next(provider for provider in guides.PROVIDERS if provider['id'] == source['guideId'])
+            listings = [Listing(row['homeTeam'], row['awayTeam'], datetime.fromisoformat(row['startTime']),
+                                row['competition'], tuple(row['broadcasters']) if signals else ())
+                        for row in source['records']]
+            records.extend(guides.checked_records(listings, provider, day, self.config))
+        return day, records
+
+    def november_14_feed(self, records):
+        day = date(2026, 11, 14)
+        now = datetime(2026, 11, 14, 13, tzinfo=ZONE)
+        rows, conflicts = guides.merge_rows([], records, day, self.official_config, self.config)
+        feed, daily, details, _ = bot.preview(rows, day, now, self.official_config, self.groups, self.mapping,
+                                             guide_records=records, guide_config=self.config)
+        events = [event for section in feed['sections'] for event in section['events']]
+        return rows, feed, events, daily, details, conflicts
+
+    def test_copa_argentina_retains_real_banfield_boca_fixture_and_explicit_tv(self):
+        day, records = self.copa_records()
+        self.assertEqual(2, len(records))
+        self.assertEqual({'2026-11-14T19:00:00-03:00'}, {row['startTime'] for row in records})
+        self.assertEqual({'Copa Argentina'}, {row['competition'] for row in records})
+        rows, feed, events, daily, details, conflicts = self.november_14_feed(records)
+        self.assertEqual([], conflicts)
+        self.assertEqual(1, len(rows))
+        self.assertEqual('agenda-copa-argentina', rows[0]['competitionId'])
+        self.assertEqual([], rows[0]['broadcasters'])  # Guide evidence stays separate from fixture authority.
+        self.assertEqual(day.isoformat(), feed['date'])
+        self.assertEqual(1, len(events))
+        self.assertEqual(('Banfield', 'Boca Juniors', '19:00'),
+                         (events[0]['homeTeam'], events[0]['awayTeam'], events[0]['startTime']))
+        self.assertEqual([events[0]], next(section['events'] for section in feed['sections'] if section['id'] == 'argentina'))
+        self.assertEqual(['tyc_sports'], daily['broadcasts'][0]['channelGroups'])
+        self.assertEqual('CONFIRMED_MBOX', details[0]['state'])
+
+    def test_copa_one_guide_and_unconfirmed_extra_platform_do_not_assign_channels(self):
+        _, records = self.copa_records((0,))
+        _, _, events, daily, details, _ = self.november_14_feed(records)
+        self.assertNotIn('channels', events[0])
+        self.assertEqual([], daily['broadcasts'])
+        self.assertEqual('REVIEW', details[0]['state'])
+
+    def test_copa_without_explicit_tv_retains_fixture_without_inventing_channels(self):
+        _, records = self.copa_records(signals=False)
+        _, _, events, daily, details, _ = self.november_14_feed(records)
+        self.assertEqual(1, len(events))
+        self.assertNotIn('channels', events[0])
+        self.assertEqual([], daily['broadcasts'])
+        self.assertEqual('UNRESOLVED', details[0]['state'])
+
+    def test_copa_scope_does_not_enable_other_cups_or_categories(self):
+        self.assertIs(self.config, guides.validate_guides(self.config))
+        self.assertEqual('Copa Argentina', guides.canonical_competition('Argentina - Copa Argentina', self.config))
+        for competition in ('Copa Argentina Femenina', 'Copa Argentina Reserva', 'Supercopa Argentina', 'Copa de la Liga'):
+            with self.subTest(competition=competition):
+                self.assertEqual([], self.records(item=listing(competition=competition)))
+        bad = copy.deepcopy(self.config)
+        bad['competitionAliases']['Supercopa Argentina'] = []
+        with self.assertRaisesRegex(DiscoveryError, 'ARGENTINA_GUIDE_SCOPE_INVALID'):
+            guides.validate_guides(bad)
+
+    def test_copa_team_aliases_are_exact_and_reserve_aliases_stay_scoped(self):
+        self.assertEqual(guides.team_key('Boca', 'Copa Argentina', self.config),
+                         guides.team_key('Boca Juniors', 'Copa Argentina', self.config))
+        self.assertNotEqual(guides.team_key('Boca Juniors Reserva', 'Copa Argentina', self.config),
+                            guides.team_key('Boca Juniors', 'Copa Argentina', self.config))
+        self.assertNotEqual(guides.team_key('Gimnasia', 'Copa Argentina', self.config),
+                            guides.team_key('Gimnasia LP', 'Copa Argentina', self.config))
+        self.assertNotEqual(guides.team_key('Boca', 'CONMEBOL Libertadores', self.config),
+                            guides.team_key('Boca Juniors', 'CONMEBOL Libertadores', self.config))
+
+    def test_primera_nacional_exact_club_aliases_merge_explicit_lpf_play_evidence(self):
+        # Exact team labels and clocks from the saved 14 November FEV and Olé pages.
+        matches = [(('CA Atlanta', 'Estudiantes BA'), ('Atlanta', 'Estudiantes Caseros'), 15),
+                   (('CA Colón', 'Midland'), ('Colón Santa Fe', 'Ferrocarril Midland'), 18)]
+        for first, second, hour in matches:
+            with self.subTest(home=first[0]):
+                records = []
+                start = datetime(2026, 11, 14, hour, tzinfo=ZONE)
+                for provider, pair in zip(guides.PROVIDERS, (first, second)):
+                    item = Listing(*pair, start, 'Primera Nacional', ('LPF Play',))
+                    records.extend(guides.checked_records([item], provider, start.date(), self.config))
+                rows, _, events, daily, details, conflicts = self.november_14_feed(records)
+                self.assertEqual([], conflicts)
+                self.assertEqual(1, len(rows))
+                self.assertEqual(1, len(events))
+                self.assertEqual(start.strftime('%H:%M'), events[0]['startTime'])
+                self.assertNotIn('channels', events[0])
+                self.assertEqual([], daily['broadcasts'])
+                self.assertEqual('CONFIRMED_EXTERNAL', details[0]['state'])
+                self.assertEqual(['LPF Play'], details[0]['broadcaster'])
+                self.assertEqual(2, details[0]['evidenceCount'])
+
+    def test_known_argentina_club_aliases_do_not_generalize_to_other_contexts(self):
+        for alias, canonical in [('CA Atlanta', 'Atlanta'), ('Estudiantes BA', 'Estudiantes Caseros'),
+                                 ('Colón Santa Fe', 'Colón'), ('Ferrocarril Midland', 'Midland')]:
+            with self.subTest(alias=alias):
+                self.assertEqual(guides.team_key(alias, 'Primera Nacional', self.config),
+                                 guides.team_key(canonical, 'Primera Nacional', self.config))
+                self.assertNotEqual(guides.team_key(alias, 'CONMEBOL Libertadores', self.config),
+                                    guides.team_key(canonical, 'CONMEBOL Libertadores', self.config))
+        self.assertNotEqual(guides.team_key('Estudiantes', 'Primera Nacional', self.config),
+                            guides.team_key('Estudiantes Caseros', 'Primera Nacional', self.config))
+
     def test_existing_four_european_agendas_remain_supported_without_sports_api(self):
         for source_name, canonical, section in [('LALIGA EA SPORTS', 'LaLiga', 'spain'),
                                                ('Premier League', 'Premier League', 'england'),

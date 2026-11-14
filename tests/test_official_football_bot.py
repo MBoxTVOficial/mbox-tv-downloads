@@ -196,10 +196,30 @@ class OfficialBotTests(unittest.TestCase):
         self.assertEqual(len(channels), len({c['streamId'] for c in channels}))
         self.assertEqual([165664, 183616], [c['streamId'] for c in channels[:2]])
 
-    def test_playback_policy_reapplies_without_inventing_final_state(self):
+    def test_confirmed_metadata_survives_elapsed_window_without_inventing_final_state(self):
         feed, _, _, _ = self.make_preview([row(broadcasters=['TNT Sports'])], now=NOW.replace(hour=23))
-        self.assertNotIn('channels', self.events(feed)[0])
+        self.assertEqual([165664, 165666, 165665],
+                         [channel['streamId'] for channel in self.events(feed)[0]['channels']])
         self.assertEqual('SCHEDULED', self.events(feed)[0]['status'])
+
+    def test_confirmed_metadata_is_independent_of_refresh_hour(self):
+        rows = [row(broadcasters=['TyC Sports'])]
+        expected = [165660, 165659]
+        for hour in (0, 8, 12, 17, 20, 23):
+            with self.subTest(hour=hour):
+                feed, assignments, details, _ = self.make_preview(rows, now=NOW.replace(hour=hour))
+                self.assertEqual(expected, [channel['streamId'] for channel in self.events(feed)[0]['channels']])
+                self.assertEqual(['tyc_sports'], assignments['broadcasts'][0]['channelGroups'])
+                self.assertEqual('CONFIRMED_MBOX', details[0]['state'])
+
+    def test_later_fixture_does_not_destroy_earlier_confirmed_metadata(self):
+        rows = [row(broadcasters=['TyC Sports']),
+                {**row('Other Home', 'Other Away', ['TyC Sports'], '2026-11-12T21:00:00-03:00'),
+                 'providerFixtureId': 'later-official-row'}]
+        feed, _, _, _ = self.make_preview(rows, now=NOW.replace(hour=22))
+        self.assertEqual(2, len(self.events(feed)))
+        self.assertTrue(all([channel['streamId'] for channel in event['channels']] == [165660, 165659]
+                            for event in self.events(feed)))
 
 
 class OfficialBotBudgetTests(unittest.TestCase):

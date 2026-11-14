@@ -14,7 +14,6 @@ from .lpf_expanded_source import article_links, parse_lpf_fixtures
 from .sports_channel_rules import load_clean_groups
 from .sports_daily_broadcasts import apply_daily_assignments, resolve_broadcasts, validate_broadcasts
 from .sports_fixture_identity import IdentityStore
-from .sports_playback_policy import apply_playback_policy
 
 REGISTRY = 'sports_official_sources.json'
 HOSTS = {'lpf_official': 'www.ligaprofesional.ar', 'afa_official': 'www.afa.com.ar',
@@ -267,10 +266,11 @@ def preview(rows, day, now, config, groups, mapping, identity=None, daily=None, 
     broadcasts = {'schemaVersion': 1, 'date': day.isoformat(), 'timezone': generator.TIMEZONE,
                   'broadcasts': assignments}
     apply_daily_assignments(feed, resolve_broadcasts(broadcasts, feed, groups, generator.normalize))
-    if day <= instant(now.isoformat()).date():
-        apply_playback_policy(feed, now, ZONE, groups, log=lambda message: None)
-    # Future confirmed options are delivered in advance; Android evaluates their
-    # playback window locally. updatedAt above always retains the real clock.
+    # Confirmed channel references describe broadcast evidence, not whether the
+    # card can launch now. Android evaluates its playback window, explicit final
+    # state and superseded signals locally, including previously cached agendas.
+    # Do not erase that evidence when a server refresh happens outside the window.
+    # updatedAt above always retains the real clock.
     for section in sections:
         section['events'].sort(key=generator.event_sort_key)
     generator.validate_feed(feed)

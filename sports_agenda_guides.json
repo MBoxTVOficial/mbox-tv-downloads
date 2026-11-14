@@ -11,6 +11,7 @@
     "Liga Profesional Argentina": ["Liga Profesional", "Primera División Argentina", "Liga Argentina", "Torneo Clausura"],
     "Torneo Proyección": ["Reserva", "Proyección", "Torneo de Reserva", "Torneo Proyección", "Torneo Proyección de Reserva"],
     "Primera Nacional": ["Primera Nacional Argentina", "Argentina - Primera Nacional"],
+    "Copa Argentina": ["Argentina - Copa Argentina"],
     "CONMEBOL Libertadores": ["Copa Libertadores", "Libertadores"],
     "CONMEBOL Sudamericana": ["Copa Sudamericana", "Sudamericana"],
     "LaLiga": ["La Liga", "LALIGA EA SPORTS", "Liga de España", "Primera División España"],
@@ -22,6 +23,7 @@
     "Amistosos de selecciones": ["Amistoso", "Amistosos", "Amistoso Internacional", "Amistosos Internacionales", "International Friendlies"]
   },
   "agendaCompetitions": {
+    "Copa Argentina": {"id": "agenda-copa-argentina", "section": "argentina"},
     "LaLiga": {"id": "agenda-laliga", "section": "spain"},
     "Premier League": {"id": "agenda-premier", "section": "england"},
     "Serie A": {"id": "agenda-serie-a-italia", "section": "italy"},
@@ -34,10 +36,13 @@
     "Boca Juniors": ["Boca"],
     "River Plate": ["River"],
     "Argentinos Juniors": ["Argentinos"],
+    "Atlanta": ["CA Atlanta"],
     "Newells Old Boys": ["Newell’s", "Newell's", "Newell s", "Newells", "Newell's Old Boys"],
     "Gimnasia Mendoza": ["Gimnasia (Mza.)", "Gimnasia M.", "Gimnasia y Esgrima de Mendoza"],
     "Estudiantes Río Cuarto": ["Estudiantes (Río Cuarto)", "Estudiantes de Río Cuarto", "Estudiantes RC"],
-    "Colón": ["CA Colón"],
+    "Estudiantes Caseros": ["Estudiantes BA"],
+    "Colón": ["CA Colón", "Colón Santa Fe"],
+    "Midland": ["Ferrocarril Midland"],
     "Huracán": ["CA Huracán"]
   },
   "reserveTeamAliases": {"Gimnasia LP": ["Gimnasia", "Gimnasia La Plata"]},

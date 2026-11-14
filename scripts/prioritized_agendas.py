@@ -16,6 +16,9 @@ PROVIDERS = (
 )
 OFFICIAL = {'lpf_official', 'afa_official', 'conmebol_official'}
 OWNED_TYC = {'tyc sports', 'tyc sports play'}
+ARGENTINA_AGENDA = {
+    'Copa Argentina': {'id': 'agenda-copa-argentina', 'section': 'argentina'},
+}
 EUROPE_AGENDA = {
     'LaLiga': {'id': 'agenda-laliga', 'section': 'spain'},
     'Premier League': {'id': 'agenda-premier', 'section': 'england'},
@@ -32,7 +35,7 @@ SELECTION_AGENDA = {
 def validate_guides(config):
     if not isinstance(config, dict) or config.get('schemaVersion') != 1 or config.get('territory') != 'Argentina' or \
             config.get('cacheHours') != 2 or config.get('providers') != list(PROVIDERS) or \
-            config.get('agendaCompetitions') != {**EUROPE_AGENDA, **SELECTION_AGENDA} or \
+            config.get('agendaCompetitions') != {**ARGENTINA_AGENDA, **EUROPE_AGENDA, **SELECTION_AGENDA} or \
             set(config) != {'schemaVersion', 'territory', 'cacheHours', 'providers', 'competitionAliases', 'argentinaTeamAliases', 'reserveTeamAliases', 'signalAliases', 'agendaCompetitions'}:
         raise DiscoveryError('ARGENTINA_GUIDE_CONFIGURATION_INVALID')
     for field in ('competitionAliases', 'argentinaTeamAliases', 'reserveTeamAliases', 'signalAliases'):
@@ -48,7 +51,7 @@ def validate_guides(config):
                     raise DiscoveryError('ARGENTINA_GUIDE_ALIAS_AMBIGUOUS')
                 seen[key] = canonical
     if set(config['competitionAliases']) != {'Liga Profesional Argentina', 'Torneo Proyección', 'Primera Nacional',
-                                            'CONMEBOL Libertadores', 'CONMEBOL Sudamericana'} | set(EUROPE_AGENDA) | set(SELECTION_AGENDA):
+                                            'CONMEBOL Libertadores', 'CONMEBOL Sudamericana'} | set(ARGENTINA_AGENDA) | set(EUROPE_AGENDA) | set(SELECTION_AGENDA):
         raise DiscoveryError('ARGENTINA_GUIDE_SCOPE_INVALID')
     return config
 
@@ -66,7 +69,7 @@ def team_key(value, competition, config):
         return norm(national_key(value) or value)
     # Explicit bracket seeds are metadata, not fuzzy team-name prefixes.
     key = norm(re.sub(r'\s+\([1-8][AB]\)$', '', value))
-    if competition not in ('Liga Profesional Argentina', 'Torneo Proyección', 'Primera Nacional'):
+    if competition not in ('Liga Profesional Argentina', 'Torneo Proyección', 'Primera Nacional', 'Copa Argentina'):
         return key
     if competition == 'Torneo Proyección':
         key = re.sub(r'\s+(?:reserva|reserves)$', '', key)
