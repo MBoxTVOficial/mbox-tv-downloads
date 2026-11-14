@@ -107,6 +107,43 @@
       ]
     },
     {
+      "id": "telefe",
+      "canonicalName": "Telefe",
+      "category": "football",
+      "signalRegion": "argentina",
+      "aliases": [],
+      "selectionReason": "Identidad Telefe confirmada por el usuario y reproducción registrada en PRIMARY, categoría ARGENTINA. Principal y respaldo según orden observado de la grilla; calidad HD/FHD no verificada. Requiere confirmación de transmisión para cada fixture.",
+      "identityEvidence": {
+        "type": "user_confirmed_playback_log",
+        "date": "2026-11-14",
+        "logSha256": "f28007caa6b0380db85441a813f3e85f7a538800bc81092c491841df0d58b12b",
+        "serverType": "PRIMARY",
+        "providerCategoryId": "23",
+        "gridPositions": [12, 13],
+        "excludedStreamIds": [165583]
+      },
+      "streams": [
+        {
+          "streamId": 165581,
+          "name": "Telefe",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 1,
+          "role": "primary"
+        },
+        {
+          "streamId": 165582,
+          "name": "Telefe",
+          "providerCategoryId": "23",
+          "providerCategoryName": "ARGENTINA",
+          "enabled": true,
+          "priority": 2,
+          "role": "backup_1"
+        }
+      ]
+    },
+    {
       "id": "espn",
       "canonicalName": "ESPN",
       "category": "football",
@@ -3088,14 +3125,14 @@
     "originalLiveStreamsReported": 2819,
     "originalSportsEntries": 724,
     "uniqueSportsStreamsAnalyzed": 724,
-    "permanentFootballStreams": 123,
-    "canonicalGroups": 82,
-    "backupStreams": 41,
+    "permanentFootballStreams": 125,
+    "canonicalGroups": 83,
+    "backupStreams": 42,
     "temporaryFootballEvents": 39,
     "unconfirmedTemporaryEvents": 38,
     "libertadoresEvents": 7,
     "sudamericanaEvents": 8,
-    "selectedFootballCandidates": 177,
+    "selectedFootballCandidates": 179,
     "disabledCandidates": 14,
     "reviewCandidates": 31,
     "possibleDuplicateGroups": 3,
