@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-14T06:45:30-03:00",
+  "generatedAt": "2026-11-14T13:47:28-03:00",
   "days": {
     "2026-11-14": {
       "schemaVersion": 1,
       "date": "2026-11-14",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-14T06:45:30-03:00",
+      "updatedAt": "2026-11-14T13:47:28-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -28,8 +28,8 @@
               "competition": "Amistosos de selecciones",
               "homeTeam": "japón",
               "awayTeam": "Brasil",
-              "homeLogo": "https://ole.com.ar/collections/escudos/1266.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/614.png",
+              "homeLogo": "https://statics-files.tycsports.com/escudos/288.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/167.png?v=6?v=2",
               "startTime": "07:15",
               "status": "SCHEDULED"
             }
@@ -379,7 +379,7 @@
       "schemaVersion": 1,
       "date": "2026-11-15",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-14T06:45:30-03:00",
+      "updatedAt": "2026-11-14T13:47:28-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -662,7 +662,7 @@
       "schemaVersion": 1,
       "date": "2026-11-16",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-14T06:45:30-03:00",
+      "updatedAt": "2026-11-14T13:47:28-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -743,7 +743,29 @@
               "homeLogo": "https://static.futbolenlatv.com/img/32/20171107062145-islandia.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20130606115125-luxemburgo.webp",
               "startTime": "14:00",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: ESPN 2 HD",
+                  "streamId": 165652,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 2 HD",
+                    "ESPN 2 HD (ARG)"
+                  ]
+                },
+                {
+                  "name": "ESPN 2 HD (ARG)",
+                  "streamId": 169953,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 2 HD",
+                    "ESPN 2 HD (ARG)"
+                  ]
+                }
+              ]
             },
             {
               "id": "fixture-1633106485",

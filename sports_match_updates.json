@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-14",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-14T12:54:06-03:00",
+  "updatedAt": "2026-11-14T13:47:35-03:00",
   "matches": {
     "fixture-1481947416": {
       "status": "FINISHED",
@@ -18,14 +18,14 @@
         "israel",
         "2026-11-14T11:00:00-03:00"
       ],
-      "observedAt": "2026-11-14T12:54:06-03:00",
+      "observedAt": "2026-11-14T13:47:35-03:00",
       "expiresAt": "2026-11-15T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "f1xiwulsj0cnwtavtrhm4wsus",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-14T12:49:55-03:00",
+      "sourceUpdatedAt": "2026-11-14T12:56:15-03:00",
       "homeScore": 0,
       "awayScore": 0
     }

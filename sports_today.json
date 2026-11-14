@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-14",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-14T06:45:30-03:00",
+  "updatedAt": "2026-11-14T13:47:28-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -23,8 +23,8 @@
           "competition": "Amistosos de selecciones",
           "homeTeam": "japón",
           "awayTeam": "Brasil",
-          "homeLogo": "https://ole.com.ar/collections/escudos/1266.png",
-          "awayLogo": "https://ole.com.ar/collections/escudos/614.png",
+          "homeLogo": "https://statics-files.tycsports.com/escudos/288.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/167.png?v=6?v=2",
           "startTime": "07:15",
           "status": "SCHEDULED"
         }

@@ -2,7 +2,15 @@
   "schemaVersion": 1,
   "date": "2026-11-14",
   "timezone": "America/Argentina/Buenos_Aires",
-  "requests": 1,
-  "lastAttemptAt": "2026-11-14T12:54:06-03:00",
-  "settled": {}
+  "requests": 2,
+  "lastAttemptAt": "2026-11-14T13:47:35-03:00",
+  "settled": {
+    "fixture-1481947416": [
+      "f1xiwulsj0cnwtavtrhm4wsus",
+      "UEFA Nations League",
+      "kosovo",
+      "israel",
+      "2026-11-14T11:00:00-03:00"
+    ]
+  }
 }
