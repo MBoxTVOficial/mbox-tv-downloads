@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "date": "2026-11-14",
   "timezone": "America/Argentina/Buenos_Aires",
-  "requests": 3,
-  "lastAttemptAt": "2026-11-14T16:45:48-03:00",
+  "requests": 4,
+  "lastAttemptAt": "2026-11-14T17:14:56-03:00",
   "settled": {
     "fixture-1481947416": [
       "f1xiwulsj0cnwtavtrhm4wsus",
@@ -11,6 +11,13 @@
       "kosovo",
       "israel",
       "2026-11-14T11:00:00-03:00"
+    ],
+    "fixture-1898589692": [
+      "7g9230i4y7kqftg0hlq8ep8no",
+      "UEFA Nations League",
+      "noruega",
+      "gales",
+      "2026-11-14T14:00:00-03:00"
     ]
   }
 }
