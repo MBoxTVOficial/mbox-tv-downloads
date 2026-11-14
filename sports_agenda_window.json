@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-13T21:50:00-03:00",
+  "generatedAt": "2026-11-13T23:45:35-03:00",
   "days": {
     "2026-11-13": {
       "schemaVersion": 1,
       "date": "2026-11-13",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-13T21:50:00-03:00",
+      "updatedAt": "2026-11-13T23:45:35-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -334,7 +334,7 @@
       "schemaVersion": 1,
       "date": "2026-11-14",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-13T21:50:00-03:00",
+      "updatedAt": "2026-11-13T23:45:35-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -706,7 +706,7 @@
       "schemaVersion": 1,
       "date": "2026-11-15",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-13T21:50:00-03:00",
+      "updatedAt": "2026-11-13T23:45:35-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
