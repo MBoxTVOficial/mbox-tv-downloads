@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-14",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "sections": [
+    {
+      "events": [
+        {
+          "id": "fixture-1600255604",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "CA Atlanta",
+          "awayTeam": "Estudiantes BA",
+          "startTime": "15:00",
+          "status": "SCHEDULED",
+          "channels": []
+        },
+        {
+          "id": "fixture-1070941341",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "Temperley",
+          "awayTeam": "Ciudad de Bolivar",
+          "startTime": "16:00",
+          "status": "SCHEDULED",
+          "channels": []
+        },
+        {
+          "id": "fixture-1087525276",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "CA Colón",
+          "awayTeam": "Midland",
+          "startTime": "18:00",
+          "status": "SCHEDULED",
+          "channels": []
+        },
+        {
+          "id": "fixture-1104282838",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "Deportivo Madryn",
+          "awayTeam": "Deportivo Maipú",
+          "startTime": "19:00",
+          "status": "SCHEDULED",
+          "channels": []
+        },
+        {
+          "id": "fixture-1146901096",
+          "sport": "football",
+          "competition": "Primera Nacional",
+          "homeTeam": "Gimnasia Jujuy",
+          "awayTeam": "Almirante Brown",
+          "startTime": "20:00",
+          "status": "SCHEDULED",
+          "channels": []
+        }
+      ]
+    }
+  ]
+}

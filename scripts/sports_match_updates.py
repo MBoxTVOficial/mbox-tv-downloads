@@ -143,6 +143,8 @@ class SourceMatch:
     source_updated: datetime | None
     home_score: int | None = None
     away_score: int | None = None
+    provider: str = 'ole-opta'
+    source_url: str = SOURCE_URL
 
 
 def parse_ole_bulk(payload, day):
@@ -304,9 +306,9 @@ def _confirmed_channel_events(feed, day, groups, window=None, daily=None):
              has_channel(retained[identifier])) or identifier in assigned}
 
 
-def pending_events(eligible, day, now, guides, previous=None, state=None):
+def pending_events(eligible, day, now, guides, previous=None, state=None, supported=None):
     """The clock only gates network work; it never asserts a match's state."""
-    supported = {value[1] for value in COMPETITIONS.values()}
+    supported = {value[1] for value in COMPETITIONS.values()} if supported is None else supported
     result = {}
     for identifier, event in eligible.items():
         key = fixture_key(event, day, guides)
@@ -375,7 +377,8 @@ def confirm_finished(state, previous, rows, eligible, guides, day, now):
         if len(candidates) != 1:
             continue
         row = candidates[0]
-        if row.status != 'FINISHED' or row.match_id != old['source']['matchId'] or now <= _stamp(old['observedAt']):
+        if row.status != 'FINISHED' or row.match_id != old['source']['matchId'] or \
+                row.provider != old['source']['provider'] or now <= _stamp(old['observedAt']):
             continue
         old_updated = _stamp(old['sourceUpdatedAt']) if 'sourceUpdatedAt' in old else None
         if (old_updated is not None and (row.source_updated is None or row.source_updated < old_updated)) or \
@@ -417,8 +420,9 @@ def validate_updates(value):
             if 'sourceUpdatedAt' in entry and _stamp(entry['sourceUpdatedAt']) > observed:
                 raise ValueError()
             source = entry['source']
+            from .sports_results_sources import source_urls
             if not isinstance(source, dict) or set(source) != {'provider', 'matchId', 'url'} or \
-                    source['provider'] != 'ole-opta' or source['url'] != SOURCE_URL or \
+                    source.get('provider') not in source_urls() or source['url'] != source_urls()[source['provider']] or \
                     not isinstance(source['matchId'], str) or not re.fullmatch(r'[A-Za-z0-9]{1,64}', source['matchId']):
                 raise ValueError()
     except (KeyError, TypeError, ValueError):
@@ -426,7 +430,7 @@ def validate_updates(value):
     return value
 
 
-def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=None, daily=None):
+def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=None, daily=None, scope='all'):
     """rows=None means acquisition failed: retain last good metadata unchanged."""
     if now.tzinfo is None or now.astimezone(ZONE).date() != day:
         raise MatchUpdatesError('current_art_date_required')
@@ -435,6 +439,8 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
         validate_updates(previous)
     eligible = eligible_events(feed, day, guides, groups, window, daily)
     confirmed = _confirmed_channel_events(feed, day, groups, window, daily)
+    if scope not in ('all', 'confirmed', 'informative'):
+        raise MatchUpdatesError('invalid_scope')
     old_current = previous is not None and previous['date'] == day.isoformat()
     retained = {}
     if old_current:
@@ -452,6 +458,9 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
         index[key] = row
     matched = 0
     for identifier, event in eligible.items():
+        if (scope == 'confirmed' and identifier not in confirmed) or \
+                (scope == 'informative' and identifier in confirmed):
+            continue
         key = fixture_key(event, day, guides)
         row = index.get(tuple(key))
         if row is None or tuple(key) in ambiguous or row.kickoff > now or \
@@ -464,7 +473,8 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
             continue
         previous_entry = matches.get(identifier)
         if previous_entry is not None:
-            if previous_entry['source']['matchId'] != row.match_id:
+            same_provider = previous_entry['source']['provider'] == row.provider
+            if same_provider and previous_entry['source']['matchId'] != row.match_id:
                 continue  # A verified persisted raw identity cannot silently move.
             if previous_entry['status'] == 'FINISHED' and row.status != 'FINISHED':
                 continue
@@ -474,10 +484,16 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
                 continue  # An incomplete new response cannot erase a verified final result.
             old_observed = _stamp(previous_entry['observedAt'])
             old_updated = _stamp(previous_entry['sourceUpdatedAt']) if 'sourceUpdatedAt' in previous_entry else None
-            if now < old_observed or (old_updated is not None and (row.source_updated is None or row.source_updated < old_updated)):
+            if not same_provider and previous_entry['status'] == row.status and \
+                    previous_entry.get('homeScore') == row.home_score and previous_entry.get('awayScore') == row.away_score and \
+                    (row.source_updated is None or (old_updated is not None and row.source_updated <= old_updated)):
+                continue  # Changing websites alone must not renew the same old LIVE observation.
+            if now < old_observed or (old_updated is not None and
+                    ((same_provider and row.source_updated is None) or
+                     (row.source_updated is not None and row.source_updated < old_updated))):
                 continue
             # Re-reading the same snapshot must not extend a stale LIVE label.
-            if old_updated is not None and row.source_updated == old_updated:
+            if same_provider and old_updated is not None and row.source_updated == old_updated:
                 continue
             if old_updated is None and row.source_updated is None and \
                     previous_entry['status'] == row.status and \
@@ -486,7 +502,7 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
         expires = now + LIVE_TTL if row.status == 'LIVE' else datetime.combine(day + timedelta(days=1), time(), ZONE)
         entry = {'status': row.status, 'fixture': _fixture(event), 'fixtureKey': key,
                  'observedAt': _iso(now), 'expiresAt': _iso(expires),
-                 'source': {'provider': 'ole-opta', 'matchId': row.match_id, 'url': SOURCE_URL}}
+                 'source': {'provider': row.provider, 'matchId': row.match_id, 'url': row.source_url}}
         if row.source_updated is not None:
             entry['sourceUpdatedAt'] = _iso(row.source_updated)
         if row.home_score is not None and row.away_score is not None:

@@ -1,64 +1,100 @@
-# Public football refresh every two hours
+# Separate football result refresh cadences
 
-GENERAL (`update-sports-today.yml`) now refreshes the public agenda and then invokes
-the existing grouped result updater once per run. The expected ART windows are
-00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00 and
-22:00. GitHub stores cron in UTC, so the expression is `0 1-23/2 * * *`.
-GitHub may delay or skip scheduled executions; this is a cadence, not a delivery SLA.
+The public agenda and result overlay have independent responsibilities. Neither result
+workflow discovers channels, rewrites agenda fixtures, makes IPTV requests or uses
+sports account keys. Both writers share `sports-today-main` concurrency and check out
+current `main` after acquiring that group, so they serialize publication.
 
-The separate `update-sports-match-updates.yml` keeps `workflow_dispatch` but its
-old five-minute schedule is commented to avoid duplicate result requests. Its prior
-expression remains documented in the file. The suspended API-Football LIVE workflow
-and the Cloudflare Worker are not changed or reactivated.
+## Informative cards: every two hours
 
-No paid sports APIs are selected by GENERAL. The maximum public agenda request
-budget remains **6 per invocation**. Twelve windows allow at most **72 public page
-requests per day** before cache savings. The result generator makes a grouped
-calendar request rather than one request per fixture, normally at most twelve such
-requests per day at this cadence when there are eligible matches. Its existing
-separate daily safety budget and spacing guard remain in place. Manual runs, if
-deliberately invoked later, still count against those guards.
+GENERAL (`update-sports-today.yml`) generates the agenda and then executes
+`python -m scripts.generate_sports_match_updates --scope informative`.
+Its ART windows are 00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00,
+18:00, 20:00 and 22:00. The UTC cron is `0 1-23/2 * * *`.
 
-A missing source or an unfinished match is not evidence of a final result.
-The result engine must match the exact competition, ordered teams and ART kickoff
-and require explicit final status with a valid score for informative cards. Existing
-confirmed cards retain their safety rule that an explicit final closes playback
-even when its score is missing; no score is manufactured. Unverifiable cards keep their
-previous safe data until a later refresh. Broadcaster identity/confirmation remains
-separate: a score must not create channel assignments. The agenda can stay partial.
+Only cards without a confirmed usable signal enter this observation scope. They
+receive `FINISHED` and a score only when a source explicitly reports a final with
+both valid scores and the exact competition, ordered teams and ART kickoff match.
+An ongoing, missing, ambiguous or contradictory observation leaves the card unchanged.
+Existing confirmed-card entries in the shared overlay must be preserved.
+
+## Confirmed-channel cards: every five minutes
+
+The public `update-sports-match-updates.yml` executes
+`python -m scripts.generate_sports_match_updates --scope confirmed` with cron
+`*/5 * * * *`. It refreshes LIVE, score and FINISHED observations for confirmed-channel
+fixtures only. It does not run agenda discovery or the whole backend test suite on
+every tick; its offline checks focus on match-state handling.
+
+The generator avoids source requests when no supported confirmed fixtures are pending
+in the active match window. It preserves informative results in the same overlay and
+uses the persisted request guards. Explicit finals stay final; source failures retain
+the last-good observation without extending its freshness. A scheduling tick is not
+an instruction to reopen a final, manufacture a score or assign a new channel.
+
+GitHub may delay or skip scheduled executions. Five minutes is the configured cadence,
+not a guarantee of real-time delivery. The LIVE freshness timeout remains independent
+of polling: a failed/delayed request cannot keep an old LIVE label fresh indefinitely.
+
+## Sources, identity and limits
+
+Results are reconciled separately from broadcaster evidence. Public result adapters
+must validate their actual page/data shape, source status and exact fixture identity;
+unsupported pages or competitions are not treated as verified by their existence.
+Using the same underlying data through two pages does not create independent evidence.
+Network attempts are grouped and bounded, rather than one request per match. Failed
+requests count against persisted request budgets too.
+
+The initial enabled providers are Olé's public Opta calendar (also the data source
+behind Olé Estadísticas), Canchallena and TyC Sports. Olé and Canchallena are limited
+to the verified competition mappings for national friendlies, UEFA Nations League,
+Copa Argentina and Primera Nacional. The verified TyC adapter covers Primera Nacional.
+A source is queried only if it supports a competition with a pending fixture in the
+selected scope; this does not promise results for every card or every competition.
+
+GENERAL's existing public agenda budget remains six page requests per invocation,
+or at most 72 across its twelve daily windows before cache savings. Result acquisition
+has separate persisted scope guards: at most 288 confirmed-channel cycles and 12
+informative cycles per ART day, with one grouped request to each selected known
+provider in a cycle. With all three providers selected in every possible cycle, the
+theoretical result ceiling is 900 public requests/day (300 cycles times three), plus
+the agenda ceiling of 72. Actual consumption is lower when no match is pending, a
+provider lacks competition coverage or a final is already settled. Source failures
+consume a reserved attempt too; repeating the same slot does not create more work.
+These limits do not borrow from or reactivate API-Football, football-data or
+FootballSoccer account limits.
+
+During migration, the existing same-day result ledger is retained in full. Its
+previous attempts still count against the Olé provider ceiling, its last slot and
+four-minute spacing guard remain effective, and settled final identities are kept.
+Upgrading the ledger does not reset consumption or permit an immediate duplicate
+query. A new ART day resets only the corresponding daily counters.
+
+Neither workflow reads Google search results. Cross-source conflicts must keep the
+last-good result, rather than choosing an arbitrary score. Scores never create a
+broadcaster assignment or a channel mapping.
 
 ## Football display and access
 
-The Android presentation groups existing fixtures as Partidos de Argentina,
-Amistosos, Nations League and Fútbol internacional. For Libertadores/Sudamericana,
-an official Argentine participant moves the fixture to the start of the Argentina
-group, before Primera División, Copa Argentina, the remaining domestic cups and
-the lower divisions. Other fixtures retain separate Libertadores/Sudamericana rows.
-No competition or empty category is invented by this presentation layer.
+The existing Android presentation groups fixtures as Partidos de Argentina, Amistosos,
+Nations League and Fútbol internacional. Officially identified Argentine participants
+in Libertadores/Sudamericana go first in Partidos de Argentina, then Primera División,
+Copa Argentina, remaining national cups and the lower divisions. Other Libertadores
+and Sudamericana fixtures retain separate competition rows. Unknown countries are
+not guessed from club names.
 
-CONMEBOL's official homepage already fetched by the agenda contains team cards
-with countries and crest IDs. The adapter joins those IDs to the fixture's ordered
-home/away badges and optionally publishes `homeCountry` / `awayCountry` ISO2 codes.
-These are schemaVersion 1 additions: old clients can ignore them, old feeds remain
-valid, and unknown/conflicting countries stay omitted. Names alone do not establish
-Argentina membership; missing country evidence keeps the fixture in its general
-competition row. Countries never confirm a broadcaster or add channels.
+Card access opens at kickoff minus 15 minutes in ART, retaining terminal, stale and
+superseded-signal protections. Result acquisition does not change that playback window.
+No APK, player, TV EN VIVO or focus behavior is modified by this scheduling split.
 
-Card access opens at kickoff minus **15 minutes** in ART, retaining the existing
-terminal, stale and superseded-signal protections. This differs from the updater's
-T-minus-10 request-eligibility gate, which does not grant playback. Scores are
-currently verified for national friendlies, UEFA Nations League, Copa Argentina
-and Primera Nacional; unsupported or unmatched competitions stay informative.
-Ongoing informative cards remain unchanged. Final results persist for their ART
-day, and missing results can be retried throughout that day at the next cadence.
+## Legacy infrastructure and rollback
 
-Cloudflare is unnecessary for this schedule: GitHub executes GENERAL directly.
-The old Worker may be retained as a paused backup. Its local `wrangler.toml` still
-contains the former cron, which does not prove the deployed trigger is enabled;
-redeploying that old configuration requires a deliberate review. No Worker code,
-configuration, credentials or infrastructure were modified for this cadence.
+The API-Football `update-sports-live.yml` automatic schedule remains paused. Cloudflare
+code/configuration and its deployed trigger were not modified or reactivated.
 
-For rollback, the previous GENERAL windows were 00:00, 08:00, 12:00, 17:00 and
-20:00 ART (`0 3`, `0 11`, `0 15`, `0 20`, `0 23`, with the remaining cron fields
-`* * *`). Restore cadence only after checking the intended request budget. The old
-five-minute sidecar schedule must not be restored at the same time accidentally.
+To pause frequent public results, comment only the `schedule` block in
+`update-sports-match-updates.yml`; GENERAL can continue publishing agenda and informative
+finals every two hours. To restore the former shared result behavior deliberately,
+replace GENERAL's scope with `all` and first pause the separate confirmed workflow.
+Do not enable both an all-card cadence and an overlapping confirmed-card cadence by
+accident. Never restore legacy API or Cloudflare schedules as part of this rollback.

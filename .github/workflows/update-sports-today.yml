@@ -50,12 +50,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python -m scripts.generate_public_agenda
-      - name: Refresh confirmed match states
+      - name: Refresh informative final results
         id: match-states
         continue-on-error: true
-        # One grouped result refresh per two-hour agenda run, including informational cards.
-        # No repeat discovery and no API-Football requests.
-        run: python -m scripts.generate_sports_match_updates
+        # Informative cards accept only explicit finals with complete scores.
+        # Confirmed-channel LIVE/results have their own five-minute public workflow.
+        run: python -m scripts.generate_sports_match_updates --scope informative
       - name: Report preserved match states
         if: steps.match-states.outcome == 'failure'
         run: echo '::warning::Match state refresh failed; last-good states and agenda are retained.'

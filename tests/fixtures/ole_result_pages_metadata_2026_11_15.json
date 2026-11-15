@@ -1,0 +1,90 @@
+{
+  "capturedAt": "2026-11-15T09:14:26-03:00",
+  "pageURL": "https://www.ole.com.ar/estadisticas/futbol/home.html",
+  "agendaURL": "https://www.ole.com.ar/agenda-deportiva",
+  "sharedResultEndpoint": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar",
+  "sharedResultProvider": "ole-opta",
+  "verifiedSiteScript": "https://www.ole.com.ar/_next/static/chunks/5080.fa9f0e29e6e8a1e6.js",
+  "siteScriptRequest": "all-tournament-calendar with POST JSON date/status/featuredCompetitions/pgSz/country",
+  "catalog": [
+    {
+      "id": "581t4mywybx21wcpmpykhyzr3",
+      "name": "Liga Profesional",
+      "country": "Argentina",
+      "url": "/estadisticas/futbol/primera-division.html"
+    },
+    {
+      "id": "bdtat25m14jy85y484z3e6lf",
+      "name": "Copa Argentina",
+      "country": "Argentina",
+      "url": "/estadisticas/futbol/copa-argentina.html"
+    },
+    {
+      "id": "32n2r9bl6x90psj0wa7bfs6vq",
+      "name": "CONMEBOL Sudamericana",
+      "country": "South America",
+      "url": "/estadisticas/futbol/copa-sudamericana.html"
+    },
+    {
+      "id": "59tpnfrwnvhnhzmnvfyug68hj",
+      "name": "CONMEBOL Libertadores",
+      "country": "South America",
+      "url": "/estadisticas/futbol/copa-libertadores.html"
+    },
+    {
+      "id": "cesdwwnxbc5fmajgroc0hqzy2",
+      "name": "Amistosos FIFA",
+      "country": "World",
+      "url": "/estadisticas/futbol/amistoso-fifa.html"
+    },
+    {
+      "id": "2kwbbcootiqqgmrzs6o5inle5",
+      "name": "Premier League",
+      "country": "England",
+      "url": "/estadisticas/futbol/premier-league.html"
+    },
+    {
+      "id": "1r097lpxe0xn03ihb7wi98kao",
+      "name": "Serie A",
+      "country": "Italy",
+      "url": "/estadisticas/futbol/liga-italiana.html"
+    },
+    {
+      "id": "34pl8szyvrbwcmfkuocjm3r6t",
+      "name": "Liga de España",
+      "country": "Spain",
+      "url": "/estadisticas/futbol/liga-espanola.html"
+    },
+    {
+      "id": "581t4mywybx21wcpmpykhyzr3",
+      "name": "Copa de la Liga",
+      "country": "Argentina",
+      "url": "/estadisticas/futbol/argentina-ligacopa.html"
+    },
+    {
+      "id": "byu00jvt1j6csyv4y1lkt2fm2",
+      "name": "Primera Nacional",
+      "country": "Argentina",
+      "url": "/estadisticas/futbol/nacional-b.html"
+    },
+    {
+      "id": "595nsvo7ykvoe690b1e4u5n56",
+      "name": "UEFA Nations League",
+      "country": "Europe",
+      "url": "/estadisticas/futbol/europa-nations-league.html"
+    },
+    {
+      "id": "dm5ka0os1e3dxcp3vh05kmp33",
+      "name": "Ligue 1",
+      "country": "France",
+      "url": "/estadisticas/futbol/francia.html"
+    }
+  ],
+  "notes": [
+    "Menu labels are not necessarily Opta matchInfo.competition.name.",
+    "The LPF/Copa de la Liga menu shares one ID; require exact competition semantics and never infer solely from ID.",
+    "Current statistics hydration properties.results.data is empty; live page uses the shared Olé/Opta request.",
+    "Current agenda mams contain empty scores and no explicit state; never infer final/live from kickoff.",
+    "Real agenda Lituania mams home=Latvia contradicts title; source event title alone must not bless nested result identity."
+  ]
+}

@@ -356,8 +356,11 @@ class WorkflowTest(unittest.TestCase):
                                    for hour in range(1, 24, 2))
         self.assertEqual(list(range(0, 24, 2)), general_art_hours)
         states = (workflows / 'update-sports-match-updates.yml').read_text(encoding='utf-8')
-        self.assertNotIn('\n  schedule:', states)
+        self.assertIn('\n  schedule:', states)
         self.assertIn('workflow_dispatch:', states)
+        self.assertIn("- cron: '*/5 * * * *'", states)
+        self.assertIn('--scope confirmed', states)
+        self.assertIn('--scope informative', general)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-"""One automatic public agenda/result refresh every two ART hours, without duplicate jobs."""
+"""Separate informative finals from frequent confirmed-channel match updates."""
 from datetime import datetime, timezone
 import json
 from pathlib import Path
@@ -35,20 +35,36 @@ class TwoHourSportsScheduleTests(unittest.TestCase):
                                     and value.astimezone(timezone.utc).minute == 0
                                     for value in art_times))
 
-    def test_general_runs_agenda_then_one_grouped_result_refresh(self):
+    def test_general_runs_agenda_then_only_informative_result_refresh(self):
         agenda = 'run: python -m scripts.generate_public_agenda'
-        results = 'run: python -m scripts.generate_sports_match_updates'
+        results = 'run: python -m scripts.generate_sports_match_updates --scope informative'
         self.assertEqual(1, self.general.count(agenda))
         self.assertEqual(1, self.general.count(results))
         self.assertLess(self.general.index(agenda), self.general.index(results))
         self.assertIn('continue-on-error: true', self.general)
         self.assertIn('last-good states and agenda are retained', self.general)
+        self.assertNotIn('--scope confirmed', self.general)
 
-    def test_separate_match_workflow_keeps_manual_dispatch_without_automatic_schedule(self):
-        self.assertEqual([], active_crons(self.states))
-        self.assertNotIn('\n  schedule:', self.states)
+    def test_separate_public_match_workflow_refreshes_only_confirmed_every_five_minutes(self):
+        self.assertEqual(['*/5 * * * *'], active_crons(self.states))
+        self.assertIn('\n  schedule:', self.states)
         self.assertIn('workflow_dispatch:', self.states)
-        self.assertIn("#   - cron: '*/5 * * * *'", self.states)
+        self.assertIn('run: python -m scripts.generate_sports_match_updates --scope confirmed', self.states)
+        self.assertNotIn('--scope informative', self.states)
+
+    def test_both_publishers_share_concurrency_and_checkout_current_main(self):
+        for workflow in (self.general, self.states):
+            with self.subTest(workflow=workflow.splitlines()[0]):
+                self.assertIn('group: sports-today-main', workflow)
+                self.assertIn('cancel-in-progress: false', workflow)
+                self.assertIn('ref: main', workflow)
+        self.assertNotIn('generate_public_agenda', self.states)
+
+    def test_frequent_workflow_uses_focused_offline_checks_and_no_account_keys(self):
+        self.assertIn('test_sports_match_updates.py', self.states)
+        self.assertNotIn('-p "test_*.py"', self.states)
+        for name in ('API_FOOTBALL_KEY', 'FOOTBALL_DATA_TOKEN', 'FOOTBALL_SOCCER_API_KEY'):
+            self.assertNotIn('secrets.' + name, self.states)
 
     def test_old_api_football_live_remains_paused(self):
         self.assertEqual([], active_crons(self.live))

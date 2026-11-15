@@ -2,11 +2,10 @@ name: Update confirmed football match states
 
 on:
   workflow_dispatch:
-  # Automatic result refresh is included in GENERAL every two hours.
-  # Retain manual diagnostics; do not also run the old five-minute schedule.
-  # Previous cadence, for reference only:
-  # schedule:
-  #   - cron: '*/5 * * * *'
+  # Public results only for confirmed-channel fixtures with pending observations.
+  # Informative finals are refreshed separately by GENERAL every two ART hours.
+  schedule:
+    - cron: '*/5 * * * *'
 
 permissions:
   contents: write
@@ -33,10 +32,12 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test match state handling offline
-        run: python -m unittest discover -s tests -p "test_sports_match_updates.py"
+        run: |
+          python -m unittest discover -s tests -p "test_sports_match_updates.py"
+          python -m unittest discover -s tests -p "test_*results*.py"
       - name: Refresh confirmed match states
         # No sports account keys. No discovery, channel assignments or IPTV requests.
-        run: python -m scripts.generate_sports_match_updates
+        run: python -m scripts.generate_sports_match_updates --scope confirmed
       - name: Commit only match state artifacts
         shell: bash
         run: |

@@ -20,8 +20,25 @@ from scripts.sports_match_updates import (MatchUpdatesError, OleBulkTransport,
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def refresh(root, output, day, now, source_input=None, transport=None, state_output=None):
+def refresh(root, output, day, now, source_input=None, transport=None, state_output=None, scope=None):
     """Offline input is useful for review; network requests are never per fixture."""
+    if scope is not None:
+        from scripts.sports_results_coordinator import refresh_scope
+        scopes = ('confirmed', 'informative') if scope == 'all' else (scope,)
+        reports, value = [], None
+        for selected_scope in scopes:
+            value, report = refresh_scope(root, output, day, now, selected_scope,
+                transport=transport, state_output=state_output,
+                source_inputs={'ole-opta': source_input} if source_input is not None else None)
+            reports.append(report)
+        if len(reports) == 1:
+            return value, reports[0]
+        combined = {'scope': 'all'}
+        for key in ('eligible', 'pending', 'matched', 'requests', 'conflicts', 'corroborated'):
+            combined[key] = sum(report.get(key, 0) for report in reports)
+        for key in ('changed', 'stateChanged', 'sourceFailed', 'agendaUnavailable', 'budgetSkipped'):
+            combined[key] = any(report.get(key, False) for report in reports)
+        return value, combined
     if now.tzinfo is None or now.astimezone(ZONE).date() != day:
         raise MatchUpdatesError('current_art_date_required')
     feed = read_json(root / 'sports_today.json', optional=True)
@@ -86,6 +103,8 @@ def main(argv=None):
     parser.add_argument('--date', type=date.fromisoformat,
         help='Must be the current ART date; a past/future day is rejected before a request.')
     parser.add_argument('--input', type=Path, help='Read a saved Olé bulk response without network.')
+    parser.add_argument('--scope', choices=('confirmed', 'informative', 'all'), default='all',
+        help='Confirmed: frequent match states; informative: final+score only; all: diagnostic combined run.')
     parser.add_argument('--state-output', type=Path,
         help='Persistent request budget, default: <root>/sports_match_updates_state.json.')
     args = parser.parse_args(argv)
@@ -100,7 +119,7 @@ def main(argv=None):
         parser.error('Output must be a separate match-updates sidecar.')
     try:
         _, diagnostics = refresh(args.root, output, day, now, source_input=args.input,
-                                 state_output=args.state_output)
+                                 state_output=args.state_output, scope=args.scope)
     except (ValueError, OSError):
         print('SPORTS_MATCH_UPDATES input_invalid output_preserved=true', file=sys.stderr)
         return 1

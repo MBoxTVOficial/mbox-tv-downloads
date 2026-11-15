@@ -23,8 +23,9 @@ is documented in `SPORTS_TWO_HOUR_UPDATES.md`.
 - `sports_agenda_providers.json` remains in place. The disabled API-Football LIVE path
   currently relies on this file's `apiFootballLiveEnabled=false` guard.
 - The old LIVE workflow retains manual dispatch and its automatic schedules remain
-  paused. Automatic public match updates now run within GENERAL every two hours;
-  the separate match-update workflow retains manual dispatch only. See
+  paused. Informative final results run within GENERAL every two hours;
+  the separate public match-update workflow refreshes confirmed-channel match
+  states every five minutes, with pending-match and request-budget guards. See
   `SPORTS_TWO_HOUR_UPDATES.md` for the current cadence.
 - No secrets, credentials, feed artifacts or Cloudflare configuration were changed.
 
