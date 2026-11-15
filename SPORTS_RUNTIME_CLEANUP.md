@@ -9,8 +9,9 @@ with failure when the available feed is not for today's ART date.
 
 The daily cache restores `official_source_cache.json` and `argentina_guide_cache.json`.
 The retired API/discovery cache paths were removed from GENERAL's restore list; their
-files were not deleted. Cache keys and restore prefixes, schedules, permissions,
-concurrency, token bindings and match-update step were preserved.
+files were not deleted. Cache keys and restore prefixes, permissions, concurrency,
+token bindings and the match-update step were preserved. The later two-hour cadence
+is documented in `SPORTS_TWO_HOUR_UPDATES.md`.
 
 ## Retained for a deliberate future migration
 
@@ -22,7 +23,9 @@ concurrency, token bindings and match-update step were preserved.
 - `sports_agenda_providers.json` remains in place. The disabled API-Football LIVE path
   currently relies on this file's `apiFootballLiveEnabled=false` guard.
 - The old LIVE workflow retains manual dispatch and its automatic schedules remain
-  paused. The public match-update workflow remains active for current states/results.
+  paused. Automatic public match updates now run within GENERAL every two hours;
+  the separate match-update workflow retains manual dispatch only. See
+  `SPORTS_TWO_HOUR_UPDATES.md` for the current cadence.
 - No secrets, credentials, feed artifacts or Cloudflare configuration were changed.
 
 ## Recovery reference

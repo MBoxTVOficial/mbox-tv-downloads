@@ -625,7 +625,7 @@ class PipelineTest(unittest.TestCase):
         self.assertIn('git add -- sports_today.json sports_broadcasts_today.json', general)
         self.assertIn('--only -- sports_today.json sports_broadcasts_today.json', general)
         self.assertEqual(90, generator.MAX_DAILY_API_CALLS)
-        self.assertEqual(5, general.count('- cron:'))  # Original paused schedule remains documented.
+        self.assertEqual(1, general.count('- cron:'))  # One expression covers twelve two-hour slots.
         self.assertEqual(2, live.count('- cron:'))
 
     def test_http403_preserves_auto_and_refreshes_scores(self):

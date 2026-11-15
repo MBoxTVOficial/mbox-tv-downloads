@@ -1,0 +1,204 @@
+{
+  "code": 200,
+  "data": {
+    "fixture": [
+      {
+        "match": [
+          {
+            "matchInfo": {
+              "id": "dbcssu950tmvx7uthp6esg93o",
+              "date": "2026-11-14Z",
+              "time": "22:00:00Z",
+              "lastUpdated": "2026-11-14T22:08:43Z",
+              "competition": {
+                "id": "bdtat25m14jy85y484z3e6lf",
+                "name": "Copa Argentina"
+              },
+              "contestant": [
+                {
+                  "name": "Banfield",
+                  "position": "home"
+                },
+                {
+                  "name": "Boca Juniors",
+                  "position": "away"
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "matchStatus": "Playing",
+                "scores": {
+                  "total": {
+                    "home": 0,
+                    "away": 0
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "3kphptu6ilognhed58wf3y3o4",
+              "date": "2026-11-14Z",
+              "time": "18:00:00Z",
+              "lastUpdated": "2026-11-14T20:02:27Z",
+              "competition": {
+                "id": "byu00jvt1j6csyv4y1lkt2fm2",
+                "name": "Primera Nacional"
+              },
+              "contestant": [
+                {
+                  "name": "Atlanta",
+                  "position": "home"
+                },
+                {
+                  "name": "Estudiantes Caseros",
+                  "position": "away"
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "matchStatus": "Played",
+                "scores": {
+                  "total": {
+                    "home": 1,
+                    "away": 1
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "3lzdiqmazfn9x5pbmooczlvkk",
+              "date": "2026-11-14Z",
+              "time": "19:00:00Z",
+              "lastUpdated": "2026-11-14T21:05:08Z",
+              "competition": {
+                "id": "byu00jvt1j6csyv4y1lkt2fm2",
+                "name": "Primera Nacional"
+              },
+              "contestant": [
+                {
+                  "name": "Temperley",
+                  "position": "home"
+                },
+                {
+                  "name": "Ciudad de Bolívar",
+                  "position": "away"
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "matchStatus": "Played",
+                "scores": {
+                  "total": {
+                    "home": 1,
+                    "away": 2
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "3nt4d0ld7qoehr9anv28h2xas",
+              "date": "2026-11-14Z",
+              "time": "21:00:00Z",
+              "lastUpdated": "2026-11-14T22:35:45Z",
+              "competition": {
+                "id": "byu00jvt1j6csyv4y1lkt2fm2",
+                "name": "Primera Nacional"
+              },
+              "contestant": [
+                {
+                  "name": "Colón",
+                  "position": "home"
+                },
+                {
+                  "name": "Midland",
+                  "position": "away"
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "matchStatus": "Playing",
+                "scores": {
+                  "total": {
+                    "home": 1,
+                    "away": 0
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "3mj8dccvs6ntvoj38j33x5udw",
+              "date": "2026-11-14Z",
+              "time": "22:00:00Z",
+              "lastUpdated": "2026-11-14T22:42:10Z",
+              "competition": {
+                "id": "byu00jvt1j6csyv4y1lkt2fm2",
+                "name": "Primera Nacional"
+              },
+              "contestant": [
+                {
+                  "name": "Deportivo Madryn",
+                  "position": "home"
+                },
+                {
+                  "name": "Deportivo Maipú",
+                  "position": "away"
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "matchStatus": "Playing",
+                "scores": {
+                  "total": {
+                    "home": 1,
+                    "away": 0
+                  }
+                }
+              }
+            }
+          },
+          {
+            "matchInfo": {
+              "id": "3n99zvfw2o60rs04kc8cc9vys",
+              "date": "2026-11-14Z",
+              "time": "23:00:00Z",
+              "lastUpdated": "2026-11-14T22:36:34Z",
+              "competition": {
+                "id": "byu00jvt1j6csyv4y1lkt2fm2",
+                "name": "Primera Nacional"
+              },
+              "contestant": [
+                {
+                  "name": "Gimnasia Jujuy",
+                  "position": "home"
+                },
+                {
+                  "name": "Almirante Brown",
+                  "position": "away"
+                }
+              ]
+            },
+            "liveData": {
+              "matchDetails": {
+                "matchStatus": "Fixture",
+                "scores": {}
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

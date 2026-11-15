@@ -45,7 +45,7 @@ def refresh(root, output, day, now, source_input=None, transport=None, state_out
             'changed': False, 'requests': 0, 'pending': 0, 'stateChanged': False,
             'agendaUnavailable': True,
             'availableDate': available_date.isoformat() if available_date is not None else 'missing'}
-    # Avoid even a grouped lookup when there is no configured confirmed fixture.
+    # Avoid even a grouped lookup when there is no pending supported agenda identity.
     eligible = eligible_events(feed, day, guides, groups, window, daily)
     pending = pending_events(eligible, day, now, guides, previous, state)
     rows, failed, requests, state_changed = [], False, 0, False

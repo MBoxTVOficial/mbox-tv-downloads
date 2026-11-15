@@ -108,7 +108,7 @@ class MatchUpdatesTests(unittest.TestCase):
             source_record(value)['matchInfo']['competition'][field] = wrong
             self.assertNotIn(MOLDOVA, {row.match_id for row in self.rows(value)})
 
-    def test_unconfirmed_disabled_and_unknown_channels_are_ignored(self):
+    def test_informative_disabled_and_unknown_channels_do_not_block_verified_final(self):
         options = [None, [], [{'streamId': 999, 'enabled': True}],
                    [{'streamId': 1, 'enabled': False}], [{'streamId': 2, 'enabled': True}],
                    [{'streamId': '1', 'enabled': True}]]
@@ -118,10 +118,13 @@ class MatchUpdatesTests(unittest.TestCase):
                 row['channels'] = channels
             with self.subTest(channels=channels):
                 value, report = self.merge(agenda=feed(row))
-                self.assertEqual({}, value['matches'])
-                self.assertEqual(0, report['eligible'])
+                self.assertEqual('FINISHED', value['matches']['fixture-1']['status'])
+                self.assertEqual((2, 1), (value['matches']['fixture-1']['homeScore'],
+                                          value['matches']['fixture-1']['awayScore']))
+                self.assertEqual(1, report['eligible'])
+                self.assertNotIn('channels', value['matches']['fixture-1'])
 
-    def test_exact_retained_window_can_prove_existing_channel_without_adding_one(self):
+    def test_retained_window_cannot_grant_or_withdraw_an_informative_final(self):
         agenda = feed(event(channels=False))
         window = {'timezone': TIMEZONE, 'days': {DAY.isoformat(): feed()}}
         value, _ = self.merge(agenda=agenda, window=window)
@@ -129,9 +132,12 @@ class MatchUpdatesTests(unittest.TestCase):
         self.assertNotIn('channels', agenda['sections'][0]['events'][0])
         window['days'][DAY.isoformat()]['sections'][0]['events'][0]['startTime'] = '14:01'
         value, _ = self.merge(agenda=agenda, window=window)
-        self.assertEqual({}, value['matches'])
+        self.assertIn('fixture-1', value['matches'])
+        agenda['sections'][0]['events'][0]['startTime'] = '14:02'
+        value, _ = self.merge(agenda=agenda, window=window)
+        self.assertEqual({}, value['matches'])  # The current fixture identity still must match.
 
-    def test_existing_confirmed_daily_assignment_can_prove_channel(self):
+    def test_daily_tv_assignment_does_not_gate_verified_match_facts(self):
         agenda = feed(event(channels=False))
         daily = {'date': DAY.isoformat(), 'timezone': TIMEZONE,
                  'broadcasts': [{'fixtureId': 1, 'confidence': 'confirmed', 'channelGroups': ['confirmed']}]}
@@ -139,7 +145,33 @@ class MatchUpdatesTests(unittest.TestCase):
         self.assertIn('fixture-1', value['matches'])
         daily['broadcasts'][0]['confidence'] = 'review'
         value, _ = self.merge(agenda=agenda, daily=daily)
+        self.assertIn('fixture-1', value['matches'])
+
+    def test_informative_ongoing_match_remains_unchanged(self):
+        value, report = self.merge(rows=[self.live_row()], agenda=feed(event(channels=False)))
         self.assertEqual({}, value['matches'])
+        self.assertEqual(0, report['matched'])
+
+    def test_informative_final_requires_a_complete_valid_result(self):
+        for total in ({}, {'home': 2}, {'home': None, 'away': 1}, {'home': True, 'away': 1}):
+            raw = payload()
+            source_record(raw)['liveData']['matchDetails']['scores']['total'] = total
+            with self.subTest(total=total):
+                value, report = self.merge(rows=self.rows(raw), agenda=feed(event(channels=False)))
+                self.assertEqual({}, value['matches'])
+                self.assertEqual(0, report['matched'])
+
+    def test_incomplete_new_final_cannot_erase_previous_verified_result(self):
+        for channels in (True, False):
+            agenda = feed(event(channels=channels))
+            previous, _ = self.merge(agenda=agenda)
+            row = next(row for row in self.rows() if row.match_id == MOLDOVA)
+            incomplete = replace(row, source_updated=NOW + timedelta(minutes=2),
+                                 home_score=None, away_score=None)
+            with self.subTest(channels=channels):
+                value, _ = self.merge(rows=[incomplete], agenda=agenda, previous=previous,
+                                      now=NOW + timedelta(minutes=2))
+                self.assertEqual(previous, value)
 
     def test_missing_null_negative_or_bool_score_never_becomes_zero(self):
         totals = [{}, {'home': None, 'away': 1}, {'home': 2},
@@ -320,13 +352,15 @@ class MatchUpdatesTests(unittest.TestCase):
         self.assertEqual(state, confirmed)
         self.assertEqual({}, confirmed['settled'])
 
-    def test_pending_only_requests_supported_fixtures_near_kickoff(self):
+    def test_pending_requests_supported_fixtures_from_ten_minutes_before_until_art_day_end(self):
         eligible = eligible_events(feed(), DAY, self.guides, GROUPS)
-        for now in (instant('2026-11-13T13:49:00-03:00'), instant('2026-11-13T22:01:00-03:00')):
+        for now in (instant('2026-11-13T13:49:00-03:00'), instant('2026-11-14T00:00:00-03:00')):
             with self.subTest(now=now):
                 self.assertEqual({}, pending_events(eligible, DAY, now, self.guides))
         self.assertEqual({'fixture-1'}, set(pending_events(eligible, DAY,
                          instant('2026-11-13T13:50:00-03:00'), self.guides)))
+        self.assertEqual({'fixture-1'}, set(pending_events(eligible, DAY,
+                         instant('2026-11-13T23:59:59-03:00'), self.guides)))
         unsupported = eligible_events(feed(event(competition='Premier League')), DAY, self.guides, GROUPS)
         self.assertEqual({}, pending_events(unsupported, DAY, NOW, self.guides))
 
@@ -415,14 +449,24 @@ class MatchUpdatesRefreshTests(unittest.TestCase):
                        now or instant('2026-11-13T16:00:00-03:00'),
                        transport=self.transport, state_output=self.state, **kwargs)
 
-    def test_no_eligible_or_idle_fixture_makes_zero_requests(self):
-        for agenda in (feed(event(channels=False)), feed(event(start='20:00'))):
+    def test_no_supported_or_idle_fixture_makes_zero_requests(self):
+        for agenda in (feed(event(competition='Unvalidated tournament', channels=False)),
+                       feed(event(start='20:00'))):
             self.write('sports_today.json', agenda)
             with self.subTest(agenda=agenda):
                 _, report = self.refresh()
                 self.assertEqual(0, report['requests'])
                 self.assertEqual(0, self.transport.requests)
                 self.assertFalse(self.state.exists())
+
+    def test_informative_fixture_uses_one_grouped_lookup_and_publishes_verified_final(self):
+        self.write('sports_today.json', feed(event(channels=False)))
+        value, report = self.refresh()
+        self.assertEqual(1, self.transport.requests)
+        self.assertEqual(1, report['requests'])
+        entry = value['matches']['fixture-1']
+        self.assertEqual(('FINISHED', 2, 1), (entry['status'], entry['homeScore'], entry['awayScore']))
+        self.assertNotIn('channels', entry)
 
     def test_finished_gets_one_post_confirmation_lookup_then_settles(self):
         now = instant('2026-11-13T16:00:00-03:00')

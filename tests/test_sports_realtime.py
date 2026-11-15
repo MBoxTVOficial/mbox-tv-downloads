@@ -322,7 +322,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn("generate_sports_today.py --live", live)
         self.assertIn('git commit -m "Update live sports scores"', live)
 
-    def test_hourly_live_fallback_and_external_scheduler_stay_under_budget(self):
+    def test_two_hour_public_schedule_keeps_legacy_live_fallback_paused(self):
         workflows = generator.ROOT / ".github/workflows"
         live = (workflows / "update-sports-live.yml").read_text(encoding="utf-8")
         self.assertNotIn('\n  schedule:', live)
@@ -338,11 +338,10 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn('workflow_dispatch:', general)
         general_crons = [line.split("cron:", 1)[1].strip().strip("'")
                          for line in general.splitlines() if line.strip().startswith("- cron:")]
-        self.assertEqual(["0 3 * * *", "0 11 * * *", "0 15 * * *", "0 20 * * *", "0 23 * * *"], general_crons)
+        self.assertEqual(["0 1-23/2 * * *"], general_crons)
         worker = (generator.ROOT / "cloudflare/live-scheduler/wrangler.toml").read_text(encoding="utf-8")
         self.assertIn('crons = ["*/10 * * * *"]', worker)
-        worker_slots = 10 * 6  # 15:00-00:59 ART; one tick every ten minutes.
-        automatic_slots = worker_slots + fallback_slots + len(general_crons)
+        # The stored Worker config is not evidence that its paused deployed cron is active.
         self.assertEqual(10, fallback_slots)
         utc_hours = [hour for cron in live_crons
                      for hour in range(int(cron.split()[1].split("-")[0]),
@@ -352,8 +351,13 @@ class WorkflowTest(unittest.TestCase):
                      for hour in utc_hours]
         self.assertEqual([f"{hour:02d}:37" for hour in range(15, 24)] + ["00:37"], art_slots)
         self.assertEqual(90, generator.MAX_DAILY_API_CALLS)
-        self.assertEqual(75, automatic_slots)  # Historical upper bound; only GENERAL is enabled.
-        self.assertLess(automatic_slots, generator.MAX_DAILY_API_CALLS)
+        general_art_hours = sorted(datetime(2026, 11, 14, hour, tzinfo=timezone.utc)
+                                   .astimezone(generator.argentina_timezone()).hour
+                                   for hour in range(1, 24, 2))
+        self.assertEqual(list(range(0, 24, 2)), general_art_hours)
+        states = (workflows / 'update-sports-match-updates.yml').read_text(encoding='utf-8')
+        self.assertNotIn('\n  schedule:', states)
+        self.assertIn('workflow_dispatch:', states)
 
 
 if __name__ == "__main__":

@@ -525,6 +525,8 @@ def validate_feed(feed):
         "id", "sport", "competition", "homeTeam", "awayTeam", "homeLogo", "awayLogo", "startTime", "status"
     }
     score_fields = {"homeScore", "awayScore"}
+    country_fields = {"homeCountry", "awayCountry"}
+    conmebol_countries = {'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'}
     for section, (sid, title, priority) in zip(sections, expected_sections):
         if not isinstance(section, dict) or set(section) != {"id", "title", "priority", "events"} or \
                 type(section["priority"]) is not int or \
@@ -533,9 +535,14 @@ def validate_feed(feed):
             raise GenerationError("Feed generado inválido: sección.")
         for event in section["events"]:
             if not isinstance(event, dict) or not event_fields <= set(event) or \
-                    set(event) - event_fields - score_fields - {"channels"} or \
+                    set(event) - event_fields - score_fields - country_fields - {"channels"} or \
                     any(not isinstance(event[key], str) for key in event_fields):
                 raise GenerationError("Feed generado inválido: evento.")
+            if country_fields.intersection(event) and (
+                    event['competition'] not in ('CONMEBOL Libertadores', 'CONMEBOL Sudamericana') or
+                    any(not isinstance(event[field], str) or event[field] not in conmebol_countries
+                        for field in country_fields.intersection(event))):
+                raise GenerationError("Feed generado inválido: país de club CONMEBOL.")
             if "channels" in event:
                 try:
                     validate_references(event["channels"], normalize)

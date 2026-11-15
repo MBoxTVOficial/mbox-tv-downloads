@@ -1,6 +1,6 @@
 """A bounded public match-state overlay; never changes the agenda or TV evidence.
 
-Olé's anonymous Opta bulk endpoint was checked on 2026-11-13. The two numeric
+Olé's anonymous Opta bulk endpoint was checked on 2026-11-13 and 2026-11-14. The two numeric
 featured categories come from agenda related.mams.category (941 Nations League,
 88 national friendlies). They are a request hint, not proof of a competition:
 the response can contain other competitions, which are filtered independently.
@@ -28,11 +28,12 @@ MAX_REQUESTS = 2
 LIVE_TTL = timedelta(minutes=15)
 MAX_DAILY_REQUESTS = 120
 MIN_REQUEST_INTERVAL = timedelta(minutes=4)
-FINAL_CATCHUP_WINDOW = timedelta(hours=8)
 # Exact Opta competition IDs and names verified in the public bulk response.
 COMPETITIONS = {
     'cesdwwnxbc5fmajgroc0hqzy2': ('Friendlies', 'Amistosos de selecciones'),
     '595nsvo7ykvoe690b1e4u5n56': ('UEFA Nations League', 'UEFA Nations League'),
+    'bdtat25m14jy85y484z3e6lf': ('Copa Argentina', 'Copa Argentina'),
+    'byu00jvt1j6csyv4y1lkt2fm2': ('Primera Nacional', 'Primera Nacional'),
 }
 
 
@@ -215,7 +216,7 @@ def fixture_key(event, day, guides):
             raise ValueError()
         return [competition, team_key(event['homeTeam'], competition, guides),
                 team_key(event['awayTeam'], competition, guides),
-                f"{day.isoformat()}T{event['startTime']}:00-03:00"]
+                datetime.combine(day, time.fromisoformat(event['startTime']), ZONE).isoformat(timespec='seconds')]
     except (KeyError, TypeError, ValueError):
         raise MatchUpdatesError('invalid_fixture_identity') from None
 
@@ -258,15 +259,34 @@ def agenda_date(feed):
 
 
 def eligible_events(feed, day, guides, groups, window=None, daily=None):
-    """A confirmed existing stream is eligibility evidence, never a new assignment."""
+    """Match facts apply to valid agenda identities, independently of TV evidence.
+
+    groups/window/daily remain accepted for the existing call contract; they can
+    neither grant nor withdraw eligibility for an informative football card.
+    """
     if feed.get('date') != day.isoformat():
         raise MatchUpdatesError('agenda_date_mismatch')
     events = _events(feed)
-    enabled = {stream['streamId'] for group in groups.values() for stream in group['streams'] if stream['enabled']}
+    result = {}
+    for identifier, event in events.items():
+        if canonical_competition(event['competition'], guides) is None:
+            continue  # An unknown competition cannot acquire a guessed identity.
+        fixture_key(event, day, guides)
+        result[identifier] = event
+    return result
+
+
+def _confirmed_channel_events(feed, day, groups, window=None, daily=None):
+    """Existing TV evidence selects the LIVE policy, never result eligibility."""
+    events = _events(feed)
+    enabled = {stream['streamId'] for group in groups.values()
+               for stream in group['streams'] if stream['enabled']}
+
     def has_channel(event):
         return any(isinstance(channel, dict) and channel.get('enabled', True) is True and
                    type(channel.get('streamId')) is int and channel['streamId'] in enabled
                    for channel in event.get('channels', []))
+
     retained = {}
     if isinstance(window, dict) and window.get('timezone') == TIMEZONE:
         cached = window.get('days', {}).get(day.isoformat())
@@ -279,14 +299,9 @@ def eligible_events(feed, day, guides, groups, window=None, daily=None):
                     identifier in groups and any(stream['enabled'] for stream in groups[identifier]['streams'])
                     for identifier in assignment.get('channelGroups', [])):
                 assigned.add(f"fixture-{assignment['fixtureId']}")
-    result = {}
-    for identifier, event in events.items():
-        old = retained.get(identifier)
-        same = old is not None and _fixture(old) == _fixture(event)
-        if has_channel(event) or (same and has_channel(old)) or identifier in assigned:
-            fixture_key(event, day, guides)
-            result[identifier] = event
-    return result
+    return {identifier for identifier, event in events.items() if has_channel(event) or
+            (identifier in retained and _fixture(retained[identifier]) == _fixture(event) and
+             has_channel(retained[identifier])) or identifier in assigned}
 
 
 def pending_events(eligible, day, now, guides, previous=None, state=None):
@@ -296,9 +311,9 @@ def pending_events(eligible, day, now, guides, previous=None, state=None):
     for identifier, event in eligible.items():
         key = fixture_key(event, day, guides)
         start = _stamp(key[3])
-        # A delayed scheduled job must still retrieve an unobserved final. This
-        # changes request eligibility only, never the app's three-hour launch guard.
-        if key[0] not in supported or not start - timedelta(minutes=10) <= now <= start + FINAL_CATCHUP_WINDOW:
+        # Retry an unobserved final throughout its ART day. This only gates a
+        # grouped request; it never extends playback or manufactures a final.
+        if key[0] not in supported or now.astimezone(ZONE).date() != day or now < start - timedelta(minutes=10):
             continue
         old = (previous or {}).get('matches', {}).get(identifier)
         final = (previous or {}).get('date') == day.isoformat() and old is not None and \
@@ -419,6 +434,7 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
     if previous is not None:
         validate_updates(previous)
     eligible = eligible_events(feed, day, guides, groups, window, daily)
+    confirmed = _confirmed_channel_events(feed, day, groups, window, daily)
     old_current = previous is not None and previous['date'] == day.isoformat()
     retained = {}
     if old_current:
@@ -441,6 +457,9 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
         if row is None or tuple(key) in ambiguous or row.kickoff > now or \
                 (row.source_updated is not None and row.source_updated > now):
             continue
+        if identifier not in confirmed and (row.status != 'FINISHED' or
+                                           row.home_score is None or row.away_score is None):
+            continue  # Informative cards change only after an explicit final + result.
         if row.status == 'LIVE' and row.source_updated is not None and now - row.source_updated > LIVE_TTL:
             continue
         previous_entry = matches.get(identifier)
@@ -449,6 +468,10 @@ def merge_updates(feed, day, now, rows, guides, groups, previous=None, window=No
                 continue  # A verified persisted raw identity cannot silently move.
             if previous_entry['status'] == 'FINISHED' and row.status != 'FINISHED':
                 continue
+            if previous_entry['status'] == row.status == 'FINISHED' and \
+                    'homeScore' in previous_entry and 'awayScore' in previous_entry and \
+                    (row.home_score is None or row.away_score is None):
+                continue  # An incomplete new response cannot erase a verified final result.
             old_observed = _stamp(previous_entry['observedAt'])
             old_updated = _stamp(previous_entry['sourceUpdatedAt']) if 'sourceUpdatedAt' in previous_entry else None
             if now < old_observed or (old_updated is not None and (row.source_updated is None or row.source_updated < old_updated)):

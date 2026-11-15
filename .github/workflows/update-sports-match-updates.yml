@@ -2,9 +2,11 @@ name: Update confirmed football match states
 
 on:
   workflow_dispatch:
-  schedule:
-    # A separate optional sidecar; the API-Football LIVE workflow remains paused.
-    - cron: '*/5 * * * *'
+  # Automatic result refresh is included in GENERAL every two hours.
+  # Retain manual diagnostics; do not also run the old five-minute schedule.
+  # Previous cadence, for reference only:
+  # schedule:
+  #   - cron: '*/5 * * * *'
 
 permissions:
   contents: write

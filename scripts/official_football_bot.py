@@ -91,7 +91,7 @@ def source_rows(source, day, pages):
 
 def checked_rows(rows, source, day):
     """Source adapters/cache cannot inject score/state/channel fields into preview."""
-    result = {}
+    result, country_conflicts = {}, {}
     for raw in rows:
         if not isinstance(raw, dict) or raw.get('competition') != source['competition'] or \
                 raw.get('competitionId') != source['id'] or raw.get('source') != source['provider'] or \
@@ -114,6 +114,11 @@ def checked_rows(rows, source, day):
         row = {key: raw[key] for key in ('providerFixtureId', 'competition', 'competitionId',
                                        'homeTeam', 'awayTeam', 'source', 'sourceUrl')}
         row.update(startTime=start.isoformat(), broadcasters=list(dict.fromkeys(broadcasters)))
+        if source['provider'] == 'conmebol_official':
+            from .conmebol_official_source import COUNTRY_CODES
+            for field in ('homeCountry', 'awayCountry'):
+                if isinstance(raw.get(field), str) and raw[field] in COUNTRY_CODES:
+                    row[field] = raw[field]
         previous = result.get(row['providerFixtureId'])
         if previous and any(previous[key] != row[key] for key in ('homeTeam', 'awayTeam', 'startTime')):
             raise DiscoveryError('OFFICIAL_FIXTURE_CONFLICT')
@@ -121,6 +126,15 @@ def checked_rows(rows, source, day):
             if previous['broadcasters'] and row['broadcasters'] and set(previous['broadcasters']) != set(row['broadcasters']):
                 raise DiscoveryError('OFFICIAL_FIXTURE_CONFLICT')
             row['broadcasters'] = list(dict.fromkeys(previous['broadcasters'] + row['broadcasters']))
+            blocked = country_conflicts.setdefault(row['providerFixtureId'], set())
+            for field in ('homeCountry', 'awayCountry'):
+                if field in blocked:
+                    row.pop(field, None)
+                elif field in previous and field in row and previous[field] != row[field]:
+                    row.pop(field)
+                    blocked.add(field)
+                elif field in previous:
+                    row.setdefault(field, previous[field])
         result[row['providerFixtureId']] = row
     return sorted(result.values(), key=lambda row: (row['startTime'], row['providerFixtureId']))
 
@@ -223,6 +237,7 @@ def preview(rows, day, now, config, groups, mapping, identity=None, daily=None, 
         event = {'id': f'fixture-{identifier}', 'sport': 'football', 'competition': row['competition'],
                  'homeTeam': row['homeTeam'], 'awayTeam': row['awayTeam'], 'homeLogo': '', 'awayLogo': '',
                  'startTime': start.strftime('%H:%M'), 'status': 'SCHEDULED'}
+        event.update({field: row[field] for field in ('homeCountry', 'awayCountry') if field in row})
         if guide_records is not None and guide_config is not None:
             from .sports_team_logos import fixture_logos
             event.update(fixture_logos(row, guide_records, guide_config))
