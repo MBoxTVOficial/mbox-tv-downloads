@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-15",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-15T16:07:25-03:00",
+  "updatedAt": "2026-11-15T16:14:28-03:00",
   "matches": {
     "fixture-1668811830": {
       "status": "FINISHED",
@@ -52,6 +52,56 @@
       },
       "sourceUpdatedAt": "2026-11-15T15:51:47-03:00",
       "homeScore": 0,
+      "awayScore": 2
+    },
+    "fixture-1406919679": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Letonia",
+        "awayTeam": "Armenia",
+        "startTime": "11:00"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "letonia",
+        "armenia",
+        "2026-11-15T11:00:00-03:00"
+      ],
+      "observedAt": "2026-11-15T16:14:28-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "1mme9temrb8gcbdb1l2brpt04",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T13:52:17-03:00",
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    "fixture-1022796431": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Finlandia",
+        "awayTeam": "San Marino",
+        "startTime": "14:00"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "finlandia",
+        "san marino",
+        "2026-11-15T14:00:00-03:00"
+      ],
+      "observedAt": "2026-11-15T16:14:28-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "1npnii4tn6hh1pu68iqkdx8gk",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T15:58:15-03:00",
+      "homeScore": 7,
       "awayScore": 2
     }
   }

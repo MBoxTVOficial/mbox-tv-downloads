@@ -15,13 +15,13 @@
       "settled": {}
     },
     "informative": {
-      "cycles": 0,
-      "lastAttemptAt": null,
-      "slot": -1,
+      "cycles": 1,
+      "lastAttemptAt": "2026-11-15T16:14:28-03:00",
+      "slot": 8,
       "requests": {
-        "ole-opta": 0,
-        "canchallena": 0,
-        "tyc-results": 0
+        "ole-opta": 1,
+        "canchallena": 1,
+        "tyc-results": 1
       },
       "settled": {}
     }
