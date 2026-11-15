@@ -1,30 +1,29 @@
 {
-  "schemaVersion": 1,
-  "date": "2026-11-14",
+  "schemaVersion": 2,
+  "date": "2026-11-15",
   "timezone": "America/Argentina/Buenos_Aires",
-  "requests": 6,
-  "lastAttemptAt": "2026-11-14T20:56:47-03:00",
-  "settled": {
-    "fixture-1481947416": [
-      "f1xiwulsj0cnwtavtrhm4wsus",
-      "UEFA Nations League",
-      "kosovo",
-      "israel",
-      "2026-11-14T11:00:00-03:00"
-    ],
-    "fixture-1898589692": [
-      "7g9230i4y7kqftg0hlq8ep8no",
-      "UEFA Nations League",
-      "noruega",
-      "gales",
-      "2026-11-14T14:00:00-03:00"
-    ],
-    "fixture-1379475023": [
-      "7gt276fn6v2d5h1g4q03zeivo",
-      "UEFA Nations League",
-      "portugal",
-      "dinamarca",
-      "2026-11-14T16:45:00-03:00"
-    ]
+  "scopes": {
+    "confirmed": {
+      "cycles": 1,
+      "lastAttemptAt": "2026-11-15T16:07:25-03:00",
+      "slot": 193,
+      "requests": {
+        "ole-opta": 1,
+        "canchallena": 1,
+        "tyc-results": 0
+      },
+      "settled": {}
+    },
+    "informative": {
+      "cycles": 0,
+      "lastAttemptAt": null,
+      "slot": -1,
+      "requests": {
+        "ole-opta": 0,
+        "canchallena": 0,
+        "tyc-results": 0
+      },
+      "settled": {}
+    }
   }
 }
