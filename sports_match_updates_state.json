@@ -4,15 +4,32 @@
   "timezone": "America/Argentina/Buenos_Aires",
   "scopes": {
     "confirmed": {
-      "cycles": 1,
-      "lastAttemptAt": "2026-11-15T16:07:25-03:00",
-      "slot": 193,
+      "cycles": 2,
+      "lastAttemptAt": "2026-11-15T20:22:50-03:00",
+      "slot": 244,
       "requests": {
-        "ole-opta": 1,
-        "canchallena": 1,
+        "ole-opta": 2,
+        "canchallena": 2,
         "tyc-results": 0
       },
-      "settled": {}
+      "settled": {
+        "fixture-1668811830": [
+          "ole-opta",
+          "1m2a6e4hnm30qrfdlaxxe4l5g",
+          "UEFA Nations League",
+          "chipre",
+          "montenegro",
+          "2026-11-15T11:00:00-03:00"
+        ],
+        "fixture-1864873101": [
+          "ole-opta",
+          "1n59f4xi23rm80lp87boilyxg",
+          "UEFA Nations League",
+          "bielorrusia",
+          "albania",
+          "2026-11-15T14:00:00-03:00"
+        ]
+      }
     },
     "informative": {
       "cycles": 1,

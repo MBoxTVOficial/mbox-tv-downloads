@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-15",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-15T16:14:28-03:00",
+  "updatedAt": "2026-11-15T20:22:50-03:00",
   "matches": {
     "fixture-1668811830": {
       "status": "FINISHED",
@@ -103,6 +103,31 @@
       "sourceUpdatedAt": "2026-11-15T15:58:15-03:00",
       "homeScore": 7,
       "awayScore": 2
+    },
+    "fixture-1561663919": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "España",
+        "awayTeam": "Inglaterra",
+        "startTime": "16:45"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "espana",
+        "inglaterra",
+        "2026-11-15T16:45:00-03:00"
+      ],
+      "observedAt": "2026-11-15T20:22:50-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "7j57g1z3k41oykvidhl2aym1g",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T18:44:40-03:00",
+      "homeScore": 2,
+      "awayScore": 3
     }
   }
 }
