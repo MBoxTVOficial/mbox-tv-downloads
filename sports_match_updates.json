@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-16",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-16T16:16:59-03:00",
+  "updatedAt": "2026-11-16T17:46:53-03:00",
   "matches": {
     "fixture-1765675641": {
       "status": "FINISHED",
@@ -103,6 +103,31 @@
       "sourceUpdatedAt": "2026-11-16T15:55:22-03:00",
       "homeScore": 2,
       "awayScore": 1
+    },
+    "fixture-1941690430": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Islandia",
+        "awayTeam": "Luxemburgo",
+        "startTime": "14:00"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "islandia",
+        "luxemburgo",
+        "2026-11-16T14:00:00-03:00"
+      ],
+      "observedAt": "2026-11-16T17:46:53-03:00",
+      "expiresAt": "2026-11-17T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "1q1xtpcccpnevgsqlus6c06qc",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-16T17:36:16-03:00",
+      "homeScore": 3,
+      "awayScore": 0
     }
   }
 }

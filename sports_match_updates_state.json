@@ -4,12 +4,12 @@
   "timezone": "America/Argentina/Buenos_Aires",
   "scopes": {
     "confirmed": {
-      "cycles": 0,
-      "lastAttemptAt": null,
-      "slot": -1,
+      "cycles": 1,
+      "lastAttemptAt": "2026-11-16T17:46:53-03:00",
+      "slot": 213,
       "requests": {
-        "ole-opta": 0,
-        "canchallena": 0,
+        "ole-opta": 1,
+        "canchallena": 1,
         "tyc-results": 0
       },
       "settled": {}
