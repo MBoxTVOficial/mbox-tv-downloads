@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-15",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-15T21:46:46-03:00",
+  "updatedAt": "2026-11-15T23:56:01-03:00",
   "matches": {
     "fixture-1668811830": {
       "status": "FINISHED",
@@ -18,14 +18,14 @@
         "montenegro",
         "2026-11-15T11:00:00-03:00"
       ],
-      "observedAt": "2026-11-15T16:07:25-03:00",
+      "observedAt": "2026-11-15T23:56:01-03:00",
       "expiresAt": "2026-11-16T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "1m2a6e4hnm30qrfdlaxxe4l5g",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-15T13:52:56-03:00",
+      "sourceUpdatedAt": "2026-11-15T21:41:09-03:00",
       "homeScore": 1,
       "awayScore": 4
     },
@@ -43,14 +43,14 @@
         "albania",
         "2026-11-15T14:00:00-03:00"
       ],
-      "observedAt": "2026-11-15T16:07:25-03:00",
+      "observedAt": "2026-11-15T23:56:01-03:00",
       "expiresAt": "2026-11-16T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "1n59f4xi23rm80lp87boilyxg",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-15T15:51:47-03:00",
+      "sourceUpdatedAt": "2026-11-15T20:58:59-03:00",
       "homeScore": 0,
       "awayScore": 2
     },

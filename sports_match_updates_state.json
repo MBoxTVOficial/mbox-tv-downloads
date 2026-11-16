@@ -4,12 +4,12 @@
   "timezone": "America/Argentina/Buenos_Aires",
   "scopes": {
     "confirmed": {
-      "cycles": 2,
-      "lastAttemptAt": "2026-11-15T20:22:50-03:00",
-      "slot": 244,
+      "cycles": 3,
+      "lastAttemptAt": "2026-11-15T23:56:01-03:00",
+      "slot": 287,
       "requests": {
-        "ole-opta": 2,
-        "canchallena": 2,
+        "ole-opta": 3,
+        "canchallena": 3,
         "tyc-results": 0
       },
       "settled": {
@@ -28,6 +28,14 @@
           "bielorrusia",
           "albania",
           "2026-11-15T14:00:00-03:00"
+        ],
+        "fixture-1561663919": [
+          "ole-opta",
+          "7j57g1z3k41oykvidhl2aym1g",
+          "UEFA Nations League",
+          "espana",
+          "inglaterra",
+          "2026-11-15T16:45:00-03:00"
         ]
       }
     },
