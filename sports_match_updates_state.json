@@ -1,71 +1,29 @@
 {
   "schemaVersion": 2,
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "timezone": "America/Argentina/Buenos_Aires",
   "scopes": {
     "confirmed": {
-      "cycles": 3,
-      "lastAttemptAt": "2026-11-15T23:56:01-03:00",
-      "slot": 287,
+      "cycles": 0,
+      "lastAttemptAt": null,
+      "slot": -1,
       "requests": {
-        "ole-opta": 3,
-        "canchallena": 3,
+        "ole-opta": 0,
+        "canchallena": 0,
         "tyc-results": 0
       },
-      "settled": {
-        "fixture-1668811830": [
-          "ole-opta",
-          "1m2a6e4hnm30qrfdlaxxe4l5g",
-          "UEFA Nations League",
-          "chipre",
-          "montenegro",
-          "2026-11-15T11:00:00-03:00"
-        ],
-        "fixture-1864873101": [
-          "ole-opta",
-          "1n59f4xi23rm80lp87boilyxg",
-          "UEFA Nations League",
-          "bielorrusia",
-          "albania",
-          "2026-11-15T14:00:00-03:00"
-        ],
-        "fixture-1561663919": [
-          "ole-opta",
-          "7j57g1z3k41oykvidhl2aym1g",
-          "UEFA Nations League",
-          "espana",
-          "inglaterra",
-          "2026-11-15T16:45:00-03:00"
-        ]
-      }
+      "settled": {}
     },
     "informative": {
-      "cycles": 2,
-      "lastAttemptAt": "2026-11-15T21:46:46-03:00",
-      "slot": 10,
+      "cycles": 1,
+      "lastAttemptAt": "2026-11-16T16:16:59-03:00",
+      "slot": 8,
       "requests": {
-        "ole-opta": 2,
-        "canchallena": 2,
-        "tyc-results": 2
+        "ole-opta": 1,
+        "canchallena": 1,
+        "tyc-results": 0
       },
-      "settled": {
-        "fixture-1406919679": [
-          "ole-opta",
-          "1mme9temrb8gcbdb1l2brpt04",
-          "UEFA Nations League",
-          "letonia",
-          "armenia",
-          "2026-11-15T11:00:00-03:00"
-        ],
-        "fixture-1022796431": [
-          "ole-opta",
-          "1npnii4tn6hh1pu68iqkdx8gk",
-          "UEFA Nations League",
-          "finlandia",
-          "san marino",
-          "2026-11-15T14:00:00-03:00"
-        ]
-      }
+      "settled": {}
     }
   }
 }

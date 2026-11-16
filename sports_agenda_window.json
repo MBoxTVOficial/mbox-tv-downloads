@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-16T04:39:34-03:00",
+  "generatedAt": "2026-11-16T16:16:51-03:00",
   "days": {
     "2026-11-16": {
       "schemaVersion": 1,
       "date": "2026-11-16",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-16T04:39:34-03:00",
+      "updatedAt": "2026-11-16T16:16:51-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -334,7 +334,7 @@
       "schemaVersion": 1,
       "date": "2026-11-17",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-16T04:39:34-03:00",
+      "updatedAt": "2026-11-16T16:16:51-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -386,10 +386,10 @@
               "id": "fixture-1288749522",
               "sport": "football",
               "competition": "Amistosos de selecciones",
-              "homeTeam": "Argentina",
-              "awayTeam": "Costa Rica",
-              "homeLogo": "https://statics-files.tycsports.com/escudos/21.png?v=6?v=2",
-              "awayLogo": "https://statics-files.tycsports.com/escudos/278.png?v=6?v=2",
+              "homeTeam": "ARGENTINA",
+              "awayTeam": "COSTA RICA",
+              "homeLogo": "https://ole.com.ar/collections/escudos/632.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/838.png",
               "startTime": "20:00",
               "status": "SCHEDULED"
             },
@@ -397,10 +397,10 @@
               "id": "fixture-1265834554",
               "sport": "football",
               "competition": "Amistosos de selecciones",
-              "homeTeam": "Chile",
-              "awayTeam": "Colombia",
-              "homeLogo": "https://statics-files.tycsports.com/escudos/159.png?v=6?v=2",
-              "awayLogo": "https://statics-files.tycsports.com/escudos/168.png?v=6?v=2",
+              "homeTeam": "CHILE",
+              "awayTeam": "COLOMBIA",
+              "homeLogo": "https://ole.com.ar/collections/escudos/831.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/832.png",
               "startTime": "20:00",
               "status": "SCHEDULED"
             },
@@ -794,7 +794,7 @@
       "schemaVersion": 1,
       "date": "2026-11-18",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-16T04:39:34-03:00",
+      "updatedAt": "2026-11-16T16:16:51-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
