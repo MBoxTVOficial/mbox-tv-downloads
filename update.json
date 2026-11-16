@@ -1,9 +1,9 @@
 {
   "appName": "MBox TV",
-  "versionName": "1.1.5",
-  "versionCode": 22,
+  "versionName": "2.0.0",
+  "versionCode": 23,
   "mandatory": false,
   "apkUrl": "https://github.com/MBoxTVOficial/mbox-tv-downloads/releases/latest/download/MBoxTV.apk",
-  "releaseNotes": "Mejoras de estabilidad, navegación, reproducción y conexión.",
-  "publishedAt": "2026-06-28T00:00:00Z"
+  "releaseNotes": "Nueva interfaz con TV en vivo, Fútbol y Películas; agenda y resultados verificados, caché local y recuperación automática de canales.",
+  "publishedAt": "2026-11-16T00:00:00-03:00"
 }
