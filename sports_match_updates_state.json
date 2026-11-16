@@ -32,15 +32,32 @@
       }
     },
     "informative": {
-      "cycles": 1,
-      "lastAttemptAt": "2026-11-15T16:14:28-03:00",
-      "slot": 8,
+      "cycles": 2,
+      "lastAttemptAt": "2026-11-15T21:46:46-03:00",
+      "slot": 10,
       "requests": {
-        "ole-opta": 1,
-        "canchallena": 1,
-        "tyc-results": 1
+        "ole-opta": 2,
+        "canchallena": 2,
+        "tyc-results": 2
       },
-      "settled": {}
+      "settled": {
+        "fixture-1406919679": [
+          "ole-opta",
+          "1mme9temrb8gcbdb1l2brpt04",
+          "UEFA Nations League",
+          "letonia",
+          "armenia",
+          "2026-11-15T11:00:00-03:00"
+        ],
+        "fixture-1022796431": [
+          "ole-opta",
+          "1npnii4tn6hh1pu68iqkdx8gk",
+          "UEFA Nations League",
+          "finlandia",
+          "san marino",
+          "2026-11-15T14:00:00-03:00"
+        ]
+      }
     }
   }
 }

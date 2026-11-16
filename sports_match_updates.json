@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-15",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-15T20:22:50-03:00",
+  "updatedAt": "2026-11-15T21:46:46-03:00",
   "matches": {
     "fixture-1668811830": {
       "status": "FINISHED",
@@ -68,14 +68,14 @@
         "armenia",
         "2026-11-15T11:00:00-03:00"
       ],
-      "observedAt": "2026-11-15T16:14:28-03:00",
+      "observedAt": "2026-11-15T21:46:46-03:00",
       "expiresAt": "2026-11-16T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "1mme9temrb8gcbdb1l2brpt04",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-15T13:52:17-03:00",
+      "sourceUpdatedAt": "2026-11-15T18:25:27-03:00",
       "homeScore": 0,
       "awayScore": 0
     },
@@ -93,14 +93,14 @@
         "san marino",
         "2026-11-15T14:00:00-03:00"
       ],
-      "observedAt": "2026-11-15T16:14:28-03:00",
+      "observedAt": "2026-11-15T21:46:46-03:00",
       "expiresAt": "2026-11-16T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "1npnii4tn6hh1pu68iqkdx8gk",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-15T15:58:15-03:00",
+      "sourceUpdatedAt": "2026-11-15T16:59:31-03:00",
       "homeScore": 7,
       "awayScore": 2
     },
@@ -128,6 +128,131 @@
       "sourceUpdatedAt": "2026-11-15T18:44:40-03:00",
       "homeScore": 2,
       "awayScore": 3
+    },
+    "fixture-1002290733": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Bélgica",
+        "awayTeam": "Italia",
+        "startTime": "16:45"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "belgica",
+        "italia",
+        "2026-11-15T16:45:00-03:00"
+      ],
+      "observedAt": "2026-11-15T21:46:46-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "7hd6j6oayde5xn9gaaaes03kk",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T18:41:09-03:00",
+      "homeScore": 4,
+      "awayScore": 1
+    },
+    "fixture-1026678729": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Croacia",
+        "awayTeam": "República Checa",
+        "startTime": "16:45"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "croacia",
+        "chequia",
+        "2026-11-15T16:45:00-03:00"
+      ],
+      "observedAt": "2026-11-15T21:46:46-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "7iigzv7r2sdlaepzls4qvvf9w",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T18:34:40-03:00",
+      "homeScore": 2,
+      "awayScore": 1
+    },
+    "fixture-1482567270": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Francia",
+        "awayTeam": "Turquía",
+        "startTime": "16:45"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "francia",
+        "turquia",
+        "2026-11-15T16:45:00-03:00"
+      ],
+      "observedAt": "2026-11-15T21:46:46-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "7hxantwsk2rm46hv4lt2otyxg",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T20:02:23-03:00",
+      "homeScore": 2,
+      "awayScore": 1
+    },
+    "fixture-1512802325": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "Primera Nacional",
+        "homeTeam": "Deportivo Morón",
+        "awayTeam": "Colegiales",
+        "startTime": "15:00"
+      },
+      "fixtureKey": [
+        "Primera Nacional",
+        "deportivo moron",
+        "colegiales",
+        "2026-11-15T15:00:00-03:00"
+      ],
+      "observedAt": "2026-11-15T21:46:46-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "3l9apdik8e3gu3uqwbk245l3o",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T17:05:27-03:00",
+      "homeScore": 1,
+      "awayScore": 1
+    },
+    "fixture-1740270423": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "Primera Nacional",
+        "homeTeam": "Godoy Cruz",
+        "awayTeam": "Tristán Suárez",
+        "startTime": "17:00"
+      },
+      "fixtureKey": [
+        "Primera Nacional",
+        "godoy cruz",
+        "tristan suarez",
+        "2026-11-15T17:00:00-03:00"
+      ],
+      "observedAt": "2026-11-15T21:46:46-03:00",
+      "expiresAt": "2026-11-16T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "4wcu0q2fhjv07os8ueejjbml0",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-15T18:52:26-03:00",
+      "homeScore": 3,
+      "awayScore": 1
     }
   }
 }

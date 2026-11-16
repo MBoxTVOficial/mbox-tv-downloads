@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-15T16:14:19-03:00",
+  "generatedAt": "2026-11-15T21:46:35-03:00",
   "days": {
     "2026-11-15": {
       "schemaVersion": 1,
       "date": "2026-11-15",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-15T16:14:19-03:00",
+      "updatedAt": "2026-11-15T21:46:35-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -290,7 +290,7 @@
       "schemaVersion": 1,
       "date": "2026-11-16",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-15T16:14:19-03:00",
+      "updatedAt": "2026-11-15T21:46:35-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -617,7 +617,7 @@
       "schemaVersion": 1,
       "date": "2026-11-17",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-15T16:14:19-03:00",
+      "updatedAt": "2026-11-15T21:46:35-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -862,17 +862,6 @@
               "status": "SCHEDULED"
             },
             {
-              "id": "fixture-1848573677",
-              "sport": "football",
-              "competition": "Torneo Proyección",
-              "homeTeam": "– Unión",
-              "awayTeam": "Instituto",
-              "homeLogo": "",
-              "awayLogo": "",
-              "startTime": "15:00",
-              "status": "SCHEDULED"
-            },
-            {
               "id": "fixture-1321189730",
               "sport": "football",
               "competition": "Torneo Proyección",
@@ -906,6 +895,17 @@
               "status": "SCHEDULED"
             },
             {
+              "id": "fixture-1803121901",
+              "sport": "football",
+              "competition": "Torneo Proyección",
+              "homeTeam": "Unión Santa Fe Reserva",
+              "awayTeam": "Instituto Reserva",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20160115093449-union-santa-fe.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20140814115618-instituto-atletico-central-cordoba.webp",
+              "startTime": "15:00",
+              "status": "SCHEDULED"
+            },
+            {
               "id": "fixture-1683635589",
               "sport": "football",
               "competition": "Torneo Proyección",
@@ -913,6 +913,17 @@
               "awayTeam": "Quilmes",
               "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051808_san-martín-de-san-juan.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051608_quilmes-atlético-club.webp",
+              "startTime": "17:00",
+              "status": "SCHEDULED"
+            },
+            {
+              "id": "fixture-1848573677",
+              "sport": "football",
+              "competition": "Torneo Proyección",
+              "homeTeam": "– Unión",
+              "awayTeam": "Instituto",
+              "homeLogo": "",
+              "awayLogo": "",
               "startTime": "17:00",
               "status": "SCHEDULED"
             }
