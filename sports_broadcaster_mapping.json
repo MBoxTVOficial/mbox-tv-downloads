@@ -198,7 +198,7 @@
       "name": "DSports",
       "territory": "Argentina",
       "channelGroup": "dsports",
-      "aliases": [],
+      "aliases": ["DSports (610/1610)"],
       "intrinsicRegion": false
     },
     {
@@ -238,6 +238,20 @@
     },
     {
       "name": "Disney+",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": [],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "Disney+ Premium",
+      "territory": "",
+      "channelGroup": null,
+      "aliases": ["Disney + Premium"],
+      "intrinsicRegion": true
+    },
+    {
+      "name": "DGO",
       "territory": "",
       "channelGroup": null,
       "aliases": [],

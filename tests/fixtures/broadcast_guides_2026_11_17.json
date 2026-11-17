@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-17",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "sources": [
+    {
+      "guideId": "futbol-en-vivo-ar",
+      "url": "https://www.futbolenvivoargentina.com/",
+      "capturedUTC": "2026-11-17T13:47:41.259764+00:00",
+      "records": [
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "Bosnia",
+          "awayTeam": "Rumanía",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium"
+          ]
+        },
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "Dinamarca",
+          "awayTeam": "Noruega",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium",
+            "ESPN 4"
+          ]
+        },
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "Gales",
+          "awayTeam": "Portugal",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium",
+            "ESPN"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Chile",
+          "awayTeam": "Colombia",
+          "startTime": "2026-11-17T20:00:00-03:00",
+          "broadcasters": [
+            "DGO",
+            "DSports (610/1610)"
+          ]
+        }
+      ]
+    },
+    {
+      "guideId": "ole-agenda",
+      "url": "https://www.ole.com.ar/agenda-deportiva",
+      "capturedUTC": "2026-11-17T13:47:41.259764+00:00",
+      "records": [
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "BOSNIA",
+          "awayTeam": "Romania",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "Disney + Premium"
+          ]
+        },
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "DINAMARCA",
+          "awayTeam": "Norway",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "ESPN 4",
+            "Disney + Premium",
+            "DGO"
+          ]
+        },
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "Wales",
+          "awayTeam": "PORTUGAL",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "ESPN",
+            "Disney + Premium",
+            "DGO"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "ARGENTINA",
+          "awayTeam": "COSTA RICA",
+          "startTime": "2026-11-17T20:00:00-03:00",
+          "broadcasters": [
+            "Telefe",
+            "TyC Sports"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "CHILE",
+          "awayTeam": "COLOMBIA",
+          "startTime": "2026-11-17T20:00:00-03:00",
+          "broadcasters": [
+            "DSports",
+            "DGO"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Ecuador",
+          "awayTeam": "Bolivia",
+          "startTime": "2026-11-17T20:30:00-03:00",
+          "broadcasters": []
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "URUGUAY",
+          "awayTeam": "Dominican Republic",
+          "startTime": "2026-11-17T20:30:00-03:00",
+          "broadcasters": []
+        }
+      ]
+    },
+    {
+      "guideId": "tyc-agenda",
+      "url": "https://www.tycsports.com/agenda-deportiva-hoy.html",
+      "capturedUTC": "2026-11-17T13:47:41.259764+00:00",
+      "records": [
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "Dinamarca",
+          "awayTeam": "Noruega",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium",
+            "ESPN 4"
+          ]
+        },
+        {
+          "competition": "UEFA Nations League",
+          "homeTeam": "Gales",
+          "awayTeam": "Portugal",
+          "startTime": "2026-11-17T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium",
+            "ESPN"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Argentina",
+          "awayTeam": "Costa Rica",
+          "startTime": "2026-11-17T20:00:00-03:00",
+          "broadcasters": [
+            "DGO"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Chile",
+          "awayTeam": "Colombia",
+          "startTime": "2026-11-17T20:00:00-03:00",
+          "broadcasters": [
+            "DSports"
+          ]
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Ecuador",
+          "awayTeam": "Bolivia",
+          "startTime": "2026-11-17T20:30:00-03:00",
+          "broadcasters": []
+        },
+        {
+          "competition": "Amistosos de selecciones",
+          "homeTeam": "Uruguay",
+          "awayTeam": "Rep. Dominicana",
+          "startTime": "2026-11-17T20:30:00-03:00",
+          "broadcasters": []
+        }
+      ]
+    }
+  ],
+  "ownedArticle": {
+    "source": "tyc",
+    "url": "https://www.tycsports.com/amistosos-de-selecciones/amistosos-internacionales-masc-2026-argentina-vs-costa-rica-amistosos-id771718.html",
+    "publishedAt": "2026-11-17T07:43:53-03:00",
+    "homeTeam": "Argentina",
+    "awayTeam": "Costa Rica",
+    "startTime": "2026-11-17T20:00:00-03:00",
+    "explicitBroadcasters": [
+      "TyC Sports"
+    ],
+    "notes": "Owned TV claim is in the article body list. The lower liveblog also names the separate DGO platform. Telefe is only stated by the Ole agenda capture."
+  }
+}

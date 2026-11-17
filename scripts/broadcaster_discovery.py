@@ -161,6 +161,23 @@ def map_signal(name, territory, mapping):
     return name, territory, None, False
 
 
+_PLATFORM_NAMES = frozenset(broadcaster_key(name) for name in (
+    'Fanatiz', 'LPF Play', 'OneFootball', 'Disney+', 'Disney+ Premium',
+    'YouTube', 'Entel Gol', 'TyC Sports Play', 'Win Play', 'DGO'))
+
+
+def is_external_platform(name, market, mapping):
+    """Explicit configured platforms do not contradict a linear-TV listing.
+
+    An unknown name or an unmapped TV broadcaster is not automatically treated
+    as a platform. Nothing here maps a subscription service onto a MBox stream.
+    """
+    canonical, _, group, ambiguous = map_signal(name, market, mapping)
+    return not ambiguous and group is None and broadcaster_key(canonical) in _PLATFORM_NAMES and any(
+        item['channelGroup'] is None and broadcaster_key(item['name']) == broadcaster_key(canonical)
+        for item in mapping['signals'])
+
+
 def confidence(fixture, evidence, mapping, groups):
     # The organisation's explicit fixture listing wins over competing generic/guide claims.
     organisation = [item for item in evidence if isinstance(item, Evidence) and item.official and item.trusted
@@ -182,7 +199,8 @@ def confidence(fixture, evidence, mapping, groups):
         key = (name, region, group)
         valid.append((key, item))
         owners.setdefault(key, set()).add(item.owner)
-        market_sets.setdefault(norm(region), {}).setdefault(item.owner, set()).add(name)
+        if not is_external_platform(item.broadcaster, item.territory, mapping):
+            market_sets.setdefault(norm(region), {}).setdefault(item.owner, set()).add(broadcaster_key(name))
     # Different exclusive listings in one market conflict. A guide adding an
     # extra platform does not negate an agreed TV signal; that extra signal
     # must independently satisfy the same confidence threshold before use.

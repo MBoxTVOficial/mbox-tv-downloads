@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-17",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-17T11:06:57-03:00",
+  "updatedAt": "2026-11-17T11:18:01-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -59,7 +59,18 @@
           "homeLogo": "https://static.futbolenlatv.com/img/32/20130322050634_chile.webp",
           "awayLogo": "https://static.futbolenlatv.com/img/32/20130410092520_colombia.webp",
           "startTime": "20:00",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "DSPORTS AR*",
+              "streamId": 169947,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "DSPORTS AR*"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1288749522",
@@ -70,7 +81,29 @@
           "homeLogo": "https://ole.com.ar/collections/escudos/632.png",
           "awayLogo": "https://ole.com.ar/collections/escudos/838.png",
           "startTime": "20:00",
-          "status": "SCHEDULED"
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: TYC SPORTS HD",
+              "streamId": 165660,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: TYC SPORTS HD",
+                "ARG: TYC SPORTS HD*"
+              ]
+            },
+            {
+              "name": "ARG: TYC SPORTS HD*",
+              "streamId": 165659,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: TYC SPORTS HD",
+                "ARG: TYC SPORTS HD*"
+              ]
+            }
+          ]
         },
         {
           "id": "fixture-1643596436",

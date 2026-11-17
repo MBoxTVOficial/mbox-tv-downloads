@@ -6,7 +6,7 @@ import json
 import re
 
 from .broadcaster_sources import DiscoveryError, Evidence, Fixture, Listing, instant, norm, safe_text
-from .broadcaster_discovery import confidence, map_signal
+from .broadcaster_discovery import confidence, map_signal, broadcaster_key, is_external_platform
 from .sports_national_agenda import national_key, senior_pair, confederation
 
 PROVIDERS = (
@@ -214,11 +214,14 @@ def signal_conflict(row, records, config, mapping):
     if row['source'] in {'lpf_official', 'afa_official'} and row.get('broadcasters'):
         return False  # Explicit organisation fixture TV overrides lower-level guide conflicts.
     candidates = [record for record in records if exact_key(record, config) == exact_key(row, config)]
-    signals = {record['guideId']: {map_signal(name, 'Argentina', mapping)[0] for name in record['broadcasters']}
-               for record in candidates if record['broadcasters']}
-    tv_signals = {record['guideId']: {group for name in record['broadcasters']
-                 if (group := map_signal(name, 'Argentina', mapping)[2]) is not None}
-                 for record in candidates}
+    signals, tv_signals = {}, {}
+    for record in candidates:
+        for name in record['broadcasters']:
+            canonical, _, group, _ = map_signal(name, 'Argentina', mapping)
+            if not is_external_platform(name, 'Argentina', mapping):
+                signals.setdefault(record['guideId'], set()).add(broadcaster_key(canonical))
+            if group is not None:
+                tv_signals.setdefault(record['guideId'], set()).add(group)
     # A shared streaming platform cannot conceal ESPN vs ESPN 2 TV disagreement.
     tv_signals = {key: value for key, value in tv_signals.items() if value}
     return any(not left.intersection(right) for table in (signals, tv_signals)
@@ -233,8 +236,19 @@ def evidence_for(row, identifier, records, config):
         provider = next(p for p in PROVIDERS if p['id'] == record['guideId'])
         for signal in record['broadcasters']:
             owned = provider['id'] == 'tyc-agenda' and norm(signal) in OWNED_TYC
+            url = provider['url']
+            if 'ownedTvUrl' in record:
+                # Ephemeral enrichment is reconstructed from dated HTML proof;
+                # cached_records intentionally never restores this privilege.
+                if not owned:
+                    continue
+                from .tyc_fixture_tv_source import validate_tyc_fixture_tv_url
+                try:
+                    url = validate_tyc_fixture_tv_url(record['ownedTvUrl'])
+                except DiscoveryError:
+                    continue
             evidence.append(Evidence(identifier, instant(row['startTime']).isoformat(), signal, 'Argentina',
-                provider['id'], provider['owner'], owned, True, provider['url'],
+                provider['id'], provider['owner'], owned, True, url,
                 'official_broadcaster' if owned else 'trusted_guide'))
     return evidence
 
@@ -324,11 +338,14 @@ def acquire_all(official_config, config, day, now, groups, mapping, official_cac
     pages = PublicPages(budget)
     old_guide_cache = guide_cache
     day_caches, records_by_day, reports_by_day = {}, {}, {}
+    previous_tv = None
     for offset in range(window_days):
         target = day + timedelta(days=offset)
         stored = old_guide_cache.get('days', {}).get(target.isoformat()) if isinstance(old_guide_cache, dict) and isinstance(old_guide_cache.get('days'), dict) else None
         if stored is None and isinstance(old_guide_cache, dict) and old_guide_cache.get('date') == target.isoformat():
             stored = old_guide_cache
+        if offset == 0 and isinstance(stored, dict):
+            previous_tv = stored.get('fixtureTv')
         records, current_cache, guide_report = acquire_guides(config, target, now, pages,
             [row for row in cached_official if instant(row['startTime']).date() == target],
             official_config, groups, mapping, stored, offline)
@@ -336,13 +353,21 @@ def acquire_all(official_config, config, day, now, groups, mapping, official_cac
         records_by_day[target.isoformat()] = records
         reports_by_day[target.isoformat()] = guide_report
     records, guide_report = records_by_day[day.isoformat()], reports_by_day[day.isoformat()]
+    # Optional fixture TV must not consume the three slots an uncached Primera
+    # acquisition needs. Official rotation/cache retains its existing priority.
+    official_rows, official_cache, report = acquire(official_config, day, now, official_cache,
+        offline=offline, budget=budget, reuse_future_rows=window_days > 1)
+    from .tyc_fixture_tv_discovery import enrich_fixture_tv
+    records, tv_cache, tv_report = enrich_fixture_tv(records, day, pages, config, mapping,
+        previous_cache=previous_tv, now=now, groups=groups, offline=offline)
+    records_by_day[day.isoformat()] = records
+    if tv_cache:
+        day_caches[day.isoformat()]['fixtureTv'] = tv_cache
     guide_cache = day_caches[day.isoformat()]
     if window_days > 1:
         guide_cache = {**guide_cache, 'days': day_caches}
-    official_rows, official_cache, report = acquire(official_config, day, now, official_cache,
-        offline=offline, budget=budget, reuse_future_rows=window_days > 1)
     rows, conflicts = merge_rows(official_rows, records, day, official_config, config)
-    report.update(guides=guide_report, conflicts=conflicts, publicRequests=budget.requests,
+    report.update(guides=guide_report, fixtureTv=tv_report, conflicts=conflicts, publicRequests=budget.requests,
                   blockedCompetitions=[source['competition'] for source in report['sources'] if source['state'] == 'REVIEW'])
     if window_days > 1:
         report['windowRecords'] = records_by_day
