@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-17",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-17T11:07:02-03:00",
+  "updatedAt": "2026-11-17T17:50:43-03:00",
   "matches": {
     "fixture-1825845374": {
       "status": "FINISHED",
@@ -28,6 +28,31 @@
       "sourceUpdatedAt": "2026-11-17T08:51:57-03:00",
       "homeScore": 0,
       "awayScore": 7
+    },
+    "fixture-1184064772": {
+      "status": "LIVE",
+      "fixture": {
+        "competition": "UEFA Nations League",
+        "homeTeam": "Gales",
+        "awayTeam": "Portugal",
+        "startTime": "16:45"
+      },
+      "fixtureKey": [
+        "UEFA Nations League",
+        "gales",
+        "portugal",
+        "2026-11-17T16:45:00-03:00"
+      ],
+      "observedAt": "2026-11-17T17:50:43-03:00",
+      "expiresAt": "2026-11-17T18:05:43-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "7lg3km5a54fwtntjhd5ian0us",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-17T17:49:20-03:00",
+      "homeScore": 2,
+      "awayScore": 2
     }
   }
 }
