@@ -1,22 +1,10 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "timezone": "America/Argentina/Buenos_Aires",
   "broadcasts": [
     {
-      "fixtureId": 1941690430,
-      "channelGroups": [
-        "espn_2"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "ESPN 2 Argentina"
-      ],
-      "evidenceCount": 2
-    },
-    {
-      "fixtureId": 1454365077,
+      "fixtureId": 1184064772,
       "channelGroups": [
         "espn"
       ],
