@@ -15,15 +15,24 @@
       "settled": {}
     },
     "informative": {
-      "cycles": 1,
-      "lastAttemptAt": "2026-11-17T11:07:02-03:00",
-      "slot": 5,
+      "cycles": 2,
+      "lastAttemptAt": "2026-11-17T19:46:34-03:00",
+      "slot": 9,
       "requests": {
-        "ole-opta": 1,
-        "canchallena": 1,
+        "ole-opta": 2,
+        "canchallena": 2,
         "tyc-results": 0
       },
-      "settled": {}
+      "settled": {
+        "fixture-1825845374": [
+          "ole-opta",
+          "5nq6umcgi0u7c7vlxjo8wfu38",
+          "Amistosos de selecciones",
+          "singapur",
+          "brasil",
+          "2026-11-17T07:00:00-03:00"
+        ]
+      }
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-17T11:18:01-03:00",
+  "generatedAt": "2026-11-17T19:46:28-03:00",
   "days": {
     "2026-11-17": {
       "schemaVersion": 1,
       "date": "2026-11-17",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-17T11:18:01-03:00",
+      "updatedAt": "2026-11-17T19:46:28-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -50,8 +50,8 @@
               "competition": "Amistosos de selecciones",
               "homeTeam": "RUSIA",
               "awayTeam": "Venezuela",
-              "homeLogo": "https://ole.com.ar/collections/escudos/536.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/833.png",
+              "homeLogo": "https://statics-files.tycsports.com/escudos/481.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/173.png?v=6?v=2",
               "startTime": "13:00",
               "status": "SCHEDULED"
             },
@@ -500,7 +500,7 @@
       "schemaVersion": 1,
       "date": "2026-11-18",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-17T11:18:01-03:00",
+      "updatedAt": "2026-11-17T19:46:28-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -661,7 +661,7 @@
       "schemaVersion": 1,
       "date": "2026-11-19",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-17T11:18:01-03:00",
+      "updatedAt": "2026-11-17T19:46:28-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
