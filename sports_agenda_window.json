@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-17T00:24:33-03:00",
+  "generatedAt": "2026-11-17T11:06:57-03:00",
   "days": {
     "2026-11-17": {
       "schemaVersion": 1,
       "date": "2026-11-17",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-17T00:24:33-03:00",
+      "updatedAt": "2026-11-17T11:06:57-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -28,8 +28,8 @@
               "competition": "Amistosos de selecciones",
               "homeTeam": "Singapore",
               "awayTeam": "BRASIL",
-              "homeLogo": "https://ole.com.ar/collections/escudos/790.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/614.png",
+              "homeLogo": "https://statics-files.tycsports.com/escudos/6992.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/167.png?v=6?v=2",
               "startTime": "07:00",
               "status": "SCHEDULED"
             },
@@ -39,8 +39,8 @@
               "competition": "Amistosos de selecciones",
               "homeTeam": "JAPÓN",
               "awayTeam": "Paraguay",
-              "homeLogo": "https://ole.com.ar/collections/escudos/1266.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/835.png",
+              "homeLogo": "https://statics-files.tycsports.com/escudos/288.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/170.png?v=6?v=2",
               "startTime": "10:10",
               "status": "SCHEDULED"
             },
@@ -56,6 +56,17 @@
               "status": "SCHEDULED"
             },
             {
+              "id": "fixture-1265834554",
+              "sport": "football",
+              "competition": "Amistosos de selecciones",
+              "homeTeam": "Chile",
+              "awayTeam": "Colombia",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20130322050634_chile.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20130410092520_colombia.webp",
+              "startTime": "20:00",
+              "status": "SCHEDULED"
+            },
+            {
               "id": "fixture-1288749522",
               "sport": "football",
               "competition": "Amistosos de selecciones",
@@ -63,17 +74,6 @@
               "awayTeam": "COSTA RICA",
               "homeLogo": "https://ole.com.ar/collections/escudos/632.png",
               "awayLogo": "https://ole.com.ar/collections/escudos/838.png",
-              "startTime": "20:00",
-              "status": "SCHEDULED"
-            },
-            {
-              "id": "fixture-1265834554",
-              "sport": "football",
-              "competition": "Amistosos de selecciones",
-              "homeTeam": "CHILE",
-              "awayTeam": "COLOMBIA",
-              "homeLogo": "https://ole.com.ar/collections/escudos/831.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/832.png",
               "startTime": "20:00",
               "status": "SCHEDULED"
             },
@@ -368,7 +368,7 @@
               "awayTeam": "Honduras",
               "homeLogo": "https://statics-files.tycsports.com/escudos/474.png?v=6?v=2",
               "awayLogo": "https://statics-files.tycsports.com/escudos/472.png?v=6?v=2",
-              "startTime": "10:00",
+              "startTime": "13:30",
               "status": "SCHEDULED"
             },
             {
@@ -394,6 +394,17 @@
               "status": "SCHEDULED"
             },
             {
+              "id": "fixture-1778072007",
+              "sport": "football",
+              "competition": "CONCACAF Nations League",
+              "homeTeam": "San Cristóbal y Nieves",
+              "awayTeam": "Bonaire",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20170219022627-san-cristobal.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20220411101416-bonaire.webp",
+              "startTime": "16:00",
+              "status": "SCHEDULED"
+            },
+            {
               "id": "fixture-1941352540",
               "sport": "football",
               "competition": "CONCACAF Nations League",
@@ -402,17 +413,6 @@
               "homeLogo": "https://static.futbolenlatv.com/img/32/20190825102541-santa-lucia.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20200228203037-barbados.webp",
               "startTime": "16:00",
-              "status": "SCHEDULED"
-            },
-            {
-              "id": "fixture-1778072007",
-              "sport": "football",
-              "competition": "CONCACAF Nations League",
-              "homeTeam": "San Cristóbal y Nieves",
-              "awayTeam": "Bonaire",
-              "homeLogo": "https://static.futbolenlatv.com/img/32/20170219022627-san-cristobal.webp",
-              "awayLogo": "https://static.futbolenlatv.com/img/32/20220411101416-bonaire.webp",
-              "startTime": "17:00",
               "status": "SCHEDULED"
             },
             {
@@ -467,7 +467,7 @@
       "schemaVersion": 1,
       "date": "2026-11-18",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-17T00:24:33-03:00",
+      "updatedAt": "2026-11-17T11:06:57-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -628,7 +628,7 @@
       "schemaVersion": 1,
       "date": "2026-11-19",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-17T00:24:33-03:00",
+      "updatedAt": "2026-11-17T11:06:57-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [

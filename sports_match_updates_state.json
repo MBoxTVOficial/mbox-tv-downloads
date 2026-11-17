@@ -1,23 +1,23 @@
 {
   "schemaVersion": 2,
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "timezone": "America/Argentina/Buenos_Aires",
   "scopes": {
     "confirmed": {
-      "cycles": 1,
-      "lastAttemptAt": "2026-11-16T17:46:53-03:00",
-      "slot": 213,
+      "cycles": 0,
+      "lastAttemptAt": null,
+      "slot": -1,
       "requests": {
-        "ole-opta": 1,
-        "canchallena": 1,
+        "ole-opta": 0,
+        "canchallena": 0,
         "tyc-results": 0
       },
       "settled": {}
     },
     "informative": {
       "cycles": 1,
-      "lastAttemptAt": "2026-11-16T16:16:59-03:00",
-      "slot": 8,
+      "lastAttemptAt": "2026-11-17T11:07:02-03:00",
+      "slot": 5,
       "requests": {
         "ole-opta": 1,
         "canchallena": 1,
