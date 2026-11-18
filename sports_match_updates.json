@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-17",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-17T19:46:34-03:00",
+  "updatedAt": "2026-11-17T23:40:15-03:00",
   "matches": {
     "fixture-1825845374": {
       "status": "FINISHED",
@@ -30,7 +30,7 @@
       "awayScore": 7
     },
     "fixture-1184064772": {
-      "status": "LIVE",
+      "status": "FINISHED",
       "fixture": {
         "competition": "UEFA Nations League",
         "homeTeam": "Gales",
@@ -43,16 +43,16 @@
         "portugal",
         "2026-11-17T16:45:00-03:00"
       ],
-      "observedAt": "2026-11-17T17:50:43-03:00",
-      "expiresAt": "2026-11-17T18:05:43-03:00",
+      "observedAt": "2026-11-17T23:40:15-03:00",
+      "expiresAt": "2026-11-18T00:00:00-03:00",
       "source": {
         "provider": "ole-opta",
         "matchId": "7lg3km5a54fwtntjhd5ian0us",
         "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
       },
-      "sourceUpdatedAt": "2026-11-17T17:49:20-03:00",
+      "sourceUpdatedAt": "2026-11-17T22:29:33-03:00",
       "homeScore": 2,
-      "awayScore": 2
+      "awayScore": 3
     },
     "fixture-1325844683": {
       "status": "FINISHED",
@@ -303,6 +303,56 @@
       "sourceUpdatedAt": "2026-11-17T19:12:36-03:00",
       "homeScore": 0,
       "awayScore": 2
+    },
+    "fixture-1265834554": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "Amistosos de selecciones",
+        "homeTeam": "Chile",
+        "awayTeam": "Colombia",
+        "startTime": "20:00"
+      },
+      "fixtureKey": [
+        "Amistosos de selecciones",
+        "chile",
+        "colombia",
+        "2026-11-17T20:00:00-03:00"
+      ],
+      "observedAt": "2026-11-17T23:40:15-03:00",
+      "expiresAt": "2026-11-18T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "dj5ammmwqr0w5to4cb8gjlixg",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-17T22:04:53-03:00",
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    "fixture-1288749522": {
+      "status": "FINISHED",
+      "fixture": {
+        "competition": "Amistosos de selecciones",
+        "homeTeam": "ARGENTINA",
+        "awayTeam": "COSTA RICA",
+        "startTime": "20:00"
+      },
+      "fixtureKey": [
+        "Amistosos de selecciones",
+        "argentina",
+        "costa rica",
+        "2026-11-17T20:00:00-03:00"
+      ],
+      "observedAt": "2026-11-17T23:40:15-03:00",
+      "expiresAt": "2026-11-18T00:00:00-03:00",
+      "source": {
+        "provider": "ole-opta",
+        "matchId": "9yd9bddl6u73abqzdhqtc9ij8",
+        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
+      },
+      "sourceUpdatedAt": "2026-11-17T21:50:31-03:00",
+      "homeScore": 7,
+      "awayScore": 0
     }
   }
 }
