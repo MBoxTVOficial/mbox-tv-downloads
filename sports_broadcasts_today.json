@@ -1,45 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "timezone": "America/Argentina/Buenos_Aires",
-  "broadcasts": [
-    {
-      "fixtureId": 1184064772,
-      "channelGroups": [
-        "espn"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "Disney+ Premium",
-        "ESPN Argentina"
-      ],
-      "evidenceCount": 2
-    },
-    {
-      "fixtureId": 1265834554,
-      "channelGroups": [
-        "dsports"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "DGO",
-        "DSports"
-      ],
-      "evidenceCount": 2
-    },
-    {
-      "fixtureId": 1288749522,
-      "channelGroups": [
-        "tyc_sports"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "TyC Sports"
-      ],
-      "evidenceCount": 1
-    }
-  ]
+  "broadcasts": []
 }
