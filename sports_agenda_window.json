@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-19T00:58:11-03:00",
+  "generatedAt": "2026-11-19T11:07:45-03:00",
   "days": {
     "2026-11-19": {
       "schemaVersion": 1,
       "date": "2026-11-19",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-19T00:58:11-03:00",
+      "updatedAt": "2026-11-19T11:07:45-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -156,7 +156,7 @@
       "schemaVersion": 1,
       "date": "2026-11-20",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-19T00:58:11-03:00",
+      "updatedAt": "2026-11-19T11:07:45-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -297,7 +297,7 @@
       "schemaVersion": 1,
       "date": "2026-11-21",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-19T00:58:11-03:00",
+      "updatedAt": "2026-11-19T11:07:45-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -426,10 +426,10 @@
               "id": "fixture-1789468205",
               "sport": "football",
               "competition": "Primera Nacional",
-              "homeTeam": "Ciudad de Bolívar",
-              "awayTeam": "Atlanta",
-              "homeLogo": "https://ole.com.ar/collections/escudos/20035.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/2463.png",
+              "homeTeam": "Ciudad de Bolivar",
+              "awayTeam": "CA Atlanta",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20260103212408-club-ciudad-bolivar.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20140812072403-ca-atlanta.webp",
               "startTime": "17:00",
               "status": "SCHEDULED"
             },
@@ -437,10 +437,10 @@
               "id": "fixture-1802291883",
               "sport": "football",
               "competition": "Primera Nacional",
-              "homeTeam": "Colón Santa Fe",
+              "homeTeam": "CA Colón",
               "awayTeam": "Deportivo Morón",
-              "homeLogo": "https://ole.com.ar/collections/escudos/1027.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/3612.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051345_colón-de-santa-fe.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20140815030859-deportivo-moron.webp",
               "startTime": "17:30",
               "status": "SCHEDULED"
             },
@@ -450,8 +450,8 @@
               "competition": "Primera Nacional",
               "homeTeam": "Gimnasia Jujuy",
               "awayTeam": "Deportivo Madryn",
-              "homeLogo": "https://ole.com.ar/collections/escudos/2582.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/11403.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20220908113721-gimnasia-jujuy.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20141115115835-deportivo-madryn.webp",
               "startTime": "21:30",
               "status": "SCHEDULED"
             }
