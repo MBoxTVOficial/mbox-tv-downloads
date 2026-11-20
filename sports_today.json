@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-19T19:34:44-03:00",
+  "updatedAt": "2026-11-20T00:52:02-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -36,70 +36,50 @@
       "priority": 5,
       "events": [
         {
-          "id": "fixture-1342799026",
+          "id": "fixture-1132993747",
           "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "– Sarmiento",
-          "awayTeam": "Barracas Central",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20140814114704-sarmiento.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20141118022620-barracas.webp",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1600591396",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "– Argentinos",
-          "awayTeam": "Gimnasia (Mza.)",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051144_argentinos-juniors.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20140919100933-gimnasia-mendoza.webp",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1644828015",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "– Aldosivi",
-          "awayTeam": "Godoy Cruz",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20140826095110-aldosivi.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051410_godoy-cruz.webp",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1445730106",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "– Racing",
-          "awayTeam": "Talleres",
+          "competition": "Liga Profesional Argentina",
+          "homeTeam": "Vélez (3A)",
+          "awayTeam": "Belgrano (6B)",
           "homeLogo": "",
           "awayLogo": "",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1629114673",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "– River",
-          "awayTeam": "Banfield",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051705_river-plate.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20140621094222-banfield.webp",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1075622151",
-          "sport": "football",
-          "competition": "Torneo Proyección",
-          "homeTeam": "Racing Avellaneda Reserva",
-          "awayTeam": "Talleres Córdoba Reserva",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051639_racing-de-avellaneda.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20160714102309-talleres-cordoba.webp",
-          "startTime": "15:00",
-          "status": "SCHEDULED"
+          "startTime": "20:00",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: TNT SPORTS PREMIUM FHD",
+              "streamId": 165664,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: TNT SPORTS PREMIUM FHD",
+                "ARG: TNT SPORTS PREMIUM HD",
+                "ARG: TNT SPORTS PREMIUM HD+"
+              ]
+            },
+            {
+              "name": "ARG: TNT SPORTS PREMIUM HD",
+              "streamId": 165666,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: TNT SPORTS PREMIUM FHD",
+                "ARG: TNT SPORTS PREMIUM HD",
+                "ARG: TNT SPORTS PREMIUM HD+"
+              ]
+            },
+            {
+              "name": "ARG: TNT SPORTS PREMIUM HD+",
+              "streamId": 165665,
+              "priority": 3,
+              "enabled": true,
+              "aliases": [
+                "ARG: TNT SPORTS PREMIUM FHD",
+                "ARG: TNT SPORTS PREMIUM HD",
+                "ARG: TNT SPORTS PREMIUM HD+"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -131,7 +111,19 @@
       "id": "france",
       "title": "Liga de Francia",
       "priority": 10,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1794018143",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Troyes",
+          "awayTeam": "Le Havre AC",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130117033335_esperance-sportive-troyes-aube-champagne.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130910055724-havre-ac.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        }
+      ]
     },
     {
       "id": "italy",
