@@ -1,5 +1,6 @@
 """Shared safe CLI diagnostics; no providers, network or credentials."""
 import json
+import re
 
 
 def emit_result(feed, report, changed, requested_date, *, public=False):
@@ -13,6 +14,14 @@ def emit_result(feed, report, changed, requested_date, *, public=False):
                   ' reason=' + source.get('reason', source['state']))
     for guide in report.get('guides', []):
         print('SPORTS_AGENDA GUIDE ' + json.dumps(guide, ensure_ascii=True))
+    manual = report.get('manual')
+    if isinstance(manual, dict):
+        counts = {key: manual[key] for key in ('eventsAdded', 'eventsRemoved', 'channelOverridesApplied',
+                  'pendingEvents', 'pendingOverrides') if type(manual.get(key)) is int}
+        print('SPORTS_AGENDA MANUAL ' + json.dumps(counts, sort_keys=True))
+        for code in manual.get('warnings', []):
+            if isinstance(code, str) and re.fullmatch(r'MANUAL_[A-Z_]+', code):
+                print('::warning title=Manual football agenda::' + code)
     if public:
         print('SPORTS_AGENDA PUBLIC requests=' + str(report.get('publicRequests', 0)) +
               ' sportsApiRequests=' + str(report.get('sportsApiRequests', 0)))

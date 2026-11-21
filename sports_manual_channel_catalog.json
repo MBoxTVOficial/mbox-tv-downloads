@@ -1,0 +1,6544 @@
+{
+  "schemaVersion": 1,
+  "sourceDate": "2026-10-08",
+  "supplementalSourceDate": "2026-11-14",
+  "source": "Catalogo deportivo local y catalogo depurado MBox",
+  "coverage": "Parcial e historico; no equivale a la grilla completa actual ni prueba disponibilidad de reproduccion.",
+  "serverSpecified": false,
+  "channels": [
+    {
+      "streamId": 220250,
+      "name": "ARG: DEPORTV HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165652,
+      "name": "ARG: ESPN 2 HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165654,
+      "name": "ARG: ESPN 3 HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165649,
+      "name": "ARG: ESPN HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 183614,
+      "name": "ARG: ESPN PREMIUM",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 183616,
+      "name": "ARG: ESPN PREMIUM FHD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 183615,
+      "name": "ARG: ESPN PREMIUM HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165656,
+      "name": "ARG: FOX SPORTS 2 HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165657,
+      "name": "ARG: FOX SPORTS 3 HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165655,
+      "name": "ARG: FOX SPORTS HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165664,
+      "name": "ARG: TNT SPORTS PREMIUM FHD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165666,
+      "name": "ARG: TNT SPORTS PREMIUM HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165665,
+      "name": "ARG: TNT SPORTS PREMIUM HD+",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165660,
+      "name": "ARG: TYC SPORTS HD",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165659,
+      "name": "ARG: TYC SPORTS HD*",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165658,
+      "name": "ARG: TYC SPORTS INT",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165581,
+      "name": "Telefe",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165582,
+      "name": "Telefe",
+      "category": "ARGENTINA",
+      "enabled": true,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 482633,
+      "name": "BO: FUTBOL CANAL",
+      "category": "BOLIVIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 483579,
+      "name": "BO: FUTBOL CANAL 2",
+      "category": "BOLIVIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 437826,
+      "name": "BOX NATION",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 438314,
+      "name": "CA | Fight Network HD",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 334317,
+      "name": "COMBATES MMA",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 504780,
+      "name": "FITE 24/7",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 504785,
+      "name": "GLORY Kickboxing",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459091,
+      "name": "Hard Knock Fighting",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527918,
+      "name": "HBO BOXING",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459153,
+      "name": "MSG Sports Zone",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465808,
+      "name": "POLSAT SPORT FIGHT",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459112,
+      "name": "Strongman Champion League",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459063,
+      "name": "Swerve Combat",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 504779,
+      "name": "UFC",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288219,
+      "name": "UFC FIGHTPASS 24/7",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288222,
+      "name": "UFCP 01 | Pancrase 367 | 12:30 AM ET | 10.04",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288223,
+      "name": "UFCP 02 | Uae Warriors 73 | 1 PM ET | 10.05",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288224,
+      "name": "UFCP 03 | (Español) UFC BJJ 12: Moura Vs Fornarino | 8 PM ET | 10.08",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288225,
+      "name": "UFCP 04 | UFC BJJ 12: Moura Vs Fornarino | 8 PM ET | 10.08",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288226,
+      "name": "UFCP 05 | Zfn Origin 06 | 3 AM ET | 10.09",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 439701,
+      "name": "UFCP 06 | Fury FC 126 | 5 PM ET | 10.11",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 439702,
+      "name": "UFCP 07 | Bison Kombat 10 | 6 PM ET | 10.16",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 439703,
+      "name": "UFCP 08 | (Français) Samourai MMA 22 | 7 PM ET | 10.16",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 439704,
+      "name": "UFCP 09 | Samourai MMA 22 | 7 PM ET | 10.16",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288220,
+      "name": "UFCP 10 | (Español) Budo Sento Championship 37 | 9 PM ET | 10.16",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459111,
+      "name": "Unbeaten Sports Channel",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195812,
+      "name": "USA:  Fight Network",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195867,
+      "name": "USA: UFC Fight Pass",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195868,
+      "name": "USA: UFC FIGHTPASS",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195869,
+      "name": "USA: UFC TV",
+      "category": "BOX ║UFC PASS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563459,
+      "name": "BR: BAND",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563427,
+      "name": "BR: BAND SPORTS",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563430,
+      "name": "BR: BAND SPORTS FHD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563429,
+      "name": "BR: BAND SPORTS HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563428,
+      "name": "BR: BAND SPORTS SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563460,
+      "name": "BR: COMBATE",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563461,
+      "name": "BR: ELEVEN SPORTS CANAL 1",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563470,
+      "name": "BR: ELEVEN SPORTS CANAL 10",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563462,
+      "name": "BR: ELEVEN SPORTS CANAL 2",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563463,
+      "name": "BR: ELEVEN SPORTS CANAL 3",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563464,
+      "name": "BR: ELEVEN SPORTS CANAL 4",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563465,
+      "name": "BR: ELEVEN SPORTS CANAL 5",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563466,
+      "name": "BR: ELEVEN SPORTS CANAL 6",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563467,
+      "name": "BR: ELEVEN SPORTS CANAL 7",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563468,
+      "name": "BR: ELEVEN SPORTS CANAL 8",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563469,
+      "name": "BR: ELEVEN SPORTS CANAL 9",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563447,
+      "name": "BR: ESPN",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563448,
+      "name": "BR: ESPN 2",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563449,
+      "name": "BR: ESPN 3",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563455,
+      "name": "BR: ESTADIO TNT SPORTS 2 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563456,
+      "name": "BR: ESTADIO TNT SPORTS 3 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563457,
+      "name": "BR: ESTADIO TNT SPORTS 4 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563474,
+      "name": "BR: HBO MAX 01 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563473,
+      "name": "BR: JOVEM PAN NEWS",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563471,
+      "name": "BR: LIGA FUTSAL",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563472,
+      "name": "BR: LIGA FUTSAL 2",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563458,
+      "name": "BR: OFF",
+      "category": "BRASIL SPORTS",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563437,
+      "name": "BR: PREMIERE 2 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563436,
+      "name": "BR: PREMIERE 2 SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563438,
+      "name": "BR: PREMIERE 3  SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563439,
+      "name": "BR: PREMIERE 3 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563441,
+      "name": "BR: PREMIERE 4",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563440,
+      "name": "BR: PREMIERE 4  SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563442,
+      "name": "BR: PREMIERE 4 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563443,
+      "name": "BR: PREMIERE 5  SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563444,
+      "name": "BR: PREMIERE 5 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563445,
+      "name": "BR: PREMIERE 6",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563446,
+      "name": "BR: PREMIERE 7",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563434,
+      "name": "BR: PREMIERE CLUBES",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563433,
+      "name": "BR: PREMIERE CLUBES FHD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563432,
+      "name": "BR: PREMIERE CLUBES HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563435,
+      "name": "BR: PREMIERE CLUBES HD Extra",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563431,
+      "name": "BR: PREMIERE CLUBES SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563420,
+      "name": "BR: SPORTV",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563422,
+      "name": "BR: SPORTV 2",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563423,
+      "name": "BR: SPORTV 2 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563421,
+      "name": "BR: SPORTV 2 SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563425,
+      "name": "BR: SPORTV 3",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563424,
+      "name": "BR: SPORTV 3  SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563426,
+      "name": "BR: SPORTV 3 HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563418,
+      "name": "BR: SPORTV HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563417,
+      "name": "BR: SPORTV SD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563453,
+      "name": "BR: TNT SPORTS 2",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563454,
+      "name": "BR: TNT SPORTS 3",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563452,
+      "name": "BR: TNT Sports HD",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563475,
+      "name": "BR: TV NSPORTS HD (JOGO 1)",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563476,
+      "name": "BR: TV NSPORTS HD (JOGO 2)",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 563477,
+      "name": "BR: TV NSPORTS HD (JOGO 3)",
+      "category": "BRASIL SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 530395,
+      "name": "ESPN CHILE",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 409071,
+      "name": "ESPN PREMIUM",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 167697,
+      "name": "TNT SPORTS HD",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165223,
+      "name": "TNT SPORTS PREMIUM",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165228,
+      "name": "TNT SPORTS PREMIUM FHD",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165224,
+      "name": "TNT SPORTS PREMIUM HD",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165227,
+      "name": "TNT SPORTS*",
+      "category": "CHILE",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166589,
+      "name": "CO: Win Sports",
+      "category": "COLOMBIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166590,
+      "name": "CO: Win Sports + HD",
+      "category": "COLOMBIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166592,
+      "name": "CO: Win Sports + HD",
+      "category": "COLOMBIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166594,
+      "name": "CO: WIN SPORTS + HD",
+      "category": "COLOMBIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166591,
+      "name": "CO: WIN SPORTS HD",
+      "category": "COLOMBIA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283061,
+      "name": "LIBERTADORES 1 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283062,
+      "name": "LIBERTADORES 2 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283065,
+      "name": "LIBERTADORES 3 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283066,
+      "name": "LIBERTADORES 4 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283067,
+      "name": "LIBERTADORES 5 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283068,
+      "name": "LIBERTADORES 6 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283069,
+      "name": "LIBERTADORES 7 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283070,
+      "name": "SUDAMERICANA 1 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283071,
+      "name": "SUDAMERICANA 2 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283074,
+      "name": "SUDAMERICANA 3 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283077,
+      "name": "SUDAMERICANA 4 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 283078,
+      "name": "SUDAMERICANA 5 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 410552,
+      "name": "SUDAMERICANA 6 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 535754,
+      "name": "SUDAMERICANA 7 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 542241,
+      "name": "SUDAMERICANA 8 |",
+      "category": "COPA LIBERTADORES Y SUDAMERICANA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 113990,
+      "name": "BEIN SPORTS XTRA Ñ",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 424318,
+      "name": "CLARO SPORTS (MX)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509699,
+      "name": "CLARO SPORTS (SUR)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 532706,
+      "name": "CLARO SPORTS 2 (SUR)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169953,
+      "name": "ESPN 2 HD (ARG)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169914,
+      "name": "ESPN 2 MX",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169913,
+      "name": "ESPN 2 SUR HD*",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169954,
+      "name": "ESPN 3 (ARG)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169916,
+      "name": "ESPN 3 MX",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169915,
+      "name": "ESPN 3 SUR HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 170211,
+      "name": "ESPN 4 HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169918,
+      "name": "ESPN 5 HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169961,
+      "name": "ESPN 6 HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169958,
+      "name": "ESPN 7 HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169910,
+      "name": "ESPN DEPORTES",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169952,
+      "name": "ESPN HD (ARG)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169912,
+      "name": "ESPN NORTE",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169911,
+      "name": "ESPN SUR HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 522626,
+      "name": "FOX ONE",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527785,
+      "name": "FOX ONE 1",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527786,
+      "name": "FOX ONE 2",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527787,
+      "name": "FOX ONE 3",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527788,
+      "name": "FOX ONE 4",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527789,
+      "name": "FOX ONE 5",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527790,
+      "name": "FOX ONE 6",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527791,
+      "name": "FOX ONE 7",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 527792,
+      "name": "FOX ONE 8",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169955,
+      "name": "FOX SPORTS (ARG)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169957,
+      "name": "FOX SPORTS 2 (ARG)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169959,
+      "name": "FOX SPORTS 2 (MX)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169960,
+      "name": "FOX SPORTS 3 (ARG) HD",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169962,
+      "name": "FOX SPORTS 3 NORTE HD*",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169920,
+      "name": "FOX SPORTS NORTE",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 413794,
+      "name": "MX: ITV DEPORTES",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 440283,
+      "name": "NBA TV",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 440276,
+      "name": "SKY SPORTS BUNDESLIGA",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169942,
+      "name": "TUDN HD (MX)",
+      "category": "DEPORTES LAT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165647,
+      "name": "DSPORTS +",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169946,
+      "name": "DSPORTS 2 HD",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169947,
+      "name": "DSPORTS AR*",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169906,
+      "name": "DSPORTS CH*",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166600,
+      "name": "DSPORTS CO",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165697,
+      "name": "DSPORTS EC*",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165215,
+      "name": "DSPORTS PE*",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 164325,
+      "name": "DSPORTS URU",
+      "category": "DIRECTV SPORTS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 530558,
+      "name": "ZAPPING SPORTS",
+      "category": "ECUADOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 359337,
+      "name": "EVENTO 01 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359338,
+      "name": "EVENTO 02 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359339,
+      "name": "EVENTO 03 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359340,
+      "name": "EVENTO 04 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359341,
+      "name": "EVENTO 05 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359342,
+      "name": "EVENTO 06 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359343,
+      "name": "EVENTO 07 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359344,
+      "name": "EVENTO 08 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359345,
+      "name": "EVENTO 09 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359346,
+      "name": "EVENTO 10 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359347,
+      "name": "EVENTO 11 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359348,
+      "name": "EVENTO 12 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359349,
+      "name": "EVENTO 13 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359350,
+      "name": "EVENTO 14 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359351,
+      "name": "EVENTO 15 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359352,
+      "name": "EVENTO 16 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359353,
+      "name": "EVENTO 17 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359354,
+      "name": "EVENTO 18 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359355,
+      "name": "EVENTO 19 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359356,
+      "name": "EVENTO 20 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359357,
+      "name": "EVENTO 21 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359358,
+      "name": "EVENTO 22 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359359,
+      "name": "EVENTO 23 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359360,
+      "name": "EVENTO 24 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359361,
+      "name": "EVENTO 25 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359362,
+      "name": "EVENTO 26 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359363,
+      "name": "EVENTO 27 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359364,
+      "name": "EVENTO 28 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359365,
+      "name": "EVENTO 29 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 359366,
+      "name": "EVENTO 30 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435602,
+      "name": "EVENTO 31 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435603,
+      "name": "EVENTO 32 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435604,
+      "name": "EVENTO 33 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435605,
+      "name": "EVENTO 34 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435606,
+      "name": "EVENTO 35 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435607,
+      "name": "EVENTO 36 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435608,
+      "name": "EVENTO 37 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 435609,
+      "name": "EVENTO 38 |",
+      "category": "EVENTOS DIARIOS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": true
+    },
+    {
+      "streamId": 288432,
+      "name": "Flo Sports 26: OFF",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288433,
+      "name": "Flo Sports 27: OFF",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288434,
+      "name": "Flo Sports 28: OFF",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288435,
+      "name": "Flo Sports 29: OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288441,
+      "name": "Flo Sports 30: OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288436,
+      "name": "Flo Sports 31: OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288437,
+      "name": "Flo Sports 32:OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288438,
+      "name": "Flo Sports 33:OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288439,
+      "name": "Flo Sports 34:OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288440,
+      "name": "Flo Sports 35: OFFLINE",
+      "category": "FLOSPORTS / DIRTVision",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 188033,
+      "name": "Canal Motor",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 181540,
+      "name": "Discovery Turbo FHD",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 181539,
+      "name": "DISCOVERY TURBO HD",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 434536,
+      "name": "F1 TRACKER",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 434539,
+      "name": "F1 TV FHD",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 220168,
+      "name": "Garage TV",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 492691,
+      "name": "RALLY TV (DE)",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 492690,
+      "name": "RALLY TV (UK)",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 434513,
+      "name": "Sky Sport F1 DE",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 434515,
+      "name": "Sky Sport F1 IT",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 434514,
+      "name": "Sky Sport F1 UK",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 220629,
+      "name": "USA: FOX SPORTS RACING",
+      "category": "FORMULA 1 ║ AUTOMOTOR",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165501,
+      "name": "MX〢ADRENALINA SPORTS HD",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165497,
+      "name": "MX〢AYM SPORTS HD",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 381373,
+      "name": "MX〢AZTECA DEPORTES",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165504,
+      "name": "MX〢ESPN 2 HD",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165506,
+      "name": "MX〢ESPN 3 HD",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 452302,
+      "name": "MX〢ESPN 4 HD",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165502,
+      "name": "MX〢ESPN HD*",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208740,
+      "name": "MX〢FOX SPORTS",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208742,
+      "name": "MX〢FOX SPORTS 2",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208741,
+      "name": "MX〢FOX SPORTS 2 HD",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208744,
+      "name": "MX〢FOX SPORTS 3",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208743,
+      "name": "MX〢FOX SPORTS 3 HD*",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208738,
+      "name": "MX〢FOX SPORTS HD*",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 207757,
+      "name": "MX〢FOX SPORTS PREMIUM",
+      "category": "MEXICO",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287824,
+      "name": "NBA 01 | Minnesota Timberwolves at Indiana Pacers | 7:00 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287825,
+      "name": "NBA 02 | Orlando Magic at Memphis Grizzlies | 8:00 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287826,
+      "name": "NBA 03 | Milwaukee Bucks at Oklahoma City Thunder | 8:00 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287827,
+      "name": "NBA 04 | Phoenix Suns at Chicago Bulls | 8:00 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287828,
+      "name": "NBA 05 | Golden State Warriors at Portland Trail Blazers | 10:00 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287829,
+      "name": "NBA 06 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287830,
+      "name": "NBA 07 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287831,
+      "name": "NBA 08 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287832,
+      "name": "NBA 09 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287833,
+      "name": "NBA 10",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287834,
+      "name": "NBA 11 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287835,
+      "name": "NBA 12 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287836,
+      "name": "NBA 13 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287837,
+      "name": "NBA 14 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287838,
+      "name": "NBA 15 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287915,
+      "name": "NBA ATLANTA HAWKS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287914,
+      "name": "NBA BOSTON CELTICS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287913,
+      "name": "NBA BROOKLYN NETS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287910,
+      "name": "NBA CHARLOTTE HORNETS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287912,
+      "name": "NBA CHICAGO BULLS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287911,
+      "name": "NBA CLEVELAND CAVALIERS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287909,
+      "name": "NBA DALLAS MAVERICKS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287908,
+      "name": "NBA Denver Nuggets",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287907,
+      "name": "NBA DETROIT PISTONS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459053,
+      "name": "NBA Fast Channel",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287906,
+      "name": "NBA GOLDEN STATE WARRIORS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287905,
+      "name": "NBA HOUSTON ROCKETS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287904,
+      "name": "NBA INDIANA PACERS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287903,
+      "name": "NBA LOS ANGELES CLIPPERS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287902,
+      "name": "NBA LOS ANGELES LAKERS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287901,
+      "name": "NBA MEMPHIS GRIZZLIES",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287900,
+      "name": "NBA MIAMI HEAT",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287899,
+      "name": "NBA MILWAUKEE BUCKS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287898,
+      "name": "NBA MINNESOTA TIMBERWOLVES",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287897,
+      "name": "NBA NEW ORLEANS PELICANS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287896,
+      "name": "NBA NEW YORK KNICKS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287895,
+      "name": "NBA Oklahoma City Thunder",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287894,
+      "name": "NBA ORLANDO MAGIC",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287893,
+      "name": "NBA PHILADELPHIA 76ERS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287892,
+      "name": "NBA PHOENIX SUNS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287891,
+      "name": "NBA PORTLAND TRAIL BLAZERS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287890,
+      "name": "NBA SACRAMENTO KINGS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287889,
+      "name": "NBA SAN ANTONIO SPURS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287888,
+      "name": "NBA TORONTO RAPTORS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287887,
+      "name": "NBA UTAH JAZZ",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287886,
+      "name": "NBA WASHINGTON WIZARDS",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287823,
+      "name": "USA | NBA TV FHD",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415163,
+      "name": "WNBA 01 | New York Liberty at Atlanta Dream | 7:30 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415164,
+      "name": "WNBA 02 | Las Vegas Aces at Golden State Valkyries | 9:30 PM ET | 10.07",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415165,
+      "name": "WNBA 03 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415166,
+      "name": "WNBA 04 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415167,
+      "name": "WNBA 05 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415168,
+      "name": "WNBA 06 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415169,
+      "name": "WNBA 07 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415170,
+      "name": "WNBA 08 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415171,
+      "name": "WNBA 09 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 415172,
+      "name": "WNBA 10 |",
+      "category": "NBA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287854,
+      "name": "Arizona Cardinals",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287855,
+      "name": "Atlanta Falcons",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287856,
+      "name": "Baltimore Ravens",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287857,
+      "name": "Buffalo Bills",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287858,
+      "name": "Carolina Panthers",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287859,
+      "name": "Chicago Bears",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287860,
+      "name": "Cincinnati Bengals",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287861,
+      "name": "Cleveland Browns",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287862,
+      "name": "Dallas Cowboys",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287863,
+      "name": "Denver Broncos",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287864,
+      "name": "Detroit Lions",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287865,
+      "name": "Green Bay Packers",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287866,
+      "name": "Houston Texans",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287867,
+      "name": "Indianapolis Colts",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287868,
+      "name": "Jacksonville Jaguars",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287869,
+      "name": "Kansas City Chiefs",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287870,
+      "name": "Las Vegas Raiders",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287871,
+      "name": "Los Angeles Chargers",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287872,
+      "name": "Los Angeles Rams",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287873,
+      "name": "Miami Dolphins",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287874,
+      "name": "Minnesota Vikings",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509431,
+      "name": "NCAAF 001 | Jacksonville State Gamecocks at Kennesaw State Owls | 7 PM ET | 10.07",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509432,
+      "name": "NCAAF 002 | New Mexico State Aggies at Florida International Panthers | 7:30 PM ET | 10.07",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509433,
+      "name": "NCAAF 003 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509434,
+      "name": "NCAAF 004 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509435,
+      "name": "NCAAF 005 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509436,
+      "name": "NCAAF 006 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509437,
+      "name": "NCAAF 007 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509438,
+      "name": "NCAAF 008 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509439,
+      "name": "NCAAF 009 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509440,
+      "name": "NCAAF 010 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509441,
+      "name": "NCAAF 011 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509442,
+      "name": "NCAAF 012 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509443,
+      "name": "NCAAF 013 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509444,
+      "name": "NCAAF 014 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509445,
+      "name": "NCAAF 015 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509446,
+      "name": "NCAAF 016 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509447,
+      "name": "NCAAF 017 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509448,
+      "name": "NCAAF 018 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509449,
+      "name": "NCAAF 019 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509450,
+      "name": "NCAAF 020 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509451,
+      "name": "NCAAF 021 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509452,
+      "name": "NCAAF 022 | Morgan State Bears at Villanova Wildcats | 1 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509453,
+      "name": "NCAAF 023 | Valparaiso Beacons at Morehead State Eagles | 1 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509454,
+      "name": "NCAAF 024 | Western Michigan Broncos at Buffalo Bulls | 1 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509455,
+      "name": "NCAAF 025 | Mercer Bears at VMI Keydets | 1:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509456,
+      "name": "NCAAF 026 | Pennsylvania Quakers at Dartmouth Big Green | 1:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509457,
+      "name": "NCAAF 027 | Kentucky State at Edward Waters | 2 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509458,
+      "name": "NCAAF 028 | Murray State Racers at North Dakota Fighting Hawks | 2 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509459,
+      "name": "NCAAF 029 | Norfolk State Spartans at Robert Morris Colonials | 2 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509460,
+      "name": "NCAAF 030 | Toledo Rockets at Ball State Cardinals | 2 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509461,
+      "name": "NCAAF 031 | Wofford Terriers at Furman Paladins | 2 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509462,
+      "name": "NCAAF 032 | Calvin at Adrian | 3 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509463,
+      "name": "NCAAF 033 | Indiana State Sycamores at South Dakota Coyotes | 3 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509464,
+      "name": "NCAAF 034 | Lane at Miles College | 3 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509465,
+      "name": "NCAAF 035 | Akron Zips at Central Michigan Chippewas | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509466,
+      "name": "NCAAF 036 | Auburn Tigers at Tennessee Volunteers | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509467,
+      "name": "NCAAF 037 | Bowling Green Falcons at Miami (OH) RedHawks | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509468,
+      "name": "NCAAF 038 | California Golden Bears at UNLV Rebels | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509469,
+      "name": "NCAAF 039 | Chattanooga Mocs at ETSU Buccaneers | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509470,
+      "name": "NCAAF 040 | Eastern Michigan Eagles at Massachusetts Minutemen | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509471,
+      "name": "NCAAF 041 | Florida Gators at Missouri Tigers | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509472,
+      "name": "NCAAF 042 | Holy Cross Crusaders at William & Mary Tribe | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509473,
+      "name": "NCAAF 043 | Louisville Cardinals at NC State Wolfpack | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509474,
+      "name": "NCAAF 044 | Ohio Bobcats at Kent State Golden Flashes | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509475,
+      "name": "NCAAF 045 | Ohio State Buckeyes at Iowa Hawkeyes | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509476,
+      "name": "NCAAF 046 | Old Dominion Monarchs at Georgia State Panthers | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509477,
+      "name": "NCAAF 047 | Samford Bulldogs at UAB Blazers | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509478,
+      "name": "NCAAF 048 | Virginia Cavaliers at Florida State Seminoles | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509479,
+      "name": "NCAAF 049 | Wyoming Cowboys at North Dakota State Bison | 3:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509480,
+      "name": "NCAAF 050 | Marshall Thundering Herd at James Madison Dukes | 3:45 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509481,
+      "name": "NCAAF 051 | Davidson Wildcats at San Diego Toreros | 4 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509482,
+      "name": "NCAAF 052 | Maryland Terrapins at Nebraska Cornhuskers | 4 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509483,
+      "name": "NCAAF 053 | Northern Colorado Bears at Montana Grizzlies | 4 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509484,
+      "name": "NCAAF 054 | Tennessee State Tigers at Western Illinois Leathernecks | 4 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509485,
+      "name": "NCAAF 055 | Kentucky Wildcats at South Carolina Gamecocks | 4:15 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509486,
+      "name": "NCAAF 056 | Purdue Boilermakers at Illinois Fighting Illini | 4:15 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509487,
+      "name": "NCAAF 057 | New Haven Chargers at Austin Peay Governors | 5 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509488,
+      "name": "NCAAF 058 | Youngstown State Penguins at Southern Illinois Salukis | 5 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509489,
+      "name": "NCAAF 059 | Gardner-Webb Bulldogs at Charleston Southern Buccaneers | 6 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509490,
+      "name": "NCAAF 060 | Incarnate Word Cardinals at Stephen F. Austin Lumberjacks | 6 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509491,
+      "name": "NCAAF 061 | North Alabama Lions at Eastern Kentucky Colonels | 6 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509492,
+      "name": "NCAAF 062 | Oregon State Beavers at Colorado State Rams | 6 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509493,
+      "name": "NCAAF 063 | Tennessee Tech Golden Eagles at Western Carolina Catamounts | 6 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509494,
+      "name": "NCAAF 064 | Texas Southern Tigers at Florida Atlantic Owls | 6 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509495,
+      "name": "NCAAF 065 | Arkansas Razorbacks at Texas A&M Aggies | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509496,
+      "name": "NCAAF 066 | BYU Cougars at TCU Horned Frogs | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509497,
+      "name": "NCAAF 067 | Chicago State Cougars at Tarleton State Texans | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509498,
+      "name": "NCAAF 068 | Colgate Raiders at Harvard Crimson | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509499,
+      "name": "NCAAF 069 | Georgia Southern at Costal Carolina | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509500,
+      "name": "NCAAF 070 | Nicholls Colonels at Houston Christian Huskies | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509501,
+      "name": "NCAAF 071 | Northwestern State Demons at Lamar Cardinals | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509502,
+      "name": "NCAAF 072 | South Dakota State Jackrabbits at Illinois State Redbirds | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509503,
+      "name": "NCAAF 073 | Tuskegee at Morehouse (at Cramton Bowl in Montgomery, Ala.) | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509504,
+      "name": "NCAAF 074 | ULM Warhawks at South Alabama Jaguars | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509505,
+      "name": "NCAAF 075 | UT Rio Grande Valley Vaqueros at East Texas A&M Lions | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509506,
+      "name": "NCAAF 076 | UTSA Roadrunners at Rice Owls | 7 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509507,
+      "name": "NCAAF 077 | Army Black Knights at Louisiana Tech Bulldogs | 7:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509508,
+      "name": "NCAAF 078 | Miami (Fla.) at Clemson | 7:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509509,
+      "name": "NCAAF 079 | Temple Owls at South Florida Bulls | 7:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509510,
+      "name": "NCAAF 080 | Texas Tech Red Raiders at Colorado Buffaloes | 7:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509511,
+      "name": "NCAAF 081 | Utah State Aggies at Boise State Broncos | 7:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509512,
+      "name": "NCAAF 082 | Washington Huskies at USC Trojans | 7:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509513,
+      "name": "NCAAF 083 | McNeese Cowboys at LSU Tigers | 7:45 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509514,
+      "name": "NCAAF 084 | Arkansas State Red Wolves at Louisiana Ragin' Cajuns | 8 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509515,
+      "name": "NCAAF 085 | Indiana Hoosiers at Rutgers Scarlet Knights | 8 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509516,
+      "name": "NCAAF 086 | Northern Arizona Wildcats at Idaho State Bengals | 8 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509517,
+      "name": "NCAAF 087 | Southern Utah Thunderbirds at Utah Tech Trailblazers | 8 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509518,
+      "name": "NCAAF 088 | Weber State Wildcats at Cal Poly Mustangs | 8 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509519,
+      "name": "NCAAF 089 | West Florida Argonauts at Abilene Christian Wildcats | 8 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509520,
+      "name": "NCAAF 090 | Fresno State Bulldogs at Washington State Cougars | 9:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509521,
+      "name": "NCAAF 091 | Baylor Bears at Arizona State Sun Devils | 10:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509522,
+      "name": "NCAAF 092 | Eastern Washington Eagles at UC Davis Aggies | 10:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509523,
+      "name": "NCAAF 093 | Texas State Bobcats at San Diego State Aztecs | 10:30 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509524,
+      "name": "NCAAF 094 | Cincinnati Bearcats at Arizona Wildcats | 11 PM ET | 10.03",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509525,
+      "name": "NCAAF 095 | Mercer Bears at Abilene Christian | 8 PM ET | 9.26",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509526,
+      "name": "NCAAF 096 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509527,
+      "name": "NCAAF 097 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509528,
+      "name": "NCAAF 098",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509529,
+      "name": "NCAAF 099 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509530,
+      "name": "NCAAF 100 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509531,
+      "name": "NCAAF 101 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509532,
+      "name": "NCAAF 102 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509533,
+      "name": "NCAAF 103 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509534,
+      "name": "NCAAF 104 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509535,
+      "name": "NCAAF 105 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509536,
+      "name": "NCAAF 106 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509537,
+      "name": "NCAAF 107 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509538,
+      "name": "NCAAF 108 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509539,
+      "name": "NCAAF 109 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509540,
+      "name": "NCAAF 110 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509541,
+      "name": "NCAAF 111 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509542,
+      "name": "NCAAF 112 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509543,
+      "name": "NCAAF 113 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509544,
+      "name": "NCAAF 114 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509545,
+      "name": "NCAAF 115 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509546,
+      "name": "NCAAF 116 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509547,
+      "name": "NCAAF 117 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509548,
+      "name": "NCAAF 118 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509549,
+      "name": "NCAAF 119 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509550,
+      "name": "NCAAF 120 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509551,
+      "name": "NCAAF 121 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509552,
+      "name": "NCAAF 122 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509553,
+      "name": "NCAAF 123 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509554,
+      "name": "NCAAF 124 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509555,
+      "name": "NCAAF 125 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509556,
+      "name": "NCAAF 126 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509557,
+      "name": "NCAAF 127 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509558,
+      "name": "NCAAF 128 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509559,
+      "name": "NCAAF 129 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509560,
+      "name": "NCAAF 130 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509561,
+      "name": "NCAAF 131 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509562,
+      "name": "NCAAF 132 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509563,
+      "name": "NCAAF 133 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509564,
+      "name": "NCAAF 134 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509565,
+      "name": "NCAAF 135 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509566,
+      "name": "NCAAF 136 | OFFLINE",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509567,
+      "name": "NCAAF 137 | OFFLINE",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 509568,
+      "name": "NCAAF 138 | OFFLINE",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": false,
+      "sourceDate": "2026-11-14",
+      "source": "mbox_sports_channels_clean.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287875,
+      "name": "New England Patriots",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287876,
+      "name": "New Orleans Saints",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287877,
+      "name": "New York Giants",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287878,
+      "name": "New York Jets",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287839,
+      "name": "NFL 01 | Atlanta Falcons at New Orleans Saints | 8:15 PM ET | 10.05",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287840,
+      "name": "NFL 02 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287841,
+      "name": "NFL 03 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287842,
+      "name": "NFL 04 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287843,
+      "name": "NFL 05 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287844,
+      "name": "NFL 06 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287845,
+      "name": "NFL 07 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287846,
+      "name": "NFL 08 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287847,
+      "name": "NFL 09 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287848,
+      "name": "NFL 10 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287849,
+      "name": "NFL 11 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287850,
+      "name": "NFL 12 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287851,
+      "name": "NFL 13 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287852,
+      "name": "NFL 14 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287853,
+      "name": "NFL 15 |",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511268,
+      "name": "NFL 16",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 367888,
+      "name": "NFL NETWORK FHD",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 367889,
+      "name": "NFL RED ZONE HD",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287879,
+      "name": "Philadelphia Eagles",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287880,
+      "name": "Pittsburgh Steelers",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287881,
+      "name": "San Francisco 49ers",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287882,
+      "name": "Seattle Seahawks",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287883,
+      "name": "Tampa Bay Buccaneers",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287884,
+      "name": "Tennessee Titans",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 287885,
+      "name": "Washington Commanders",
+      "category": "NFL║NFL SD ║NCAAF",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 166286,
+      "name": "PE: Movistar Deportes",
+      "category": "PERU",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288534,
+      "name": "PPV 01 | WWE | MONDAY NIGHT RAW | 8 PM ET | MON",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288530,
+      "name": "PPV 02 | UFC 332: Silva v. Wang | EARLY PRELIMS | 4 PM ET | 10.03",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288529,
+      "name": "PPV 03 | UFC 332: Silva v. Wang | EARLY PRELIMS | 4 PM ET | 10.03 | LATINO",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288528,
+      "name": "PPV 04 | UFC 332: Silva v. Wang | PRELIMS | 6 PM ET | 10.03",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288527,
+      "name": "PPV 05 | UFC 332: Silva v. Wang | MAIN | 7.30 PM ET | 10.03",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288526,
+      "name": "PPV 06 | UFC 332: Silva v. Wang | MAIN | 7.30 PM ET | 10.03 | LATINO",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 288525,
+      "name": "PPV 07 | UFC 332: Silva v. Wang | MAIN | 7.30 PM ET | 10.03 | MULTIVIEW",
+      "category": "PPV || PEACOCK",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 529250,
+      "name": "SECN+ 020 | [FOOTBALL] Sooner Sports Talk | 8.00 PM ET | 10.5",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 529261,
+      "name": "SECN+ 031 | [LIVE] Sooner Sports Talk | 8.00 PM ET | 8.31",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511212,
+      "name": "TSN+ 01: ATP 1000 Tennis: Shanghai - Day #1 (Grandstand 2) (7 Oct 12:00 AM ET)",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511213,
+      "name": "TSN+ 02: ATP 1000 Tennis: Shanghai - Early Round Coverage Day #1 (7 Oct 12:00 AM ET)",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511214,
+      "name": "TSN+ 03: ATP 1000 Tennis: Shanghai - Day #1 (Show Court 3) (7 Oct 12:00 AM ET)",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511215,
+      "name": "TSN+ 04 | ATP 1000 Tennis: Shanghai - Day #1 (Stadium) | 12:00 AM ET | 10.07",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511216,
+      "name": "TSN+ 05 | ATP 1000 Tennis: Shanghai - Early Round Coverage Day #1 | 12:00 AM ET | 10.07",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511219,
+      "name": "TSN+ 08 | Formula 1 Pit Lane - Bahrain Grand Prix | 2:30 AM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511220,
+      "name": "TSN+ 09 | Formula 1 Timing Channel - Bahrain Grand Prix | 2:30 AM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511221,
+      "name": "TSN+ 10 | ATP 500 Tennis: Beijing - Quarterfinals (Lotus) | 7:00 AM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511222,
+      "name": "TSN+ 11 | NFL International Series: Colts vs. Commanders | 9:30 AM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511223,
+      "name": "TSN+ 12 | NFL Fantasy Focus | 10:00 AM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511224,
+      "name": "TSN+ 13 | NFL RedZone | 1:00 PM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511225,
+      "name": "TSN+ 14 | NFL on TSN: Jaguars vs. Bengals | 1:00 PM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511229,
+      "name": "TSN+ 18 | WTA 1000 Tennis: Beijing - Early Round Coverage Day #6 | 11:00 PM ET | 10.04",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 511240,
+      "name": "TSN+ 29 | ATP 500 Tennis: Tokyo - Quarterfinals | 10:00 PM ET | 10.03",
+      "category": "SEC+ ║ TSN+",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465778,
+      "name": "Arena Sport 1 BiH",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465779,
+      "name": "Arena Sport 1 Croatia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465780,
+      "name": "Arena Sport 1 Premium",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465781,
+      "name": "Arena Sport 1 Serbia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465782,
+      "name": "Arena Sport 2 Croatia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465783,
+      "name": "Arena Sport 2 Premium",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465784,
+      "name": "Arena Sport 2 Serbia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465785,
+      "name": "Arena Sport 3 Croatia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465786,
+      "name": "Arena Sport 3 Premium",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465787,
+      "name": "Arena Sport 3 Serbia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465788,
+      "name": "Arena Sport 4 Croatia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465789,
+      "name": "Arena Sport 4 Serbia",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 280646,
+      "name": "BEIN SPORTS 1 ( ENGLISH)",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459952,
+      "name": "BEIN SPORTS 1 ARABIA",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459949,
+      "name": "BEIN SPORTS 1 ENGLISH",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459966,
+      "name": "BEIN SPORTS 1 FRANCE",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459959,
+      "name": "BEIN SPORTS 1 PREMIUM",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459962,
+      "name": "BEIN SPORTS 1 TURKEY",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 280647,
+      "name": "BEIN SPORTS 2 ( ENGLISH )",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459953,
+      "name": "BEIN SPORTS 2 ARABIA",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459950,
+      "name": "BEIN SPORTS 2 ENGLISH",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459967,
+      "name": "BEIN SPORTS 2 FRANCE",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459960,
+      "name": "BEIN SPORTS 2 PREMIUM",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459963,
+      "name": "BEIN SPORTS 2 TURKEY",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459951,
+      "name": "BEIN SPORTS 3 ENGLISH",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459968,
+      "name": "BEIN SPORTS 3 FRANCE",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459964,
+      "name": "BEIN SPORTS 3 TURKEY",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459955,
+      "name": "BEIN SPORTS 4 ARABIA",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459965,
+      "name": "BEIN SPORTS 4 TURKEY",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 459969,
+      "name": "BEIN SPORTS USA",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481092,
+      "name": "DE: Sky Sport Bundesliga HD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481093,
+      "name": "DE: Sky Sport Top Event HD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 533351,
+      "name": "FIFA+",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481064,
+      "name": "Hub Premier 1 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481065,
+      "name": "Hub Premier 2 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481066,
+      "name": "Hub Premier 3 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481067,
+      "name": "Hub Premier 4 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481068,
+      "name": "Hub Premier 5 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481069,
+      "name": "Hub Premier 6 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481070,
+      "name": "Hub Premier 7 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481071,
+      "name": "Hub Premier 8 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481089,
+      "name": "IRE: Premier Sports 1 HD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 481090,
+      "name": "IRE: Premier Sports 2 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 156658,
+      "name": "MOTORVISION",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 156660,
+      "name": "PFC",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465804,
+      "name": "POLSAT SPORT",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 424342,
+      "name": "POLSAT SPORT 1 FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465807,
+      "name": "POLSAT SPORT EXTRA",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465809,
+      "name": "POLSAT SPORT NEWS",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 424344,
+      "name": "POLSAT SPORT NEWS FHD",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465810,
+      "name": "POLSAT SPORT PREMIUM 1",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465811,
+      "name": "POLSAT SPORT PREMIUM 2",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465812,
+      "name": "POLSAT SPORT PREMIUM 3",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465813,
+      "name": "POLSAT SPORT PREMIUM 4",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465814,
+      "name": "POLSAT SPORT PREMIUM 5",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 465815,
+      "name": "POLSAT SPORT PREMIUM 6",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 533344,
+      "name": "Red Bull TV",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 156646,
+      "name": "REDBULL TV ᶠᴴᴰ",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 533349,
+      "name": "Top Barça",
+      "category": "SPORTS EUROPA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195805,
+      "name": "BeIN SPORT 3 HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 295916,
+      "name": "BEIN SPORTS 4",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 295917,
+      "name": "BEIN SPORTS 5",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 295918,
+      "name": "BEIN SPORTS 6",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 295919,
+      "name": "BEIN SPORTS 7",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 295920,
+      "name": "BEIN SPORTS 8",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 480845,
+      "name": "CBS Sports Golazo",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 296999,
+      "name": "Marquee Sports Network",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 560367,
+      "name": "TELEMUNDO | DEPORTES",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169924,
+      "name": "TUDN HD (USA)",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 484891,
+      "name": "TUDN HD (USA)",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195813,
+      "name": "USA:  MotorTrend HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195818,
+      "name": "USA:  MSG 2 PLUS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195819,
+      "name": "USA:  MSG 3 PLUS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 185944,
+      "name": "USA: ACC Network",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195766,
+      "name": "USA: ACC NETWORK",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195910,
+      "name": "USA: ALTITUDE SPORTS ALT HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195863,
+      "name": "USA: Altitude Sports HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 409037,
+      "name": "USA: Arizona's Family Sports",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 303975,
+      "name": "USA: AT&T SportsNet Pittsburgh",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195850,
+      "name": "USA: AT&T Sportsnet South West",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 303974,
+      "name": "USA: AT&T SportsNet Southwest",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 212120,
+      "name": "USA: AXS TV",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 113997,
+      "name": "USA: BEIN SPORTS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 169948,
+      "name": "USA: BEIN SPORTS ESPANOL",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195798,
+      "name": "USA: beIN SPORTS XTRA HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195871,
+      "name": "USA: BIG TEN NETWORK",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 378081,
+      "name": "USA: Billiard TV",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195873,
+      "name": "USA: CBS SPORTS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195857,
+      "name": "USA: CNBC HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195914,
+      "name": "USA: ELEVEN SPORTS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195745,
+      "name": "USA: ESPN 2",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195752,
+      "name": "USA: ESPN DEPORTES",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195743,
+      "name": "USA: ESPN HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195754,
+      "name": "USA: ESPN NEWS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195749,
+      "name": "USA: ESPN U",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 193396,
+      "name": "USA: FanDuel Sports Arizona",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 193409,
+      "name": "USA: FanDuel Sports New Orleans",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 193420,
+      "name": "USA: FanDuel Sports Oklahoma",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195771,
+      "name": "USA: FOX DEPORTES HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195772,
+      "name": "USA: FOX SOCCER PLUS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195769,
+      "name": "USA: Fox Sports 1 HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195770,
+      "name": "USA: Fox Sports 2 HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195775,
+      "name": "USA: FUBO SPORTS NETWORK",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 409036,
+      "name": "USA: FUBO SPORTS NETWORK 2",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195876,
+      "name": "USA: Game+",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195877,
+      "name": "USA: GINX ESports",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 478719,
+      "name": "USA: GOLF CHANNEL",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 185790,
+      "name": "USA: MavTv",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195816,
+      "name": "USA: MSG HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195817,
+      "name": "USA: MSG Plus HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195826,
+      "name": "USA: NBC Sports Bay Area",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195825,
+      "name": "USA: NBC Sports Bay Area Plus",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195827,
+      "name": "USA: NBC Sports Boston",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195829,
+      "name": "USA: NBC Sports California",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195830,
+      "name": "USA: NBC Sports Chicago",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195831,
+      "name": "USA: NBC SPORTS NOW",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 191145,
+      "name": "USA: NBC Sports Philadelphia",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 191144,
+      "name": "USA: NBC Sports Philadelphia Plus",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195835,
+      "name": "USA: NBC Sports Washington",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 247242,
+      "name": "USA: NBC UNIVERSO",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195890,
+      "name": "USA: NESN HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195891,
+      "name": "USA: NESN PLUS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 202780,
+      "name": "USA: NFL FHD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 108862,
+      "name": "USA: NHL NETWORK",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 127459,
+      "name": "USA: OUTSIDE TV",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 122022,
+      "name": "USA: PAC- 12 Insider",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195866,
+      "name": "USA: SEC NETWORK (ESPN)",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195848,
+      "name": "USA: SNY HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195853,
+      "name": "USA: SPECTRUM SPORTSNET (Lakers)",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195897,
+      "name": "USA: Sportsman Channel",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195849,
+      "name": "USA: SPORTSNET EAST",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195851,
+      "name": "USA: SPORTSNET LA DODGERS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195912,
+      "name": "USA: SPORTSNET NY",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 128485,
+      "name": "USA: SPORTSNET WEST",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 122030,
+      "name": "USA: Stadium",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195903,
+      "name": "USA: TENNIS CHANNEL",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195840,
+      "name": "USA: TENNIS CHANNEL HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 208698,
+      "name": "USA: TRACE SPORTS",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195870,
+      "name": "USA: VSiN",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 394986,
+      "name": "USA: Womens Sports Network",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195854,
+      "name": "USA: World Fish Network HD",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 195855,
+      "name": "USA: YES NETWORK",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 296985,
+      "name": "World Fishing Network (US)",
+      "category": "SPORTS USA",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432451,
+      "name": "SKY SPORT TENNIS FHD",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432450,
+      "name": "SKY SPORT TENNIS HD",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432452,
+      "name": "SKY SPORT TENNIS HEVC HB (1080p)",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432453,
+      "name": "SKY SPORT TENNIS HEVC LB (1080p)",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432449,
+      "name": "SKY SPORT TENNIS SD",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432447,
+      "name": "TENNIS CHANNEL HD",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432446,
+      "name": "TENNIS CHANNEL INTERNACIONAL HD",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432456,
+      "name": "TENNIS TV | Event 01",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432457,
+      "name": "TENNIS TV | Event 02",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432458,
+      "name": "TENNIS TV | Event 03",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432459,
+      "name": "TENNIS TV | Event 04",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432460,
+      "name": "TENNIS TV | Event 05",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432461,
+      "name": "TENNIS TV | Event 06",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432462,
+      "name": "TENNIS TV | Event 07",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432463,
+      "name": "TENNIS TV | Event 08",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432464,
+      "name": "TENNIS TV | Event 09",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432465,
+      "name": "TENNIS TV | Event 10",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432466,
+      "name": "TENNIS TV | Event 11",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432467,
+      "name": "TENNIS TV | Event 12",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432468,
+      "name": "TENNIS TV | Event 13",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432469,
+      "name": "TENNIS TV | Event 14",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432470,
+      "name": "TENNIS TV | Event 15",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432471,
+      "name": "TENNIS TV | Event 16",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432472,
+      "name": "TENNIS TV | Event 17",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432473,
+      "name": "TENNIS TV | Event 18",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432474,
+      "name": "TENNIS TV | Event 19",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432475,
+      "name": "TENNIS TV | Event 20",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432442,
+      "name": "USA: TENNIS CHANNEL HD",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 432444,
+      "name": "USA: TENNIS CHANNEL PLUS",
+      "category": "TENNIS",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 165693,
+      "name": "UR: DSPORTS PREMIUM",
+      "category": "URUGUAY",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 526002,
+      "name": "UR: PPV FUTBOL URUGUAY",
+      "category": "URUGUAY",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 437461,
+      "name": "USA: DOCUBOX: SPORTS",
+      "category": "USA: CINEMA & ENTERTAINMENT",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576155,
+      "name": "DAZN CA 19 | NFL Game Pass: Cowboys @ Texans | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576156,
+      "name": "DAZN CA 20 | NFL Game Pass: Jaguars @ Bengals | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576157,
+      "name": "DAZN CA 21 | NFL Game Pass: Patriots @ Bills | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576158,
+      "name": "DAZN CA 22 | NFL Game Pass: Cardinals @ Giants | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576159,
+      "name": "DAZN CA 23 | NFL Game Pass: Packers @ Buccaneers | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576160,
+      "name": "DAZN CA 24 | NFL Game Pass: Rams @ Eagles | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576161,
+      "name": "DAZN CA 25 | NFL Game Pass: Titans @ Ravens | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576162,
+      "name": "DAZN CA 26 | NFL Game Pass: Jets @ Bears | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576163,
+      "name": "DAZN CA 27 | NFL Game Pass: JAX @ CIN, GB @ TB, TEN @ BAL, RedZone | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576164,
+      "name": "DAZN CA 28 | NFL Game Pass: LAR @ PHI, GB @ TB, NYJ @ CHI, TEN @ BAL | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576165,
+      "name": "DAZN CA 29 | NFL Game Pass: LAR @ PHI, JAX @ CIN, NE @ BUF, RedZone | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576166,
+      "name": "DAZN CA 30 | NFL Game Pass: DAL @ HOU, NYJ @ CHI, TEN @ BAL, ARI @ NYG | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576167,
+      "name": "DAZN CA 31 | NFL Game Pass: LAR @ PHI, JAX @ CIN, NE @ BUF, DAL @ HOU | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576168,
+      "name": "DAZN CA 32 | NFL Game Pass: NE @ BUF, GB @ TB, ARI @ NYG, RedZone | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576169,
+      "name": "DAZN CA 33 | NFL Game Pass: GB @ TB, NYJ @ CHI, TEN @ BAL, ARI @ NYG | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576170,
+      "name": "DAZN CA 34 | NFL Game Pass: JAX @ CIN, DAL @ HOU, GB @ TB, ARI @ NYG | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576171,
+      "name": "DAZN CA 35 | NFL Game Pass: JAX @ CIN, NE @ BUF, DAL @ HOU, RedZone | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576172,
+      "name": "DAZN CA 36 | NFL Game Pass: NFL Redzone - Week 4 | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576173,
+      "name": "DAZN CA 37 | NFL Game Pass: NE @ BUF, DAL @ HOU, NYJ @ CHI, RedZone | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576175,
+      "name": "DAZN CA 39 | Sports Direct Women’s Premiership: Cliftonville vs. Glentoran | 1:00 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576182,
+      "name": "DAZN CA 46 | NFL Game Pass: Dolphins @ Vikings | 4:05 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576183,
+      "name": "DAZN CA 47 | NFL Game Pass: RedZone, DEN @ SF, LAC @ SEA, KC @ LV | 4:05 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576184,
+      "name": "DAZN CA 48 | NFL Game Pass: RedZone, MIA @ MIN, DEN @ SF, LAC @ SEA | 4:05 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576185,
+      "name": "DAZN CA 49 | NFL Game Pass: MIA @ MIN, DEN @ SF, LAC @ SEA, KC @ LV | 4:05 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576186,
+      "name": "DAZN CA 50 | NFL Game Pass: Broncos @ 49ers | 4:25 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576187,
+      "name": "DAZN CA 51 | NFL Game Pass: Chargers @ Seahawks | 4:25 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576188,
+      "name": "DAZN CA 52 | NFL Game Pass: Chiefs @ Raiders | 4:25 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576189,
+      "name": "DAZN CA 53 | NFL Game Pass: Lions @ Panthers | 8:20 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    },
+    {
+      "streamId": 576190,
+      "name": "DAZN CA 54 | NFL Game Pass: Lions @ Panthers (In French) | 8:20 PM ET | 10.04",
+      "category": "VIX+║ DAZN",
+      "enabled": true,
+      "sourceDate": "2026-10-08",
+      "source": "sports_channel_catalog.json",
+      "temporary": false
+    }
+  ]
+}

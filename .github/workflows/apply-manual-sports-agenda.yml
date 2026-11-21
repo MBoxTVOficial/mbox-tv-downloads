@@ -1,0 +1,49 @@
+name: Apply manual football agenda
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - sports_manual_agenda.json
+      - sports_manual_channel_catalog.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sports-today-main
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Test manual editing offline
+        run: python -m unittest discover -s tests -p "test_*manual*.py"
+      - name: Apply edits without provider or IPTV requests
+        run: python -m scripts.manual_agenda_publication
+      - name: Publish only the edited agenda and its reversible base
+        shell: bash
+        run: |
+          files=(sports_today.json sports_agenda_window.json sports_agenda_automatic.json sports_fixture_identity.json)
+          git add -- "${files[@]}"
+          if git diff --cached --quiet -- "${files[@]}"; then
+            echo "Manual agenda unchanged; no commit."
+            exit 0
+          fi
+          git config user.name "MBox Sports Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Apply manual football agenda" --only -- "${files[@]}"
+          git push origin HEAD:main

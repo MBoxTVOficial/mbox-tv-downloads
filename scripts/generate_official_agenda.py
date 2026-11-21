@@ -21,6 +21,7 @@ from .sports_competition_broadcasters import territory
 from .sports_daily_broadcasts import read_broadcasts, validate_broadcasts, resolve_broadcasts, apply_daily_assignments
 from .sports_fixture_identity import IdentityStore
 from .sports_agenda_window import build_agenda_window, validate_window
+from .manual_agenda_publication import BASE as MANUAL_BASE, MANUAL, CATALOG, read_base, overlay_for_generation
 
 
 def _events(feed):
@@ -71,6 +72,29 @@ def _valid_empty(report):
     return any(item.get('state') in {'OK', 'NO_MATCHES', 'CACHE_HIT'} and
                item.get('fixturesToday', item.get('fixtures', 0)) == 0
                for item in report.get('sources', []) + report.get('guides', []))
+
+
+def _automatic_fallback(feed, identity, daily, groups, *, reset_channels=False):
+    """A lost editor base must not turn edited public cards into source evidence."""
+    if feed is None:
+        return None
+    result = copy.deepcopy(feed)
+    manual_ids = {f'fixture-{identifier}' for key, identifier in (identity or {}).get('entries', {}).items()
+                  if key.startswith('manual_agenda:')}
+    for section in result['sections']:
+        section['events'] = [event for event in section['events'] if event['id'] not in manual_ids]
+        if reset_channels:
+            for event in section['events']:
+                event.pop('channels', None)
+    if reset_channels and daily and daily['date'] == result['date']:
+        # Only the independent, dated assignment artifact can restore original
+        # TV here. Never infer original channels from a previously edited card.
+        try:
+            assignments = resolve_broadcasts(daily, result, groups, generator.normalize)
+            apply_daily_assignments(result, assignments)
+        except ValueError:
+            pass
+    return result
 
 
 def _reconcile_exact_rows(rows, previous, identity, guides, report, day):
@@ -199,6 +223,7 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
     try:
         protected = {'sports_fixture_identity.json', 'sports_broadcasts_today.json',
                      'sports_agenda_window.json',
+                     MANUAL_BASE, MANUAL, CATALOG,
                      'mbox_sports_channels_clean.json', 'sports_broadcaster_mapping.json',
                      'sports_official_sources.json', 'sports_agenda_guides.json',
                      'mbox_config.json', 'update.json'}
@@ -217,9 +242,24 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
         previous_window = read_json(root / 'sports_agenda_window.json', optional=True)
         if previous_window is not None:
             validate_window(previous_window)
-        baseline = previous if previous and previous['date'] == day.isoformat() else \
-            (previous_window or {}).get('days', {}).get(day.isoformat())
+        try:
+            manual_base = read_base(root)
+        except (ValueError, KeyError, TypeError, OSError):
+            manual_base = None
+            report['warnings'].append('MANUAL_BASE_INVALID')
+        # Automatic reconciliation only sees automatic evidence, even after an
+        # editor added a confirmed manual fixture or replaced its channel IDs.
         daily = read_broadcasts(root / 'sports_broadcasts_today.json')
+        automatic_previous = manual_base['automaticWindow'] if manual_base else copy.deepcopy(previous_window)
+        reset_channels = not manual_base and (root / MANUAL).exists()
+        if manual_base is None and automatic_previous is not None:
+            automatic_previous['days'] = {key: _automatic_fallback(value, identity, daily, groups,
+                reset_channels=reset_channels) for key, value in automatic_previous['days'].items()}
+        if reset_channels:
+            report['warnings'].append('MANUAL_BASE_REBUILT_FROM_CONFIRMED_ASSIGNMENTS')
+        baseline = (automatic_previous or {}).get('days', {}).get(day.isoformat())
+        if baseline is None and previous and previous['date'] == day.isoformat():
+            baseline = _automatic_fallback(previous, identity, daily, groups, reset_channels=reset_channels)
         rows, official_cache, guide_cache, records, acquired = acquire_all(
             config, guides, day, local_now, groups, mapping,
             cache('official_source_cache.json'), cache('argentina_guide_cache.json'),
@@ -269,9 +309,16 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
         validate_broadcasts(broadcasts)
         IdentityStore(updated_identity)
         window, updated_identity, window_report = build_agenda_window(day, local_now, feed,
-            config, guides, groups, mapping, updated_identity, report, previous_window,
+            config, guides, groups, mapping, updated_identity, report, automatic_previous,
             reconcile=_reconcile_exact_rows, daily=daily)
-        values = [(root / 'sports_fixture_identity.json', updated_identity)]
+        window, updated_identity, new_manual_base, manual_report = overlay_for_generation(
+            root, window, updated_identity, local_now, base=manual_base, previous=previous_window)
+        manual_report['warnings'] = list(dict.fromkeys(manual_report.get('warnings', []) +
+            [code for code in report['warnings'] if code.startswith('MANUAL_')]))
+        feed = window['days'][day.isoformat()]
+        incoming = _events(feed)
+        values = [(root / 'sports_fixture_identity.json', updated_identity),
+                  (root / MANUAL_BASE, new_manual_base)]
         if daily and day.isoformat() < daily['date'] <= (day + timedelta(days=2)).isoformat() and \
                 any(item.get('source', 'manual') == 'manual' for item in daily['broadcasts']):
             report['warnings'].append('FUTURE_MANUAL_CONFIGURATION_PRESERVED')
@@ -282,6 +329,7 @@ def generate_official_agenda(root, output, day, now, *, transport=None, offline=
         changed = output in changed_paths
         report.update(state='DEGRADED', feedDate=feed['date'], changed=changed,
                       fixtures=details, totalFixtures=len(incoming),
+                      manual=manual_report,
                       windowDays=window_report, availableDates=sorted(window['days']),
                       withChannels=sum(bool(event.get('channels')) for event in incoming))
         _diagnostic(root, report)

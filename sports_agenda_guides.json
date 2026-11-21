@@ -8,16 +8,16 @@
     {"id": "tyc-agenda", "url": "https://www.tycsports.com/agenda-deportiva-hoy.html", "owner": "ole-tyc-conservative", "adapter": "tyc"}
   ],
   "competitionAliases": {
-    "Liga Profesional Argentina": ["Liga Profesional", "Primera División Argentina", "Liga Argentina", "Torneo Clausura"],
+    "Liga Profesional Argentina": ["Liga Profesional", "Primera División Argentina", "Liga Argentina", "Torneo Clausura", "Liga Profesional de Fútbol", "Torneo Betano"],
     "Torneo Proyección": ["Reserva", "Proyección", "Torneo de Reserva", "Torneo Proyección", "Torneo Proyección de Reserva"],
     "Primera Nacional": ["Primera Nacional Argentina", "Argentina - Primera Nacional"],
     "Copa Argentina": ["Argentina - Copa Argentina"],
     "CONMEBOL Libertadores": ["Copa Libertadores", "Libertadores"],
     "CONMEBOL Sudamericana": ["Copa Sudamericana", "Sudamericana"],
-    "LaLiga": ["La Liga", "LALIGA EA SPORTS", "Liga de España", "Primera División España"],
+    "LaLiga": ["La Liga", "LALIGA EA SPORTS", "La Liga EA Sports", "Liga de España", "Primera División España", "España - Primera División"],
     "Premier League": ["Inglaterra - Premier League"],
     "Serie A": ["Serie A Italia", "Serie A Italiana", "Liga Italiana"],
-    "Ligue 1": ["Liga Francesa", "Francia - Ligue 1"],
+    "Ligue 1": ["Liga Francesa", "Francia - Ligue 1", "Francia - Primera División"],
     "UEFA Nations League": ["Nations League", "UEFA Nations League - Liga A", "UEFA Nations League - Liga B", "UEFA Nations League - Liga C", "UEFA Nations League - Liga D"],
     "CONCACAF Nations League": ["Liga de Naciones CONCACAF"],
     "Amistosos de selecciones": ["Amistoso", "Amistosos", "Amistoso Internacional", "Amistosos Internacionales", "International Friendlies"]
@@ -43,8 +43,13 @@
     "Estudiantes Caseros": ["Estudiantes BA"],
     "Colón": ["CA Colón", "Colón Santa Fe"],
     "Midland": ["Ferrocarril Midland"],
-    "Huracán": ["CA Huracán"]
+    "Huracán": ["CA Huracán"],
+    "Vélez": ["Vélez Sarsfield"]
   },
-  "reserveTeamAliases": {"Gimnasia LP": ["Gimnasia", "Gimnasia La Plata"]},
+  "reserveTeamAliases": {
+    "Gimnasia LP": ["Gimnasia", "Gimnasia La Plata"],
+    "Racing": ["Racing Avellaneda"],
+    "Talleres": ["Talleres Córdoba"]
+  },
   "signalAliases": {"LPF Play": ["LPF Play (plan plus)"]}
 }

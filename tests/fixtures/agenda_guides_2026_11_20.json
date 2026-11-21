@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-20",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "sources": [
+    {
+      "guideId": "futbol-en-vivo-ar",
+      "sourceUrl": "https://www.futbolenvivoargentina.com/",
+      "records": [
+        {
+          "competition": "Francia Ligue 1",
+          "homeTeam": "Troyes",
+          "awayTeam": "Le Havre AC",
+          "startTime": "2026-11-20T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium"
+          ],
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130117033335_esperance-sportive-troyes-aube-champagne.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130910055724-havre-ac.webp"
+        },
+        {
+          "competition": "La Liga EA Sports",
+          "homeTeam": "Athletic Club",
+          "awayTeam": "Espanyol",
+          "startTime": "2026-11-20T17:00:00-03:00",
+          "broadcasters": [
+            "DSports 2 (612/1612)",
+            "DGO",
+            "Amazon Prime Video (Ver en vivo)",
+            "Paramount+"
+          ],
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093611_bilbao.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093321_espanol.webp"
+        },
+        {
+          "competition": "Torneo Betano",
+          "homeTeam": "Vélez Sarsfield",
+          "awayTeam": "Belgrano",
+          "startTime": "2026-11-20T20:00:00-03:00",
+          "broadcasters": [
+            "TNT Sports Premium",
+            "TNT Sports en HBO MAX (Suscripción Pack fútbol)"
+          ],
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051943_vélez-sarsfield.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219050908__belgrano.webp"
+        }
+      ]
+    },
+    {
+      "guideId": "ole-agenda",
+      "sourceUrl": "https://www.ole.com.ar/agenda-deportiva",
+      "records": [
+        {
+          "competition": "Liga Profesional",
+          "homeTeam": "Vélez Sarsfield",
+          "awayTeam": "Belgrano",
+          "startTime": "2026-11-20T20:00:00-03:00",
+          "broadcasters": [
+            "TNT Sports"
+          ],
+          "homeLogo": "",
+          "awayLogo": ""
+        }
+      ]
+    },
+    {
+      "guideId": "tyc-agenda",
+      "sourceUrl": "https://www.tycsports.com/agenda-deportiva-hoy.html",
+      "records": [
+        {
+          "competition": "Francia - Primera División",
+          "homeTeam": "Troyes",
+          "awayTeam": "Le Havre AC",
+          "startTime": "2026-11-20T16:45:00-03:00",
+          "broadcasters": [
+            "Disney+ Premium",
+            "Tubi"
+          ],
+          "homeLogo": "https://statics-files.tycsports.com/escudos/3889.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/7987.png?v=6?v=2"
+        },
+        {
+          "competition": "España - Primera División",
+          "homeTeam": "Athletic Bilbao",
+          "awayTeam": "Espanyol",
+          "startTime": "2026-11-20T17:00:00-03:00",
+          "broadcasters": [
+            "DGO",
+            "DSports2"
+          ],
+          "homeLogo": "https://statics-files.tycsports.com/escudos/30.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/34.png?v=6?v=2"
+        },
+        {
+          "competition": "Liga Profesional de Fútbol",
+          "homeTeam": "Vélez",
+          "awayTeam": "Belgrano",
+          "startTime": "2026-11-20T20:00:00-03:00",
+          "broadcasters": [
+            "TNT Sports"
+          ],
+          "homeLogo": "https://statics-files.tycsports.com/escudos/20.png?v=6?v=2",
+          "awayLogo": "https://statics-files.tycsports.com/escudos/124.png?v=6?v=2"
+        }
+      ]
+    }
+  ],
+  "competitionContext": {
+    "Torneo Betano": "/competicion/liga-argentina",
+    "La Liga EA Sports": "/competicion/la-liga"
+  },
+  "november19": {
+    "oleArgentinaU17": {
+      "home": "Argentina U17",
+      "away": "Australia U17",
+      "kickoff": "2026-11-19T13:00:00-03:00",
+      "competition": "Mundial Sub 17",
+      "broadcasters": [
+        "TyC Sports",
+        "DGO"
+      ],
+      "home_logo": "",
+      "away_logo": "",
+      "acceptedCompetition": null
+    },
+    "racingRows": [
+      {
+        "id": "fixture-1445730106",
+        "sport": "football",
+        "competition": "Torneo Proyección",
+        "homeTeam": "– Racing",
+        "awayTeam": "Talleres",
+        "homeLogo": "",
+        "awayLogo": "",
+        "startTime": "15:00",
+        "status": "SCHEDULED"
+      },
+      {
+        "id": "fixture-1075622151",
+        "sport": "football",
+        "competition": "Torneo Proyección",
+        "homeTeam": "Racing Avellaneda Reserva",
+        "awayTeam": "Talleres Córdoba Reserva",
+        "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051639_racing-de-avellaneda.webp",
+        "awayLogo": "https://static.futbolenlatv.com/img/32/20160714102309-talleres-cordoba.webp",
+        "startTime": "15:00",
+        "status": "SCHEDULED"
+      }
+    ]
+  },
+  "futureLaLiga": [
+    {
+      "date": "2026-11-21",
+      "previousFeedRows": [
+        {
+          "id": "fixture-1287273567",
+          "competition": "LaLiga",
+          "homeTeam": "Alavés",
+          "awayTeam": "Deportivo de A Coruña",
+          "startTime": "10:00"
+        },
+        {
+          "id": "fixture-1209352870",
+          "competition": "LaLiga",
+          "homeTeam": "Rayo Vallecano",
+          "awayTeam": "Valencia",
+          "startTime": "12:15"
+        },
+        {
+          "id": "fixture-1042642692",
+          "competition": "LaLiga",
+          "homeTeam": "Sevilla",
+          "awayTeam": "Real Betis",
+          "startTime": "14:30"
+        },
+        {
+          "id": "fixture-1975551641",
+          "competition": "LaLiga",
+          "homeTeam": "Real Madrid",
+          "awayTeam": "Celta de Vigo",
+          "startTime": "17:00"
+        }
+      ],
+      "sources": [
+        {
+          "guideId": "futbol-en-vivo-ar",
+          "records": [
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Alavés",
+              "awayTeam": "Deportivo",
+              "startTime": "2026-11-21T10:00:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20210127191233-alaves-esports.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218091015_deportivo.webp"
+            },
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Rayo Vallecano",
+              "awayTeam": "Valencia CF",
+              "startTime": "2026-11-21T12:15:00-03:00",
+              "broadcasters": [
+                "DSports 2 (612/1612)",
+                "DGO",
+                "Amazon Prime Video (Ver en vivo)",
+                "Paramount+"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121226112150_rayo-vallecano_(1).webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20151004120005-valencia.webp"
+            },
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Sevilla FC",
+              "awayTeam": "Real Betis",
+              "startTime": "2026-11-21T14:30:00-03:00",
+              "broadcasters": [
+                "DSports 2 (612/1612)",
+                "DGO",
+                "Amazon Prime Video (Ver en vivo)",
+                "Paramount+"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093043_sevilla.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20130924050626-real-betis.webp"
+            },
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Real Madrid",
+              "awayTeam": "Celta",
+              "startTime": "2026-11-21T17:00:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20160725122745-real-madrid.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218091134_celta.webp"
+            }
+          ]
+        },
+        {
+          "guideId": "ole-agenda",
+          "records": [
+            {
+              "competition": "La Liga",
+              "homeTeam": "Alavés",
+              "awayTeam": "Deportivo de A Coruña",
+              "startTime": "2026-11-21T10:00:00-03:00",
+              "broadcasters": [
+                "Disney + Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/173.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/180.png"
+            },
+            {
+              "competition": "La Liga",
+              "homeTeam": "Rayo Vallecano",
+              "awayTeam": "Valencia",
+              "startTime": "2026-11-21T12:15:00-03:00",
+              "broadcasters": [
+                "DSports 2"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/184.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/191.png"
+            },
+            {
+              "competition": "La Liga",
+              "homeTeam": "Sevilla",
+              "awayTeam": "Real Betis",
+              "startTime": "2026-11-21T14:30:00-03:00",
+              "broadcasters": [
+                "DSports 2"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/179.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/185.png"
+            },
+            {
+              "competition": "La Liga",
+              "homeTeam": "Real Madrid",
+              "awayTeam": "Celta de Vigo",
+              "startTime": "2026-11-21T17:00:00-03:00",
+              "broadcasters": [
+                "Disney + Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/186.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/176.png"
+            }
+          ]
+        },
+        {
+          "guideId": "tyc-agenda",
+          "records": [
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Alavés",
+              "awayTeam": "Deportivo",
+              "startTime": "2026-11-21T10:00:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/160.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/33.png?v=6?v=2"
+            },
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Rayo Vallecano",
+              "awayTeam": "Valencia",
+              "startTime": "2026-11-21T12:15:00-03:00",
+              "broadcasters": [
+                "DGO",
+                "DSports2"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/3310.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/42.png?v=6?v=2"
+            },
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Sevilla",
+              "awayTeam": "Betis",
+              "startTime": "2026-11-21T14:30:00-03:00",
+              "broadcasters": [
+                "DGO",
+                "DSports2"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/41.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/32.png?v=6?v=2"
+            },
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Real Madrid",
+              "awayTeam": "Celta",
+              "startTime": "2026-11-21T17:00:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/39.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/162.png?v=6?v=2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "previousFeedRows": [
+        {
+          "id": "fixture-1794572848",
+          "competition": "LaLiga",
+          "homeTeam": "Barcelona",
+          "awayTeam": "Villarreal",
+          "startTime": "10:00"
+        },
+        {
+          "id": "fixture-1801123149",
+          "competition": "LaLiga",
+          "homeTeam": "Racing de Santander",
+          "awayTeam": "Real Sociedad",
+          "startTime": "12:15"
+        },
+        {
+          "id": "fixture-1532340622",
+          "competition": "LaLiga",
+          "homeTeam": "Osasuna",
+          "awayTeam": "Málaga",
+          "startTime": "14:30"
+        },
+        {
+          "id": "fixture-1609810488",
+          "competition": "LaLiga",
+          "homeTeam": "Getafe",
+          "awayTeam": "Atlético de Madrid",
+          "startTime": "17:00"
+        }
+      ],
+      "sources": [
+        {
+          "guideId": "futbol-en-vivo-ar",
+          "records": [
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "FC Barcelona",
+              "awayTeam": "Villarreal",
+              "startTime": "2026-11-22T10:00:00-03:00",
+              "broadcasters": [
+                "DGO",
+                "Amazon Prime Video (Ver en vivo)",
+                "Paramount+",
+                "DSports (610/1610)"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093448_barcelona.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093727_villareal.webp"
+            },
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Racing Santander",
+              "awayTeam": "Real Sociedad",
+              "startTime": "2026-11-22T12:15:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218095805_racing.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093019_real-sociedad.webp"
+            },
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Osasuna",
+              "awayTeam": "Málaga",
+              "startTime": "2026-11-22T14:30:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093507_osasuna.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20130729013601-malaga.webp"
+            },
+            {
+              "competition": "La Liga EA Sports",
+              "homeTeam": "Getafe",
+              "awayTeam": "At. Madrid",
+              "startTime": "2026-11-22T17:00:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium",
+                "ESPN"
+              ],
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20190410094027-getafe.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20240712123854-at-madrid.webp"
+            }
+          ]
+        },
+        {
+          "guideId": "ole-agenda",
+          "records": [
+            {
+              "competition": "La Liga",
+              "homeTeam": "Barcelona",
+              "awayTeam": "Villarreal",
+              "startTime": "2026-11-22T10:00:00-03:00",
+              "broadcasters": [
+                "DSports"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/178.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/449.png"
+            },
+            {
+              "competition": "La Liga",
+              "homeTeam": "Racing de Santander",
+              "awayTeam": "Real Sociedad",
+              "startTime": "2026-11-22T12:15:00-03:00",
+              "broadcasters": [
+                "Disney + Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/189.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/188.png"
+            },
+            {
+              "competition": "La Liga",
+              "homeTeam": "Osasuna",
+              "awayTeam": "Málaga",
+              "startTime": "2026-11-22T14:30:00-03:00",
+              "broadcasters": [
+                "Disney + Premium",
+                "ESPN 3"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/450.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/182.png"
+            },
+            {
+              "competition": "La Liga",
+              "homeTeam": "Getafe",
+              "awayTeam": "Atlético de Madrid",
+              "startTime": "2026-11-22T17:00:00-03:00",
+              "broadcasters": [
+                "Disney + Premium",
+                "ESPN"
+              ],
+              "homeLogo": "https://ole.com.ar/collections/escudos/1450.png",
+              "awayLogo": "https://ole.com.ar/collections/escudos/175.png"
+            }
+          ]
+        },
+        {
+          "guideId": "tyc-agenda",
+          "records": [
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Barcelona",
+              "awayTeam": "Villarreal",
+              "startTime": "2026-11-22T10:00:00-03:00",
+              "broadcasters": [
+                "DGO",
+                "DSports"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/31.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/43.png?v=6?v=2"
+            },
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Racing Santander",
+              "awayTeam": "Real Sociedad",
+              "startTime": "2026-11-22T12:15:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/38.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/40.png?v=6?v=2"
+            },
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Osasuna",
+              "awayTeam": "Málaga",
+              "startTime": "2026-11-22T14:30:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/37.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/25.png?v=6?v=2"
+            },
+            {
+              "competition": "España - Primera División",
+              "homeTeam": "Getafe",
+              "awayTeam": "Atlético de Madrid",
+              "startTime": "2026-11-22T17:00:00-03:00",
+              "broadcasters": [
+                "Disney+ Premium"
+              ],
+              "homeLogo": "https://statics-files.tycsports.com/escudos/24.png?v=6?v=2",
+              "awayLogo": "https://statics-files.tycsports.com/escudos/29.png?v=6?v=2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "priorFutureIdentity": {
+    "schemaVersion": 1,
+    "entries": {
+      "argentina_agendas:agenda:717a5f2459f65327a92c6595df0b2c71eb448c9a50c004530c5d94094c395fc1": 1287273567,
+      "argentina_agendas:agenda:f4fb8a0a62d471524405c497cd066b01969488c753756066e17b3056b63a3372": 1209352870,
+      "argentina_agendas:agenda:a953bca6d620975209a0d48357088e73a17e26edc84c26fdf24a481d6f606b39": 1042642692,
+      "argentina_agendas:agenda:f3a475a22c365698dcabba07883b89c2082d265f266b302fce508ce00cdaf016": 1975551641,
+      "argentina_agendas:agenda:5b3102568151db83c78cbbb4ec349a58513fb9cccc42f0412ed7d35fe138932d": 1794572848,
+      "argentina_agendas:agenda:474491ce896f7bcde599c2b2902e5a98f2b2cf591938d2ec20a3ae717b262033": 1801123149,
+      "argentina_agendas:agenda:529c99286f9bd9df099bf55f5b56e9568232e014eca592326e61762986772888": 1532340622,
+      "argentina_agendas:agenda:3f68e8b937ec4fe628eceae9473bb52b45d91e76c592034d23415ccc96103eb2": 1609810488
+    }
+  }
+}

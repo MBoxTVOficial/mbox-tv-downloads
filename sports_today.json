@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-20",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-20T19:07:38-03:00",
+  "updatedAt": "2026-11-20T23:12:41-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -39,10 +39,10 @@
           "id": "fixture-1132993747",
           "sport": "football",
           "competition": "Liga Profesional Argentina",
-          "homeTeam": "Vélez (3A)",
-          "awayTeam": "Belgrano (6B)",
-          "homeLogo": "",
-          "awayLogo": "",
+          "homeTeam": "Vélez Sarsfield",
+          "awayTeam": "Belgrano",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051943_vélez-sarsfield.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219050908__belgrano.webp",
           "startTime": "20:00",
           "status": "SCHEDULED",
           "channels": [
@@ -99,7 +99,19 @@
       "id": "spain",
       "title": "Liga de España",
       "priority": 8,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1255587971",
+          "sport": "football",
+          "competition": "LaLiga",
+          "homeTeam": "Athletic Club",
+          "awayTeam": "Espanyol",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093611_bilbao.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093321_espanol.webp",
+          "startTime": "17:00",
+          "status": "SCHEDULED"
+        }
+      ]
     },
     {
       "id": "england",

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-20T19:07:38-03:00",
+  "generatedAt": "2026-11-20T23:12:41-03:00",
   "days": {
     "2026-11-20": {
       "schemaVersion": 1,
       "date": "2026-11-20",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-20T19:07:38-03:00",
+      "updatedAt": "2026-11-20T23:12:41-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -44,10 +44,10 @@
               "id": "fixture-1132993747",
               "sport": "football",
               "competition": "Liga Profesional Argentina",
-              "homeTeam": "Vélez (3A)",
-              "awayTeam": "Belgrano (6B)",
-              "homeLogo": "",
-              "awayLogo": "",
+              "homeTeam": "Vélez Sarsfield",
+              "awayTeam": "Belgrano",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051943_vélez-sarsfield.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121219050908__belgrano.webp",
               "startTime": "20:00",
               "status": "SCHEDULED",
               "channels": [
@@ -104,7 +104,19 @@
           "id": "spain",
           "title": "Liga de España",
           "priority": 8,
-          "events": []
+          "events": [
+            {
+              "id": "fixture-1255587971",
+              "sport": "football",
+              "competition": "LaLiga",
+              "homeTeam": "Athletic Club",
+              "awayTeam": "Espanyol",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093611_bilbao.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093321_espanol.webp",
+              "startTime": "17:00",
+              "status": "SCHEDULED"
+            }
+          ]
         },
         {
           "id": "england",
@@ -148,7 +160,7 @@
       "schemaVersion": 1,
       "date": "2026-11-21",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-20T19:07:38-03:00",
+      "updatedAt": "2026-11-20T23:12:41-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -187,8 +199,8 @@
               "competition": "Liga Profesional Argentina",
               "homeTeam": "Defensa y Justicia (4A)",
               "awayTeam": "Barracas Central (5B)",
-              "homeLogo": "https://ole.com.ar/collections/escudos/8625.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/9280.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20140621094213-defensa-y-justicia.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20141118022620-barracas.webp",
               "startTime": "15:00",
               "status": "SCHEDULED",
               "channels": [
@@ -233,8 +245,8 @@
               "competition": "Liga Profesional Argentina",
               "homeTeam": "Argentinos (2B)",
               "awayTeam": "Independiente (7A)",
-              "homeLogo": "https://ole.com.ar/collections/escudos/846.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/1243.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051144_argentinos-juniors.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051437_independiente.webp",
               "startTime": "17:00",
               "status": "SCHEDULED",
               "channels": [
@@ -373,20 +385,42 @@
               "sport": "football",
               "competition": "LaLiga",
               "homeTeam": "Alavés",
-              "awayTeam": "Deportivo de A Coruña",
-              "homeLogo": "https://ole.com.ar/collections/escudos/173.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/180.png",
+              "awayTeam": "Deportivo",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20210127191233-alaves-esports.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218091015_deportivo.webp",
               "startTime": "10:00",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: ESPN 3 HD",
+                  "streamId": 165654,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                },
+                {
+                  "name": "ESPN 3 (ARG)",
+                  "streamId": 169954,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                }
+              ]
             },
             {
               "id": "fixture-1209352870",
               "sport": "football",
               "competition": "LaLiga",
               "homeTeam": "Rayo Vallecano",
-              "awayTeam": "Valencia",
-              "homeLogo": "https://ole.com.ar/collections/escudos/184.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/191.png",
+              "awayTeam": "Valencia CF",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121226112150_rayo-vallecano_(1).webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20151004120005-valencia.webp",
               "startTime": "12:15",
               "status": "SCHEDULED"
             },
@@ -394,10 +428,10 @@
               "id": "fixture-1042642692",
               "sport": "football",
               "competition": "LaLiga",
-              "homeTeam": "Sevilla",
+              "homeTeam": "Sevilla FC",
               "awayTeam": "Real Betis",
-              "homeLogo": "https://ole.com.ar/collections/escudos/179.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/185.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093043_sevilla.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20130924050626-real-betis.webp",
               "startTime": "14:30",
               "status": "SCHEDULED"
             },
@@ -406,11 +440,33 @@
               "sport": "football",
               "competition": "LaLiga",
               "homeTeam": "Real Madrid",
-              "awayTeam": "Celta de Vigo",
-              "homeLogo": "https://ole.com.ar/collections/escudos/186.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/176.png",
+              "awayTeam": "Celta",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20160725122745-real-madrid.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218091134_celta.webp",
               "startTime": "17:00",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: ESPN 3 HD",
+                  "streamId": 165654,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                },
+                {
+                  "name": "ESPN 3 (ARG)",
+                  "streamId": 169954,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -656,7 +712,7 @@
       "schemaVersion": 1,
       "date": "2026-11-22",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-20T19:07:38-03:00",
+      "updatedAt": "2026-11-20T23:12:41-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -695,8 +751,8 @@
               "competition": "Liga Profesional Argentina",
               "homeTeam": "Rosario Central (1B)",
               "awayTeam": "Gimnasia (Mza.) (8A)",
-              "homeLogo": "https://ole.com.ar/collections/escudos/745.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/10754.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20130804050508-rosario-central.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20140919100933-gimnasia-mendoza.webp",
               "startTime": "16:00",
               "status": "SCHEDULED",
               "channels": [
@@ -741,8 +797,8 @@
               "competition": "Liga Profesional Argentina",
               "homeTeam": "River (4A)",
               "awayTeam": "Lanús (5B)",
-              "homeLogo": "https://ole.com.ar/collections/escudos/608.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/2473.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051705_river-plate.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051504_lanús.webp",
               "startTime": "19:00",
               "status": "SCHEDULED",
               "channels": [
@@ -861,23 +917,56 @@
               "id": "fixture-1794572848",
               "sport": "football",
               "competition": "LaLiga",
-              "homeTeam": "Barcelona",
+              "homeTeam": "FC Barcelona",
               "awayTeam": "Villarreal",
-              "homeLogo": "https://ole.com.ar/collections/escudos/178.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/449.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093448_barcelona.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093727_villareal.webp",
               "startTime": "10:00",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "DSPORTS AR*",
+                  "streamId": 169947,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "DSPORTS AR*"
+                  ]
+                }
+              ]
             },
             {
               "id": "fixture-1801123149",
               "sport": "football",
               "competition": "LaLiga",
-              "homeTeam": "Racing de Santander",
+              "homeTeam": "Racing Santander",
               "awayTeam": "Real Sociedad",
-              "homeLogo": "https://ole.com.ar/collections/escudos/189.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/188.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218095805_racing.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093019_real-sociedad.webp",
               "startTime": "12:15",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: ESPN 3 HD",
+                  "streamId": 165654,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                },
+                {
+                  "name": "ESPN 3 (ARG)",
+                  "streamId": 169954,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                }
+              ]
             },
             {
               "id": "fixture-1532340622",
@@ -885,21 +974,65 @@
               "competition": "LaLiga",
               "homeTeam": "Osasuna",
               "awayTeam": "Málaga",
-              "homeLogo": "https://ole.com.ar/collections/escudos/450.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/182.png",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093507_osasuna.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20130729013601-malaga.webp",
               "startTime": "14:30",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: ESPN 3 HD",
+                  "streamId": 165654,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                },
+                {
+                  "name": "ESPN 3 (ARG)",
+                  "streamId": 169954,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN 3 HD",
+                    "ESPN 3 (ARG)"
+                  ]
+                }
+              ]
             },
             {
               "id": "fixture-1609810488",
               "sport": "football",
               "competition": "LaLiga",
               "homeTeam": "Getafe",
-              "awayTeam": "Atlético de Madrid",
-              "homeLogo": "https://ole.com.ar/collections/escudos/1450.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/175.png",
+              "awayTeam": "At. Madrid",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20190410094027-getafe.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20240712123854-at-madrid.webp",
               "startTime": "17:00",
-              "status": "SCHEDULED"
+              "status": "SCHEDULED",
+              "channels": [
+                {
+                  "name": "ARG: ESPN HD",
+                  "streamId": 165649,
+                  "priority": 1,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN HD",
+                    "ESPN HD (ARG)"
+                  ]
+                },
+                {
+                  "name": "ESPN HD (ARG)",
+                  "streamId": 169952,
+                  "priority": 2,
+                  "enabled": true,
+                  "aliases": [
+                    "ARG: ESPN HD",
+                    "ESPN HD (ARG)"
+                  ]
+                }
+              ]
             }
           ]
         },

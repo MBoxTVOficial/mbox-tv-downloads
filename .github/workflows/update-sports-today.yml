@@ -64,10 +64,12 @@ jobs:
         run: |
           git add -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json sports_match_updates.json sports_match_updates_state.json
           window_files=()
-          if [ -f sports_agenda_window.json ]; then
-            window_files=(sports_agenda_window.json)
-            git add -- "${window_files[@]}"
-          fi
+          for file in sports_agenda_window.json sports_agenda_automatic.json; do
+            if [ -f "$file" ]; then
+              window_files+=("$file")
+              git add -- "$file"
+            fi
+          done
           if git diff --cached --quiet -- sports_today.json sports_broadcasts_today.json sports_fixture_identity.json sports_match_updates.json sports_match_updates_state.json "${window_files[@]}"; then
             echo "Sports schedule unchanged; no commit."
             exit 0

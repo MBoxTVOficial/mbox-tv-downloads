@@ -69,6 +69,15 @@ def team_key(value, competition, config):
         return norm(national_key(value) or value)
     # Explicit bracket seeds are metadata, not fuzzy team-name prefixes.
     key = norm(re.sub(r'\s+\([1-8][AB]\)$', '', value))
+    if competition == 'LaLiga':
+        # Exact 20-22 November guide labels only. Preserve the previously
+        # published canonical pairs so a newly recognized guide cannot mint a
+        # replacement fixture ID. No fragments, youth or cross-league aliases.
+        return {'athletic bilbao': 'athletic club',
+                'deportivo': 'deportivo de a coruna', 'valencia cf': 'valencia',
+                'sevilla fc': 'sevilla', 'betis': 'real betis', 'celta': 'celta de vigo',
+                'fc barcelona': 'barcelona', 'racing santander': 'racing de santander',
+                'at madrid': 'atletico de madrid'}.get(key, key)
     if competition not in ('Liga Profesional Argentina', 'Torneo Proyección', 'Primera Nacional', 'Copa Argentina'):
         return key
     if competition == 'Torneo Proyección':
