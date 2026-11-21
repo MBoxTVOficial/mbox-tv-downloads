@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-21T10:14:38-03:00",
+  "generatedAt": "2026-11-21T17:46:53-03:00",
   "days": {
     "2026-11-21": {
       "schemaVersion": 1,
       "date": "2026-11-21",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-21T10:14:38-03:00",
+      "updatedAt": "2026-11-21T17:46:53-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -44,8 +44,8 @@
               "id": "fixture-1620850175",
               "sport": "football",
               "competition": "Liga Profesional Argentina",
-              "homeTeam": "Defensa y Justicia (4A)",
-              "awayTeam": "Barracas Central (5B)",
+              "homeTeam": "Defensa y Justicia",
+              "awayTeam": "Barracas Central",
               "homeLogo": "https://static.futbolenlatv.com/img/32/20140621094213-defensa-y-justicia.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20141118022620-barracas.webp",
               "startTime": "15:00",
@@ -87,11 +87,22 @@
               ]
             },
             {
+              "id": "fixture-1789468205",
+              "sport": "football",
+              "competition": "Primera Nacional",
+              "homeTeam": "Ciudad de Bolivar",
+              "awayTeam": "CA Atlanta",
+              "homeLogo": "https://static.futbolenlatv.com/img/32/20260103212408-club-ciudad-bolivar.webp",
+              "awayLogo": "https://static.futbolenlatv.com/img/32/20140812072403-ca-atlanta.webp",
+              "startTime": "17:00",
+              "status": "SCHEDULED"
+            },
+            {
               "id": "fixture-1044937507",
               "sport": "football",
               "competition": "Liga Profesional Argentina",
-              "homeTeam": "Argentinos (2B)",
-              "awayTeam": "Independiente (7A)",
+              "homeTeam": "Argentinos Juniors",
+              "awayTeam": "Independiente",
               "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051144_argentinos-juniors.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051437_independiente.webp",
               "startTime": "17:00",
@@ -131,17 +142,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "id": "fixture-1789468205",
-              "sport": "football",
-              "competition": "Primera Nacional",
-              "homeTeam": "Ciudad de Bolivar",
-              "awayTeam": "CA Atlanta",
-              "homeLogo": "https://static.futbolenlatv.com/img/32/20260103212408-club-ciudad-bolivar.webp",
-              "awayLogo": "https://static.futbolenlatv.com/img/32/20140812072403-ca-atlanta.webp",
-              "startTime": "17:00",
-              "status": "SCHEDULED"
             },
             {
               "id": "fixture-1802291883",
@@ -489,8 +489,8 @@
               "competition": "Ligue 1",
               "homeTeam": "Strasbourg",
               "awayTeam": "Brest",
-              "homeLogo": "https://ole.com.ar/collections/escudos/153.png",
-              "awayLogo": "https://ole.com.ar/collections/escudos/862.png",
+              "homeLogo": "",
+              "awayLogo": "",
               "startTime": "16:45",
               "status": "SCHEDULED"
             }
@@ -559,7 +559,7 @@
       "schemaVersion": 1,
       "date": "2026-11-22",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-21T10:14:38-03:00",
+      "updatedAt": "2026-11-21T17:46:53-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -1026,7 +1026,7 @@
       "schemaVersion": 1,
       "date": "2026-11-23",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-21T10:14:38-03:00",
+      "updatedAt": "2026-11-21T17:46:53-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [

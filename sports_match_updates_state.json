@@ -1,38 +1,29 @@
 {
   "schemaVersion": 2,
-  "date": "2026-11-17",
+  "date": "2026-11-21",
   "timezone": "America/Argentina/Buenos_Aires",
   "scopes": {
     "confirmed": {
-      "cycles": 2,
-      "lastAttemptAt": "2026-11-17T23:40:15-03:00",
-      "slot": 284,
+      "cycles": 0,
+      "lastAttemptAt": null,
+      "slot": -1,
       "requests": {
-        "ole-opta": 2,
-        "canchallena": 2,
+        "ole-opta": 0,
+        "canchallena": 0,
         "tyc-results": 0
       },
       "settled": {}
     },
     "informative": {
-      "cycles": 2,
-      "lastAttemptAt": "2026-11-17T19:46:34-03:00",
-      "slot": 9,
+      "cycles": 1,
+      "lastAttemptAt": "2026-11-21T17:47:04-03:00",
+      "slot": 8,
       "requests": {
-        "ole-opta": 2,
-        "canchallena": 2,
-        "tyc-results": 0
+        "ole-opta": 1,
+        "canchallena": 1,
+        "tyc-results": 1
       },
-      "settled": {
-        "fixture-1825845374": [
-          "ole-opta",
-          "5nq6umcgi0u7c7vlxjo8wfu38",
-          "Amistosos de selecciones",
-          "singapur",
-          "brasil",
-          "2026-11-17T07:00:00-03:00"
-        ]
-      }
+      "settled": {}
     }
   }
 }

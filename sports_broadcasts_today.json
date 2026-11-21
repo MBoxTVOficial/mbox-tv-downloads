@@ -4,30 +4,6 @@
   "timezone": "America/Argentina/Buenos_Aires",
   "broadcasts": [
     {
-      "fixtureId": 1620850175,
-      "channelGroups": [
-        "espn_premium"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "ESPN Premium"
-      ],
-      "evidenceCount": 1
-    },
-    {
-      "fixtureId": 1044937507,
-      "channelGroups": [
-        "tnt_sports_premium"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "TNT Sports Premium"
-      ],
-      "evidenceCount": 1
-    },
-    {
       "fixtureId": 1304069006,
       "channelGroups": [
         "espn"
@@ -54,6 +30,18 @@
       "evidenceCount": 2
     },
     {
+      "fixtureId": 1620850175,
+      "channelGroups": [
+        "espn_premium"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "ESPN Premium"
+      ],
+      "evidenceCount": 2
+    },
+    {
       "fixtureId": 1975551641,
       "channelGroups": [
         "espn_3"
@@ -63,6 +51,18 @@
       "broadcaster": [
         "Disney+ Premium",
         "ESPN 3 Argentina"
+      ],
+      "evidenceCount": 2
+    },
+    {
+      "fixtureId": 1044937507,
+      "channelGroups": [
+        "tnt_sports_premium"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "TNT Sports Premium"
       ],
       "evidenceCount": 2
     },
