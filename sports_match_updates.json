@@ -1,58 +1,7 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-21T21:57:39-03:00",
-  "matches": {
-    "fixture-1789468205": {
-      "status": "FINISHED",
-      "fixture": {
-        "competition": "Primera Nacional",
-        "homeTeam": "Ciudad de Bolivar",
-        "awayTeam": "CA Atlanta",
-        "startTime": "17:00"
-      },
-      "fixtureKey": [
-        "Primera Nacional",
-        "ciudad de bolivar",
-        "atlanta",
-        "2026-11-21T17:00:00-03:00"
-      ],
-      "observedAt": "2026-11-21T21:57:39-03:00",
-      "expiresAt": "2026-11-22T00:00:00-03:00",
-      "source": {
-        "provider": "canchallena",
-        "matchId": "8m6gofk34lq9n8kjg7huqbsb8",
-        "url": "https://canchallena.lanacion.com.ar/"
-      },
-      "sourceUpdatedAt": "2026-11-21T19:01:13-03:00",
-      "homeScore": 0,
-      "awayScore": 1
-    },
-    "fixture-1802291883": {
-      "status": "FINISHED",
-      "fixture": {
-        "competition": "Primera Nacional",
-        "homeTeam": "CA Colón",
-        "awayTeam": "Deportivo Morón",
-        "startTime": "17:30"
-      },
-      "fixtureKey": [
-        "Primera Nacional",
-        "colon",
-        "deportivo moron",
-        "2026-11-21T17:30:00-03:00"
-      ],
-      "observedAt": "2026-11-21T21:57:39-03:00",
-      "expiresAt": "2026-11-22T00:00:00-03:00",
-      "source": {
-        "provider": "ole-opta",
-        "matchId": "8jo7vjbneqyx0x6t9gwssa5g4",
-        "url": "https://www.ole.com.ar/api/opta/sdapi/futbol/all-tournament-calendar"
-      },
-      "sourceUpdatedAt": "2026-11-21T19:39:38-03:00",
-      "homeScore": 0,
-      "awayScore": 0
-    }
-  }
+  "updatedAt": "2026-11-22T04:52:34-03:00",
+  "matches": {}
 }
