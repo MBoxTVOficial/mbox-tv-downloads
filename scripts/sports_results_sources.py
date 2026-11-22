@@ -27,6 +27,21 @@ def source_urls():
     }
 
 
+def request_url(provider, day):
+    """Return the bounded public request endpoint for one ART day.
+
+    Cancha Llena publishes its dated results at ``/fecha/YYYY-MM-DD``.  Its
+    landing page does not carry the daily hydration document, so it cannot
+    produce a verified match state.  The stored source identity remains the
+    stable provider URL from ``source_urls``; this is only the fetch target.
+    """
+    if provider not in source_urls() or type(day) is not date:
+        raise MatchUpdatesError('invalid_result_request')
+    if provider == 'canchallena':
+        return f"https://canchallena.lanacion.com.ar/fecha/{day.isoformat()}/"
+    return source_urls()[provider]
+
+
 def source_competitions(guides):
     # Parsers still require their verified competition identifiers/names. This
     # controls requests, not acceptance of arbitrary/unvalidated competitions.
@@ -68,8 +83,7 @@ class PublicResultsTransport:
 
 
 def _fetch_provider(provider, day, timeout):
-    urls = source_urls()
-    if provider not in urls or not 1 <= timeout <= TIMEOUT_SECONDS:
+    if provider not in source_urls() or type(day) is not date or not 1 <= timeout <= TIMEOUT_SECONDS:
         raise MatchUpdatesError('invalid_result_request')
     data = json.dumps(request_body(day)).encode('utf8') if provider == 'ole-opta' else None
     headers = {'User-Agent': 'Mozilla/5.0 (compatible; MBoxSportsMatchUpdates/1.1)',
@@ -77,7 +91,7 @@ def _fetch_provider(provider, day, timeout):
     if data:
         headers['Content-Type'] = 'application/json'
     try:
-        with build_opener(NoRedirect()).open(Request(urls[provider], data=data,
+        with build_opener(NoRedirect()).open(Request(request_url(provider, day), data=data,
                 headers=headers, method='POST' if data else 'GET'), timeout=timeout) as response:
             if response.status != 200:
                 raise MatchUpdatesError('source_unavailable')

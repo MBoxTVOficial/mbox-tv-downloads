@@ -10,6 +10,7 @@ from scripts.public_results_tyc import (
     MAX_BODY, SOURCE_URLS, parse_canchallena_results, parse_tyc_results,
 )
 from scripts.sports_match_updates import MatchUpdatesError, fixture_key, _source_key, merge_updates
+from scripts.sports_results_sources import request_url, source_urls
 
 
 FIXTURES = Path(__file__).resolve().parent / 'fixtures'
@@ -34,6 +35,11 @@ def first(data):
 
 
 class PublicResultsTycTests(unittest.TestCase):
+    def test_canchallena_fetches_dated_results_but_keeps_stable_source_identity(self):
+        self.assertEqual('https://canchallena.lanacion.com.ar/fecha/2026-11-14/',
+                         request_url('canchallena', DAY))
+        self.assertEqual('https://canchallena.lanacion.com.ar/', source_urls()['canchallena'])
+
     def test_real_tyc_finals_have_original_art_kickoff_and_separate_identity(self):
         rows = parse_tyc_results(tyc(), DAY)
         self.assertEqual(3, len(rows))
