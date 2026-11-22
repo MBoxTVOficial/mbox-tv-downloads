@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-21T17:46:53-03:00",
+  "generatedAt": "2026-11-21T21:57:32-03:00",
   "days": {
     "2026-11-21": {
       "schemaVersion": 1,
       "date": "2026-11-21",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-21T17:46:53-03:00",
+      "updatedAt": "2026-11-21T21:57:32-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -559,7 +559,7 @@
       "schemaVersion": 1,
       "date": "2026-11-22",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-21T17:46:53-03:00",
+      "updatedAt": "2026-11-21T21:57:32-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -692,7 +692,7 @@
               "awayTeam": "Tristán Suárez",
               "homeLogo": "https://static.futbolenlatv.com/img/32/20140903054146-gimnasiaytiro.webp",
               "awayLogo": "https://static.futbolenlatv.com/img/32/20140815014026-tristan-suarez.webp",
-              "startTime": "21:30",
+              "startTime": "21:00",
               "status": "SCHEDULED"
             },
             {
@@ -1026,7 +1026,7 @@
       "schemaVersion": 1,
       "date": "2026-11-23",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-21T17:46:53-03:00",
+      "updatedAt": "2026-11-21T21:57:32-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
