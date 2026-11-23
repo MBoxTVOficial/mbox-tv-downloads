@@ -1,22 +1,10 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "timezone": "America/Argentina/Buenos_Aires",
   "broadcasts": [
     {
-      "fixtureId": 1552790533,
-      "channelGroups": [
-        "espn_premium"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "ESPN Premium"
-      ],
-      "evidenceCount": 1
-    },
-    {
-      "fixtureId": 1681058162,
+      "fixtureId": 1480632177,
       "channelGroups": [
         "tnt_sports_premium"
       ],
@@ -26,70 +14,6 @@
         "TNT Sports Premium"
       ],
       "evidenceCount": 1
-    },
-    {
-      "fixtureId": 1129331487,
-      "channelGroups": [
-        "espn_premium"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "ESPN Premium"
-      ],
-      "evidenceCount": 1
-    },
-    {
-      "fixtureId": 1794572848,
-      "channelGroups": [
-        "dsports"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "DGO",
-        "DSports"
-      ],
-      "evidenceCount": 2
-    },
-    {
-      "fixtureId": 1801123149,
-      "channelGroups": [
-        "espn_3"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "Disney+ Premium",
-        "ESPN 3 Argentina"
-      ],
-      "evidenceCount": 2
-    },
-    {
-      "fixtureId": 1532340622,
-      "channelGroups": [
-        "espn_3"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "Disney+ Premium",
-        "ESPN 3 Argentina"
-      ],
-      "evidenceCount": 2
-    },
-    {
-      "fixtureId": 1609810488,
-      "channelGroups": [
-        "espn"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "Disney+ Premium",
-        "ESPN Argentina"
-      ],
-      "evidenceCount": 2
     }
   ]
 }
