@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "generatedAt": "2026-11-23T12:41:01-03:00",
+  "generatedAt": "2026-11-24T00:10:04-03:00",
   "days": {
-    "2026-11-23": {
+    "2026-11-24": {
       "schemaVersion": 1,
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-23T12:41:01-03:00",
+      "updatedAt": "2026-11-24T00:10:04-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -39,54 +39,7 @@
           "id": "argentina",
           "title": "Fútbol - Argentina",
           "priority": 5,
-          "events": [
-            {
-              "id": "fixture-1480632177",
-              "sport": "football",
-              "competition": "Liga Profesional Argentina",
-              "homeTeam": "Gimnasia (3B)",
-              "awayTeam": "Newell’s (6A)",
-              "homeLogo": "https://statics-files.tycsports.com/escudos/8.png?v=6?v=2",
-              "awayLogo": "https://statics-files.tycsports.com/escudos/13.png?v=6?v=2",
-              "startTime": "17:00",
-              "status": "SCHEDULED",
-              "channels": [
-                {
-                  "name": "ARG: TNT SPORTS PREMIUM FHD",
-                  "streamId": 165664,
-                  "priority": 1,
-                  "enabled": true,
-                  "aliases": [
-                    "ARG: TNT SPORTS PREMIUM FHD",
-                    "ARG: TNT SPORTS PREMIUM HD",
-                    "ARG: TNT SPORTS PREMIUM HD+"
-                  ]
-                },
-                {
-                  "name": "ARG: TNT SPORTS PREMIUM HD",
-                  "streamId": 165666,
-                  "priority": 2,
-                  "enabled": true,
-                  "aliases": [
-                    "ARG: TNT SPORTS PREMIUM FHD",
-                    "ARG: TNT SPORTS PREMIUM HD",
-                    "ARG: TNT SPORTS PREMIUM HD+"
-                  ]
-                },
-                {
-                  "name": "ARG: TNT SPORTS PREMIUM HD+",
-                  "streamId": 165665,
-                  "priority": 3,
-                  "enabled": true,
-                  "aliases": [
-                    "ARG: TNT SPORTS PREMIUM FHD",
-                    "ARG: TNT SPORTS PREMIUM HD",
-                    "ARG: TNT SPORTS PREMIUM HD+"
-                  ]
-                }
-              ]
-            }
-          ]
+          "events": []
         },
         {
           "id": "conmebol",
@@ -104,37 +57,13 @@
           "id": "spain",
           "title": "Liga de España",
           "priority": 8,
-          "events": [
-            {
-              "id": "fixture-1544548325",
-              "sport": "football",
-              "competition": "LaLiga",
-              "homeTeam": "Levante",
-              "awayTeam": "Elche",
-              "homeLogo": "https://static.futbolenlatv.com/img/32/20121218092930_levante.webp",
-              "awayLogo": "https://static.futbolenlatv.com/img/32/20190417031718-elche-cf.webp",
-              "startTime": "17:00",
-              "status": "SCHEDULED"
-            }
-          ]
+          "events": []
         },
         {
           "id": "england",
           "title": "Premier League",
           "priority": 9,
-          "events": [
-            {
-              "id": "fixture-1566833256",
-              "sport": "football",
-              "competition": "Premier League",
-              "homeTeam": "Brentford",
-              "awayTeam": "Everton",
-              "homeLogo": "https://static.futbolenlatv.com/img/32/20171127121055-brentford.webp",
-              "awayLogo": "https://static.futbolenlatv.com/img/32/20150304024926-everton.webp",
-              "startTime": "17:00",
-              "status": "SCHEDULED"
-            }
-          ]
+          "events": []
         },
         {
           "id": "france",
@@ -146,19 +75,7 @@
           "id": "italy",
           "title": "Serie A",
           "priority": 11,
-          "events": [
-            {
-              "id": "fixture-1724180027",
-              "sport": "football",
-              "competition": "Serie A",
-              "homeTeam": "Monza",
-              "awayTeam": "Fiorentina",
-              "homeLogo": "https://static.futbolenlatv.com/img/32/20191029064703-monza.webp",
-              "awayLogo": "https://static.futbolenlatv.com/img/32/20220713172317-fiorentina.webp",
-              "startTime": "16:45",
-              "status": "SCHEDULED"
-            }
-          ]
+          "events": []
         },
         {
           "id": "international",
@@ -172,7 +89,7 @@
       "schemaVersion": 1,
       "date": "2026-11-25",
       "timezone": "America/Argentina/Buenos_Aires",
-      "updatedAt": "2026-11-23T12:41:01-03:00",
+      "updatedAt": "2026-11-24T00:10:04-03:00",
       "demo": false,
       "sportsDataMode": "DEGRADED",
       "sections": [
@@ -272,6 +189,111 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "conmebol",
+          "title": "Copas CONMEBOL",
+          "priority": 6,
+          "events": []
+        },
+        {
+          "id": "champions",
+          "title": "Champions League",
+          "priority": 7,
+          "events": []
+        },
+        {
+          "id": "spain",
+          "title": "Liga de España",
+          "priority": 8,
+          "events": []
+        },
+        {
+          "id": "england",
+          "title": "Premier League",
+          "priority": 9,
+          "events": []
+        },
+        {
+          "id": "france",
+          "title": "Liga de Francia",
+          "priority": 10,
+          "events": []
+        },
+        {
+          "id": "italy",
+          "title": "Serie A",
+          "priority": 11,
+          "events": []
+        },
+        {
+          "id": "international",
+          "title": "Fútbol - Internacional",
+          "priority": 12,
+          "events": []
+        }
+      ]
+    },
+    "2026-11-26": {
+      "schemaVersion": 1,
+      "date": "2026-11-26",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "updatedAt": "2026-11-24T00:10:04-03:00",
+      "demo": false,
+      "sportsDataMode": "DEGRADED",
+      "sections": [
+        {
+          "id": "south_america_qualifiers",
+          "title": "Eliminatorias Sudamericanas",
+          "priority": 1,
+          "events": []
+        },
+        {
+          "id": "south_america_national_teams",
+          "title": "Selecciones Sudamericanas",
+          "priority": 2,
+          "events": []
+        },
+        {
+          "id": "uefa_qualifiers",
+          "title": "Eliminatorias UEFA",
+          "priority": 3,
+          "events": []
+        },
+        {
+          "id": "uefa_nations",
+          "title": "UEFA Nations League",
+          "priority": 4,
+          "events": []
+        },
+        {
+          "id": "argentina",
+          "title": "Fútbol - Argentina",
+          "priority": 5,
+          "events": [
+            {
+              "id": "fixture-1853544677",
+              "sport": "football",
+              "competition": "Torneo Proyección",
+              "homeTeam": "Vélez Sarsfield",
+              "awayTeam": "Boca Juniors",
+              "homeLogo": "",
+              "awayLogo": "",
+              "startTime": "16:30",
+              "status": "SCHEDULED"
+            },
+            {
+              "id": "fixture-1710695261",
+              "sport": "football",
+              "competition": "Torneo Proyección",
+              "homeTeam": "Independiente",
+              "awayTeam": "Gimnasia de Mendoza",
+              "homeLogo": "",
+              "awayLogo": "",
+              "startTime": "19:00",
+              "status": "SCHEDULED"
             }
           ]
         },

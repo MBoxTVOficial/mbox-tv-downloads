@@ -1,19 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "timezone": "America/Argentina/Buenos_Aires",
-  "broadcasts": [
-    {
-      "fixtureId": 1480632177,
-      "channelGroups": [
-        "tnt_sports_premium"
-      ],
-      "confidence": "confirmed",
-      "source": "auto",
-      "broadcaster": [
-        "TNT Sports Premium"
-      ],
-      "evidenceCount": 1
-    }
-  ]
+  "broadcasts": []
 }
