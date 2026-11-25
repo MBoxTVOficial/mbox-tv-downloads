@@ -1,6 +1,19 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "timezone": "America/Argentina/Buenos_Aires",
-  "broadcasts": []
+  "broadcasts": [
+    {
+      "fixtureId": 1489162386,
+      "channelGroups": [
+        "espn_premium"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "ESPN Premium"
+      ],
+      "evidenceCount": 1
+    }
+  ]
 }
