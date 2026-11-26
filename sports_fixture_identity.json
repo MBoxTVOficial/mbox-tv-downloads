@@ -228,7 +228,15 @@
     "argentina_agendas:agenda:dcfc6e47b3b3c1bf48c460a770354c569a07d3f797ae8eaf73dcac3733150a25": 1160185199,
     "argentina_agendas:agenda:0eccfee24386cdf4a0cee437e00df7d2ef5b8a13141efe5bca45ee319ec190f7": 1738416522,
     "argentina_agendas:agenda:b426dbfc6650f1474348e5771107c634e9bceb091035f3a633e5bc543c5ab9a5": 1203982510,
-    "argentina_agendas:agenda:d30858622c0274609f4f2caa30c8fe8d81c04fbcebf5cd1123fcb7b05925bbfd": 1503757672
+    "argentina_agendas:agenda:d30858622c0274609f4f2caa30c8fe8d81c04fbcebf5cd1123fcb7b05925bbfd": 1503757672,
+    "manual_agenda:2026-11-26:uel-2026-11-26-celta-bournemouth": 1673374722,
+    "manual_agenda:2026-11-26:uel-2026-11-26-dinamo-leverkusen": 1216410310,
+    "manual_agenda:2026-11-26:uel-2026-11-26-olympiacos-milan": 1190811698,
+    "manual_agenda:2026-11-26:uel-2026-11-26-viktoria-plzen-benfica": 1473641402,
+    "manual_agenda:2026-11-26:uel-2026-11-26-crystal-palace-real-sociedad": 1826907316,
+    "manual_agenda:2026-11-26:uel-2026-11-26-juventus-omonia": 1286192508,
+    "manual_agenda:2026-11-26:uel-2026-11-26-lyon-lillestrom": 1676509855,
+    "manual_agenda:2026-11-26:uel-2026-11-26-sunderland-jagiellonia": 1778210372
   },
   "reconciliations": {
     "lpf_official:lpf:336c7198577149c9e344a69048e489e595686653faff54751a40f90a4d631e29": "argentina_agendas:agenda:b5bb4c4aa79d356b308e1bbfd0bb3e29017de57108bd6dc76f8e910790bf23cc",

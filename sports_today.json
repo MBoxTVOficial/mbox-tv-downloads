@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-26",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-26T11:43:04-03:00",
+  "updatedAt": "2026-11-26T17:10:43-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -99,7 +99,160 @@
       "id": "international",
       "title": "Fútbol - Internacional",
       "priority": 12,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1673374722",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Celta de Vigo",
+          "awayTeam": "Bournemouth",
+          "startTime": "14:45",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ESPN 4 HD",
+              "streamId": 170211,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "fixture-1216410310",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Dinamo Zagreb",
+          "awayTeam": "Bayer 04 Leverkusen",
+          "startTime": "14:45",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 3 HD",
+              "streamId": 165654,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "fixture-1190811698",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Olympiacos",
+          "awayTeam": "Milan",
+          "startTime": "14:45",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": []
+        },
+        {
+          "id": "fixture-1473641402",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Viktoria Plzen",
+          "awayTeam": "Benfica",
+          "startTime": "14:45",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN HD",
+              "streamId": 165649,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "fixture-1826907316",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Crystal Palace",
+          "awayTeam": "Real Sociedad",
+          "startTime": "17:00",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 2 HD",
+              "streamId": 165652,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "fixture-1286192508",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Juventus",
+          "awayTeam": "Omonia Nicosia",
+          "startTime": "17:00",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN HD",
+              "streamId": 165649,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "fixture-1676509855",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Lyon",
+          "awayTeam": "Lillestrom",
+          "startTime": "17:00",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 3 HD",
+              "streamId": 165654,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "fixture-1778210372",
+          "sport": "football",
+          "competition": "UEFA Europa League",
+          "homeTeam": "Sunderland",
+          "awayTeam": "Jagiellonia Bialystok",
+          "startTime": "17:00",
+          "homeLogo": "",
+          "awayLogo": "",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ESPN 4 HD",
+              "streamId": 170211,
+              "aliases": [],
+              "priority": 1,
+              "enabled": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }
