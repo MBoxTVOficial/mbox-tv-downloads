@@ -1,6 +1,92 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Argentina/Buenos_Aires",
-  "events": [],
+  "events": [
+
+
+  {
+    "id": "uel-2026-11-26-viktoria-plzen-benfica",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Viktoria Plzen",
+    "awayTeam": "Benfica",
+    "startTime": "14:45",
+    "channelIds": [165649]
+  },
+  {
+    "id": "uel-2026-11-26-celta-bournemouth",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Celta de Vigo",
+    "awayTeam": "Bournemouth",
+    "startTime": "14:45",
+    "channelIds": [170211]
+  },
+  {
+    "id": "uel-2026-11-26-dinamo-leverkusen",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Dinamo Zagreb",
+    "awayTeam": "Bayer 04 Leverkusen",
+    "startTime": "14:45",
+    "channelIds": [165654]
+  },
+  {
+    "id": "uel-2026-11-26-olympiacos-milan",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Olympiacos",
+    "awayTeam": "Milan",
+    "startTime": "14:45",
+    "channelIds": []
+  },
+  {
+    "id": "uel-2026-11-26-juventus-omonia",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Juventus",
+    "awayTeam": "Omonia Nicosia",
+    "startTime": "17:00",
+    "channelIds": [165649]
+  },
+  {
+    "id": "uel-2026-11-26-lyon-lillestrom",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Lyon",
+    "awayTeam": "Lillestrom",
+    "startTime": "17:00",
+    "channelIds": [165654]
+  },
+  {
+    "id": "uel-2026-11-26-crystal-palace-real-sociedad",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Crystal Palace",
+    "awayTeam": "Real Sociedad",
+    "startTime": "17:00",
+    "channelIds": [165652]
+  },
+  {
+    "id": "uel-2026-11-26-sunderland-jagiellonia",
+    "date": "2026-11-26",
+    "sectionId": "international",
+    "competition": "UEFA Europa League",
+    "homeTeam": "Sunderland",
+    "awayTeam": "Jagiellonia Bialystok",
+    "startTime": "17:00",
+    "channelIds": [170211]
+  }
+
+
+    
+  ],
   "channelOverrides": []
 }
