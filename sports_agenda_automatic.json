@@ -3,13 +3,13 @@
   "automaticWindow": {
     "schemaVersion": 1,
     "timezone": "America/Argentina/Buenos_Aires",
-    "generatedAt": "2026-11-26T11:43:04-03:00",
+    "generatedAt": "2026-11-26T20:29:03-03:00",
     "days": {
       "2026-11-26": {
         "schemaVersion": 1,
         "date": "2026-11-26",
         "timezone": "America/Argentina/Buenos_Aires",
-        "updatedAt": "2026-11-26T11:43:04-03:00",
+        "updatedAt": "2026-11-26T20:29:03-03:00",
         "demo": false,
         "sportsDataMode": "DEGRADED",
         "sections": [
@@ -114,7 +114,7 @@
         "schemaVersion": 1,
         "date": "2026-11-27",
         "timezone": "America/Argentina/Buenos_Aires",
-        "updatedAt": "2026-11-26T11:43:04-03:00",
+        "updatedAt": "2026-11-26T20:29:03-03:00",
         "demo": false,
         "sportsDataMode": "DEGRADED",
         "sections": [
@@ -300,7 +300,7 @@
         "schemaVersion": 1,
         "date": "2026-11-28",
         "timezone": "America/Argentina/Buenos_Aires",
-        "updatedAt": "2026-11-26T11:43:04-03:00",
+        "updatedAt": "2026-11-26T20:29:03-03:00",
         "demo": false,
         "sportsDataMode": "DEGRADED",
         "sections": [
@@ -348,10 +348,10 @@
                 "id": "fixture-1203982510",
                 "sport": "football",
                 "competition": "Liga Profesional Argentina",
-                "homeTeam": "Vélez",
+                "homeTeam": "Vélez Sarsfield",
                 "awayTeam": "Independiente",
-                "homeLogo": "https://statics-files.tycsports.com/escudos/20.png?v=6?v=2",
-                "awayLogo": "https://statics-files.tycsports.com/escudos/10.png?v=6?v=2",
+                "homeLogo": "https://ole.com.ar/collections/escudos/570.png",
+                "awayLogo": "https://ole.com.ar/collections/escudos/1243.png",
                 "startTime": "20:00",
                 "status": "SCHEDULED"
               },
@@ -360,9 +360,9 @@
                 "sport": "football",
                 "competition": "Liga Profesional Argentina",
                 "homeTeam": "Instituto",
-                "awayTeam": "River",
-                "homeLogo": "https://statics-files.tycsports.com/escudos/11.png?v=6?v=2",
-                "awayLogo": "https://statics-files.tycsports.com/escudos/17.png?v=6?v=2",
+                "awayTeam": "River Plate",
+                "homeLogo": "https://ole.com.ar/collections/escudos/3638.png",
+                "awayLogo": "https://ole.com.ar/collections/escudos/608.png",
                 "startTime": "22:00",
                 "status": "SCHEDULED"
               }
@@ -430,7 +430,18 @@
                 "homeLogo": "https://static.futbolenlatv.com/img/32/20130729013601-malaga.webp",
                 "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093611_bilbao.webp",
                 "startTime": "12:15",
-                "status": "SCHEDULED"
+                "status": "SCHEDULED",
+                "channels": [
+                  {
+                    "name": "DSPORTS AR*",
+                    "streamId": 169947,
+                    "priority": 1,
+                    "enabled": true,
+                    "aliases": [
+                      "DSPORTS AR*"
+                    ]
+                  }
+                ]
               },
               {
                 "id": "fixture-1931423337",
@@ -441,7 +452,18 @@
                 "homeLogo": "https://static.futbolenlatv.com/img/32/20190417031718-elche-cf.webp",
                 "awayLogo": "https://static.futbolenlatv.com/img/32/20240712123854-at-madrid.webp",
                 "startTime": "14:30",
-                "status": "SCHEDULED"
+                "status": "SCHEDULED",
+                "channels": [
+                  {
+                    "name": "DSPORTS AR*",
+                    "streamId": 169947,
+                    "priority": 1,
+                    "enabled": true,
+                    "aliases": [
+                      "DSPORTS AR*"
+                    ]
+                  }
+                ]
               },
               {
                 "id": "fixture-1406226995",
