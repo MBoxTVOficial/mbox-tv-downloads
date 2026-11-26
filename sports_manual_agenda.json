@@ -3,7 +3,7 @@
   "timezone": "America/Argentina/Buenos_Aires",
   "events": [
 
-
+[
   {
     "id": "uel-2026-11-26-viktoria-plzen-benfica",
     "date": "2026-11-26",
@@ -84,6 +84,9 @@
     "startTime": "17:00",
     "channelIds": [170211]
   }
+]
+
+
 
 
     
