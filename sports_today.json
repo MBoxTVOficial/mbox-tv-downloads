@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-25T19:08:46-03:00",
+  "updatedAt": "2026-11-26T01:42:19-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -36,72 +36,26 @@
       "priority": 5,
       "events": [
         {
-          "id": "fixture-1228075147",
+          "id": "fixture-1853544677",
           "sport": "football",
           "competition": "Torneo Proyección",
-          "homeTeam": "Lanús Reserva",
-          "awayTeam": "River Plate Reserva",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051504_lanús.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051705_river-plate.webp",
-          "startTime": "16:00",
+          "homeTeam": "Vélez Sarsfield Reserva",
+          "awayTeam": "Boca Juniors Reserva",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051943_vélez-sarsfield.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051310_boca-juniors.webp",
+          "startTime": "16:30",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1897484982",
+          "id": "fixture-1555454756",
           "sport": "football",
           "competition": "Torneo Proyección",
-          "homeTeam": "Talleres Córdoba Reserva",
-          "awayTeam": "Estudiantes LP Reserva",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20160714102309-talleres-cordoba.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20140830122106-estudiantes-lp.webp",
-          "startTime": "18:30",
+          "homeTeam": "Independiente Reserva",
+          "awayTeam": "Gimnasia Mendoza Reserva",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051437_independiente.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20140919100933-gimnasia-mendoza.webp",
+          "startTime": "19:00",
           "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1489162386",
-          "sport": "football",
-          "competition": "Liga Profesional Argentina",
-          "homeTeam": "Boca (2A)",
-          "awayTeam": "Ind. Rivadavia Mza. (7B)",
-          "homeLogo": "",
-          "awayLogo": "",
-          "startTime": "21:00",
-          "status": "SCHEDULED",
-          "channels": [
-            {
-              "name": "ARG: ESPN PREMIUM FHD",
-              "streamId": 183616,
-              "priority": 1,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN PREMIUM FHD",
-                "ARG: ESPN PREMIUM HD",
-                "ARG: ESPN PREMIUM"
-              ]
-            },
-            {
-              "name": "ARG: ESPN PREMIUM HD",
-              "streamId": 183615,
-              "priority": 2,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN PREMIUM FHD",
-                "ARG: ESPN PREMIUM HD",
-                "ARG: ESPN PREMIUM"
-              ]
-            },
-            {
-              "name": "ARG: ESPN PREMIUM",
-              "streamId": 183614,
-              "priority": 3,
-              "enabled": true,
-              "aliases": [
-                "ARG: ESPN PREMIUM FHD",
-                "ARG: ESPN PREMIUM HD",
-                "ARG: ESPN PREMIUM"
-              ]
-            }
-          ]
         }
       ]
     },
