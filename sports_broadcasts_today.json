@@ -1,6 +1,20 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "timezone": "America/Argentina/Buenos_Aires",
-  "broadcasts": []
+  "broadcasts": [
+    {
+      "fixtureId": 1169144567,
+      "channelGroups": [
+        "espn"
+      ],
+      "confidence": "confirmed",
+      "source": "auto",
+      "broadcaster": [
+        "Disney+ Premium",
+        "ESPN Argentina"
+      ],
+      "evidenceCount": 2
+    }
+  ]
 }

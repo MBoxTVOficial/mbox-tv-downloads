@@ -236,7 +236,29 @@
     "manual_agenda:2026-11-26:uel-2026-11-26-crystal-palace-real-sociedad": 1826907316,
     "manual_agenda:2026-11-26:uel-2026-11-26-juventus-omonia": 1286192508,
     "manual_agenda:2026-11-26:uel-2026-11-26-lyon-lillestrom": 1676509855,
-    "manual_agenda:2026-11-26:uel-2026-11-26-sunderland-jagiellonia": 1778210372
+    "manual_agenda:2026-11-26:uel-2026-11-26-sunderland-jagiellonia": 1778210372,
+    "lpf_official:lpf:aae99854c42569794ea96a0cd3dc428efbd5638e2e6eff2960746063da835260": 1902368921,
+    "lpf_official:lpf:0b261c08f02c18f8fd171f85f8356a859f155c85c05a9b7ffbb90d6c1d3f38b9": 1107923071,
+    "argentina_agendas:agenda:85059e8189875f78fbf0bf2c65bc280bee16b57c32868e4679c607aabe02385a": 1467496691,
+    "argentina_agendas:agenda:912c3d02a3df563ea5138726d57deb6c8e7b5c4f8318808d57999ebffc413175": 1112130797,
+    "argentina_agendas:agenda:02a22de3738b899cbb1fa33bde961a96d63a2762bf670b2cc297850cabdc5cf7": 1683632252,
+    "argentina_agendas:agenda:97b398645a34a5bcb20db4277949d9d22ac050758f0b9710eadbc758f78b4ca8": 1284328120,
+    "argentina_agendas:agenda:e3861cd786ae6aa8515a213d507d83b626bdfb45f25d1aaeb9eaaec4bad63317": 1434331789,
+    "argentina_agendas:agenda:51ecd074ce23f11086bf2729557cbe887e0425c2bdd9c2782fed0d62d4fc761f": 1713134604,
+    "argentina_agendas:agenda:c6c8f6a1691f07fdd3d0dc468fbe429285c4be66cbfb91eff4460333ae21042a": 1660002563,
+    "argentina_agendas:agenda:66e9f4eeeb1e672ec3a3ba80bc58f9454165320937545c7e5e1b3492bf28a8ce": 1373788370,
+    "argentina_agendas:agenda:4d4adc7c4b65b8abfc6a544ee27966d412b3810597e6871779aa5da4c4709384": 1260773293,
+    "argentina_agendas:agenda:4c06bb517db4a64d5995a2d55564f233c24da0d7157e9b36f84612a5d64e6ff7": 1472989215,
+    "argentina_agendas:agenda:68cafe798e6bbab6379e83e40cf4a835353a702a1d5087b61efaa5d051960509": 1349247790,
+    "argentina_agendas:agenda:948dc264ba6323fd7c1b75081655baa6863618e2304e2eb301ca35f64ce4701c": 1864335773,
+    "argentina_agendas:agenda:d9efeef613475eac06a535447e787307aed286a611ffae26dc2963c33b740487": 1542903733,
+    "argentina_agendas:agenda:1e9792a153bd041f4ee88a75315c1a478fae1434ca1d84541d694bad8b30da57": 1260682358,
+    "argentina_agendas:agenda:d11a29666e9f4b629ff3f7c09cc9f05182a81ba374699e64fe0f25133d7c5e09": 1085996924,
+    "argentina_agendas:agenda:6df7f1ccfded34613461f9cef90bdff87c666f7edb13d1ecf39f3aab622774ac": 1535513291,
+    "argentina_agendas:agenda:2716effd3262e2d0b472eed4f47bda8f605d6f670724ad477e42d463d44c6df3": 1616426635,
+    "argentina_agendas:agenda:5e1ae2c9f518b30e285d4246d0306af81236d9199fc111ca4eefe4b4b5c96d17": 1613421777,
+    "argentina_agendas:agenda:a8d5122eace5869a40b197fc0b344eeedb43676d3dfe1fe62dab838d759552ec": 1713480994,
+    "argentina_agendas:agenda:74a105ed8b5d9e0880c8a6782bdb4ba6dce7a50465c2943752f8df3dc69a0f86": 1289321181
   },
   "reconciliations": {
     "lpf_official:lpf:336c7198577149c9e344a69048e489e595686653faff54751a40f90a4d631e29": "argentina_agendas:agenda:b5bb4c4aa79d356b308e1bbfd0bb3e29017de57108bd6dc76f8e910790bf23cc",
@@ -247,6 +269,8 @@
     "afa_official:afa:primera-nacional:e2899b7e31551087248d94df21bc9ff8d4f38172b3519c5aa5876b265f474171": "argentina_agendas:agenda:3dbf177733854df765d67a4fd32f424568c1e159fb6cc89c23f7b3d4e06f68ba",
     "argentina_agendas:agenda:62d6899adfde620dc3d3d24d10f7f6076ac025553e6d119fc691fa9a18020e3b": "lpf_official:lpf:b4c1b49b8b1257fcd5dc47d6924888156d1bc0ef47026553549cb6aa3995c44f",
     "argentina_agendas:agenda:f9a089925e2393502d473861d7fafd318492be806dba39374e721b7b480157c8": "lpf_official:lpf:ba5be9141731be085d1518a4f0cbba332e3b72273a600cd7f34073f557a24062",
-    "argentina_agendas:agenda:c8b790da3e4ccbb4beda295636d6f1f71a528eb4a94c84a5eb4fb596b9f24b8e": "lpf_official:lpf:519a15981757f0964d9670c427381090d2144ba1a8c317a32e30592f49b52cba"
+    "argentina_agendas:agenda:c8b790da3e4ccbb4beda295636d6f1f71a528eb4a94c84a5eb4fb596b9f24b8e": "lpf_official:lpf:519a15981757f0964d9670c427381090d2144ba1a8c317a32e30592f49b52cba",
+    "lpf_official:lpf:34d1d94e23192e9c71dd28169cbfc8ddd7a42eb0c2a076f4fac201a13e2dbc81": "argentina_agendas:agenda:b426dbfc6650f1474348e5771107c634e9bceb091035f3a633e5bc543c5ab9a5",
+    "lpf_official:lpf:a85081bea269c52196aa50e89c0aea29b3e9f388ea3b6e1e92b424ff6992e8a5": "argentina_agendas:agenda:d30858622c0274609f4f2caa30c8fe8d81c04fbcebf5cd1123fcb7b05925bbfd"
   }
 }
