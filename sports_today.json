@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "timezone": "America/Argentina/Buenos_Aires",
-  "updatedAt": "2026-11-27T16:47:43-03:00",
+  "updatedAt": "2026-11-28T00:05:47-03:00",
   "demo": false,
   "sportsDataMode": "DEGRADED",
   "sections": [
@@ -36,37 +36,107 @@
       "priority": 5,
       "events": [
         {
-          "id": "fixture-1766586984",
+          "id": "fixture-1203982510",
+          "sport": "football",
+          "competition": "Liga Profesional Argentina",
+          "homeTeam": "Vélez (3A)",
+          "awayTeam": "Independiente (7A)",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219051943_vélez-sarsfield.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051437_independiente.webp",
+          "startTime": "20:00",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: TNT SPORTS PREMIUM FHD",
+              "streamId": 165664,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: TNT SPORTS PREMIUM FHD",
+                "ARG: TNT SPORTS PREMIUM HD",
+                "ARG: TNT SPORTS PREMIUM HD+"
+              ]
+            },
+            {
+              "name": "ARG: TNT SPORTS PREMIUM HD",
+              "streamId": 165666,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: TNT SPORTS PREMIUM FHD",
+                "ARG: TNT SPORTS PREMIUM HD",
+                "ARG: TNT SPORTS PREMIUM HD+"
+              ]
+            },
+            {
+              "name": "ARG: TNT SPORTS PREMIUM HD+",
+              "streamId": 165665,
+              "priority": 3,
+              "enabled": true,
+              "aliases": [
+                "ARG: TNT SPORTS PREMIUM FHD",
+                "ARG: TNT SPORTS PREMIUM HD",
+                "ARG: TNT SPORTS PREMIUM HD+"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1160185199",
           "sport": "football",
           "competition": "Primera Nacional",
-          "homeTeam": "CA Atlanta",
-          "awayTeam": "Ciudad de Bolivar",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20140812072403-ca-atlanta.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20260103212408-club-ciudad-bolivar.webp",
-          "startTime": "19:30",
+          "homeTeam": "Deportivo Madryn",
+          "awayTeam": "Gimnasia Jujuy",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20141115115835-deportivo-madryn.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20220908113721-gimnasia-jujuy.webp",
+          "startTime": "20:00",
           "status": "SCHEDULED"
         },
         {
-          "id": "fixture-1916512935",
+          "id": "fixture-1503757672",
           "sport": "football",
-          "competition": "Primera Nacional",
-          "homeTeam": "Deportivo Morón",
-          "awayTeam": "CA Colón",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20140815030859-deportivo-moron.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051345_colón-de-santa-fe.webp",
-          "startTime": "21:00",
-          "status": "SCHEDULED"
-        },
-        {
-          "id": "fixture-1238874651",
-          "sport": "football",
-          "competition": "Primera Nacional",
-          "homeTeam": "Tristán Suárez",
-          "awayTeam": "Gimnasia y Tiro",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20140815014026-tristan-suarez.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20140903054146-gimnasiaytiro.webp",
-          "startTime": "21:00",
-          "status": "SCHEDULED"
+          "competition": "Liga Profesional Argentina",
+          "homeTeam": "Instituto (1B)",
+          "awayTeam": "River (4A)",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20140814115618-instituto-atletico-central-cordoba.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051705_river-plate.webp",
+          "startTime": "22:00",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN PREMIUM FHD",
+              "streamId": 183616,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN PREMIUM FHD",
+                "ARG: ESPN PREMIUM HD",
+                "ARG: ESPN PREMIUM"
+              ]
+            },
+            {
+              "name": "ARG: ESPN PREMIUM HD",
+              "streamId": 183615,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN PREMIUM FHD",
+                "ARG: ESPN PREMIUM HD",
+                "ARG: ESPN PREMIUM"
+              ]
+            },
+            {
+              "name": "ARG: ESPN PREMIUM",
+              "streamId": 183614,
+              "priority": 3,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN PREMIUM FHD",
+                "ARG: ESPN PREMIUM HD",
+                "ARG: ESPN PREMIUM"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -74,7 +144,32 @@
       "id": "conmebol",
       "title": "Copas CONMEBOL",
       "priority": 6,
-      "events": []
+      "events": [
+        {
+          "id": "fixture-1773947632",
+          "sport": "football",
+          "competition": "CONMEBOL Libertadores",
+          "homeTeam": "SE Palmeiras",
+          "awayTeam": "Club Estudiantes de La Plata",
+          "homeLogo": "",
+          "awayLogo": "",
+          "startTime": "17:00",
+          "status": "SCHEDULED",
+          "homeCountry": "BR",
+          "awayCountry": "AR"
+        },
+        {
+          "id": "fixture-1876709070",
+          "sport": "football",
+          "competition": "CONMEBOL Libertadores",
+          "homeTeam": "Palmeiras",
+          "awayTeam": "Estudiantes LP",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130207042018_palmeiras.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20140830122106-estudiantes-lp.webp",
+          "startTime": "17:00",
+          "status": "SCHEDULED"
+        }
+      ]
     },
     {
       "id": "champions",
@@ -88,31 +183,90 @@
       "priority": 8,
       "events": [
         {
-          "id": "fixture-1567226344",
+          "id": "fixture-1662206531",
           "sport": "football",
           "competition": "LaLiga",
-          "homeTeam": "Levante",
-          "awayTeam": "Racing Santander",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20121218092930_levante.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20121218095805_racing.webp",
-          "startTime": "17:00",
-          "status": "SCHEDULED"
-        }
-      ]
-    },
-    {
-      "id": "england",
-      "title": "Premier League",
-      "priority": 9,
-      "events": [
+          "homeTeam": "Real Betis",
+          "awayTeam": "Rayo Vallecano",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130924050626-real-betis.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121226112150_rayo-vallecano_(1).webp",
+          "startTime": "10:00",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN HD",
+              "streamId": 165649,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN HD",
+                "ESPN HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN HD (ARG)",
+              "streamId": 169952,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN HD",
+                "ESPN HD (ARG)"
+              ]
+            }
+          ]
+        },
         {
-          "id": "fixture-1169144567",
+          "id": "fixture-1544327085",
           "sport": "football",
-          "competition": "Premier League",
-          "homeTeam": "Nottingham Forest",
-          "awayTeam": "Chelsea",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20130410124910_nottingham-forest.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20121218101333_chelsea.webp",
+          "competition": "LaLiga",
+          "homeTeam": "Málaga",
+          "awayTeam": "Athletic Club",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130729013601-malaga.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121218093611_bilbao.webp",
+          "startTime": "12:15",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "DSPORTS AR*",
+              "streamId": 169947,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "DSPORTS AR*"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1931423337",
+          "sport": "football",
+          "competition": "LaLiga",
+          "homeTeam": "Elche",
+          "awayTeam": "At. Madrid",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20190417031718-elche-cf.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20240712123854-at-madrid.webp",
+          "startTime": "14:30",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "DSPORTS AR*",
+              "streamId": 169947,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "DSPORTS AR*"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fixture-1406226995",
+          "sport": "football",
+          "competition": "LaLiga",
+          "homeTeam": "Real Madrid",
+          "awayTeam": "Alavés",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20160725122745-real-madrid.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20210127191233-alaves-esports.webp",
           "startTime": "17:00",
           "status": "SCHEDULED",
           "channels": [
@@ -141,18 +295,135 @@
       ]
     },
     {
+      "id": "england",
+      "title": "Premier League",
+      "priority": 9,
+      "events": [
+        {
+          "id": "fixture-1958374127",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Leeds Utd",
+          "awayTeam": "Coventry City",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130207050812_leeds-united.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20131008053036-coventry-city.webp",
+          "startTime": "12:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1839742717",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Manchester Utd.",
+          "awayTeam": "Brentford",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121218101319_manchester-united.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20171127121055-brentford.webp",
+          "startTime": "12:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1525325826",
+          "sport": "football",
+          "competition": "Premier League",
+          "homeTeam": "Ipswich Town",
+          "awayTeam": "Aston Villa",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130824095319-ipswich-town.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20240923180723-aston-villa.webp",
+          "startTime": "14:30",
+          "status": "SCHEDULED",
+          "channels": [
+            {
+              "name": "ARG: ESPN 2 HD",
+              "streamId": 165652,
+              "priority": 1,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            },
+            {
+              "name": "ESPN 2 HD (ARG)",
+              "streamId": 169953,
+              "priority": 2,
+              "enabled": true,
+              "aliases": [
+                "ARG: ESPN 2 HD",
+                "ESPN 2 HD (ARG)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "france",
       "title": "Liga de Francia",
       "priority": 10,
       "events": [
         {
-          "id": "fixture-1177377120",
+          "id": "fixture-1153134054",
           "sport": "football",
           "competition": "Ligue 1",
-          "homeTeam": "Stade Brestois",
-          "awayTeam": "Paris FC",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20130117033942_stade-brestois-29.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20150717031822-paris-fc.webp",
+          "homeTeam": "Angers",
+          "awayTeam": "Lens",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20211013183800-angers.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130410092341_lens.webp",
+          "startTime": "13:15",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1950318701",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Le Havre AC",
+          "awayTeam": "Strasbourg Alsace",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130910055724-havre-ac.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20170618112752-strasbourg-alsace.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1250378393",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Le Mans",
+          "awayTeam": "Lille",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130517110847_le-mans.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20180927105456-lille.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1452095869",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Nice",
+          "awayTeam": "Troyes",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20130913114529-niza.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130117033335_esperance-sportive-troyes-aube-champagne.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1052180224",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "PSG",
+          "awayTeam": "Lorient",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20131224050227-psg.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20130117033555_fc-lorient.webp",
+          "startTime": "16:45",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1738416522",
+          "sport": "football",
+          "competition": "Ligue 1",
+          "homeTeam": "Le Havre",
+          "awayTeam": "Strasbourg",
+          "homeLogo": "https://ole.com.ar/collections/escudos/141.png",
+          "awayLogo": "https://ole.com.ar/collections/escudos/153.png",
           "startTime": "16:45",
           "status": "SCHEDULED"
         }
@@ -164,13 +435,35 @@
       "priority": 11,
       "events": [
         {
-          "id": "fixture-1767063568",
+          "id": "fixture-1361466752",
           "sport": "football",
           "competition": "Serie A",
-          "homeTeam": "Venezia FC",
-          "awayTeam": "Bologna",
-          "homeLogo": "https://static.futbolenlatv.com/img/32/20220907172129-venezia-fc.webp",
-          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219035023_bologna.webp",
+          "homeTeam": "Frosinone",
+          "awayTeam": "Parma",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20131126051712-frosinone.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219035146_parma.webp",
+          "startTime": "11:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1086503756",
+          "sport": "football",
+          "competition": "Serie A",
+          "homeTeam": "Torino",
+          "awayTeam": "Lazio",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20121219035257_torino.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219035121_lazio.webp",
+          "startTime": "14:00",
+          "status": "SCHEDULED"
+        },
+        {
+          "id": "fixture-1625603141",
+          "sport": "football",
+          "competition": "Serie A",
+          "homeTeam": "Inter Milan",
+          "awayTeam": "Genoa",
+          "homeLogo": "https://static.futbolenlatv.com/img/32/20210330172154-inter-milan.webp",
+          "awayLogo": "https://static.futbolenlatv.com/img/32/20121219034524_génova.webp",
           "startTime": "16:45",
           "status": "SCHEDULED"
         }

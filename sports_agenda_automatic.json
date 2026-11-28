@@ -3,199 +3,13 @@
   "automaticWindow": {
     "schemaVersion": 1,
     "timezone": "America/Argentina/Buenos_Aires",
-    "generatedAt": "2026-11-27T16:47:43-03:00",
+    "generatedAt": "2026-11-28T00:05:47-03:00",
     "days": {
-      "2026-11-27": {
-        "schemaVersion": 1,
-        "date": "2026-11-27",
-        "timezone": "America/Argentina/Buenos_Aires",
-        "updatedAt": "2026-11-27T16:47:43-03:00",
-        "demo": false,
-        "sportsDataMode": "DEGRADED",
-        "sections": [
-          {
-            "id": "south_america_qualifiers",
-            "title": "Eliminatorias Sudamericanas",
-            "priority": 1,
-            "events": []
-          },
-          {
-            "id": "south_america_national_teams",
-            "title": "Selecciones Sudamericanas",
-            "priority": 2,
-            "events": []
-          },
-          {
-            "id": "uefa_qualifiers",
-            "title": "Eliminatorias UEFA",
-            "priority": 3,
-            "events": []
-          },
-          {
-            "id": "uefa_nations",
-            "title": "UEFA Nations League",
-            "priority": 4,
-            "events": []
-          },
-          {
-            "id": "argentina",
-            "title": "Fútbol - Argentina",
-            "priority": 5,
-            "events": [
-              {
-                "id": "fixture-1766586984",
-                "sport": "football",
-                "competition": "Primera Nacional",
-                "homeTeam": "CA Atlanta",
-                "awayTeam": "Ciudad de Bolivar",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20140812072403-ca-atlanta.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20260103212408-club-ciudad-bolivar.webp",
-                "startTime": "19:30",
-                "status": "SCHEDULED"
-              },
-              {
-                "id": "fixture-1916512935",
-                "sport": "football",
-                "competition": "Primera Nacional",
-                "homeTeam": "Deportivo Morón",
-                "awayTeam": "CA Colón",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20140815030859-deportivo-moron.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20121219051345_colón-de-santa-fe.webp",
-                "startTime": "21:00",
-                "status": "SCHEDULED"
-              },
-              {
-                "id": "fixture-1238874651",
-                "sport": "football",
-                "competition": "Primera Nacional",
-                "homeTeam": "Tristán Suárez",
-                "awayTeam": "Gimnasia y Tiro",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20140815014026-tristan-suarez.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20140903054146-gimnasiaytiro.webp",
-                "startTime": "21:00",
-                "status": "SCHEDULED"
-              }
-            ]
-          },
-          {
-            "id": "conmebol",
-            "title": "Copas CONMEBOL",
-            "priority": 6,
-            "events": []
-          },
-          {
-            "id": "champions",
-            "title": "Champions League",
-            "priority": 7,
-            "events": []
-          },
-          {
-            "id": "spain",
-            "title": "Liga de España",
-            "priority": 8,
-            "events": [
-              {
-                "id": "fixture-1567226344",
-                "sport": "football",
-                "competition": "LaLiga",
-                "homeTeam": "Levante",
-                "awayTeam": "Racing Santander",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20121218092930_levante.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20121218095805_racing.webp",
-                "startTime": "17:00",
-                "status": "SCHEDULED"
-              }
-            ]
-          },
-          {
-            "id": "england",
-            "title": "Premier League",
-            "priority": 9,
-            "events": [
-              {
-                "id": "fixture-1169144567",
-                "sport": "football",
-                "competition": "Premier League",
-                "homeTeam": "Nottingham Forest",
-                "awayTeam": "Chelsea",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20130410124910_nottingham-forest.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20121218101333_chelsea.webp",
-                "startTime": "17:00",
-                "status": "SCHEDULED",
-                "channels": [
-                  {
-                    "name": "ARG: ESPN HD",
-                    "streamId": 165649,
-                    "priority": 1,
-                    "enabled": true,
-                    "aliases": [
-                      "ARG: ESPN HD",
-                      "ESPN HD (ARG)"
-                    ]
-                  },
-                  {
-                    "name": "ESPN HD (ARG)",
-                    "streamId": 169952,
-                    "priority": 2,
-                    "enabled": true,
-                    "aliases": [
-                      "ARG: ESPN HD",
-                      "ESPN HD (ARG)"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "france",
-            "title": "Liga de Francia",
-            "priority": 10,
-            "events": [
-              {
-                "id": "fixture-1177377120",
-                "sport": "football",
-                "competition": "Ligue 1",
-                "homeTeam": "Stade Brestois",
-                "awayTeam": "Paris FC",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20130117033942_stade-brestois-29.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20150717031822-paris-fc.webp",
-                "startTime": "16:45",
-                "status": "SCHEDULED"
-              }
-            ]
-          },
-          {
-            "id": "italy",
-            "title": "Serie A",
-            "priority": 11,
-            "events": [
-              {
-                "id": "fixture-1767063568",
-                "sport": "football",
-                "competition": "Serie A",
-                "homeTeam": "Venezia FC",
-                "awayTeam": "Bologna",
-                "homeLogo": "https://static.futbolenlatv.com/img/32/20220907172129-venezia-fc.webp",
-                "awayLogo": "https://static.futbolenlatv.com/img/32/20121219035023_bologna.webp",
-                "startTime": "16:45",
-                "status": "SCHEDULED"
-              }
-            ]
-          },
-          {
-            "id": "international",
-            "title": "Fútbol - Internacional",
-            "priority": 12,
-            "events": []
-          }
-        ]
-      },
       "2026-11-28": {
         "schemaVersion": 1,
         "date": "2026-11-28",
         "timezone": "America/Argentina/Buenos_Aires",
-        "updatedAt": "2026-11-27T16:47:43-03:00",
+        "updatedAt": "2026-11-28T00:05:47-03:00",
         "demo": false,
         "sportsDataMode": "DEGRADED",
         "sections": [
@@ -674,7 +488,7 @@
         "schemaVersion": 1,
         "date": "2026-11-29",
         "timezone": "America/Argentina/Buenos_Aires",
-        "updatedAt": "2026-11-27T16:47:43-03:00",
+        "updatedAt": "2026-11-28T00:05:47-03:00",
         "demo": false,
         "sportsDataMode": "DEGRADED",
         "sections": [
@@ -1155,6 +969,145 @@
                 "awayTeam": "Juventus",
                 "homeLogo": "https://static.futbolenlatv.com/img/32/20211013183924-calcio-como.webp",
                 "awayLogo": "https://static.futbolenlatv.com/img/32/20170117094900-juventus.webp",
+                "startTime": "16:45",
+                "status": "SCHEDULED"
+              }
+            ]
+          },
+          {
+            "id": "international",
+            "title": "Fútbol - Internacional",
+            "priority": 12,
+            "events": []
+          }
+        ]
+      },
+      "2026-11-30": {
+        "schemaVersion": 1,
+        "date": "2026-11-30",
+        "timezone": "America/Argentina/Buenos_Aires",
+        "updatedAt": "2026-11-28T00:05:47-03:00",
+        "demo": false,
+        "sportsDataMode": "DEGRADED",
+        "sections": [
+          {
+            "id": "south_america_qualifiers",
+            "title": "Eliminatorias Sudamericanas",
+            "priority": 1,
+            "events": []
+          },
+          {
+            "id": "south_america_national_teams",
+            "title": "Selecciones Sudamericanas",
+            "priority": 2,
+            "events": []
+          },
+          {
+            "id": "uefa_qualifiers",
+            "title": "Eliminatorias UEFA",
+            "priority": 3,
+            "events": []
+          },
+          {
+            "id": "uefa_nations",
+            "title": "UEFA Nations League",
+            "priority": 4,
+            "events": []
+          },
+          {
+            "id": "argentina",
+            "title": "Fútbol - Argentina",
+            "priority": 5,
+            "events": []
+          },
+          {
+            "id": "conmebol",
+            "title": "Copas CONMEBOL",
+            "priority": 6,
+            "events": []
+          },
+          {
+            "id": "champions",
+            "title": "Champions League",
+            "priority": 7,
+            "events": []
+          },
+          {
+            "id": "spain",
+            "title": "Liga de España",
+            "priority": 8,
+            "events": [
+              {
+                "id": "fixture-1562950840",
+                "sport": "football",
+                "competition": "LaLiga",
+                "homeTeam": "Espanyol",
+                "awayTeam": "Getafe",
+                "homeLogo": "https://static.futbolenlatv.com/img/32/20121218093321_espanol.webp",
+                "awayLogo": "https://static.futbolenlatv.com/img/32/20190410094027-getafe.webp",
+                "startTime": "17:00",
+                "status": "SCHEDULED",
+                "channels": [
+                  {
+                    "name": "ARG: ESPN 3 HD",
+                    "streamId": 165654,
+                    "priority": 1,
+                    "enabled": true,
+                    "aliases": [
+                      "ARG: ESPN 3 HD",
+                      "ESPN 3 (ARG)"
+                    ]
+                  },
+                  {
+                    "name": "ESPN 3 (ARG)",
+                    "streamId": 169954,
+                    "priority": 2,
+                    "enabled": true,
+                    "aliases": [
+                      "ARG: ESPN 3 HD",
+                      "ESPN 3 (ARG)"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "england",
+            "title": "Premier League",
+            "priority": 9,
+            "events": []
+          },
+          {
+            "id": "france",
+            "title": "Liga de Francia",
+            "priority": 10,
+            "events": []
+          },
+          {
+            "id": "italy",
+            "title": "Serie A",
+            "priority": 11,
+            "events": [
+              {
+                "id": "fixture-1355517435",
+                "sport": "football",
+                "competition": "Serie A",
+                "homeTeam": "US Lecce",
+                "awayTeam": "Atalanta",
+                "homeLogo": "https://static.futbolenlatv.com/img/32/20160727113448-us-lecce.webp",
+                "awayLogo": "https://static.futbolenlatv.com/img/32/20121219034958_atalanta.webp",
+                "startTime": "14:30",
+                "status": "SCHEDULED"
+              },
+              {
+                "id": "fixture-1978570652",
+                "sport": "football",
+                "competition": "Serie A",
+                "homeTeam": "Cagliari",
+                "awayTeam": "AC Milan",
+                "homeLogo": "https://static.futbolenlatv.com/img/32/20170205100747-cagliari.webp",
+                "awayLogo": "https://static.futbolenlatv.com/img/32/20121219034733_milan.webp",
                 "startTime": "16:45",
                 "status": "SCHEDULED"
               }
